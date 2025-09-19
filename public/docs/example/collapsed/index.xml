@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>神马中转API</title>
-    <link>//localhost:1313/docs/example/collapsed/</link>
+    <link>/docs/example/collapsed/</link>
     <description>Recent content on 神马中转API</description>
     <generator>Hugo</generator>
     <language>zh</language>
-    <atom:link href="//localhost:1313/docs/example/collapsed/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/docs/example/collapsed/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

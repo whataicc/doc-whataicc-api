@@ -1,0 +1,6 @@
+[build]
+  publish = "public"
+  command = "hugo"
+
+[build.environment]
+  HUGO_VERSION = "0.150.0"  # 换成你需要的版本
