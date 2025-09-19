@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  固定格式化输出Json
+  
+  #
+  
+
+
+  格式化输出 接口说明
+  
+  #
+  
+
+通过OpenAI API获取产品信息，返回JSON格式数据。
+
+  请求地址
+  
+  #
+  
+
+POST https://api.whatai.cc/v1/chat/completions
+
+  请求参数
+  
+  #
+  
+
+
+  Headers
+  
+  #
+  
+
+
+  
+      
+          参数名
+          类型
+          必填
+          说明
+      
+  
+  
+      
+          Authorization
+          string
+          是
+          API密钥，格式: Bearer ******
+      
+      
+          Content-Type
+          string
+          是
+          固定值: application/json
+      
+  
+
+
+  Body
+  
+  #
+  
+
+{
+  &#34;model&#34;: &#34;gpt-4o-2024-08-06&#34;,
+  &#34;messages&#34;: [
+    {
+      &#34;role&#34;: &#34;system&#34;,
+      &#34;content&#34;: &#34;根据给出的产品进行分析，按json格式用中文回答,json format:product_name, price, description.&#34;
+    },
+    {
+      &#34;role&#34;: &#34;user&#34;,
+      &#34;content&#34;: &#34;产品描述&#34;
+    }
+  ],
+  &#34;response_format&#34;: {
+    &#34;type&#34;: &#34;json_object&#34;
+  }
+}
+
+  Python示例代码
+  
+  #
+  
+
+from pydantic import BaseModel
+from openai import OpenAI
+from dotenv import load_dotenv
+import json
+from textwrap import dedent
+
+# 加载环境变量，例如 API key 等配置信息
+load_dotenv()
+
+# 设置 OpenAI API 的工厂名称，默认为 &#34;openai&#34;
+factory = &#34;openai&#34;
+
+# 初始化 OpenAI 客户端，传入 API key 和 base URL
+client = OpenAI(
+    api_key=&#34;sk-***********************************************&#34;,  # 替换为你的 API key
+    base_url=&#34;https://api.whatai.cc/v1/&#34;   # 这里是 base url，注意这里需要 /v1/
+)
+
+# 定义一个产品信息类，用于解析 API 返回的数据
+class ProductInfo(BaseModel):
+    product_name: str  # 产品名称，字符串类型
+    price: float  # 价格，浮点数类型
+    description: str  # 产品描述，字符串类型
+
+# 定义一个提示信息，用于请求模型返回 JSON 格式的产品信息
+product_prompt = &#39;&#39;&#39;根据给出的产品进行分析，按json格式用中文回答,json format:product_name, price, description.&#39;&#39;&#39;
+
+# 获取产品信息的函数，传入用户的问题
+def get_product_info(question: str):
+    # 使用 OpenAI 客户端进行聊天模型的请求
+    completion = client.beta.chat.completions.parse(
+        model=&#34;gpt-4o-2024-08-06&#34;,  # 指定使用的模型
+        messages=[
+            {&#34;role&#34;: &#34;system&#34;, &#34;content&#34;: dedent(product_prompt)},  # 发送系统消息，设置模型的行为
+            {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: question},  # 发送用户消息，用户提出问题
+        ],
+        response_format=ProductInfo,  # 指定返回的数据格式为 ProductInfo
+    )
+
+    # 返回模型解析的第一个选项的消息结果
+    return completion.choices[0].message.parsed
+
+# 初始化一个空的产品信息字典
+product_inform = {}
+
+# 定义将解析的结果转换为 JSON 的函数
+def transform2JSON(parsed_result):
+    # print(parsed_result)  # 打印解析结果
+
+    # 将解析的结果存储到字典中
+    product_inform[&#34;product_name&#34;] = parsed_result.product_name
+    product_inform[&#34;price&#34;] = parsed_result.price
+    product_inform[&#34;description&#34;] = parsed_result.description
+
+    # 将字典转换为 JSON 字符串并返回，ensure_ascii=False 允许中文字符正常显示
+    return json.dumps(product_inform, ensure_ascii=False, indent=4)
+
+# 定义用户输入的问题，即一个产品信息的描述
+question = &#34;75寸小米电视机&#34;
+
+# 调用函数获取产品信息
+result = get_product_info(question)
+
+
+# 将解析结果转换为 JSON 格式并打印
+json_result = transform2JSON(result)
+print(json_result)
+
+  返回示例
+  
+  #
+  
+
+{
+    &#34;product_name&#34;: &#34;小米电视75寸&#34;,
+    &#34;price&#34;: 4999.0,
+    &#34;description&#34;: &#34;4K超高清画质，支持HDR，内置小爱同学语音助手&#34;
+}
+
+  注意事项
+  
+  #
+  
+
+
+
+请妥善保管API密钥">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/openai/gdgshscjson/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API">
+  <meta property="og:description" content="固定格式化输出Json # 格式化输出 接口说明 # 通过OpenAI API获取产品信息，返回JSON格式数据。
+请求地址 # POST https://api.whatai.cc/v1/chat/completions
+请求参数 # Headers # 参数名 类型 必填 说明 Authorization string 是 API密钥，格式: Bearer ****** Content-Type string 是 固定值: application/json Body # { &#34;model&#34;: &#34;gpt-4o-2024-08-06&#34;, &#34;messages&#34;: [ { &#34;role&#34;: &#34;system&#34;, &#34;content&#34;: &#34;根据给出的产品进行分析，按json格式用中文回答,json format:product_name, price, description.&#34; }, { &#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;产品描述&#34; } ], &#34;response_format&#34;: { &#34;type&#34;: &#34;json_object&#34; } } Python示例代码 # from pydantic import BaseModel from openai import OpenAI from dotenv import load_dotenv import json from textwrap import dedent # 加载环境变量，例如 API key 等配置信息 load_dotenv() # 设置 OpenAI API 的工厂名称，默认为 &#34;openai&#34; factory = &#34;openai&#34; # 初始化 OpenAI 客户端，传入 API key 和 base URL client = OpenAI( api_key=&#34;sk-***********************************************&#34;, # 替换为你的 API key base_url=&#34;https://api.whatai.cc/v1/&#34; # 这里是 base url，注意这里需要 /v1/ ) # 定义一个产品信息类，用于解析 API 返回的数据 class ProductInfo(BaseModel): product_name: str # 产品名称，字符串类型 price: float # 价格，浮点数类型 description: str # 产品描述，字符串类型 # 定义一个提示信息，用于请求模型返回 JSON 格式的产品信息 product_prompt = &#39;&#39;&#39;根据给出的产品进行分析，按json格式用中文回答,json format:product_name, price, description.&#39;&#39;&#39; # 获取产品信息的函数，传入用户的问题 def get_product_info(question: str): # 使用 OpenAI 客户端进行聊天模型的请求 completion = client.beta.chat.completions.parse( model=&#34;gpt-4o-2024-08-06&#34;, # 指定使用的模型 messages=[ {&#34;role&#34;: &#34;system&#34;, &#34;content&#34;: dedent(product_prompt)}, # 发送系统消息，设置模型的行为 {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: question}, # 发送用户消息，用户提出问题 ], response_format=ProductInfo, # 指定返回的数据格式为 ProductInfo ) # 返回模型解析的第一个选项的消息结果 return completion.choices[0].message.parsed # 初始化一个空的产品信息字典 product_inform = {} # 定义将解析的结果转换为 JSON 的函数 def transform2JSON(parsed_result): # print(parsed_result) # 打印解析结果 # 将解析的结果存储到字典中 product_inform[&#34;product_name&#34;] = parsed_result.product_name product_inform[&#34;price&#34;] = parsed_result.price product_inform[&#34;description&#34;] = parsed_result.description # 将字典转换为 JSON 字符串并返回，ensure_ascii=False 允许中文字符正常显示 return json.dumps(product_inform, ensure_ascii=False, indent=4) # 定义用户输入的问题，即一个产品信息的描述 question = &#34;75寸小米电视机&#34; # 调用函数获取产品信息 result = get_product_info(question) # 将解析结果转换为 JSON 格式并打印 json_result = transform2JSON(result) print(json_result) 返回示例 # { &#34;product_name&#34;: &#34;小米电视75寸&#34;, &#34;price&#34;: 4999.0, &#34;description&#34;: &#34;4K超高清画质，支持HDR，内置小爱同学语音助手&#34; } 注意事项 # 请妥善保管API密钥">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Gdgshscjson | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/openai/gdgshscjson/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.0ddff9479224e55228bc888c1967e918f97380f550b0d3909e3d1c2e2c757210.js" integrity="sha256-Dd/5R5Ik5VIovIiMGWfpGPlzgPVQsNOQnj0cLix1chA=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f5d9735162e53bec69c2f6248cc6ef7e" class="toggle"  />
+    <label for="section-f5d9735162e53bec69c2f6248cc6ef7e" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle" checked />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">Functioncall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="active">Gdgshscjson</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">Gpttst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">Gpttts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">Syfw</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">Whisper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">Wltpjx</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle"  />
+    <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
+    <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">Dev</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">Keysafety</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">Notice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/images/" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Gdgshscjson</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#固定格式化输出json">固定格式化输出Json</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#格式化输出-接口说明"><strong>格式化输出 接口说明</strong></a></li>
+            <li><a href="#请求地址"><strong>请求地址</strong></a></li>
+            <li><a href="#请求参数"><strong>请求参数</strong></a></li>
+            <li><a href="#python示例代码"><strong>Python示例代码</strong></a></li>
+            <li><a href="#返回示例"><strong>返回示例</strong></a></li>
+            <li><a href="#注意事项"><strong>注意事项</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="固定格式化输出json">
+  固定格式化输出Json
+  
+  <a class="anchor" href="#%e5%9b%ba%e5%ae%9a%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%bajson">#</a>
+  
+</h1>
+<h3 id="格式化输出-接口说明">
+  <strong>格式化输出 接口说明</strong>
+  
+  <a class="anchor" href="#%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba-%e6%8e%a5%e5%8f%a3%e8%af%b4%e6%98%8e">#</a>
+  
+</h3>
+<p>通过OpenAI API获取产品信息，返回JSON格式数据。</p>
+<h3 id="请求地址">
+  <strong>请求地址</strong>
+  
+  <a class="anchor" href="#%e8%af%b7%e6%b1%82%e5%9c%b0%e5%9d%80">#</a>
+  
+</h3>
+<p><code>POST https://api.whatai.cc/v1/chat/completions</code></p>
+<h3 id="请求参数">
+  <strong>请求参数</strong>
+  
+  <a class="anchor" href="#%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0">#</a>
+  
+</h3>
+<h4 id="headers">
+  <strong>Headers</strong>
+  
+  <a class="anchor" href="#headers">#</a>
+  
+</h4>
+<table>
+  <thead>
+      <tr>
+          <th><strong>参数名</strong></th>
+          <th><strong>类型</strong></th>
+          <th><strong>必填</strong></th>
+          <th><strong>说明</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Authorization</td>
+          <td>string</td>
+          <td>是</td>
+          <td>API密钥，格式: <code>Bearer ******</code></td>
+      </tr>
+      <tr>
+          <td>Content-Type</td>
+          <td>string</td>
+          <td>是</td>
+          <td>固定值: <code>application/json</code></td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="body">
+  <strong>Body</strong>
+  
+  <a class="anchor" href="#body">#</a>
+  
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;gpt-4o-2024-08-06&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;messages&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;system&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;根据给出的产品进行分析，按json格式用中文回答,json format:product_name, price, description.&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;产品描述&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;response_format&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;json_object&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="python示例代码">
+  <strong>Python示例代码</strong>
+  
+  <a class="anchor" href="#python%e7%a4%ba%e4%be%8b%e4%bb%a3%e7%a0%81">#</a>
+  
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pydantic <span style="color:#f92672">import</span> BaseModel
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> openai <span style="color:#f92672">import</span> OpenAI
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dotenv <span style="color:#f92672">import</span> load_dotenv
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> textwrap <span style="color:#f92672">import</span> dedent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 加载环境变量，例如 API key 等配置信息</span>
+</span></span><span style="display:flex;"><span>load_dotenv()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置 OpenAI API 的工厂名称，默认为 &#34;openai&#34;</span>
+</span></span><span style="display:flex;"><span>factory <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;openai&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 初始化 OpenAI 客户端，传入 API key 和 base URL</span>
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> OpenAI(
+</span></span><span style="display:flex;"><span>    api_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sk-***********************************************&#34;</span>,  <span style="color:#75715e"># 替换为你的 API key</span>
+</span></span><span style="display:flex;"><span>    base_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.whatai.cc/v1/&#34;</span>   <span style="color:#75715e"># 这里是 base url，注意这里需要 /v1/</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定义一个产品信息类，用于解析 API 返回的数据</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProductInfo</span>(BaseModel):
+</span></span><span style="display:flex;"><span>    product_name: str  <span style="color:#75715e"># 产品名称，字符串类型</span>
+</span></span><span style="display:flex;"><span>    price: float  <span style="color:#75715e"># 价格，浮点数类型</span>
+</span></span><span style="display:flex;"><span>    description: str  <span style="color:#75715e"># 产品描述，字符串类型</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定义一个提示信息，用于请求模型返回 JSON 格式的产品信息</span>
+</span></span><span style="display:flex;"><span>product_prompt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;根据给出的产品进行分析，按json格式用中文回答,json format:product_name, price, description.&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 获取产品信息的函数，传入用户的问题</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_product_info</span>(question: str):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 使用 OpenAI 客户端进行聊天模型的请求</span>
+</span></span><span style="display:flex;"><span>    completion <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>beta<span style="color:#f92672">.</span>chat<span style="color:#f92672">.</span>completions<span style="color:#f92672">.</span>parse(
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gpt-4o-2024-08-06&#34;</span>,  <span style="color:#75715e"># 指定使用的模型</span>
+</span></span><span style="display:flex;"><span>        messages<span style="color:#f92672">=</span>[
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;system&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: dedent(product_prompt)},  <span style="color:#75715e"># 发送系统消息，设置模型的行为</span>
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: question},  <span style="color:#75715e"># 发送用户消息，用户提出问题</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        response_format<span style="color:#f92672">=</span>ProductInfo,  <span style="color:#75715e"># 指定返回的数据格式为 ProductInfo</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 返回模型解析的第一个选项的消息结果</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> completion<span style="color:#f92672">.</span>choices[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>message<span style="color:#f92672">.</span>parsed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 初始化一个空的产品信息字典</span>
+</span></span><span style="display:flex;"><span>product_inform <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定义将解析的结果转换为 JSON 的函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">transform2JSON</span>(parsed_result):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># print(parsed_result)  # 打印解析结果</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 将解析的结果存储到字典中</span>
+</span></span><span style="display:flex;"><span>    product_inform[<span style="color:#e6db74">&#34;product_name&#34;</span>] <span style="color:#f92672">=</span> parsed_result<span style="color:#f92672">.</span>product_name
+</span></span><span style="display:flex;"><span>    product_inform[<span style="color:#e6db74">&#34;price&#34;</span>] <span style="color:#f92672">=</span> parsed_result<span style="color:#f92672">.</span>price
+</span></span><span style="display:flex;"><span>    product_inform[<span style="color:#e6db74">&#34;description&#34;</span>] <span style="color:#f92672">=</span> parsed_result<span style="color:#f92672">.</span>description
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 将字典转换为 JSON 字符串并返回，ensure_ascii=False 允许中文字符正常显示</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> json<span style="color:#f92672">.</span>dumps(product_inform, ensure_ascii<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定义用户输入的问题，即一个产品信息的描述</span>
+</span></span><span style="display:flex;"><span>question <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;75寸小米电视机&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 调用函数获取产品信息</span>
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> get_product_info(question)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将解析结果转换为 JSON 格式并打印</span>
+</span></span><span style="display:flex;"><span>json_result <span style="color:#f92672">=</span> transform2JSON(result)
+</span></span><span style="display:flex;"><span>print(json_result)
+</span></span></code></pre></div><h3 id="返回示例">
+  <strong>返回示例</strong>
+  
+  <a class="anchor" href="#%e8%bf%94%e5%9b%9e%e7%a4%ba%e4%be%8b">#</a>
+  
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;product_name&#34;</span>: <span style="color:#e6db74">&#34;小米电视75寸&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;price&#34;</span>: <span style="color:#ae81ff">4999.0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;4K超高清画质，支持HDR，内置小爱同学语音助手&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="注意事项">
+  <strong>注意事项</strong>
+  
+  <a class="anchor" href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">#</a>
+  
+</h3>
+<ol>
+<li>
+<p>请妥善保管API密钥</p>
+</li>
+<li>
+<p>产品信息由AI生成，仅供参考</p>
+</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/openai/gdgshscjson.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/openai/functioncall/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Functioncall" />
+        <span>Functioncall</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/openai/gpttst/" class="flex align-center book-icon">
+        <span>Gpttst</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Gpttst" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#固定格式化输出json">固定格式化输出Json</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#格式化输出-接口说明"><strong>格式化输出 接口说明</strong></a></li>
+            <li><a href="#请求地址"><strong>请求地址</strong></a></li>
+            <li><a href="#请求参数"><strong>请求参数</strong></a></li>
+            <li><a href="#python示例代码"><strong>Python示例代码</strong></a></li>
+            <li><a href="#返回示例"><strong>返回示例</strong></a></li>
+            <li><a href="#注意事项"><strong>注意事项</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

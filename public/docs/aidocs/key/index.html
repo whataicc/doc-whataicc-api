@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  🔑 添加令牌：您的AI通行证指南
+  
+  #
+  
+
+一Key在手，AI我有！ 令牌（API Key）是解锁AI能力的数字钥匙，就像手机SIM卡激活网络
+⚠️ 安全警示：
+Key泄露 = 家门大开！ → 立即删除并重建
+🔐 密钥格式：sk-xxxxxxxx（默认隐藏，可点击右边按钮复制）
+💻 操作入口
+👉 神马中转API令牌控制台
+
+
+  📄 配置项说明
+  
+  #
+  
+
+
+  🔖1. 令牌名称
+  
+  #
+  
+
+
+自定义标识符（建议按用途命名，如&quot;生产环境API&quot;）
+
+
+  ⏳ 2. 过期时间
+  
+  #
+  
+
+
+设置令牌的有效期间，超过则该令牌无法使用
+
+
+  💰 3. 额度
+  
+  #
+  
+
+配置当前令牌的可使用额度
+
+  
+      
+          选项
+          可用额度规则
+      
+  
+  
+      
+          ✅ 无限额度
+          动态关联主账户余额，可用额度 = 钱包实时余额
+      
+      
+          🔄 自定义额度
+          设定固定当前令牌的消费上限 **若设置值 &gt; 钱包余额时：**实际额度 = 钱包余额
+      
+  
+
+
+  🔢4. 创建数量
+  
+  #
+  
+
+
+
+默认为1
+
+
+当您输入数量值 N（如2），系统将创建N（2）个相同（当前）配置项的令牌
+
+
+
+  🌐5. 令牌渠道分组
+  
+  #
+  
+
+
+  🎯 渠道分组配置
+  
+  #
+  
+
+
+
+  [配置作用]">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/aidocs/key/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API">
+  <meta property="og:description" content="🔑 添加令牌：您的AI通行证指南 # 一Key在手，AI我有！ 令牌（API Key）是解锁AI能力的数字钥匙，就像手机SIM卡激活网络
+⚠️ 安全警示：
+Key泄露 = 家门大开！ → 立即删除并重建
+🔐 密钥格式：sk-xxxxxxxx（默认隐藏，可点击右边按钮复制）
+💻 操作入口
+👉 神马中转API令牌控制台
+📄 配置项说明 # 🔖1. 令牌名称 # 自定义标识符（建议按用途命名，如&#34;生产环境API&#34;） ⏳ 2. 过期时间 # 设置令牌的有效期间，超过则该令牌无法使用 💰 3. 额度 # 配置当前令牌的可使用额度
+选项 可用额度规则 ✅ 无限额度 动态关联主账户余额，可用额度 = 钱包实时余额 🔄 自定义额度 设定固定当前令牌的消费上限 **若设置值 &gt; 钱包余额时：**实际额度 = 钱包余额 🔢4. 创建数量 # 默认为1
+当您输入数量值 N（如2），系统将创建N（2）个相同（当前）配置项的令牌
+🌐5. 令牌渠道分组 # 🎯 渠道分组配置 # [配置作用]">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Key | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/aidocs/key/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.0ddff9479224e55228bc888c1967e918f97380f550b0d3909e3d1c2e2c757210.js" integrity="sha256-Dd/5R5Ik5VIovIiMGWfpGPlzgPVQsNOQnj0cLix1chA=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f5d9735162e53bec69c2f6248cc6ef7e" class="toggle"  />
+    <label for="section-f5d9735162e53bec69c2f6248cc6ef7e" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle"  />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">Functioncall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">Gdgshscjson</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">Gpttst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">Gpttts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">Syfw</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">Whisper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">Wltpjx</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle" checked />
+    <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="active">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
+    <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">Dev</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">Keysafety</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">Notice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/images/" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Key</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-添加令牌您的ai通行证指南"><strong>🔑 添加令牌：您的AI通行证指南</strong></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-配置项说明">📄 配置项说明</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="-添加令牌您的ai通行证指南">
+  <strong>🔑 添加令牌：您的AI通行证指南</strong>
+  
+  <a class="anchor" href="#-%e6%b7%bb%e5%8a%a0%e4%bb%a4%e7%89%8c%e6%82%a8%e7%9a%84ai%e9%80%9a%e8%a1%8c%e8%af%81%e6%8c%87%e5%8d%97">#</a>
+  
+</h1>
+<p><strong>一Key在手，AI我有！</strong> 令牌（API Key）是解锁AI能力的数字钥匙，就像手机SIM卡激活网络</p>
+<p>⚠️ <strong>安全警示</strong>：</p>
+<p><strong>Key泄露 = 家门大开！</strong> → 立即删除并重建</p>
+<p>🔐 密钥格式：<code>sk-xxxxxxxx</code>（默认隐藏，可点击右边按钮复制）</p>
+<p><strong>💻 操作入口</strong></p>
+<p><strong>👉</strong> <a href="https://api.whatai.cc/token">神马中转API令牌控制台</a></p>
+<p><img src="https://pic2.imgdd.cc/item/68cb8e85fcdff6548300a2bc.png" alt="Image 1" /></p>
+<h3 id="-配置项说明">
+  📄 配置项说明
+  
+  <a class="anchor" href="#-%e9%85%8d%e7%bd%ae%e9%a1%b9%e8%af%b4%e6%98%8e">#</a>
+  
+</h3>
+<h4 id="1-令牌名称">
+  🔖<strong>1. 令牌名称</strong>
+  
+  <a class="anchor" href="#1-%e4%bb%a4%e7%89%8c%e5%90%8d%e7%a7%b0">#</a>
+  
+</h4>
+<ul>
+<li>自定义标识符（建议按用途命名，如&quot;生产环境API&quot;）</li>
+</ul>
+<h4 id="-2-过期时间">
+  ⏳ <strong>2. 过期时间</strong>
+  
+  <a class="anchor" href="#-2-%e8%bf%87%e6%9c%9f%e6%97%b6%e9%97%b4">#</a>
+  
+</h4>
+<ul>
+<li>设置令牌的有效期间，超过则该令牌无法使用</li>
+</ul>
+<h4 id="-3-额度">
+  💰 <strong>3. 额度</strong>
+  
+  <a class="anchor" href="#-3-%e9%a2%9d%e5%ba%a6">#</a>
+  
+</h4>
+<p><strong>配置当前令牌的可使用额度</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>选项</strong></th>
+          <th><strong>可用额度规则</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>✅ <strong>无限额度</strong></td>
+          <td><strong>动态关联主账户余额，可用额度 = 钱包实时余额</strong></td>
+      </tr>
+      <tr>
+          <td>🔄 <strong>自定义额度</strong></td>
+          <td><strong>设定固定当前令牌的消费上限</strong> **若设置值 &gt; 钱包余额时：**<strong>实际额度 = 钱包余额</strong></td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="4-创建数量">
+  🔢<strong>4. 创建数量</strong>
+  
+  <a class="anchor" href="#4-%e5%88%9b%e5%bb%ba%e6%95%b0%e9%87%8f">#</a>
+  
+</h4>
+<ul>
+<li>
+<p>默认为1</p>
+</li>
+<li>
+<p>当您输入数量值 <strong>N</strong>（如2），系统将创建<strong>N</strong>（2）个相同（当前）配置项的令牌</p>
+</li>
+</ul>
+<h4 id="5-令牌渠道分组">
+  🌐<strong>5. 令牌渠道分组</strong>
+  
+  <a class="anchor" href="#5-%e4%bb%a4%e7%89%8c%e6%b8%a0%e9%81%93%e5%88%86%e7%bb%84">#</a>
+  
+</h4>
+<h5 id="-渠道分组配置">
+  🎯 渠道分组配置
+  
+  <a class="anchor" href="#-%e6%b8%a0%e9%81%93%e5%88%86%e7%bb%84%e9%85%8d%e7%bd%ae">#</a>
+  
+</h5>
+
+<blockquote class='book-hint '>
+  <p><strong>[配置作用]</strong></p>
+<ul>
+<li>
+<p>来源差异化：不同分组对应不同来源，稳定性高选高价分组，不介意稳定性则可以选择低价分组</p>
+</li>
+<li>
+<p>价格差异化：不同分组对应不同计费标准</p>
+</li>
+<li>
+<p>消费隔离：将高/低成本业务分流到不同分组</p>
+</li>
+<li>
+<p>预算优化：为测试/生产环境令牌配置不同成本分组</p>
+</li>
+</ul>
+<p>例：开发令牌配置低成本组，生产令牌配置高稳定性组</p>
+<ul>
+<li><strong>⚠️ 注意：请在****页面查看，根据自己实际情况进行配置</strong></li>
+</ul>
+</blockquote>
+<blockquote class='book-hint '>
+  <p><strong>[配置规则]</strong></p>
+<ol>
+<li>
+<p>支持多选分组</p>
+</li>
+<li>
+<p>优先级排序规则：</p>
+</li>
+</ol>
+<p>• 位置越靠前优先级越高</p>
+<p>• 同模型存在多组时 → 优先使用排序第一的组</p>
+<p>[示例]</p>
+<p>分组排序：[default, claude官, origin] → 调用共用模型时优先使用default组渠道</p>
+<p><img src="https://pic2.imgdd.cc/item/68cb8ea5fcdff6548300a31e.png" alt="Image 2" /></p>
+</blockquote><h5 id="自动选择分组机制">
+  ⚙️<strong>自动选择分组机制</strong>
+  
+  <a class="anchor" href="#%e8%87%aa%e5%8a%a8%e9%80%89%e6%8b%a9%e5%88%86%e7%bb%84%e6%9c%ba%e5%88%b6">#</a>
+  
+</h5>
+
+<blockquote class='book-hint '>
+  <p><strong>[工作逻辑]</strong></p>
+<p><strong>✅ 开启时：</strong></p>
+<ol>
+<li>
+<p>系统检测调用模型所属分组</p>
+</li>
+<li>
+<p>若模型不在令牌分组中 → 自动重定向到模型默认组</p>
+</li>
+<li>
+<p>例：模型a仅在ssvip中有，但是上面渠道分组配置只选了vip组 → 调用模型a时，自动使用ssvip组渠道</p>
+</li>
+</ol>
+<p><strong>❌ 关闭时：</strong></p>
+<p>调用模型不在令牌分组 → <strong>直接返回403错误</strong></p>
+<p><strong>⚠️ 注意：默认开启，若不需要，需要勾选关闭自动选择分组选项</strong></p>
+<p><img src="https://pic2.imgdd.cc/item/68cb8ebbfcdff6548300a31f.png" alt="Image 3" /></p>
+</blockquote><h4 id="6-模型限制">
+  🔧<strong>6. 模型限制</strong>
+  
+  <a class="anchor" href="#6-%e6%a8%a1%e5%9e%8b%e9%99%90%e5%88%b6">#</a>
+  
+</h4>
+<ul>
+<li>
+<p>✅ <strong>默认关闭</strong>：令牌可访问平台所有模型</p>
+</li>
+<li>
+<p><strong>启用时</strong>：仅限访问明确指定的模型</p>
+</li>
+</ul>
+
+<blockquote class='book-hint '>
+  <p>【示例】该令牌只能调用<code>c-3-sonnet</code>、<code>flux-chat</code>模型</p>
+<p><img src="https://pic2.imgdd.cc/item/68cb8ed4fcdff6548300a320.png" alt="Image 4" /></p>
+</blockquote><h4 id="7-对话模型设置可配置可不配置">
+  🔧<strong>7. 对话模型设置（可配置可不配置）</strong>
+  
+  <a class="anchor" href="#7-%e5%af%b9%e8%af%9d%e6%a8%a1%e5%9e%8b%e8%ae%be%e7%bd%ae%e5%8f%af%e9%85%8d%e7%bd%ae%e5%8f%af%e4%b8%8d%e9%85%8d%e7%bd%ae">#</a>
+  
+</h4>
+<p><strong>1️⃣ 启用图片请求格式整理</strong>**(可选)**</p>
+
+<blockquote class='book-hint '>
+  <p><strong>作用</strong>：自动修复不规范的识图请求格式（如多图拼接错误、参数缺失等）。</p>
+<p><strong>建议</strong>：仅当出现图片识别失败时开启，正常情况无需启用。</p>
+</blockquote><p><strong>2️⃣ 启用图片链接转 base64 再传递</strong>**(可选)**</p>
+
+<blockquote class='book-hint '>
+  <p><strong>作用</strong>：将大陆无法访问的图片链接转为Base64编码传递，解决官方接口屏蔽问题。</p>
+<p><strong>注意</strong>：会延长响应时间300-800ms，非大陆用户不建议开启。</p>
+</blockquote><p><strong>3️⃣ 设置推理模型 Reason 内容的位置</strong>**(可选)**</p>
+
+<blockquote class='book-hint '>
+  <p><strong>作用</strong>：手动指定模型返回推理内容（Reason）的字段位置。</p>
+<p>注意：默认会根据模型返回内容设置，推理内容可能在 Think 、 reason_content 中</p>
+</blockquote><h4 id="-8模型重定向可选">
+  💡 8.<strong>模型重定向（可选）</strong>
+  
+  <a class="anchor" href="#-8%e6%a8%a1%e5%9e%8b%e9%87%8d%e5%ae%9a%e5%90%91%e5%8f%af%e9%80%89">#</a>
+  
+</h4>
+<h5 id="作用魔法级请求变身术">
+  <strong>作用</strong>：魔法级请求变身术！
+  
+  <a class="anchor" href="#%e4%bd%9c%e7%94%a8%e9%ad%94%e6%b3%95%e7%ba%a7%e8%af%b7%e6%b1%82%e5%8f%98%e8%ba%ab%e6%9c%af">#</a>
+  
+</h5>
+<p>自动把请求中的 <strong>模型A</strong> 变成 <strong>模型B</strong>，完美解决：</p>
+
+<blockquote class='book-hint '>
+  <p>1️⃣ 老客户端卡在旧模型 → 🤖 原地升级新模型</p>
+<p>2️⃣ 客户端锁死模型 → 🔓 绕过限制器</p>
+<p>3️⃣ 模型突然下架 → 急救重定向</p>
+</blockquote><h5 id="-配置规则">
+  <strong>⚙️ 配置规则</strong>：
+  
+  <a class="anchor" href="#-%e9%85%8d%e7%bd%ae%e8%a7%84%e5%88%99">#</a>
+  
+</h5>
+<p>[输入框1] 客户请求的模型名（伪装名）[输入框2] 真实调用的模型名（替身演员）【示例】客户端请求gpt-3.5，服务器真实调用gpt-4-turbo</p>
+<p><img src="https://pic2.imgdd.cc/item/68cb8eecfcdff6548300a321.png" alt="Image 5" /></p>
+<h4 id="-ip白名单安全锁">
+  <strong>🔒 IP白名单（安全锁）</strong>
+  
+  <a class="anchor" href="#-ip%e7%99%bd%e5%90%8d%e5%8d%95%e5%ae%89%e5%85%a8%e9%94%81">#</a>
+  
+</h4>
+<p>启用后 → <strong>只有白名单IP能通行</strong></p>
+<p>其他IP访问？直接吃闭门羹！ 🚫</p>
+<p>【输入框】 填写你的 IP 或IP段（一个逗号一个） 【示例】： 114.214.186.111,182.168.1.0/24</p>
+<p><strong>💥 使用场景</strong></p>
+<p>▸ 企业服务器固定IP → 🤖 禁止员工摸鱼</p>
+<p>▸ 只允许自家APP调用 → 📱 封杀第三方工具</p>
+<p>▸ 金融级安全防护 → 💰 防API密钥泄露</p>
+<p>✅ <strong>救命锦囊</strong>：</p>
+<ol>
+<li>
+<p>先添加<code>当前IP</code>（防自锁）</p>
+</li>
+<li>
+<p>公司IP用<code>/24</code>网段覆盖</p>
+</li>
+<li>
+<p>开小号令牌做备用钥匙 🔑</p>
+</li>
+</ol>
+
+<blockquote class='book-hint '>
+  <p>🌟 <strong>终极安全套餐</strong>：</p>
+<p>【IP白名单】 + 【模型限制】 + 【用量监控】= 黑客看了连夜删号跑路 👻</p>
+</blockquote><h4 id="heading">
+  <strong>⚠️****预警额度</strong>
+  
+  <a class="anchor" href="#heading">#</a>
+  
+</h4>
+<p>设置当前令牌的额度红线 → <strong>自动提醒</strong>🔔</p>
+<p><strong>📌 必看重点</strong></p>
+<p>1️⃣ 先到<code>个人中心</code>→<code>消息订阅</code>开启通知❗</p>
+<p>▸ 没订阅=哑炮预警🤫</p>
+<p><img src="https://pic2.imgdd.cc/item/68cb8f10fcdff6548300a347.png" alt="Image 6" /></p>
+<p>【示例】当前令牌剩余算力额度到达 <strong>10</strong>时提醒</p>
+<p><img src="https://pic2.imgdd.cc/item/68cb8f20fcdff6548300a389.png" alt="Image 7" /></p>
+<h4 id="-限流器可选">
+  <strong>🚦 限流器（可选）</strong>
+  
+  <a class="anchor" href="#-%e9%99%90%e6%b5%81%e5%99%a8%e5%8f%af%e9%80%89">#</a>
+  
+</h4>
+<p>当用户 <code>XXX秒</code>内狂点 <code>XXX次</code> → 直接发射 <strong>冷静导弹</strong> 💥</p>
+<p>（自动弹出提示 + 强制冷静期 ❄️）</p>
+<p>【示例】当前用户10秒请求该令牌50次，提示你让服务器裂开了！</p>
+<p><img src="https://pic2.imgdd.cc/item/68cb8f30fcdff6548300a3d6.png" alt="Image 8" /></p>
+<p><strong>🔥 经典套餐</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>防刷场景</strong></th>
+          <th><strong>推荐配置</strong></th>
+          <th><strong>死亡提示</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>防脚本爆破</td>
+          <td>5秒10次</td>
+          <td>&ldquo;人类，你太快了！&rdquo; 🤖</td>
+      </tr>
+      <tr>
+          <td>保护GPT-4钱包</td>
+          <td>60秒3次</td>
+          <td>&ldquo;手慢点！烧的是钱啊！&rdquo; 💸</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="-mj绘图模式">
+  <strong>🎨 MJ绘图模式</strong>
+  
+  <a class="anchor" href="#-mj%e7%bb%98%e5%9b%be%e6%a8%a1%e5%bc%8f">#</a>
+  
+</h4>
+<p>给每个令牌绑定独立绘图策略</p>
+<p>令牌纬度控制 Midjouney 配置，设置优先级：令牌 &gt; 路径参数 &gt; 系统默认</p>
+<h4 id="-mj图片代理方案速度救星">
+  <strong>🌐 MJ图片代理方案（速度救星）</strong>
+  
+  <a class="anchor" href="#-mj%e5%9b%be%e7%89%87%e4%bb%a3%e7%90%86%e6%96%b9%e6%a1%88%e9%80%9f%e5%ba%a6%e6%95%91%e6%98%9f">#</a>
+  
+</h4>
+<p>控制在 Fetch、回调中的图片地址(image_url)</p>
+<table>
+  <thead>
+      <tr>
+          <th>选项</th>
+          <th>效果</th>
+          <th>总结</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>系统默认</td>
+          <td>随缘加载，可能转圈到崩溃 🌀</td>
+          <td>🐢💔 (龟速心碎)</td>
+      </tr>
+      <tr>
+          <td>(origin) Discord （直连源地址）</td>
+          <td>国外很快，国内无法访问</td>
+          <td>🌏❌ (地球打叉)</td>
+      </tr>
+      <tr>
+          <td>(proxy) 图片代理地址</td>
+          <td>国外很慢，国内可以访问</td>
+          <td>🌏❌ (地球打叉)</td>
+      </tr>
+      <tr>
+          <td>自定义图片代理</td>
+          <td>自建高速通道，爽到起飞</td>
+          <td>🚀✨ (火箭喷发)</td>
+      </tr>
+  </tbody>
+</table>
+<p>令牌纬度控制 Midjouney 配置，设置优先级：令牌 &gt; 路径参数 &gt; 系统默认</p>
+<h4 id="-异步任务--关闭资源代理">
+  <strong>⚠️ 异步任务 · 关闭资源代理</strong>
+  
+  <a class="anchor" href="#-%e5%bc%82%e6%ad%a5%e4%bb%bb%e5%8a%a1--%e5%85%b3%e9%97%ad%e8%b5%84%e6%ba%90%e4%bb%a3%e7%90%86">#</a>
+  
+</h4>
+<p><strong>🚫 高危操作警告</strong></p>
+<p>关闭此开关 = 亲手拆除安全气囊 🛡️💥</p>
+
+<blockquote class='book-hint '>
+  <ul>
+<li>系统将不再自动修复以下问题：</li>
+</ul>
+<ol>
+<li>
+<p>国内访问 Discord 必失败的墙问题 🧱</p>
+</li>
+<li>
+<p>浏览器跨域拦截(CORS) ❌</p>
+</li>
+</ol>
+<p>需要自行解决</p>
+</blockquote></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/aidocs/key.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/aidocs/group/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Group" />
+        <span>Group</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/aidocs/pay1/" class="flex align-center book-icon">
+        <span>Pay1</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Pay1" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-添加令牌您的ai通行证指南"><strong>🔑 添加令牌：您的AI通行证指南</strong></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-配置项说明">📄 配置项说明</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

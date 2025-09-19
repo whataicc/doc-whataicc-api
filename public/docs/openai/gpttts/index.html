@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  gpt-tts
+  
+  #
+  
+
+
+  接口说明
+  
+  #
+  
+
+
+提供基于 gpt-4o-mini-tts TTS 模型的文本转语音服务，支持多种音色选择。
+
+  基础概念
+  
+  #
+  
+
+
+
+
+TTS(Text-to-Speech): 将文本转换为自然语音的技术
+
+
+音色(Voice): 合成语音的声音特征，本API支持多种预设音色
+
+
+
+  请求地址
+  
+  #
+  
+
+
+POST https://api.whatai.cc/v1/audio/speech
+
+  请求头
+  
+  #
+  
+
+
+headers = {
+    &#34;Authorization&#34;: &#34;Bearer ******&#34;,  # 替换为您的API密钥
+    &#34;Content-Type&#34;: &#34;application/json&#34;
+}
+
+  请求参数
+  
+  #
+  
+
+
+
+  
+      
+          参数名
+          类型
+          必填
+          说明
+      
+  
+  
+      
+          model
+          string
+          是
+          固定值 &ldquo;gpt-4o-mini-tts&rdquo;
+      
+      
+          input
+          string
+          是
+          需要转换为语音的文本内容
+      
+      
+          voice
+          string
+          是
+          音色类型，如 &ldquo;alloy&rdquo;
+      
+  
+
+
+  Python 调用示例
+  
+  #
+  
+
+
+import requests
+import json
+
+url = &#34;https://api.whatai.cc/v1/audio/speech&#34;
+api_key = &#34;******&#34;  # 替换为您的API密钥
+
+payload = {
+    &#34;model&#34;: &#34;gpt-4o-mini-tts&#34;,
+    &#34;input&#34;: &#34;我是API，欢迎使用语音合成服务&#34;,
+    &#34;voice&#34;: &#34;alloy&#34;
+}
+
+try:
+    # 发送POST请求
+    response = requests.post(url, 
+                           headers={&#34;Authorization&#34;: f&#34;Bearer {api_key}&#34;},
+                           json=payload)
+    
+    # 检查响应状态
+    response.raise_for_status()
+    
+    # 处理音频响应
+    if response.headers[&#34;Content-Type&#34;] in (&#34;audio/mpeg&#34;, &#34;audio/mp3&#34;):
+        with open(&#34;output.mp3&#34;, &#34;wb&#34;) as f:
+            f.write(response.content)  # 写入音频文件
+        print(&#34;语音合成成功，已保存为output.mp3&#34;)
+    else:
+        print(&#34;错误响应:&#34;, response.text)
+
+except Exception as e:
+    print(f&#34;请求出错: {e}&#34;)
+
+  响应说明
+  
+  #
+  
+
+
+
+
+成功: 返回MP3格式的音频流，Content-Type为audio/mpeg">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/openai/gpttts/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API">
+  <meta property="og:description" content="gpt-tts # 接口说明 # 提供基于 gpt-4o-mini-tts TTS 模型的文本转语音服务，支持多种音色选择。
+基础概念 # TTS(Text-to-Speech): 将文本转换为自然语音的技术
+音色(Voice): 合成语音的声音特征，本API支持多种预设音色
+请求地址 # POST https://api.whatai.cc/v1/audio/speech
+请求头 # headers = { &#34;Authorization&#34;: &#34;Bearer ******&#34;, # 替换为您的API密钥 &#34;Content-Type&#34;: &#34;application/json&#34; } 请求参数 # 参数名 类型 必填 说明 model string 是 固定值 “gpt-4o-mini-tts” input string 是 需要转换为语音的文本内容 voice string 是 音色类型，如 “alloy” Python 调用示例 # import requests import json url = &#34;https://api.whatai.cc/v1/audio/speech&#34; api_key = &#34;******&#34; # 替换为您的API密钥 payload = { &#34;model&#34;: &#34;gpt-4o-mini-tts&#34;, &#34;input&#34;: &#34;我是API，欢迎使用语音合成服务&#34;, &#34;voice&#34;: &#34;alloy&#34; } try: # 发送POST请求 response = requests.post(url, headers={&#34;Authorization&#34;: f&#34;Bearer {api_key}&#34;}, json=payload) # 检查响应状态 response.raise_for_status() # 处理音频响应 if response.headers[&#34;Content-Type&#34;] in (&#34;audio/mpeg&#34;, &#34;audio/mp3&#34;): with open(&#34;output.mp3&#34;, &#34;wb&#34;) as f: f.write(response.content) # 写入音频文件 print(&#34;语音合成成功，已保存为output.mp3&#34;) else: print(&#34;错误响应:&#34;, response.text) except Exception as e: print(f&#34;请求出错: {e}&#34;) 响应说明 # 成功: 返回MP3格式的音频流，Content-Type为audio/mpeg">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Gpttts | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/openai/gpttts/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.0ddff9479224e55228bc888c1967e918f97380f550b0d3909e3d1c2e2c757210.js" integrity="sha256-Dd/5R5Ik5VIovIiMGWfpGPlzgPVQsNOQnj0cLix1chA=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f5d9735162e53bec69c2f6248cc6ef7e" class="toggle"  />
+    <label for="section-f5d9735162e53bec69c2f6248cc6ef7e" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle" checked />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">Functioncall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">Gdgshscjson</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">Gpttst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="active">Gpttts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">Syfw</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">Whisper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">Wltpjx</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle"  />
+    <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
+    <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">Dev</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">Keysafety</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">Notice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/images/" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Gpttts</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#gpt-tts">gpt-tts</a>
+      <ul>
+        <li><a href="#接口说明"><strong>接口说明</strong></a></li>
+        <li><a href="#基础概念"><strong>基础概念</strong></a></li>
+        <li><a href="#请求地址"><strong>请求地址</strong></a></li>
+        <li><a href="#请求头"><strong>请求头</strong></a></li>
+        <li><a href="#请求参数"><strong>请求参数</strong></a></li>
+        <li><a href="#python-调用示例"><strong>Python 调用示例</strong></a></li>
+        <li><a href="#响应说明"><strong>响应说明</strong></a></li>
+        <li><a href="#注意事项"><strong>注意事项</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="gpt-tts">
+  gpt-tts
+  
+  <a class="anchor" href="#gpt-tts">#</a>
+  
+</h1>
+<h2 id="接口说明">
+  <strong>接口说明</strong>
+  
+  <a class="anchor" href="#%e6%8e%a5%e5%8f%a3%e8%af%b4%e6%98%8e">#</a>
+  
+</h2>
+<hr>
+<p>提供基于 <code>gpt-4o-mini-tts</code> TTS 模型的文本转语音服务，支持多种音色选择。</p>
+<h2 id="基础概念">
+  <strong>基础概念</strong>
+  
+  <a class="anchor" href="#%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5">#</a>
+  
+</h2>
+<hr>
+<ul>
+<li>
+<p><strong>TTS(Text-to-Speech)</strong>: 将文本转换为自然语音的技术</p>
+</li>
+<li>
+<p><strong>音色(Voice)</strong>: 合成语音的声音特征，本API支持多种预设音色</p>
+</li>
+</ul>
+<h2 id="请求地址">
+  <strong>请求地址</strong>
+  
+  <a class="anchor" href="#%e8%af%b7%e6%b1%82%e5%9c%b0%e5%9d%80">#</a>
+  
+</h2>
+<hr>
+<p><code>POST https://api.whatai.cc/v1/audio/speech</code></p>
+<h2 id="请求头">
+  <strong>请求头</strong>
+  
+  <a class="anchor" href="#%e8%af%b7%e6%b1%82%e5%a4%b4">#</a>
+  
+</h2>
+<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>headers <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Authorization&#34;</span>: <span style="color:#e6db74">&#34;Bearer ******&#34;</span>,  <span style="color:#75715e"># 替换为您的API密钥</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Content-Type&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="请求参数">
+  <strong>请求参数</strong>
+  
+  <a class="anchor" href="#%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0">#</a>
+  
+</h2>
+<hr>
+<table>
+  <thead>
+      <tr>
+          <th><strong>参数名</strong></th>
+          <th><strong>类型</strong></th>
+          <th><strong>必填</strong></th>
+          <th><strong>说明</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>model</td>
+          <td>string</td>
+          <td>是</td>
+          <td>固定值 &ldquo;gpt-4o-mini-tts&rdquo;</td>
+      </tr>
+      <tr>
+          <td>input</td>
+          <td>string</td>
+          <td>是</td>
+          <td>需要转换为语音的文本内容</td>
+      </tr>
+      <tr>
+          <td>voice</td>
+          <td>string</td>
+          <td>是</td>
+          <td>音色类型，如 &ldquo;alloy&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="python-调用示例">
+  <strong>Python 调用示例</strong>
+  
+  <a class="anchor" href="#python-%e8%b0%83%e7%94%a8%e7%a4%ba%e4%be%8b">#</a>
+  
+</h2>
+<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://api.whatai.cc/v1/audio/speech&#34;</span>
+</span></span><span style="display:flex;"><span>api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;******&#34;</span>  <span style="color:#75715e"># 替换为您的API密钥</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;gpt-4o-mini-tts&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;input&#34;</span>: <span style="color:#e6db74">&#34;我是API，欢迎使用语音合成服务&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;voice&#34;</span>: <span style="color:#e6db74">&#34;alloy&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 发送POST请求</span>
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, 
+</span></span><span style="display:flex;"><span>                           headers<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;Authorization&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Bearer </span><span style="color:#e6db74">{</span>api_key<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>},
+</span></span><span style="display:flex;"><span>                           json<span style="color:#f92672">=</span>payload)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 检查响应状态</span>
+</span></span><span style="display:flex;"><span>    response<span style="color:#f92672">.</span>raise_for_status()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 处理音频响应</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> response<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#34;Content-Type&#34;</span>] <span style="color:#f92672">in</span> (<span style="color:#e6db74">&#34;audio/mpeg&#34;</span>, <span style="color:#e6db74">&#34;audio/mp3&#34;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;output.mp3&#34;</span>, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>            f<span style="color:#f92672">.</span>write(response<span style="color:#f92672">.</span>content)  <span style="color:#75715e"># 写入音频文件</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;语音合成成功，已保存为output.mp3&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;错误响应:&#34;</span>, response<span style="color:#f92672">.</span>text)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;请求出错: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><h2 id="响应说明">
+  <strong>响应说明</strong>
+  
+  <a class="anchor" href="#%e5%93%8d%e5%ba%94%e8%af%b4%e6%98%8e">#</a>
+  
+</h2>
+<hr>
+<ul>
+<li>
+<p>成功: 返回MP3格式的音频流，Content-Type为<code>audio/mpeg</code></p>
+</li>
+<li>
+<p>失败: 返回JSON格式的错误信息</p>
+</li>
+</ul>
+<h2 id="注意事项">
+  <strong>注意事项</strong>
+  
+  <a class="anchor" href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">#</a>
+  
+</h2>
+<hr>
+<ol>
+<li>
+<p>API密钥需妥善保管，不要暴露在客户端代码中</p>
+</li>
+<li>
+<p>输入文本长度建议不超过500字符</p>
+</li>
+<li>
+<p>音频采样率为24kHz，比特率128kbps</p>
+</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/openai/gpttts.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/openai/gpttst/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Gpttst" />
+        <span>Gpttst</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/openai/gptwst/" class="flex align-center book-icon">
+        <span>Gptwst</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Gptwst" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#gpt-tts">gpt-tts</a>
+      <ul>
+        <li><a href="#接口说明"><strong>接口说明</strong></a></li>
+        <li><a href="#基础概念"><strong>基础概念</strong></a></li>
+        <li><a href="#请求地址"><strong>请求地址</strong></a></li>
+        <li><a href="#请求头"><strong>请求头</strong></a></li>
+        <li><a href="#请求参数"><strong>请求参数</strong></a></li>
+        <li><a href="#python-调用示例"><strong>Python 调用示例</strong></a></li>
+        <li><a href="#响应说明"><strong>响应说明</strong></a></li>
+        <li><a href="#注意事项"><strong>注意事项</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

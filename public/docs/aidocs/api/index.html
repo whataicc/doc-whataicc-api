@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="这是 AI 文档的介绍页面，用于 SEO 描述。">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/aidocs/api/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="基本概念-API地址（BaseURL）">
+  <meta property="og:description" content="这是 AI 文档的介绍页面，用于 SEO 描述。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>基本概念-API地址（BaseURL） | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/aidocs/api/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.0ddff9479224e55228bc888c1967e918f97380f550b0d3909e3d1c2e2c757210.js" integrity="sha256-Dd/5R5Ik5VIovIiMGWfpGPlzgPVQsNOQnj0cLix1chA=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f5d9735162e53bec69c2f6248cc6ef7e" class="toggle"  />
+    <label for="section-f5d9735162e53bec69c2f6248cc6ef7e" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle"  />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">Functioncall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">Gdgshscjson</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">Gpttst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">Gpttts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">Syfw</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">Whisper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">Wltpjx</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle" checked />
+    <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="active">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
+    <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">Dev</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">Keysafety</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">Notice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/images/" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>基本概念-API地址（BaseURL）</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#基本概念-api地址baseurl">📖基本概念-API地址（BaseURL）</a>
+          <ul>
+            <li><a href="#1-基本概念">1️⃣ 基本概念</a></li>
+            <li><a href="#-apibaseurl信息入口"><strong>💻 API（BaseUrl）信息入口：</strong></a></li>
+            <li><a href="#-完整功能接口映射表"><strong>🔌 完整功能接口映射表</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#curl-示例"><strong>curl 示例</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="基本概念-api地址baseurl">
+  📖基本概念-API地址（BaseURL）
+  
+  <a class="anchor" href="#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5-api%e5%9c%b0%e5%9d%80baseurl">#</a>
+  
+</h2>
+<h3 id="1-基本概念">
+  1️⃣ 基本概念
+  
+  <a class="anchor" href="#1-%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5">#</a>
+  
+</h3>
+<ul>
+<li>
+<p>中转网址，用于替换官方API地址</p>
+</li>
+<li>
+<p>官方地址：<code>https://api.openai.com</code> 需要被替换成 神马中转API地址：<code>https://api.whatai.cc</code></p>
+</li>
+<li>
+<p>所有地址数据互通</p>
+</li>
+</ul>
+<h3 id="-apibaseurl信息入口">
+  <strong>💻 API（BaseUrl）信息入口：</strong>
+  
+  <a class="anchor" href="#-apibaseurl%e4%bf%a1%e6%81%af%e5%85%a5%e5%8f%a3">#</a>
+  
+</h3>
+<p><strong>👉</strong> <a href="https://api.whatai.cc/dashboard">神马中转API工作台</a></p>
+<p>根据自己调用API的地理位置选择最优线路以获得最佳体验</p>
+<p>部分路线可能区域网络受限，若无法正常访问API地址，请尝试更换地址</p>
+<p><img src="https://pic2.imgdd.cc/item/68cb9060fcdff6548300a561.png" alt="Image 13" /></p>
+<h3 id="-完整功能接口映射表">
+  <strong>🔌 完整功能接口映射表</strong>
+  
+  <a class="anchor" href="#-%e5%ae%8c%e6%95%b4%e5%8a%9f%e8%83%bd%e6%8e%a5%e5%8f%a3%e6%98%a0%e5%b0%84%e8%a1%a8">#</a>
+  
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>功能</strong></th>
+          <th><strong>路径</strong></th>
+          <th><strong>完整示例URL</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>智能对话</strong></td>
+          <td>/v1/chat/completions</td>
+          <td><a href="https://api.whatai.cc/v1/chat/completions">https://api.whatai.cc/v1/chat/completions</a></td>
+      </tr>
+      <tr>
+          <td><strong>文本嵌入</strong></td>
+          <td>/v1/embeddings</td>
+          <td><a href="https://api.whatai.cc/v1/embeddings">https://api.whatai.cc/v1/embeddings</a></td>
+      </tr>
+      <tr>
+          <td><strong>AI绘图</strong></td>
+          <td>/v1/images/generations</td>
+          <td><a href="https://api.whatai.cc/v1/images/generations">https://api.whatai.cc/v1/images/generations</a></td>
+      </tr>
+      <tr>
+          <td><strong>语音转文本</strong></td>
+          <td>/v1/audio/transcriptions</td>
+          <td><a href="https://api.whatai.cc/v1/audio/transcriptions">https://api.whatai.cc/v1/audio/transcriptions</a></td>
+      </tr>
+      <tr>
+          <td><strong>文本转语音</strong></td>
+          <td>/v1/audio/speech</td>
+          <td><a href="https://api.whatai.cc/v1/audio/speech">https://api.whatai.cc/v1/audio/speech</a></td>
+      </tr>
+  </tbody>
+</table>
+<p>在 claude code 里只需要配置域名，不需要带 /v1及后面的部分。</p>
+<p><strong>Python 示例</strong></p>
+<hr>
+<p>需要先 pip install openai</p>
+<pre tabindex="0"><code>import openai 
+# 配置API密钥和基础URL 
+openai.api_key = &#34;sk-******&#34; # 替换为你的实际令牌 
+openai.api_base = &#34;https://api.whatai.cc&#34; # 设置中转地址# 
+
+调用对话接口示例 
+response = openai.ChatCompletion.create( 
+    model=&#34;gpt-3.5-turbo&#34;,
+    messages=[{&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;你好&#34;}] ) 
+print(response.choices[0].message.content)
+</code></pre><h2 id="curl-示例">
+  <strong>curl 示例</strong>
+  
+  <a class="anchor" href="#curl-%e7%a4%ba%e4%be%8b">#</a>
+  
+</h2>
+<pre tabindex="0"><code>curl --request POST \
+    --url https://api.whatai.cc/v1/chat/completions \
+    --header &#39;Authorization: Bearer sk-替换为你的key&#39; \
+    -H &#34;Content-Type: application/json&#34; \
+    --data &#39;{
+      &#34;max_tokens&#34;: 8192,
+      &#34;model&#34;: &#34;gpt-4.1-mini&#34;,
+      &#34;temperature&#34;: 0.8,
+      &#34;top_p&#34;: 1,
+      &#34;presence_penalty&#34;: 1,
+      &#34;messages&#34;: [
+          {
+              &#34;role&#34;: &#34;system&#34;,
+              &#34;content&#34;: &#34;你是我的全能助手，你叫小美&#34;
+          },
+          {
+              &#34;role&#34;: &#34;user&#34;,
+              &#34;content&#34;: &#34;你是谁？夸我几句我就给你续费~&#34;
+          }
+      ]
+  }&#39;
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/aidocs/api.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/openai/wltpjx/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Wltpjx" />
+        <span>Wltpjx</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/aidocs/base/" class="flex align-center book-icon">
+        <span>Base</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Base" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#基本概念-api地址baseurl">📖基本概念-API地址（BaseURL）</a>
+          <ul>
+            <li><a href="#1-基本概念">1️⃣ 基本概念</a></li>
+            <li><a href="#-apibaseurl信息入口"><strong>💻 API（BaseUrl）信息入口：</strong></a></li>
+            <li><a href="#-完整功能接口映射表"><strong>🔌 完整功能接口映射表</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#curl-示例"><strong>curl 示例</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

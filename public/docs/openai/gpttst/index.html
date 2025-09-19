@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  gpt图生图
+  
+  #
+  
+
+
+  概念介绍
+  
+  #
+  
+
+
+本API提供图像编辑功能，支持：
+
+
+单图修改：基于提示词对单张图片进行内容修改
+
+
+多图合并：将多张图片按提示词要求合并处理
+
+
+
+  基础信息
+  
+  #
+  
+
+
+
+
+请求方式：POST
+
+
+Base URL：https://api.whatai.cc/v1/images/edits
+
+
+认证方式：Bearer Token
+
+
+单图修改示例
+
+
+  Python代码示例
+  
+  #
+  
+
+import base64
+import json
+import requests
+
+# API配置
+url = &#34;https://api.whatai.cc/v1/images/edits&#34;
+api_key = &#34;sk-******&#34;  # 替换为你的API密钥
+
+headers = {
+    &#34;Authorization&#34;: f&#34;Bearer {api_key}&#34;
+}
+
+# 请求参数
+payload = {
+    &#34;prompt&#34;: &#34;给哪吒带上一个红色的鸭舌帽，风格保持不变&#34;,  # 编辑指令
+    # &#34;size&#34;: &#34;1024x1024&#34;  # 可选输出尺寸
+}
+
+# 准备图片文件
+files = [
+    (&#34;image&#34;,  # 固定参数名
+        (&#34;nezha.png&#34;,  # 文件名
+         open(&#34;/path/to/nezha.png&#34;, &#34;rb&#34;),  # 文件路径
+         &#34;image/png&#34;)  # 文件类型
+    )
+]
+
+# 发送请求
+response = requests.post(url, headers=headers, data=payload, files=files)
+
+# 处理响应
+if response.status_code == 200:
+    try:
+        data = response.json()
+        
+        # 提取base64编码的图片数据
+        if data.get(&#34;data&#34;) and isinstance(data[&#34;data&#34;], list):
+            image_b64 = data[&#34;data&#34;][0].get(&#34;b64_json&#34;)
+            
+            if image_b64:
+                # 解码并保存图片
+                with open(&#34;output.png&#34;, &#34;wb&#34;) as f:
+                    f.write(base64.b64decode(image_b64))
+                print(&#34;图片保存成功&#34;)
+            else:
+                print(&#34;未获取到有效图片数据&#34;)
+        else:
+            print(&#34;响应数据结构异常&#34;)
+    except json.JSONDecodeError:
+        print(&#34;JSON解析失败&#34;)
+else:
+    print(f&#34;请求失败: {response.status_code}&#34;)
+
+  参数说明
+  
+  #
+  
+
+
+
+  
+      
+          参数名
+          必选
+          类型
+          说明
+      
+  
+  
+      
+          image
+          是
+          file
+          要编辑的图片文件
+      
+      
+          prompt
+          是
+          string
+          编辑指令描述
+      
+      
+          size
+          否
+          string
+          输出图片尺寸，如&quot;1024x1024&quot;
+      
+  
+
+
+  响应格式
+  
+  #
+  
+
+
+成功响应示例：">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/openai/gpttst/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API">
+  <meta property="og:description" content="gpt图生图 # 概念介绍 # 本API提供图像编辑功能，支持：
+单图修改：基于提示词对单张图片进行内容修改
+多图合并：将多张图片按提示词要求合并处理
+基础信息 # 请求方式：POST
+Base URL：https://api.whatai.cc/v1/images/edits
+认证方式：Bearer Token
+单图修改示例
+Python代码示例 # import base64 import json import requests # API配置 url = &#34;https://api.whatai.cc/v1/images/edits&#34; api_key = &#34;sk-******&#34; # 替换为你的API密钥 headers = { &#34;Authorization&#34;: f&#34;Bearer {api_key}&#34; } # 请求参数 payload = { &#34;prompt&#34;: &#34;给哪吒带上一个红色的鸭舌帽，风格保持不变&#34;, # 编辑指令 # &#34;size&#34;: &#34;1024x1024&#34; # 可选输出尺寸 } # 准备图片文件 files = [ (&#34;image&#34;, # 固定参数名 (&#34;nezha.png&#34;, # 文件名 open(&#34;/path/to/nezha.png&#34;, &#34;rb&#34;), # 文件路径 &#34;image/png&#34;) # 文件类型 ) ] # 发送请求 response = requests.post(url, headers=headers, data=payload, files=files) # 处理响应 if response.status_code == 200: try: data = response.json() # 提取base64编码的图片数据 if data.get(&#34;data&#34;) and isinstance(data[&#34;data&#34;], list): image_b64 = data[&#34;data&#34;][0].get(&#34;b64_json&#34;) if image_b64: # 解码并保存图片 with open(&#34;output.png&#34;, &#34;wb&#34;) as f: f.write(base64.b64decode(image_b64)) print(&#34;图片保存成功&#34;) else: print(&#34;未获取到有效图片数据&#34;) else: print(&#34;响应数据结构异常&#34;) except json.JSONDecodeError: print(&#34;JSON解析失败&#34;) else: print(f&#34;请求失败: {response.status_code}&#34;) 参数说明 # 参数名 必选 类型 说明 image 是 file 要编辑的图片文件 prompt 是 string 编辑指令描述 size 否 string 输出图片尺寸，如&#34;1024x1024&#34; 响应格式 # 成功响应示例：">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Gpttst | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/openai/gpttst/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.0ddff9479224e55228bc888c1967e918f97380f550b0d3909e3d1c2e2c757210.js" integrity="sha256-Dd/5R5Ik5VIovIiMGWfpGPlzgPVQsNOQnj0cLix1chA=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f5d9735162e53bec69c2f6248cc6ef7e" class="toggle"  />
+    <label for="section-f5d9735162e53bec69c2f6248cc6ef7e" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle" checked />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">Functioncall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">Gdgshscjson</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="active">Gpttst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">Gpttts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">Syfw</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">Whisper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">Wltpjx</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle"  />
+    <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
+    <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">Dev</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">Keysafety</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">Notice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/images/" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Gpttst</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#gpt图生图">gpt图生图</a>
+      <ul>
+        <li><a href="#概念介绍"><strong>概念介绍</strong></a></li>
+        <li><a href="#基础信息"><strong>基础信息</strong></a>
+          <ul>
+            <li><a href="#python代码示例"><strong>Python代码示例</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#参数说明"><strong>参数说明</strong></a></li>
+        <li><a href="#响应格式"><strong>响应格式</strong></a></li>
+        <li><a href="#注意事项"><strong>注意事项</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="gpt图生图">
+  gpt图生图
+  
+  <a class="anchor" href="#gpt%e5%9b%be%e7%94%9f%e5%9b%be">#</a>
+  
+</h1>
+<h2 id="概念介绍">
+  <strong>概念介绍</strong>
+  
+  <a class="anchor" href="#%e6%a6%82%e5%bf%b5%e4%bb%8b%e7%bb%8d">#</a>
+  
+</h2>
+<hr>
+<p>本API提供图像编辑功能，支持：</p>
+<ul>
+<li>
+<p>单图修改：基于提示词对单张图片进行内容修改</p>
+</li>
+<li>
+<p>多图合并：将多张图片按提示词要求合并处理</p>
+</li>
+</ul>
+<h2 id="基础信息">
+  <strong>基础信息</strong>
+  
+  <a class="anchor" href="#%e5%9f%ba%e7%a1%80%e4%bf%a1%e6%81%af">#</a>
+  
+</h2>
+<hr>
+<ul>
+<li>
+<p>请求方式：POST</p>
+</li>
+<li>
+<p>Base URL：<code>https://api.whatai.cc/v1/images/edits</code></p>
+</li>
+<li>
+<p>认证方式：Bearer Token</p>
+</li>
+</ul>
+<p><strong>单图修改示例</strong></p>
+<hr>
+<h3 id="python代码示例">
+  <strong>Python代码示例</strong>
+  
+  <a class="anchor" href="#python%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b">#</a>
+  
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># API配置</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://api.whatai.cc/v1/images/edits&#34;</span>
+</span></span><span style="display:flex;"><span>api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sk-******&#34;</span>  <span style="color:#75715e"># 替换为你的API密钥</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>headers <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Authorization&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Bearer </span><span style="color:#e6db74">{</span>api_key<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 请求参数</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;prompt&#34;</span>: <span style="color:#e6db74">&#34;给哪吒带上一个红色的鸭舌帽，风格保持不变&#34;</span>,  <span style="color:#75715e"># 编辑指令</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># &#34;size&#34;: &#34;1024x1024&#34;  # 可选输出尺寸</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 准备图片文件</span>
+</span></span><span style="display:flex;"><span>files <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    (<span style="color:#e6db74">&#34;image&#34;</span>,  <span style="color:#75715e"># 固定参数名</span>
+</span></span><span style="display:flex;"><span>        (<span style="color:#e6db74">&#34;nezha.png&#34;</span>,  <span style="color:#75715e"># 文件名</span>
+</span></span><span style="display:flex;"><span>         open(<span style="color:#e6db74">&#34;/path/to/nezha.png&#34;</span>, <span style="color:#e6db74">&#34;rb&#34;</span>),  <span style="color:#75715e"># 文件路径</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#34;image/png&#34;</span>)  <span style="color:#75715e"># 文件类型</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 发送请求</span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, headers<span style="color:#f92672">=</span>headers, data<span style="color:#f92672">=</span>payload, files<span style="color:#f92672">=</span>files)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 处理响应</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        data <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 提取base64编码的图片数据</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;data&#34;</span>) <span style="color:#f92672">and</span> isinstance(data[<span style="color:#e6db74">&#34;data&#34;</span>], list):
+</span></span><span style="display:flex;"><span>            image_b64 <span style="color:#f92672">=</span> data[<span style="color:#e6db74">&#34;data&#34;</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;b64_json&#34;</span>)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> image_b64:
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 解码并保存图片</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;output.png&#34;</span>, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>                    f<span style="color:#f92672">.</span>write(base64<span style="color:#f92672">.</span>b64decode(image_b64))
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;图片保存成功&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;未获取到有效图片数据&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;响应数据结构异常&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> json<span style="color:#f92672">.</span>JSONDecodeError:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;JSON解析失败&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;请求失败: </span><span style="color:#e6db74">{</span>response<span style="color:#f92672">.</span>status_code<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><h2 id="参数说明">
+  <strong>参数说明</strong>
+  
+  <a class="anchor" href="#%e5%8f%82%e6%95%b0%e8%af%b4%e6%98%8e">#</a>
+  
+</h2>
+<hr>
+<table>
+  <thead>
+      <tr>
+          <th><strong>参数名</strong></th>
+          <th><strong>必选</strong></th>
+          <th><strong>类型</strong></th>
+          <th><strong>说明</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>image</td>
+          <td>是</td>
+          <td>file</td>
+          <td>要编辑的图片文件</td>
+      </tr>
+      <tr>
+          <td>prompt</td>
+          <td>是</td>
+          <td>string</td>
+          <td>编辑指令描述</td>
+      </tr>
+      <tr>
+          <td>size</td>
+          <td>否</td>
+          <td>string</td>
+          <td>输出图片尺寸，如&quot;1024x1024&quot;</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="响应格式">
+  <strong>响应格式</strong>
+  
+  <a class="anchor" href="#%e5%93%8d%e5%ba%94%e6%a0%bc%e5%bc%8f">#</a>
+  
+</h2>
+<hr>
+<p>成功响应示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;b64_json&#34;</span>: <span style="color:#e6db74">&#34;base64编码的图片数据&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="注意事项">
+  <strong>注意事项</strong>
+  
+  <a class="anchor" href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">#</a>
+  
+</h2>
+<hr>
+<ol>
+<li>
+<p>图片文件需小于10MB</p>
+</li>
+<li>
+<p>支持PNG/JPEG格式</p>
+</li>
+<li>
+<p>编辑效果取决于提示词描述的准确性</p>
+</li>
+<li>
+<p>敏感操作需确保符合内容政策</p>
+</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/openai/gpttst.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/openai/gdgshscjson/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Gdgshscjson" />
+        <span>Gdgshscjson</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/openai/gpttts/" class="flex align-center book-icon">
+        <span>Gpttts</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Gpttts" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#gpt图生图">gpt图生图</a>
+      <ul>
+        <li><a href="#概念介绍"><strong>概念介绍</strong></a></li>
+        <li><a href="#基础信息"><strong>基础信息</strong></a>
+          <ul>
+            <li><a href="#python代码示例"><strong>Python代码示例</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#参数说明"><strong>参数说明</strong></a></li>
+        <li><a href="#响应格式"><strong>响应格式</strong></a></li>
+        <li><a href="#注意事项"><strong>注意事项</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

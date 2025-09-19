@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  函数调用FunctionCall
+  
+  #
+  
+
+
+  概念介绍
+  
+  #
+  
+
+
+函数调用(Function Calling\Tools Calling)是AI大模型的一种能力。允许大语言模型在对话过程中调用外部函数/工具。当用户提问需要实时数据(如天气、股票等)时，模型会返回函数调用请求，开发者可以在后端执行相应函数并返回结果。
+
+  API 基础信息
+  
+  #
+  
+
+
+
+
+请求地址: https://api.whatai.cc/v1/chat/completions
+
+
+请求方法: POST
+
+
+认证方式: Bearer Token
+
+
+
+  请求示例
+  
+  #
+  
+
+
+import http.client
+import json
+
+# 创建HTTPS连接
+conn = http.client.HTTPSConnection(&#34;api.whatai.cc&#34;)
+
+# 构造请求体
+payload = json.dumps({
+    &#34;model&#34;: &#34;gpt-4o&#34;,  # 指定模型
+    &#34;max_tokens&#34;: 300,  # 最大返回token数
+    &#34;temperature&#34;: 0.8,  # 生成结果的随机性控制
+    &#34;stream&#34;: False,  # 是否流式输出
+    &#34;messages&#34;: [{
+        &#34;role&#34;: &#34;user&#34;,
+        &#34;content&#34;: &#34;上海今天几度？&#34;  # 用户提问
+    }],
+    &#34;tools&#34;: [{  # 定义可用工具
+        &#34;type&#34;: &#34;function&#34;,
+        &#34;function&#34;: {
+            &#34;name&#34;: &#34;get_current_weather&#34;,  # 函数名称
+            &#34;description&#34;: &#34;获得天气信息&#34;,  # 功能描述
+            &#34;parameters&#34;: {  # 参数定义
+                &#34;type&#34;: &#34;object&#34;,
+                &#34;properties&#34;: {
+                    &#34;location&#34;: {  # 必填参数：地点
+                        &#34;type&#34;: &#34;string&#34;,
+                        &#34;description&#34;: &#34;城市和州名，例如：上海, 中国&#34;
+                    },
+                    &#34;unit&#34;: {  # 可选参数：温度单位
+                        &#34;type&#34;: &#34;string&#34;,
+                        &#34;enum&#34;: [&#34;celsius&#34;, &#34;fahrenheit&#34;]
+                    }
+                },
+                &#34;required&#34;: [&#34;location&#34;]  # 必填参数列表
+            }
+        }
+    }]
+})
+
+# 请求头设置
+headers = {
+    &#34;Accept&#34;: &#34;application/json&#34;,
+    &#34;Authorization&#34;: &#34;Bearer sk-**********************&#34;,  # 替换为你的 API 令牌
+    &#34;Content-Type&#34;: &#34;application/json&#34;
+}
+
+# 发送请求
+conn.request(&#34;POST&#34;, &#34;/v1/chat/completions&#34;, payload, headers)
+
+# 获取响应
+res = conn.getresponse()
+data = res.read()
+
+# 输出结果
+print(data.decode(&#34;utf-8&#34;))
+
+  响应处理
+  
+  #
+  
+
+
+当用户提问需要调用函数时，API会返回包含函数调用信息的JSON响应。开发者需要：">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/openai/functioncall/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API">
+  <meta property="og:description" content="函数调用FunctionCall # 概念介绍 # 函数调用(Function Calling\Tools Calling)是AI大模型的一种能力。允许大语言模型在对话过程中调用外部函数/工具。当用户提问需要实时数据(如天气、股票等)时，模型会返回函数调用请求，开发者可以在后端执行相应函数并返回结果。
+API 基础信息 # 请求地址: https://api.whatai.cc/v1/chat/completions
+请求方法: POST
+认证方式: Bearer Token
+请求示例 # import http.client import json # 创建HTTPS连接 conn = http.client.HTTPSConnection(&#34;api.whatai.cc&#34;) # 构造请求体 payload = json.dumps({ &#34;model&#34;: &#34;gpt-4o&#34;, # 指定模型 &#34;max_tokens&#34;: 300, # 最大返回token数 &#34;temperature&#34;: 0.8, # 生成结果的随机性控制 &#34;stream&#34;: False, # 是否流式输出 &#34;messages&#34;: [{ &#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;上海今天几度？&#34; # 用户提问 }], &#34;tools&#34;: [{ # 定义可用工具 &#34;type&#34;: &#34;function&#34;, &#34;function&#34;: { &#34;name&#34;: &#34;get_current_weather&#34;, # 函数名称 &#34;description&#34;: &#34;获得天气信息&#34;, # 功能描述 &#34;parameters&#34;: { # 参数定义 &#34;type&#34;: &#34;object&#34;, &#34;properties&#34;: { &#34;location&#34;: { # 必填参数：地点 &#34;type&#34;: &#34;string&#34;, &#34;description&#34;: &#34;城市和州名，例如：上海, 中国&#34; }, &#34;unit&#34;: { # 可选参数：温度单位 &#34;type&#34;: &#34;string&#34;, &#34;enum&#34;: [&#34;celsius&#34;, &#34;fahrenheit&#34;] } }, &#34;required&#34;: [&#34;location&#34;] # 必填参数列表 } } }] }) # 请求头设置 headers = { &#34;Accept&#34;: &#34;application/json&#34;, &#34;Authorization&#34;: &#34;Bearer sk-**********************&#34;, # 替换为你的 API 令牌 &#34;Content-Type&#34;: &#34;application/json&#34; } # 发送请求 conn.request(&#34;POST&#34;, &#34;/v1/chat/completions&#34;, payload, headers) # 获取响应 res = conn.getresponse() data = res.read() # 输出结果 print(data.decode(&#34;utf-8&#34;)) 响应处理 # 当用户提问需要调用函数时，API会返回包含函数调用信息的JSON响应。开发者需要：">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Functioncall | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/openai/functioncall/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.0ddff9479224e55228bc888c1967e918f97380f550b0d3909e3d1c2e2c757210.js" integrity="sha256-Dd/5R5Ik5VIovIiMGWfpGPlzgPVQsNOQnj0cLix1chA=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f5d9735162e53bec69c2f6248cc6ef7e" class="toggle"  />
+    <label for="section-f5d9735162e53bec69c2f6248cc6ef7e" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle" checked />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="active">Functioncall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">Gdgshscjson</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">Gpttst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">Gpttts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">Syfw</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">Whisper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">Wltpjx</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle"  />
+    <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
+    <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">Dev</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">Keysafety</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">Notice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/images/" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Functioncall</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#函数调用functioncall">函数调用FunctionCall</a>
+      <ul>
+        <li><a href="#概念介绍"><strong>概念介绍</strong></a></li>
+        <li><a href="#api-基础信息"><strong>API 基础信息</strong></a></li>
+        <li><a href="#请求示例"><strong>请求示例</strong></a></li>
+        <li><a href="#响应处理"><strong>响应处理</strong></a></li>
+        <li><a href="#注意事项"><strong>注意事项</strong></a></li>
+        <li><a href="#tools-场景示例">Tools 场景示例</a></li>
+        <li><a href="#-第一步发送用户提问--工具定义">✅ 第一步：发送用户提问 + 工具定义</a></li>
+        <li><a href="#-第二步你执行实际函数例如自己写的天气-api并将结果通过工具响应发回-ai">🔁 第二步：你执行实际函数（例如自己写的天气 API），并将结果通过工具响应发回 AI</a></li>
+        <li><a href="#-第三步返回最终的自然语言回复例如">✅ 第三步：返回最终的自然语言回复（例如）：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="函数调用functioncall">
+  函数调用FunctionCall
+  
+  <a class="anchor" href="#%e5%87%bd%e6%95%b0%e8%b0%83%e7%94%a8functioncall">#</a>
+  
+</h1>
+<h2 id="概念介绍">
+  <strong>概念介绍</strong>
+  
+  <a class="anchor" href="#%e6%a6%82%e5%bf%b5%e4%bb%8b%e7%bb%8d">#</a>
+  
+</h2>
+<hr>
+<p>函数调用(Function Calling\Tools Calling)是AI大模型的一种能力。允许大语言模型在对话过程中调用外部函数/工具。当用户提问需要实时数据(如天气、股票等)时，模型会返回函数调用请求，开发者可以在后端执行相应函数并返回结果。</p>
+<h2 id="api-基础信息">
+  <strong>API 基础信息</strong>
+  
+  <a class="anchor" href="#api-%e5%9f%ba%e7%a1%80%e4%bf%a1%e6%81%af">#</a>
+  
+</h2>
+<hr>
+<ul>
+<li>
+<p>请求地址: <code>https://api.whatai.cc/v1/chat/completions</code></p>
+</li>
+<li>
+<p>请求方法: POST</p>
+</li>
+<li>
+<p>认证方式: Bearer Token</p>
+</li>
+</ul>
+<h2 id="请求示例">
+  <strong>请求示例</strong>
+  
+  <a class="anchor" href="#%e8%af%b7%e6%b1%82%e7%a4%ba%e4%be%8b">#</a>
+  
+</h2>
+<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> http.client
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建HTTPS连接</span>
+</span></span><span style="display:flex;"><span>conn <span style="color:#f92672">=</span> http<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>HTTPSConnection(<span style="color:#e6db74">&#34;api.whatai.cc&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 构造请求体</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps({
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;gpt-4o&#34;</span>,  <span style="color:#75715e"># 指定模型</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;max_tokens&#34;</span>: <span style="color:#ae81ff">300</span>,  <span style="color:#75715e"># 最大返回token数</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;temperature&#34;</span>: <span style="color:#ae81ff">0.8</span>,  <span style="color:#75715e"># 生成结果的随机性控制</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;stream&#34;</span>: <span style="color:#66d9ef">False</span>,  <span style="color:#75715e"># 是否流式输出</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;messages&#34;</span>: [{
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;上海今天几度？&#34;</span>  <span style="color:#75715e"># 用户提问</span>
+</span></span><span style="display:flex;"><span>    }],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;tools&#34;</span>: [{  <span style="color:#75715e"># 定义可用工具</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;function&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;function&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;get_current_weather&#34;</span>,  <span style="color:#75715e"># 函数名称</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;获得天气信息&#34;</span>,  <span style="color:#75715e"># 功能描述</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;parameters&#34;</span>: {  <span style="color:#75715e"># 参数定义</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;properties&#34;</span>: {
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;location&#34;</span>: {  <span style="color:#75715e"># 必填参数：地点</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;城市和州名，例如：上海, 中国&#34;</span>
+</span></span><span style="display:flex;"><span>                    },
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;unit&#34;</span>: {  <span style="color:#75715e"># 可选参数：温度单位</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;enum&#34;</span>: [<span style="color:#e6db74">&#34;celsius&#34;</span>, <span style="color:#e6db74">&#34;fahrenheit&#34;</span>]
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;required&#34;</span>: [<span style="color:#e6db74">&#34;location&#34;</span>]  <span style="color:#75715e"># 必填参数列表</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }]
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 请求头设置</span>
+</span></span><span style="display:flex;"><span>headers <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Authorization&#34;</span>: <span style="color:#e6db74">&#34;Bearer sk-**********************&#34;</span>,  <span style="color:#75715e"># 替换为你的 API 令牌</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Content-Type&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 发送请求</span>
+</span></span><span style="display:flex;"><span>conn<span style="color:#f92672">.</span>request(<span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#e6db74">&#34;/v1/chat/completions&#34;</span>, payload, headers)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 获取响应</span>
+</span></span><span style="display:flex;"><span>res <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>getresponse()
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> res<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 输出结果</span>
+</span></span><span style="display:flex;"><span>print(data<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#34;utf-8&#34;</span>))
+</span></span></code></pre></div><h2 id="响应处理">
+  <strong>响应处理</strong>
+  
+  <a class="anchor" href="#%e5%93%8d%e5%ba%94%e5%a4%84%e7%90%86">#</a>
+  
+</h2>
+<hr>
+<p>当用户提问需要调用函数时，API会返回包含函数调用信息的JSON响应。开发者需要：</p>
+<ol>
+<li>
+<p>解析响应中的函数调用请求</p>
+</li>
+<li>
+<p>在后端执行对应函数</p>
+</li>
+<li>
+<p>将函数结果再次发送给API获取最终回答</p>
+</li>
+</ol>
+<h2 id="注意事项">
+  <strong>注意事项</strong>
+  
+  <a class="anchor" href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">#</a>
+  
+</h2>
+<hr>
+<ol>
+<li>
+<p>请妥善保管API密钥，不要泄露</p>
+</li>
+<li>
+<p>函数定义中的description很重要，会影响模型是否/如何调用该函数</p>
+</li>
+<li>
+<p>温度参数(temperature)控制生成结果的随机性，值越大结果越多样</p>
+</li>
+</ol>
+<h2 id="tools-场景示例">
+  Tools 场景示例
+  
+  <a class="anchor" href="#tools-%e5%9c%ba%e6%99%af%e7%a4%ba%e4%be%8b">#</a>
+  
+</h2>
+<p>==========</p>
+<p>例如</p>
+<p>用户提问：<strong>“北京天气怎么样？”</strong></p>
+<p>我们定义一个工具 <code>get_weather(city: string)</code></p>
+<p><code>get_weather</code> 函数需要用户开发者自己实现</p>
+<hr>
+<h2 id="-第一步发送用户提问--工具定义">
+  ✅ 第一步：发送用户提问 + 工具定义
+  
+  <a class="anchor" href="#-%e7%ac%ac%e4%b8%80%e6%ad%a5%e5%8f%91%e9%80%81%e7%94%a8%e6%88%b7%e6%8f%90%e9%97%ae--%e5%b7%a5%e5%85%b7%e5%ae%9a%e4%b9%89">#</a>
+  
+</h2>
+<pre tabindex="0"><code>
+curl --location --request POST &#39;https://api.whatai.cc/v1/chat/completions&#39; \
+--header &#39;Authorization: Bearer $API_KEY&#39; \
+--header &#39;Content-Type: application/json&#39; \
+--data-raw &#39;{
+    &#34;model&#34;: &#34;gpt-4o&#34;,
+    &#34;messages&#34;: [
+        {
+            &#34;role&#34;: &#34;user&#34;,
+            &#34;content&#34;: &#34;北京天气怎么样？&#34;
+        }
+    ],
+    &#34;tools&#34;: [
+        {
+            &#34;type&#34;: &#34;function&#34;,
+            &#34;function&#34;: {
+                &#34;name&#34;: &#34;get_weather&#34;,
+                &#34;description&#34;: &#34;获取城市天气&#34;,
+                &#34;parameters&#34;: {
+                    &#34;type&#34;: &#34;object&#34;,
+                    &#34;properties&#34;: {
+                        &#34;city&#34;: {
+                            &#34;type&#34;: &#34;string&#34;,
+                            &#34;description&#34;: &#34;城市名称，例如 北京&#34;
+                        }
+                    },
+                    &#34;required&#34;: [
+                        &#34;city&#34;
+                    ]
+                }
+            }
+        }
+    ],
+    &#34;tool_choice&#34;: &#34;auto&#34;
+}&#39;
+</code></pre><p>📥 AI 返回内容（模型决定调用 <code>get_weather</code>）：</p>
+<pre tabindex="0"><code>{
+  &#34;choices&#34;: [
+    {
+      &#34;message&#34;: {
+        &#34;role&#34;: &#34;assistant&#34;,
+        &#34;tool_calls&#34;: [
+          {
+            &#34;id&#34;: &#34;toolcall-abc123&#34;,
+            &#34;type&#34;: &#34;function&#34;,
+            &#34;function&#34;: {
+              &#34;name&#34;: &#34;get_weather&#34;,
+              &#34;arguments&#34;: &#34;{ \&#34;city\&#34;: \&#34;北京\&#34; }&#34;
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+</code></pre><h2 id="-第二步你执行实际函数例如自己写的天气-api并将结果通过工具响应发回-ai">
+  🔁 第二步：你执行实际函数（例如自己写的天气 API），并将结果通过工具响应发回 AI
+  
+  <a class="anchor" href="#-%e7%ac%ac%e4%ba%8c%e6%ad%a5%e4%bd%a0%e6%89%a7%e8%a1%8c%e5%ae%9e%e9%99%85%e5%87%bd%e6%95%b0%e4%be%8b%e5%a6%82%e8%87%aa%e5%b7%b1%e5%86%99%e7%9a%84%e5%a4%a9%e6%b0%94-api%e5%b9%b6%e5%b0%86%e7%bb%93%e6%9e%9c%e9%80%9a%e8%bf%87%e5%b7%a5%e5%85%b7%e5%93%8d%e5%ba%94%e5%8f%91%e5%9b%9e-ai">#</a>
+  
+</h2>
+<p>假设你查询天气后得到：</p>
+<p><code>{ &quot;temperature&quot;: &quot;31°C&quot;, &quot;condition&quot;: &quot;晴&quot; }</code></p>
+<p>那么你现在发送的是 <strong>完整上下文 + tool 响应</strong>：</p>
+<pre tabindex="0"><code>
+curl --location --request POST &#39;https://api.whatai.cc/v1/chat/completions&#39; \
+--header &#39;Authorization: Bearer $API_KEY&#39; \
+--header &#39;Content-Type: application/json&#39; \
+--data-raw &#39;{
+    &#34;model&#34;: &#34;gpt-4o&#34;,
+    &#34;messages&#34;: [
+        {
+            &#34;role&#34;: &#34;user&#34;,
+            &#34;content&#34;: &#34;北京天气怎么样？&#34;
+        },
+        {
+            &#34;role&#34;: &#34;assistant&#34;,
+            &#34;tool_calls&#34;: [
+                {
+                    &#34;id&#34;: &#34;toolcall-abc123&#34;,
+                    &#34;type&#34;: &#34;function&#34;,
+                    &#34;function&#34;: {
+                        &#34;name&#34;: &#34;get_weather&#34;,
+                        &#34;arguments&#34;: &#34;{ \&#34;city\&#34;: \&#34;北京\&#34; }&#34;
+                    }
+                }
+            ]
+        },
+        {
+            &#34;role&#34;: &#34;tool&#34;,
+            &#34;tool_call_id&#34;: &#34;toolcall-abc123&#34;,
+            &#34;content&#34;: &#34;{ \&#34;temperature\&#34;: \&#34;31°C\&#34;, \&#34;condition\&#34;: \&#34;晴\&#34; }&#34;
+        }
+    ]
+}&#39;
+</code></pre><hr>
+<h2 id="-第三步返回最终的自然语言回复例如">
+  ✅ 第三步：返回最终的自然语言回复（例如）：
+  
+  <a class="anchor" href="#-%e7%ac%ac%e4%b8%89%e6%ad%a5%e8%bf%94%e5%9b%9e%e6%9c%80%e7%bb%88%e7%9a%84%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%9b%9e%e5%a4%8d%e4%be%8b%e5%a6%82">#</a>
+  
+</h2>
+<pre tabindex="0"><code>{
+    &#34;choices&#34;: [
+        {
+            &#34;message&#34;: {
+                &#34;role&#34;: &#34;assistant&#34;,
+                &#34;content&#34;: &#34;北京今天是晴天，气温为 31°C。适合出门哦！&#34;
+            }
+        }
+    ]
+}
+</code></pre><p><a href="https://doc.dmxapi.cn/base64-image.html">https://doc.dmxapi.cn/base64-image.html</a></p>
+<p><img src="https://wiki.bltcy.ai/node/01983608-3d61-718c-89db-db78937a9575" alt="Image 8" /></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/openai/functioncall.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/openai/embedding/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Embedding" />
+        <span>Embedding</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/openai/gdgshscjson/" class="flex align-center book-icon">
+        <span>Gdgshscjson</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Gdgshscjson" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#函数调用functioncall">函数调用FunctionCall</a>
+      <ul>
+        <li><a href="#概念介绍"><strong>概念介绍</strong></a></li>
+        <li><a href="#api-基础信息"><strong>API 基础信息</strong></a></li>
+        <li><a href="#请求示例"><strong>请求示例</strong></a></li>
+        <li><a href="#响应处理"><strong>响应处理</strong></a></li>
+        <li><a href="#注意事项"><strong>注意事项</strong></a></li>
+        <li><a href="#tools-场景示例">Tools 场景示例</a></li>
+        <li><a href="#-第一步发送用户提问--工具定义">✅ 第一步：发送用户提问 + 工具定义</a></li>
+        <li><a href="#-第二步你执行实际函数例如自己写的天气-api并将结果通过工具响应发回-ai">🔁 第二步：你执行实际函数（例如自己写的天气 API），并将结果通过工具响应发回 AI</a></li>
+        <li><a href="#-第三步返回最终的自然语言回复例如">✅ 第三步：返回最终的自然语言回复（例如）：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
