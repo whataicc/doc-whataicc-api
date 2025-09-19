@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  📖 基本概念-按量付费
+  
+  #
+  
+
+
+  💸 按量计费：像交水电费一样简单！
+  
+  #
+  
+
+用多少字，付多少钱！ 就像家里用电——开灯时间越长，电费越多～
+
+  计费示例 ​
+  
+  #
+  
+
+
+
+文字类模型的计费通常是按照 tokens 计算。
+
+
+例如，1K tokens 消耗 xx 美金，这种计费方式与官方渠道相同。
+
+
+
+  优惠政策 ​
+  
+  #
+  
+
+
+
+官方渠道的美金购买需要实时汇率（大约 1:7）。
+
+
+在我们平台，您可以直接以折扣价格购买美金。
+
+
+具体汇率请查询充值页。
+
+
+
+  🌰 实景案例
+  
+  #
+  
+
+【示例】对于default分组下的gpt-4o-mini模型，假设提问文字数量为6323 tokens，文字输出数量为2481 tokens
+
+Input（提示token数）：0.15/M tokens （您提问的文字） Output（补全token数）: 0.6/M tokens （AI回答的文字） Cache（模型倍率）：0.075 计算方式为： $0.15 / 1000000 * 6323 &#43; 0.6 / 1000000 * 2481 &#43; 0.075/1000000 * 2048 = 0.002284$
+
+  📊 模型倍率（看不懂可以忽略）
+  
+  #
+  
+
+支持价格页面的模型价格即实价！">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/aidocs/pay1/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API">
+  <meta property="og:description" content="📖 基本概念-按量付费 # 💸 按量计费：像交水电费一样简单！ # 用多少字，付多少钱！ 就像家里用电——开灯时间越长，电费越多～
+计费示例 ​ # 文字类模型的计费通常是按照 tokens 计算。
+例如，1K tokens 消耗 xx 美金，这种计费方式与官方渠道相同。
+优惠政策 ​ # 官方渠道的美金购买需要实时汇率（大约 1:7）。
+在我们平台，您可以直接以折扣价格购买美金。
+具体汇率请查询充值页。
+🌰 实景案例 # 【示例】对于default分组下的gpt-4o-mini模型，假设提问文字数量为6323 tokens，文字输出数量为2481 tokens
+Input（提示token数）：0.15/M tokens （您提问的文字） Output（补全token数）: 0.6/M tokens （AI回答的文字） Cache（模型倍率）：0.075 计算方式为： $0.15 / 1000000 * 6323 &#43; 0.6 / 1000000 * 2481 &#43; 0.075/1000000 * 2048 = 0.002284$
+📊 模型倍率（看不懂可以忽略） # 支持价格页面的模型价格即实价！">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Pay1 | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/aidocs/pay1/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.69243289f67dba7734f533f8e4fbe167f1437d4aff3c8ded5e47d8b891294fb7.js" integrity="sha256-aSQyifZ9unc09TP45PvhZ/FDfUr/PI3tXkfYuJEpT7c=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-116a6035acc73224a51c969496c44370" class="toggle"  />
+    <label for="section-116a6035acc73224a51c969496c44370" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b781af25ad1a598c776fa6827868c0ce" class="toggle" checked />
+    <label for="section-b781af25ad1a598c776fa6827868c0ce" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="active">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">Dev</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">Keysafety</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">Notice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">Functioncall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">Gdgshscjson</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">Gpttst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">Gpttts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">Syfw</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">Whisper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">Wltpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/images/" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Pay1</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-基本概念-按量付费">📖 基本概念-按量付费</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-按量计费像交水电费一样简单"><strong>💸 按量计费：像交水电费一样简单！</strong></a></li>
+            <li><a href="#计费示例-">计费示例 ​</a></li>
+            <li><a href="#优惠政策-">优惠政策 ​</a></li>
+            <li><a href="#-实景案例"><strong>🌰 实景案例</strong></a></li>
+            <li><a href="#-模型倍率看不懂可以忽略"><strong>📊 模型倍率（看不懂可以忽略）</strong></a></li>
+            <li><a href="#-用户高频疑问解密"><strong>❓ 用户高频疑问解密</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="-基本概念-按量付费">
+  📖 基本概念-按量付费
+  
+  <a class="anchor" href="#-%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5-%e6%8c%89%e9%87%8f%e4%bb%98%e8%b4%b9">#</a>
+  
+</h1>
+<h3 id="-按量计费像交水电费一样简单">
+  <strong>💸 按量计费：像交水电费一样简单！</strong>
+  
+  <a class="anchor" href="#-%e6%8c%89%e9%87%8f%e8%ae%a1%e8%b4%b9%e5%83%8f%e4%ba%a4%e6%b0%b4%e7%94%b5%e8%b4%b9%e4%b8%80%e6%a0%b7%e7%ae%80%e5%8d%95">#</a>
+  
+</h3>
+<p><strong>用多少字，付多少钱！</strong> 就像家里用电——开灯时间越长，电费越多～</p>
+<h3 id="计费示例-">
+  计费示例 ​
+  
+  <a class="anchor" href="#%e8%ae%a1%e8%b4%b9%e7%a4%ba%e4%be%8b-">#</a>
+  
+</h3>
+<ul>
+<li>
+<p>文字类模型的计费通常是按照 tokens 计算。</p>
+</li>
+<li>
+<p>例如，1K tokens 消耗 xx 美金，这种计费方式与官方渠道相同。</p>
+</li>
+</ul>
+<h3 id="优惠政策-">
+  优惠政策 ​
+  
+  <a class="anchor" href="#%e4%bc%98%e6%83%a0%e6%94%bf%e7%ad%96-">#</a>
+  
+</h3>
+<ul>
+<li>
+<p>官方渠道的美金购买需要实时汇率（大约 1:7）。</p>
+</li>
+<li>
+<p>在我们平台，您可以直接以折扣价格购买美金。</p>
+</li>
+<li>
+<p>具体汇率请查询充值页。</p>
+</li>
+</ul>
+<h3 id="-实景案例">
+  <strong>🌰 实景案例</strong>
+  
+  <a class="anchor" href="#-%e5%ae%9e%e6%99%af%e6%a1%88%e4%be%8b">#</a>
+  
+</h3>
+<p><strong>【示例】对于default分组下的gpt-4o-mini模型，假设提问文字数量为6323 tokens，文字输出数量为2481 tokens</strong></p>
+<p><img src="https://pic2.imgdd.cc/item/68cb9552fcdff6548300ba65.png" alt="Image 5" /></p>
+<p>Input（提示token数）：0.15/M tokens （您提问的文字） Output（补全token数）: 0.6/M tokens （AI回答的文字） Cache（模型倍率）：0.075 计算方式为： $0.15 / 1000000 * 6323 + 0.6 / 1000000 * 2481 + 0.075/1000000 * 2048 = 0.002284$</p>
+<h3 id="-模型倍率看不懂可以忽略">
+  <strong>📊 模型倍率（看不懂可以忽略）</strong>
+  
+  <a class="anchor" href="#-%e6%a8%a1%e5%9e%8b%e5%80%8d%e7%8e%87%e7%9c%8b%e4%b8%8d%e6%87%82%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5">#</a>
+  
+</h3>
+<p><strong>支持价格页面的模型价格即实价！</strong></p>
+<p>倍率不是额外收费，而是定价的「基因公式」——就像咖啡店的菜单，拿铁价格= (咖啡豆成本×倍率)，您看到的已是最终价 ✅</p>
+<h4 id="倍率运作原理三步透明机制">
+  <strong>倍率运作原理（三步透明机制）</strong>
+  
+  <a class="anchor" href="#%e5%80%8d%e7%8e%87%e8%bf%90%e4%bd%9c%e5%8e%9f%e7%90%86%e4%b8%89%e6%ad%a5%e9%80%8f%e6%98%8e%e6%9c%ba%e5%88%b6">#</a>
+  
+</h4>
+<p>⚠️ 下面只是举例子不是实际定价 # 第一步：设定基础价（全球标准） 例如：GPT-4 基础价 = $0.03/千字（输入） # 第二步：乘以模型倍率（难度系数） 例如：倍率设置 1.5 倍 → $0.03 × 1.5 = $0.045# 第三步：生成最终标价（您看到的数字） 菜单直接显示：GPT-4 输入 → $0.045/千字 消耗时直接按此计算，无隐藏乘除</p>
+<h3 id="-用户高频疑问解密">
+  <strong>❓ 用户高频疑问解密</strong>
+  
+  <a class="anchor" href="#-%e7%94%a8%e6%88%b7%e9%ab%98%e9%a2%91%e7%96%91%e9%97%ae%e8%a7%a3%e5%af%86">#</a>
+  
+</h3>
+<p><strong>Q：倍率会在日志中单独显示吗？</strong></p>
+<p>→ A：不会！您的消费记录只显示 <strong>最终标价 × 用量</strong>（如：$0.045 × 50,000字）</p>
+<p><strong>Q：为什么不同模型倍率不同？</strong></p>
+<p>→ A：就像不同车型油耗不同</p>
+<ul>
+<li>
+<p><code>文本模型</code> = 经济轿车（倍率1.0）</p>
+</li>
+<li>
+<p><code>多模态模型</code> = 越野车（倍率2.0，动力更强）</p>
+</li>
+<li>
+<p><code>高速模型</code> = 跑车（倍率1.5，为速度付费）</p>
+</li>
+</ul>
+<p><strong>Q：如何知道某个模型的倍率？</strong></p>
+<p>→ A：在模型价格页面勾选倍率即可</p>
+<p><img src="https://pic2.imgdd.cc/item/68cb9575fcdff6548300bb5a.png" alt="Image 7" /></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/aidocs/pay1.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/aidocs/key/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Key" />
+        <span>Key</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/aidocs/pay2/" class="flex align-center book-icon">
+        <span>Pay2</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Pay2" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-基本概念-按量付费">📖 基本概念-按量付费</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-按量计费像交水电费一样简单"><strong>💸 按量计费：像交水电费一样简单！</strong></a></li>
+            <li><a href="#计费示例-">计费示例 ​</a></li>
+            <li><a href="#优惠政策-">优惠政策 ​</a></li>
+            <li><a href="#-实景案例"><strong>🌰 实景案例</strong></a></li>
+            <li><a href="#-模型倍率看不懂可以忽略"><strong>📊 模型倍率（看不懂可以忽略）</strong></a></li>
+            <li><a href="#-用户高频疑问解密"><strong>❓ 用户高频疑问解密</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

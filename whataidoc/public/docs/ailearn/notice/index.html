@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  高级功能-通知设置 · 额度预警通知
+  
+  #
+  
+
+
+  🔔 事件订阅与通知配置指南
+  
+  #
+  
+
+关键事件，实时掌控！
+订阅重要事件并设置通知渠道，额度预警、系统更新等消息即时送达，让您永远快人一步 🚨
+💻 配置入口：
+👉神马中转API个人中心
+
+
+  三步配置法（以额度预警为例）
+  
+  #
+  
+
+1️⃣ 选择订阅事件
+
+  🔍 可订阅事件清单
+  
+  #
+  
+
+
+  
+      
+          事件类型
+          触发条件
+          频率限制
+          推荐场景
+      
+  
+  
+      
+          公告通知
+          平台发布重要公告
+          无限制（实时推送）
+          所有用户必选 ✅
+      
+      
+          营销信息
+          平台推出优惠活动/新产品
+          无限制（实时推送）
+          关注优惠活动的用户
+      
+      
+          用户额度预警
+          总钱包余额 &lt; 您设置的阈值
+          ≤1条/小时（防骚扰）
+          所有用户必选 ✅
+      
+      
+          Key额度预警
+          单个API Key余额 &lt; 您设置的阈值
+          Key独立 ≤1条/小时
+          管理多Key的企业用户
+      
+  
+
+2️⃣ 配置通知渠道
+
+  🔧 通知渠道配置详解
+  
+  #
+  
+
+
+  
+      
+          渠道
+          配置难度
+          适用场景
+          关键配置项
+          实时性
+      
+  
+  
+      
+          邮件
+          ⭐☆☆☆☆
+          非紧急通知/存档记录
+          邮箱地址（自动识别登录邮箱）
+          5分钟内
+      
+      
+          企业微信
+          ⭐⭐☆☆☆
+          团队协作/内部告警
+          企业ID &#43; 应用Secret &#43; AgentID
+          即时
+      
+      
+          钉钉
+          ⭐⭐☆☆☆
+          企业级监控/运维警报
+          Webhook URL &#43; 密钥
+          即时
+      
+      
+          WxPusher
+          ⭐☆☆☆☆
+          个人微信接收通知
+          UID（扫码绑定）
+          即时
+      
+      
+          Webhook
+          ⭐⭐⭐⭐☆
+          系统集成/自动化流程
+          API端点URL &#43; 自定义Header/Body模板
+          即时
+      
+      
+          Telegram
+          ⭐⭐☆☆☆
+          国际用户/开发者
+          Bot Token &#43; Chat ID
+          即时
+      
+  
+
+3️⃣ 点击保存生效">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/ailearn/notice/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API">
+  <meta property="og:description" content="高级功能-通知设置 · 额度预警通知 # 🔔 事件订阅与通知配置指南 # 关键事件，实时掌控！
+订阅重要事件并设置通知渠道，额度预警、系统更新等消息即时送达，让您永远快人一步 🚨
+💻 配置入口：
+👉神马中转API个人中心
+三步配置法（以额度预警为例） # 1️⃣ 选择订阅事件
+🔍 可订阅事件清单 # 事件类型 触发条件 频率限制 推荐场景 公告通知 平台发布重要公告 无限制（实时推送） 所有用户必选 ✅ 营销信息 平台推出优惠活动/新产品 无限制（实时推送） 关注优惠活动的用户 用户额度预警 总钱包余额 &lt; 您设置的阈值 ≤1条/小时（防骚扰） 所有用户必选 ✅ Key额度预警 单个API Key余额 &lt; 您设置的阈值 Key独立 ≤1条/小时 管理多Key的企业用户 2️⃣ 配置通知渠道
+🔧 通知渠道配置详解 # 渠道 配置难度 适用场景 关键配置项 实时性 邮件 ⭐☆☆☆☆ 非紧急通知/存档记录 邮箱地址（自动识别登录邮箱） 5分钟内 企业微信 ⭐⭐☆☆☆ 团队协作/内部告警 企业ID &#43; 应用Secret &#43; AgentID 即时 钉钉 ⭐⭐☆☆☆ 企业级监控/运维警报 Webhook URL &#43; 密钥 即时 WxPusher ⭐☆☆☆☆ 个人微信接收通知 UID（扫码绑定） 即时 Webhook ⭐⭐⭐⭐☆ 系统集成/自动化流程 API端点URL &#43; 自定义Header/Body模板 即时 Telegram ⭐⭐☆☆☆ 国际用户/开发者 Bot Token &#43; Chat ID 即时 3️⃣ 点击保存生效">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Notice | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/ailearn/notice/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.69243289f67dba7734f533f8e4fbe167f1437d4aff3c8ded5e47d8b891294fb7.js" integrity="sha256-aSQyifZ9unc09TP45PvhZ/FDfUr/PI3tXkfYuJEpT7c=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-116a6035acc73224a51c969496c44370" class="toggle"  />
+    <label for="section-116a6035acc73224a51c969496c44370" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b781af25ad1a598c776fa6827868c0ce" class="toggle"  />
+    <label for="section-b781af25ad1a598c776fa6827868c0ce" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-12adfeb3a8c16820eb674638a343fdd5" class="toggle" checked />
+    <label for="section-12adfeb3a8c16820eb674638a343fdd5" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">Dev</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">Keysafety</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="active">Notice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">Functioncall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">Gdgshscjson</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">Gpttst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">Gpttts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">Syfw</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">Whisper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">Wltpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/images/" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Notice</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#高级功能-通知设置--额度预警通知">高级功能-通知设置 · 额度预警通知</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-事件订阅与通知配置指南"><strong>🔔 事件订阅与通知配置指南</strong></a></li>
+            <li><a href="#三步配置法以额度预警为例"><strong>三步配置法（以额度预警为例）</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="高级功能-通知设置--额度预警通知">
+  高级功能-通知设置 · 额度预警通知
+  
+  <a class="anchor" href="#%e9%ab%98%e7%ba%a7%e5%8a%9f%e8%83%bd-%e9%80%9a%e7%9f%a5%e8%ae%be%e7%bd%ae--%e9%a2%9d%e5%ba%a6%e9%a2%84%e8%ad%a6%e9%80%9a%e7%9f%a5">#</a>
+  
+</h1>
+<h3 id="-事件订阅与通知配置指南">
+  <strong>🔔 事件订阅与通知配置指南</strong>
+  
+  <a class="anchor" href="#-%e4%ba%8b%e4%bb%b6%e8%ae%a2%e9%98%85%e4%b8%8e%e9%80%9a%e7%9f%a5%e9%85%8d%e7%bd%ae%e6%8c%87%e5%8d%97">#</a>
+  
+</h3>
+<p><strong>关键事件，实时掌控！</strong></p>
+<p><strong>订阅重要事件并设置通知渠道，额度预警、系统更新等消息即时送达，让您永远快人一步 🚨</strong></p>
+<p><strong>💻 配置入口：</strong></p>
+<p><strong>👉</strong><a href="https://api.whatai.cc/personal">神马中转API个人中心</a></p>
+<p><img src="https://pic2.imgdd.cc/item/68cc0a32fcdff6548301c454.png" alt="Image 6" /></p>
+<h3 id="三步配置法以额度预警为例">
+  <strong>三步配置法（以额度预警为例）</strong>
+  
+  <a class="anchor" href="#%e4%b8%89%e6%ad%a5%e9%85%8d%e7%bd%ae%e6%b3%95%e4%bb%a5%e9%a2%9d%e5%ba%a6%e9%a2%84%e8%ad%a6%e4%b8%ba%e4%be%8b">#</a>
+  
+</h3>
+<p><strong>1️⃣ 选择订阅事件</strong></p>
+<h6 id="-可订阅事件清单">
+  <strong>🔍 可订阅事件清单</strong>
+  
+  <a class="anchor" href="#-%e5%8f%af%e8%ae%a2%e9%98%85%e4%ba%8b%e4%bb%b6%e6%b8%85%e5%8d%95">#</a>
+  
+</h6>
+<table>
+  <thead>
+      <tr>
+          <th><strong>事件类型</strong></th>
+          <th><strong>触发条件</strong></th>
+          <th><strong>频率限制</strong></th>
+          <th><strong>推荐场景</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>公告通知</strong></td>
+          <td>平台发布重要公告</td>
+          <td>无限制（实时推送）</td>
+          <td>所有用户必选 ✅</td>
+      </tr>
+      <tr>
+          <td><strong>营销信息</strong></td>
+          <td>平台推出优惠活动/新产品</td>
+          <td>无限制（实时推送）</td>
+          <td>关注优惠活动的用户</td>
+      </tr>
+      <tr>
+          <td><strong>用户额度预警</strong></td>
+          <td>总钱包余额 &lt; 您设置的阈值</td>
+          <td><strong>≤1条/小时</strong>（防骚扰）</td>
+          <td>所有用户必选 ✅</td>
+      </tr>
+      <tr>
+          <td><strong>Key额度预警</strong></td>
+          <td>单个API Key余额 &lt; 您设置的阈值</td>
+          <td><strong>Key独立 ≤1条/小时</strong></td>
+          <td>管理多Key的企业用户</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>2️⃣ 配置通知渠道</strong></p>
+<h6 id="-通知渠道配置详解">
+  <strong>🔧 通知渠道配置详解</strong>
+  
+  <a class="anchor" href="#-%e9%80%9a%e7%9f%a5%e6%b8%a0%e9%81%93%e9%85%8d%e7%bd%ae%e8%af%a6%e8%a7%a3">#</a>
+  
+</h6>
+<table>
+  <thead>
+      <tr>
+          <th><strong>渠道</strong></th>
+          <th><strong>配置难度</strong></th>
+          <th><strong>适用场景</strong></th>
+          <th><strong>关键配置项</strong></th>
+          <th><strong>实时性</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>邮件</strong></td>
+          <td>⭐☆☆☆☆</td>
+          <td>非紧急通知/存档记录</td>
+          <td>邮箱地址（自动识别登录邮箱）</td>
+          <td>5分钟内</td>
+      </tr>
+      <tr>
+          <td><strong>企业微信</strong></td>
+          <td>⭐⭐☆☆☆</td>
+          <td>团队协作/内部告警</td>
+          <td>企业ID + 应用Secret + AgentID</td>
+          <td>即时</td>
+      </tr>
+      <tr>
+          <td><strong>钉钉</strong></td>
+          <td>⭐⭐☆☆☆</td>
+          <td>企业级监控/运维警报</td>
+          <td>Webhook URL + 密钥</td>
+          <td>即时</td>
+      </tr>
+      <tr>
+          <td><strong>WxPusher</strong></td>
+          <td>⭐☆☆☆☆</td>
+          <td>个人微信接收通知</td>
+          <td>UID（扫码绑定）</td>
+          <td>即时</td>
+      </tr>
+      <tr>
+          <td><strong>Webhook</strong></td>
+          <td>⭐⭐⭐⭐☆</td>
+          <td>系统集成/自动化流程</td>
+          <td>API端点URL + 自定义Header/Body模板</td>
+          <td>即时</td>
+      </tr>
+      <tr>
+          <td><strong>Telegram</strong></td>
+          <td>⭐⭐☆☆☆</td>
+          <td>国际用户/开发者</td>
+          <td>Bot Token + Chat ID</td>
+          <td>即时</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>3️⃣ 点击保存生效</strong></p>
+<p><strong>遇到问题？随时召唤客服！</strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/ailearn/notice.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/ailearn/keysafety/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Keysafety" />
+        <span>Keysafety</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/ailearn/sdk/" class="flex align-center book-icon">
+        <span>Sdk</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Sdk" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#高级功能-通知设置--额度预警通知">高级功能-通知设置 · 额度预警通知</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-事件订阅与通知配置指南"><strong>🔔 事件订阅与通知配置指南</strong></a></li>
+            <li><a href="#三步配置法以额度预警为例"><strong>三步配置法（以额度预警为例）</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

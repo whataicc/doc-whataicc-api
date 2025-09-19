@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  📖基本概念-按次付费
+  
+  #
+  
+
+
+  💸 按次计费：像买奶茶一样简单！
+  
+  #
+  
+
+不问字数多少，一次对话一票到底！ 就像坐地铁——无论坐1站还是10站，票价都一样
+
+  
+      
+          对话场景
+          字数统计
+          按次计费
+          按量计费对比
+      
+  
+  
+      
+          简单问候
+          问5字 &#43; 答15字
+          ✅$0.1
+          ❌ $0.0012
+      
+      
+          问：&ldquo;你好&rdquo;
+          
+          (固定消费)
+          (输入$0.00015)
+      
+      
+          答：&ldquo;请问需要帮助吗？&rdquo;
+          
+          
+          (输出$0.0009)
+      
+      
+          深度咨询
+          问200字&#43;答800字
+          ✅$0.1
+          ❌ $0.054
+      
+      
+          问：&ldquo;请分析2023全球&hellip;&rdquo;
+          
+          (固定消费)
+          (输入$0.006)
+      
+      
+          答：&ldquo;根据IMF报告&hellip;&rdquo;
+          
+          
+          (输出$0.048)
+      
+  
+
+💎 黄金规律：当字数 &gt;1000字时，按次计费更划算！
+
+  适用场景导航
+  
+  #
+  
+
+bash复制代码# 👍 强烈推荐使用  ➜  
+   [ 写长文 ]   [ 代码调试 ]   [ 报告分析 ]  
+   [ 法律咨询 ] [ 学术修改 ] [ 剧本创作 ]  
+
+# ️ 不推荐使用 ➜  
+   [ 查天气 ]   [ 简单翻译 ]   [ 短问答 ]
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/aidocs/.html.html">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API">
+  <meta property="og:description" content="📖基本概念-按次付费 # 💸 按次计费：像买奶茶一样简单！ # 不问字数多少，一次对话一票到底！ 就像坐地铁——无论坐1站还是10站，票价都一样
+对话场景 字数统计 按次计费 按量计费对比 简单问候 问5字 &#43; 答15字 ✅$0.1 ❌ $0.0012 问：“你好” (固定消费) (输入$0.00015) 答：“请问需要帮助吗？” (输出$0.0009) 深度咨询 问200字&#43;答800字 ✅$0.1 ❌ $0.054 问：“请分析2023全球…” (固定消费) (输入$0.006) 答：“根据IMF报告…” (输出$0.048) 💎 黄金规律：当字数 &gt;1000字时，按次计费更划算！
+适用场景导航 # bash复制代码# 👍 强烈推荐使用 ➜ [ 写长文 ] [ 代码调试 ] [ 报告分析 ] [ 法律咨询 ] [ 学术修改 ] [ 剧本创作 ] # ️ 不推荐使用 ➜ [ 查天气 ] [ 简单翻译 ] [ 短问答 ]">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Pay2 | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/aidocs/.html.html">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.0456d2ce9f5ecd0be1d3b1f7921be62a56e64fe7f4ce7b20a3423b88b24e924c.js" integrity="sha256-BFbSzp9ezQvh07H3khvmKlbmT&#43;f0znsgo0I7iLJOkkw=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/index.html"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/index.html" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/index.html" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/With-ToC.html.html" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/Without-ToC.html.html" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-116a6035acc73224a51c969496c44370" class="toggle"  />
+    <label for="section-116a6035acc73224a51c969496c44370" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/index.html" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/.html.html" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b781af25ad1a598c776fa6827868c0ce" class="toggle" checked />
+    <label for="section-b781af25ad1a598c776fa6827868c0ce" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api.html.html" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/.html.html" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/.html.html" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/.html.html" class="">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/.html.html" class="">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/.html.html" class="active">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/.html.html" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/.html.html" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/.html.html" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/.html.html" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/.html.html" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/.html.html" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/.html.html" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/.html.html" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/.html.html" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/.html.html" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/KaTeX.html.html" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/index.html"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Pay2</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本概念-按次付费">📖基本概念-按次付费</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-按次计费像买奶茶一样简单"><strong>💸 按次计费：像买奶茶一样简单！</strong></a></li>
+            <li><a href="#适用场景导航"><strong>适用场景导航</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="基本概念-按次付费">
+  📖基本概念-按次付费
+  
+  <a class="anchor" href="#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5-%e6%8c%89%e6%ac%a1%e4%bb%98%e8%b4%b9">#</a>
+  
+</h1>
+<h3 id="-按次计费像买奶茶一样简单">
+  <strong>💸 按次计费：像买奶茶一样简单！</strong>
+  
+  <a class="anchor" href="#-%e6%8c%89%e6%ac%a1%e8%ae%a1%e8%b4%b9%e5%83%8f%e4%b9%b0%e5%a5%b6%e8%8c%b6%e4%b8%80%e6%a0%b7%e7%ae%80%e5%8d%95">#</a>
+  
+</h3>
+<p><strong>不问字数多少，一次对话一票到底！</strong> 就像坐地铁——无论坐1站还是10站，票价都一样</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>对话场景</strong></th>
+          <th><strong>字数统计</strong></th>
+          <th><strong>按次计费</strong></th>
+          <th><strong>按量计费对比</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>简单问候</strong></td>
+          <td>问5字 + 答15字</td>
+          <td>✅<strong>$0.1</strong></td>
+          <td>❌ $0.0012</td>
+      </tr>
+      <tr>
+          <td>问：&ldquo;你好&rdquo;</td>
+          <td></td>
+          <td>(固定消费)</td>
+          <td>(输入$0.00015)</td>
+      </tr>
+      <tr>
+          <td>答：&ldquo;请问需要帮助吗？&rdquo;</td>
+          <td></td>
+          <td></td>
+          <td>(输出$0.0009)</td>
+      </tr>
+      <tr>
+          <td><strong>深度咨询</strong></td>
+          <td>问200字+答800字</td>
+          <td>✅<strong>$0.1</strong></td>
+          <td>❌ $0.054</td>
+      </tr>
+      <tr>
+          <td>问：&ldquo;请分析2023全球&hellip;&rdquo;</td>
+          <td></td>
+          <td>(固定消费)</td>
+          <td>(输入$0.006)</td>
+      </tr>
+      <tr>
+          <td>答：&ldquo;根据IMF报告&hellip;&rdquo;</td>
+          <td></td>
+          <td></td>
+          <td>(输出$0.048)</td>
+      </tr>
+  </tbody>
+</table>
+<p>💎 <strong>黄金规律</strong>：当字数 &gt;<strong>1000字</strong>时，按次计费更划算！</p>
+<h3 id="适用场景导航">
+  <strong>适用场景导航</strong>
+  
+  <a class="anchor" href="#%e9%80%82%e7%94%a8%e5%9c%ba%e6%99%af%e5%af%bc%e8%88%aa">#</a>
+  
+</h3>
+<pre tabindex="0"><code>bash复制代码# 👍 强烈推荐使用  ➜  
+   [ 写长文 ]   [ 代码调试 ]   [ 报告分析 ]  
+   [ 法律咨询 ] [ 学术修改 ] [ 剧本创作 ]  
+
+# ️ 不推荐使用 ➜  
+   [ 查天气 ]   [ 简单翻译 ]   [ 短问答 ]
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/aidocs/pay2.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/aidocs/.html.html" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Pay1" />
+        <span>Pay1</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/shortcodes/.html.html" class="flex align-center book-icon">
+        <span>Badges</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Badges" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本概念-按次付费">📖基本概念-按次付费</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-按次计费像买奶茶一样简单"><strong>💸 按次计费：像买奶茶一样简单！</strong></a></li>
+            <li><a href="#适用场景导航"><strong>适用场景导航</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

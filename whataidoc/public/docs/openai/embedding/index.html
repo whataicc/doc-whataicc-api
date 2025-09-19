@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  embedding代码例子
+  
+  #
+  
+
+
+  基本概念
+  
+  #
+  
+
+
+
+  什么是Embedding？
+  
+  #
+  
+
+Embedding（嵌入）是将离散数据（如单词、句子）映射到连续向量空间的技术。通过Embedding：
+
+
+语义相似的文本在向量空间中距离更近
+
+
+便于机器学习模型处理文本数据
+
+
+典型应用：搜索、推荐、分类等场景
+
+
+
+  常见Embedding模型
+  
+  #
+  
+
+
+
+text-embedding-3-small Openai主流emb模型
+
+
+text-embedding-3-large
+
+
+text-embedding-ada-002
+
+
+
+  技术特点
+  
+  #
+  
+
+
+
+  
+      
+          特性
+          说明
+      
+  
+  
+      
+          维度
+          通常为数百到数千维（如1024维）
+      
+      
+          归一化
+          多数Embedding会做L2归一化
+      
+      
+          距离度量
+          常用余弦相似度计算向量距离
+      
+      
+          多语言支持
+          现代模型通常支持多语言嵌入
+      
+  
+
+
+  请求地址
+  
+  #
+  
+
+
+POST https://api.whatai.cc/v1/embeddings
+
+  认证方式
+  
+  #
+  
+
+
+需要在请求头中添加 API Key：
+headers = {
+    &#34;Authorization&#34;: &#34;Bearer sk-******&#34;,  # 替换为你的API令牌
+    &#34;Content-Type&#34;: &#34;application/json&#34;
+}
+
+  请求参数
+  
+  #
+  
+
+
+
+  
+      
+          参数名
+          类型
+          必填
+          说明
+      
+  
+  
+      
+          input
+          string/array
+          是
+          单条文本或文本列表
+      
+      
+          model
+          string
+          是
+          使用的模型名称
+      
+      
+          encoding_format
+          string
+          否
+          返回格式（float/base64）
+      
+  
+
+
+  请求示例
+  
+  #
+  
+
+
+import openai
+
+# 设置OpenAI API密钥和基础URL
+openai.api_key = &#34;sk-***********************************************&#34;  # 替换为你的 key
+openai.base_url = &#34;https://api.whatai.cc/v1/&#34;  #  这里是API的 base url，注意这里v1后面需要/，最后的 / 很容易漏掉。
+
+def get_embedding(text):
+    response = openai.embeddings.create(
+        model=&#34;text-embedding-3-small&#34;,
+        input=text
+    )
+    return response.data[0].embedding
+
+# 示例文本
+text = &#34;这是一个示例文本,用于演示如何获取文本嵌入。&#34;
+
+# 获取文本嵌入
+embedding = get_embedding(text)
+
+print(f&#34;文本: {text}&#34;)
+print(f&#34;嵌入向量维度: {len(embedding)}&#34;)
+print(f&#34;嵌入向量前5个元素: {embedding[:5]}&#34;)
+
+  典型应用场景
+  
+  #
+  
+
+
+
+
+语义搜索：通过向量相似度匹配查询和文档">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/openai/embedding/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API">
+  <meta property="og:description" content="embedding代码例子 # 基本概念 # 什么是Embedding？ # Embedding（嵌入）是将离散数据（如单词、句子）映射到连续向量空间的技术。通过Embedding：
+语义相似的文本在向量空间中距离更近
+便于机器学习模型处理文本数据
+典型应用：搜索、推荐、分类等场景
+常见Embedding模型 # text-embedding-3-small Openai主流emb模型
+text-embedding-3-large
+text-embedding-ada-002
+技术特点 # 特性 说明 维度 通常为数百到数千维（如1024维） 归一化 多数Embedding会做L2归一化 距离度量 常用余弦相似度计算向量距离 多语言支持 现代模型通常支持多语言嵌入 请求地址 # POST https://api.whatai.cc/v1/embeddings
+认证方式 # 需要在请求头中添加 API Key：
+headers = { &#34;Authorization&#34;: &#34;Bearer sk-******&#34;, # 替换为你的API令牌 &#34;Content-Type&#34;: &#34;application/json&#34; } 请求参数 # 参数名 类型 必填 说明 input string/array 是 单条文本或文本列表 model string 是 使用的模型名称 encoding_format string 否 返回格式（float/base64） 请求示例 # import openai # 设置OpenAI API密钥和基础URL openai.api_key = &#34;sk-***********************************************&#34; # 替换为你的 key openai.base_url = &#34;https://api.whatai.cc/v1/&#34; # 这里是API的 base url，注意这里v1后面需要/，最后的 / 很容易漏掉。 def get_embedding(text): response = openai.embeddings.create( model=&#34;text-embedding-3-small&#34;, input=text ) return response.data[0].embedding # 示例文本 text = &#34;这是一个示例文本,用于演示如何获取文本嵌入。&#34; # 获取文本嵌入 embedding = get_embedding(text) print(f&#34;文本: {text}&#34;) print(f&#34;嵌入向量维度: {len(embedding)}&#34;) print(f&#34;嵌入向量前5个元素: {embedding[:5]}&#34;) 典型应用场景 # 语义搜索：通过向量相似度匹配查询和文档">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Embedding | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/openai/embedding/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.69243289f67dba7734f533f8e4fbe167f1437d4aff3c8ded5e47d8b891294fb7.js" integrity="sha256-aSQyifZ9unc09TP45PvhZ/FDfUr/PI3tXkfYuJEpT7c=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-116a6035acc73224a51c969496c44370" class="toggle"  />
+    <label for="section-116a6035acc73224a51c969496c44370" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-149769d5826d2878b47d7106576ce19b" class="toggle" checked />
+    <label for="section-149769d5826d2878b47d7106576ce19b" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="active">Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">Functioncall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">Gdgshscjson</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">Gpttst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">Gpttts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">Syfw</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">Whisper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">Wltpjx</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b781af25ad1a598c776fa6827868c0ce" class="toggle"  />
+    <label for="section-b781af25ad1a598c776fa6827868c0ce" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-12adfeb3a8c16820eb674638a343fdd5" class="toggle"  />
+    <label for="section-12adfeb3a8c16820eb674638a343fdd5" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">Dev</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">Keysafety</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">Notice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/images/" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Embedding</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#embedding代码例子">embedding代码例子</a>
+      <ul>
+        <li><a href="#基本概念"><strong>基本概念</strong></a>
+          <ul>
+            <li><a href="#什么是embedding"><strong>什么是Embedding？</strong></a></li>
+            <li><a href="#常见embedding模型"><strong>常见Embedding模型</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#技术特点"><strong>技术特点</strong></a></li>
+        <li><a href="#请求地址"><strong>请求地址</strong></a></li>
+        <li><a href="#认证方式"><strong>认证方式</strong></a></li>
+        <li><a href="#请求参数"><strong>请求参数</strong></a></li>
+        <li><a href="#请求示例"><strong>请求示例</strong></a></li>
+        <li><a href="#典型应用场景"><strong>典型应用场景</strong></a></li>
+        <li><a href="#性能优化建议"><strong>性能优化建议</strong></a></li>
+        <li><a href="#响应示例"><strong>响应示例</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="embedding代码例子">
+  embedding代码例子
+  
+  <a class="anchor" href="#embedding%e4%bb%a3%e7%a0%81%e4%be%8b%e5%ad%90">#</a>
+  
+</h1>
+<h2 id="基本概念">
+  <strong>基本概念</strong>
+  
+  <a class="anchor" href="#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5">#</a>
+  
+</h2>
+<hr>
+<h3 id="什么是embedding">
+  <strong>什么是Embedding？</strong>
+  
+  <a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%afembedding">#</a>
+  
+</h3>
+<p>Embedding（嵌入）是将离散数据（如单词、句子）映射到连续向量空间的技术。通过Embedding：</p>
+<ul>
+<li>
+<p>语义相似的文本在向量空间中距离更近</p>
+</li>
+<li>
+<p>便于机器学习模型处理文本数据</p>
+</li>
+<li>
+<p>典型应用：搜索、推荐、分类等场景</p>
+</li>
+</ul>
+<h3 id="常见embedding模型">
+  <strong>常见Embedding模型</strong>
+  
+  <a class="anchor" href="#%e5%b8%b8%e8%a7%81embedding%e6%a8%a1%e5%9e%8b">#</a>
+  
+</h3>
+<ol>
+<li>
+<p><strong>text-embedding-3-small</strong> Openai主流emb模型</p>
+</li>
+<li>
+<p>text-embedding-3-large</p>
+</li>
+<li>
+<p>text-embedding-ada-002</p>
+</li>
+</ol>
+<h2 id="技术特点">
+  <strong>技术特点</strong>
+  
+  <a class="anchor" href="#%e6%8a%80%e6%9c%af%e7%89%b9%e7%82%b9">#</a>
+  
+</h2>
+<hr>
+<table>
+  <thead>
+      <tr>
+          <th><strong>特性</strong></th>
+          <th><strong>说明</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>维度</td>
+          <td>通常为数百到数千维（如1024维）</td>
+      </tr>
+      <tr>
+          <td>归一化</td>
+          <td>多数Embedding会做L2归一化</td>
+      </tr>
+      <tr>
+          <td>距离度量</td>
+          <td>常用余弦相似度计算向量距离</td>
+      </tr>
+      <tr>
+          <td>多语言支持</td>
+          <td>现代模型通常支持多语言嵌入</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="请求地址">
+  <strong>请求地址</strong>
+  
+  <a class="anchor" href="#%e8%af%b7%e6%b1%82%e5%9c%b0%e5%9d%80">#</a>
+  
+</h2>
+<hr>
+<p>POST <a href="https://api.whatai.cc/v1/embeddings">https://api.whatai.cc/v1/embeddings</a></p>
+<h2 id="认证方式">
+  <strong>认证方式</strong>
+  
+  <a class="anchor" href="#%e8%ae%a4%e8%af%81%e6%96%b9%e5%bc%8f">#</a>
+  
+</h2>
+<hr>
+<p>需要在请求头中添加 API Key：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>headers <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Authorization&#34;</span>: <span style="color:#e6db74">&#34;Bearer sk-******&#34;</span>,  <span style="color:#75715e"># 替换为你的API令牌</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Content-Type&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="请求参数">
+  <strong>请求参数</strong>
+  
+  <a class="anchor" href="#%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0">#</a>
+  
+</h2>
+<hr>
+<table>
+  <thead>
+      <tr>
+          <th><strong>参数名</strong></th>
+          <th><strong>类型</strong></th>
+          <th><strong>必填</strong></th>
+          <th><strong>说明</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>input</td>
+          <td>string/array</td>
+          <td>是</td>
+          <td>单条文本或文本列表</td>
+      </tr>
+      <tr>
+          <td>model</td>
+          <td>string</td>
+          <td>是</td>
+          <td>使用的模型名称</td>
+      </tr>
+      <tr>
+          <td>encoding_format</td>
+          <td>string</td>
+          <td>否</td>
+          <td>返回格式（float/base64）</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="请求示例">
+  <strong>请求示例</strong>
+  
+  <a class="anchor" href="#%e8%af%b7%e6%b1%82%e7%a4%ba%e4%be%8b">#</a>
+  
+</h2>
+<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> openai
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置OpenAI API密钥和基础URL</span>
+</span></span><span style="display:flex;"><span>openai<span style="color:#f92672">.</span>api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sk-***********************************************&#34;</span>  <span style="color:#75715e"># 替换为你的 key</span>
+</span></span><span style="display:flex;"><span>openai<span style="color:#f92672">.</span>base_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://api.whatai.cc/v1/&#34;</span>  <span style="color:#75715e">#  这里是API的 base url，注意这里v1后面需要/，最后的 / 很容易漏掉。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_embedding</span>(text):
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> openai<span style="color:#f92672">.</span>embeddings<span style="color:#f92672">.</span>create(
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-embedding-3-small&#34;</span>,
+</span></span><span style="display:flex;"><span>        input<span style="color:#f92672">=</span>text
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>data[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>embedding
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 示例文本</span>
+</span></span><span style="display:flex;"><span>text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;这是一个示例文本,用于演示如何获取文本嵌入。&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 获取文本嵌入</span>
+</span></span><span style="display:flex;"><span>embedding <span style="color:#f92672">=</span> get_embedding(text)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;文本: </span><span style="color:#e6db74">{</span>text<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;嵌入向量维度: </span><span style="color:#e6db74">{</span>len(embedding)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;嵌入向量前5个元素: </span><span style="color:#e6db74">{</span>embedding[:<span style="color:#ae81ff">5</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><h2 id="典型应用场景">
+  <strong>典型应用场景</strong>
+  
+  <a class="anchor" href="#%e5%85%b8%e5%9e%8b%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af">#</a>
+  
+</h2>
+<hr>
+<ol>
+<li>
+<p><strong>语义搜索</strong>：通过向量相似度匹配查询和文档</p>
+</li>
+<li>
+<p><strong>聚类分析</strong>：将相似文本自动归类</p>
+</li>
+<li>
+<p><strong>推荐系统</strong>：寻找内容相似的物品</p>
+</li>
+<li>
+<p><strong>异常检测</strong>：识别语义异常的文本</p>
+</li>
+</ol>
+<h2 id="性能优化建议">
+  <strong>性能优化建议</strong>
+  
+  <a class="anchor" href="#%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96%e5%bb%ba%e8%ae%ae">#</a>
+  
+</h2>
+<hr>
+<ol>
+<li>
+<p>批量处理文本（最多支持2048 tokens/请求）</p>
+</li>
+<li>
+<p>对静态内容缓存嵌入结果</p>
+</li>
+<li>
+<p>使用近似最近邻(ANN)算法加速搜索</p>
+</li>
+</ol>
+<h2 id="响应示例">
+  <strong>响应示例</strong>
+  
+  <a class="anchor" href="#%e5%93%8d%e5%ba%94%e7%a4%ba%e4%be%8b">#</a>
+  
+</h2>
+<hr>
+<p>成功响应(200):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;object&#34;</span>: <span style="color:#e6db74">&#34;list&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;object&#34;</span>: <span style="color:#e6db74">&#34;embedding&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;embedding&#34;</span>: [<span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">-0.2</span>, <span style="color:#ae81ff">0.3</span>, <span style="color:#960050;background-color:#1e0010">...</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;index&#34;</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;text-embedding-ada-002&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;usage&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;prompt_tokens&#34;</span>: <span style="color:#ae81ff">5</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;total_tokens&#34;</span>: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>错误响应:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;error&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Invalid input text&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;invalid_request_error&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/openai/embedding.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/openai/bdtpjx/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Bdtpjx" />
+        <span>Bdtpjx</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/openai/functioncall/" class="flex align-center book-icon">
+        <span>Functioncall</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Functioncall" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#embedding代码例子">embedding代码例子</a>
+      <ul>
+        <li><a href="#基本概念"><strong>基本概念</strong></a>
+          <ul>
+            <li><a href="#什么是embedding"><strong>什么是Embedding？</strong></a></li>
+            <li><a href="#常见embedding模型"><strong>常见Embedding模型</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#技术特点"><strong>技术特点</strong></a></li>
+        <li><a href="#请求地址"><strong>请求地址</strong></a></li>
+        <li><a href="#认证方式"><strong>认证方式</strong></a></li>
+        <li><a href="#请求参数"><strong>请求参数</strong></a></li>
+        <li><a href="#请求示例"><strong>请求示例</strong></a></li>
+        <li><a href="#典型应用场景"><strong>典型应用场景</strong></a></li>
+        <li><a href="#性能优化建议"><strong>性能优化建议</strong></a></li>
+        <li><a href="#响应示例"><strong>响应示例</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  高级功能-API KEY 安全配置
+  
+  #
+  
+
+
+  🔐 API Key 安全加固指南
+  
+  #
+  
+
+密钥如金，严防盗刷！ 三大利刃全面守护您的API Key安全，杜绝泄露风险
+
+  🛡️ 安全配置三剑客
+  
+  #
+  
+
+
+  ⚔️ 1. IP白名单 - 网络级防护
+  
+  #
+  
+
+作用：构建数字围墙，只有在白名单内的 IP 地址才能调用 API，其他 IP 地址的请求将被拒绝。
+
+令牌页 → 目标Key → 编辑 → IP白名单
+
+
+⚠️ 致命防护：
+未在白名单的IP发起请求 → 403 Forbidden
+有效拦截99%的盗刷攻击
+
+  2. 额度预警 - 财务级护航
+  
+  #
+  
+
+作用：实时监控消耗，预防超额损失
+
+个人中心页 → 通知设置 → 额度预警订阅
+
+
+
+  **🔒 3. 模型锁 - 权限级管控 -**启用模型限制
+  
+  #
+  
+
+作用：指定某个 API Key 仅用于特定的模型，防止该 Key 被用于其他模型调用">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/ailearn/keysafety/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API">
+  <meta property="og:description" content="高级功能-API KEY 安全配置 # 🔐 API Key 安全加固指南 # 密钥如金，严防盗刷！ 三大利刃全面守护您的API Key安全，杜绝泄露风险
+🛡️ 安全配置三剑客 # ⚔️ 1. IP白名单 - 网络级防护 # 作用：构建数字围墙，只有在白名单内的 IP 地址才能调用 API，其他 IP 地址的请求将被拒绝。
+令牌页 → 目标Key → 编辑 → IP白名单 ⚠️ 致命防护：
+未在白名单的IP发起请求 → 403 Forbidden
+有效拦截99%的盗刷攻击
+2. 额度预警 - 财务级护航 # 作用：实时监控消耗，预防超额损失
+个人中心页 → 通知设置 → 额度预警订阅 **🔒 3. 模型锁 - 权限级管控 -**启用模型限制 # 作用：指定某个 API Key 仅用于特定的模型，防止该 Key 被用于其他模型调用">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Keysafety | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/ailearn/keysafety/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.69243289f67dba7734f533f8e4fbe167f1437d4aff3c8ded5e47d8b891294fb7.js" integrity="sha256-aSQyifZ9unc09TP45PvhZ/FDfUr/PI3tXkfYuJEpT7c=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-116a6035acc73224a51c969496c44370" class="toggle"  />
+    <label for="section-116a6035acc73224a51c969496c44370" class="flex">
+      <a role="button" class="flex-auto ">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b781af25ad1a598c776fa6827868c0ce" class="toggle"  />
+    <label for="section-b781af25ad1a598c776fa6827868c0ce" class="flex">
+      <a role="button" class="flex-auto ">基本概念</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">Base</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">Group</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">Key</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">Pay1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-12adfeb3a8c16820eb674638a343fdd5" class="toggle" checked />
+    <label for="section-12adfeb3a8c16820eb674638a343fdd5" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">Dev</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="active">Keysafety</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">Notice</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">Functioncall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">Gdgshscjson</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">Gpttst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">Gpttts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">Syfw</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">Whisper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">Wltpjx</a>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/images/" class="">Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Keysafety</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#高级功能-api-key-安全配置">高级功能-API KEY 安全配置</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-api-key-安全加固指南"><strong>🔐 API Key 安全加固指南</strong></a></li>
+            <li><a href="#-安全配置三剑客"><strong>🛡️ 安全配置三剑客</strong></a></li>
+            <li><a href="#-配置实战演示"><strong>🛠️ 配置实战演示</strong></a></li>
+            <li><a href="#-攻击防护模拟测试"><strong>🌐 攻击防护模拟测试</strong></a></li>
+            <li><a href="#-必须规避的配置误区"><strong>⚠️ 必须规避的配置误区</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="高级功能-api-key-安全配置">
+  高级功能-API KEY 安全配置
+  
+  <a class="anchor" href="#%e9%ab%98%e7%ba%a7%e5%8a%9f%e8%83%bd-api-key-%e5%ae%89%e5%85%a8%e9%85%8d%e7%bd%ae">#</a>
+  
+</h1>
+<h3 id="-api-key-安全加固指南">
+  <strong>🔐 API Key 安全加固指南</strong>
+  
+  <a class="anchor" href="#-api-key-%e5%ae%89%e5%85%a8%e5%8a%a0%e5%9b%ba%e6%8c%87%e5%8d%97">#</a>
+  
+</h3>
+<p><strong>密钥如金，严防盗刷！</strong> 三大利刃全面守护您的API Key安全，杜绝泄露风险</p>
+<h3 id="-安全配置三剑客">
+  <strong>🛡️ 安全配置三剑客</strong>
+  
+  <a class="anchor" href="#-%e5%ae%89%e5%85%a8%e9%85%8d%e7%bd%ae%e4%b8%89%e5%89%91%e5%ae%a2">#</a>
+  
+</h3>
+<h4 id="-1-ip白名单---网络级防护">
+  <strong>⚔️ 1. IP白名单 - 网络级防护</strong>
+  
+  <a class="anchor" href="#-1-ip%e7%99%bd%e5%90%8d%e5%8d%95---%e7%bd%91%e7%bb%9c%e7%ba%a7%e9%98%b2%e6%8a%a4">#</a>
+  
+</h4>
+<p><strong>作用</strong>：构建数字围墙，只有在白名单内的 IP 地址才能调用 API，其他 IP 地址的请求将被拒绝。</p>
+<ul>
+<li><strong>令牌页 → 目标Key → 编辑 → IP白名单</strong></li>
+</ul>
+<p><img src="https://pic2.imgdd.cc/item/68cc0b20fcdff6548301c631.png" alt="Image 6" /></p>
+<p>⚠️ <strong>致命防护</strong>：</p>
+<p>未在白名单的IP发起请求 → <code>403 Forbidden</code></p>
+<p>有效拦截99%的盗刷攻击</p>
+<h4 id="2-额度预警---财务级护航">
+  <strong>2. 额度预警 - 财务级护航</strong>
+  
+  <a class="anchor" href="#2-%e9%a2%9d%e5%ba%a6%e9%a2%84%e8%ad%a6---%e8%b4%a2%e5%8a%a1%e7%ba%a7%e6%8a%a4%e8%88%aa">#</a>
+  
+</h4>
+<p><strong>作用</strong>：实时监控消耗，预防超额损失</p>
+<ul>
+<li><strong>个人中心页 → 通知设置 → 额度预警订阅</strong></li>
+</ul>
+<p><img src="https://pic2.imgdd.cc/item/68cc0a32fcdff6548301c454.png" alt="Image 8" /></p>
+<h4 id="-3-模型锁---权限级管控--启用模型限制">
+  **🔒 3. 模型锁 - 权限级管控 -**启用模型限制
+  
+  <a class="anchor" href="#-3-%e6%a8%a1%e5%9e%8b%e9%94%81---%e6%9d%83%e9%99%90%e7%ba%a7%e7%ae%a1%e6%8e%a7--%e5%90%af%e7%94%a8%e6%a8%a1%e5%9e%8b%e9%99%90%e5%88%b6">#</a>
+  
+</h4>
+<p><strong>作用</strong>：指定某个 API Key 仅用于特定的模型，防止该 Key 被用于其他模型调用</p>
+<p><strong>启用效果</strong>：</p>
+<ul>
+<li>允许： gpt-4-turbo- 拒绝： midjourney-v6（返回403错误）</li>
+</ul>
+<ul>
+<li><strong>令牌页 → 目标Key → 编辑 → 模型限制</strong></li>
+</ul>
+<p><img src="https://pic2.imgdd.cc/item/68cc0b5dfcdff6548301c66d.png" alt="Image 10" /></p>
+<h3 id="-配置实战演示">
+  <strong>🛠️ 配置实战演示</strong>
+  
+  <a class="anchor" href="#-%e9%85%8d%e7%bd%ae%e5%ae%9e%e6%88%98%e6%bc%94%e7%a4%ba">#</a>
+  
+</h3>
+<p><strong>案例</strong>：为客服系统Key配置安全策略</p>
+<pre tabindex="0"><code>bash复制代码Step 1：进入编辑页
+   Key名称：AI客服生产环境
+   
+Step 2：设置IP白名单
+   添加 → 122.112.10.25（客服服务器IP）
+   添加 → 122.112.10.0/24（备用网段）
+
+Step 3：启用模型锁
+   勾选模型 → gpt-4-turbo-2025
+   勾选模型 → whisper-asr
+
+Step 4：绑定额度预警
+   预警阈值 → $50
+   通知渠道 → 企业微信+短信
+</code></pre><h3 id="-攻击防护模拟测试">
+  <strong>🌐 攻击防护模拟测试</strong>
+  
+  <a class="anchor" href="#-%e6%94%bb%e5%87%bb%e9%98%b2%e6%8a%a4%e6%a8%a1%e6%8b%9f%e6%b5%8b%e8%af%95">#</a>
+  
+</h3>
+<pre tabindex="0"><code># 攻击者视角（密钥泄露后）：
+1. 从境外IP 58.100.2.3 发起请求 →  ❌ 被IP白名单拦截
+2. 伪造境内IP尝试 →  ❌ 非授信IP段仍被拒
+3. 尝试调用mj模型 → ❌ &#34;该Key未授权此模型&#34;
+4. 小额盗刷测试 → ✅ 触发预警短信 → 管理员立即冻结
+</code></pre><h3 id="-必须规避的配置误区">
+  <strong>⚠️ 必须规避的配置误区</strong>
+  
+  <a class="anchor" href="#-%e5%bf%85%e9%a1%bb%e8%a7%84%e9%81%bf%e7%9a%84%e9%85%8d%e7%bd%ae%e8%af%af%e5%8c%ba">#</a>
+  
+</h3>
+<pre tabindex="0"><code>- 错误1：IP白名单留空（等于全开放）
++ 修正：至少添加1个IP段
+
+- 错误2：预警阈值=$0.1（频繁干扰）
++ 修正：设为日均消耗的
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/ailearn/keysafety.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/ailearn/errorcode/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Errorcode" />
+        <span>Errorcode</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/ailearn/notice/" class="flex align-center book-icon">
+        <span>Notice</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Notice" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#高级功能-api-key-安全配置">高级功能-API KEY 安全配置</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-api-key-安全加固指南"><strong>🔐 API Key 安全加固指南</strong></a></li>
+            <li><a href="#-安全配置三剑客"><strong>🛡️ 安全配置三剑客</strong></a></li>
+            <li><a href="#-配置实战演示"><strong>🛠️ 配置实战演示</strong></a></li>
+            <li><a href="#-攻击防护模拟测试"><strong>🌐 攻击防护模拟测试</strong></a></li>
+            <li><a href="#-必须规避的配置误区"><strong>⚠️ 必须规避的配置误区</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
