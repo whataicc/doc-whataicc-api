@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>对话客户端类 on 神马中转API</title>
+    <link>//localhost:1313/docs/otherai/chat/</link>
+    <description>Recent content in 对话客户端类 on 神马中转API</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <atom:link href="//localhost:1313/docs/otherai/chat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cherry Studio</title>
+      <link>//localhost:1313/docs/otherai/chat/cherrystudio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/chat/cherrystudio/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+    <item>
+      <title>Chatgpt-web-midjourney-proxy</title>
+      <link>//localhost:1313/docs/otherai/chat/chatgptwebmidjourneyproxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/chat/chatgptwebmidjourneyproxy/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+    <item>
+      <title>Lobe-Chat</title>
+      <link>//localhost:1313/docs/otherai/chat/lobechat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/chat/lobechat/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+    <item>
+      <title>utools-ChatGPT</title>
+      <link>//localhost:1313/docs/otherai/chat/utools-chatgpt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/chat/utools-chatgpt/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+    <item>
+      <title>浏览器插件 ChatGPT Sidebar</title>
+      <link>//localhost:1313/docs/otherai/chat/sidebar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/chat/sidebar/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+    <item>
+      <title>ChatBox(推荐使用)</title>
+      <link>//localhost:1313/docs/otherai/chat/chatbox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/chat/chatbox/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+    <item>
+      <title>Chat Next Web</title>
+      <link>//localhost:1313/docs/otherai/chat/chatnextweb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/chat/chatnextweb/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+    <item>
+      <title>GoAmz</title>
+      <link>//localhost:1313/docs/otherai/chat/GoAmz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/chat/GoAmz/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+    <item>
+      <title>SparkAI</title>
+      <link>//localhost:1313/docs/otherai/chat/SparkAI/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/chat/SparkAI/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+    <item>
+      <title>NineAI(99AI) </title>
+      <link>//localhost:1313/docs/otherai/chat/nineai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/chat/nineai/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+  </channel>
+</rss>

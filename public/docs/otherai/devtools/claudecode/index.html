@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/otherai/devtools/claudecode/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="Claude code 配置方式">
+  <meta property="og:description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:tag" content="API">
+    <meta property="article:tag" content="中转API">
+    <meta property="article:tag" content="服务使用">
+<title>Claude code 配置方式 | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/otherai/devtools/claudecode/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.cfa30b6ac98c8f02b9344796716998020496ce0793c20e96f751d11fe1a0a3be.js" integrity="sha256-z6MLasmMjwK5NEeWcWmYAgSWzgeTwg6W91HRH&#43;Ggo74=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/introduction/" class="">神马中转API 一站式AI大模型API聚合平台 · 行业领先</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle"  />
+    <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
+      <a role="button" class="flex-auto ">基础知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">基本概念-令牌（Token）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">添加令牌：您的AI通行证指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">基本概念-令牌渠道分组</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">基本概念-按量付费</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">基本概念-按次付费</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
+    <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">基础教程-钱包 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/model/" class="">基础教程-支持模型 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">基础教程-聊天 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">基础教程-开发者 · 快速接入</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">高级功能-官方SDK支持</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">高级功能-通知设置 · 额度预警通知</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">高级功能-API KEY 安全配置</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">常见报错码</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle"  />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">适用范围：♥ 所有模型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">普通文本对话（非流）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">普通文本对话（流式输出）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">固定格式化输出Json</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">embedding代码例子</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">网络图片解析</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">本地图片解析</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">函数调用FunctionCall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">whisper使用示例</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">gpt-tts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">gpt文生图</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">gpt图生图</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0621f15f4cf04829ac2eddaaa730205e" class="toggle"  />
+    <label for="section-0621f15f4cf04829ac2eddaaa730205e" class="flex">
+      <a role="button" class="flex-auto ">模型接入教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-817d6bf53fc67a4117666f8fef044ed1" class="toggle" checked />
+    <label for="section-817d6bf53fc67a4117666f8fef044ed1" class="flex">
+      <a role="button" class="flex-auto ">常见AI程序配置教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5e705709838a94aa211a15f9c6e02e24" class="toggle" checked />
+    <label for="section-5e705709838a94aa211a15f9c6e02e24" class="flex">
+      <a role="button" class="flex-auto ">编程工具类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/claudecode/" class="active">Claude code 配置方式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/pythonopenai/" class="">python openai官方库（使用AutoGPT，langchain等）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/codegpt/" class="">VSCode 插件 Code GPT 使用指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/easycode/" class="">JetBrains插件 Easycode ​</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/langchain/" class="">LangChain​</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1d8817d18f5c961cd85158eff2d9c95e" class="toggle"  />
+    <label for="section-1d8817d18f5c961cd85158eff2d9c95e" class="flex">
+      <a role="button" class="flex-auto ">对话客户端类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatgptwebmidjourneyproxy/" class="">Chatgpt-web-midjourney-proxy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/lobechat/" class="">Lobe-Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/utools-chatgpt/" class="">utools-ChatGPT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/sidebar/" class="">浏览器插件 ChatGPT Sidebar</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatnextweb/" class="">Chat Next Web</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/GoAmz/" class="">GoAmz</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/SparkAI/" class="">SparkAI</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/nineai/" class="">NineAI(99AI) </a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b333ba0fec99449c08fe8af0c1f5a49b" class="toggle"  />
+    <label for="section-b333ba0fec99449c08fe8af0c1f5a49b" class="flex">
+      <a role="button" class="flex-auto ">工具类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/tools/raycast/" class="">Raycast 插件 ChatGPT 使用指南（推荐使用）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/tools/dify/" class="">Dify</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5852b31e2d938d5dbe93ddd86df36c0f" class="toggle"  />
+    <label for="section-5852b31e2d938d5dbe93ddd86df36c0f" class="flex">
+      <a role="button" class="flex-auto ">官方SDK类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/sdk/openaisdk/" class="">OpenAI官方SDK</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/sdk/geminisdk/" class="">Gemini SDK 配置</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errorcode/" class="">常见错误以及解决办法</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Claude code 配置方式</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#claude-code-配置方式">Claude code 配置方式</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-主要功能"><strong>🚀 主要功能</strong></a></li>
+            <li><a href="#本站专属功能">⭐<strong>本站专属功能</strong></a></li>
+            <li><a href="#-安装步骤"><strong>📦 安装步骤</strong></a></li>
+            <li><a href="#-常用命令"><strong>🎯 常用命令</strong></a></li>
+            <li><a href="#-使用示例"><strong>💡 使用示例</strong></a></li>
+            <li><a href="#切换模型"><strong>切换模型</strong></a></li>
+            <li><a href="#-重要提示"><strong>⚠️ 重要提示</strong></a></li>
+            <li><a href="#-高级功能"><strong>🔧 高级功能</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="claude-code-配置方式">
+  Claude code 配置方式
+  
+  <a class="anchor" href="#claude-code-%e9%85%8d%e7%bd%ae%e6%96%b9%e5%bc%8f">#</a>
+  
+</h1>
+<p>Claude Code 是 Anthropic 官方推出的命令行工具，为开发者提供强大的 AI 辅助编程体验。支持智能代码生成、代码分析、调试助手等功能。</p>
+<h3 id="-主要功能">
+  <strong>🚀 主要功能</strong>
+  
+  <a class="anchor" href="#-%e4%b8%bb%e8%a6%81%e5%8a%9f%e8%83%bd">#</a>
+  
+</h3>
+<ul>
+<li>
+<p><strong>智能代码生成</strong> - 快速生成高质量代码</p>
+</li>
+<li>
+<p><strong>代码分析</strong> - 深度理解和分析代码结构</p>
+</li>
+<li>
+<p><strong>调试助手</strong> - 智能发现和修复代码问题</p>
+</li>
+<li>
+<p><strong>文档生成</strong> - 自动生成代码文档</p>
+</li>
+<li>
+<p><strong>命令行集成</strong> - 无缝集成到开发流程</p>
+</li>
+</ul>
+<h3 id="本站专属功能">
+  ⭐<strong>本站专属功能</strong>
+  
+  <a class="anchor" href="#%e6%9c%ac%e7%ab%99%e4%b8%93%e5%b1%9e%e5%8a%9f%e8%83%bd">#</a>
+  
+</h3>
+<p>本站所有LLM 模型均支持在 Claude code 中使用</p>
+<p>如果 Claude code 无法修改调用模型，可参考教程 令牌 中，设置模型转发</p>
+<h3 id="-安装步骤">
+  <strong>📦 安装步骤</strong>
+  
+  <a class="anchor" href="#-%e5%ae%89%e8%a3%85%e6%ad%a5%e9%aa%a4">#</a>
+  
+</h3>
+<h4 id="mac--liunx-配置方式">
+  Mac &amp; Liunx 配置方式
+  
+  <a class="anchor" href="#mac--liunx-%e9%85%8d%e7%bd%ae%e6%96%b9%e5%bc%8f">#</a>
+  
+</h4>
+<h4 id="1-安装-nodejs">
+  <strong>1. 安装 Node.js</strong>
+  
+  <a class="anchor" href="#1-%e5%ae%89%e8%a3%85-nodejs">#</a>
+  
+</h4>
+<p>确保系统已安装 Node.js 18+ 版本</p>
+<h5 id="安装-homebrew-mac推荐">
+  <strong>安装 Homebrew (mac推荐)</strong>
+  
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85-homebrew-mac%e6%8e%a8%e8%8d%90">#</a>
+  
+</h5>
+<p>如果尚未安装 Homebrew：</p>
+<pre tabindex="0"><code>/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
+</code></pre><h4 id="2-安装-nodejs">
+  <strong>2. 安装 Node.js</strong>
+  
+  <a class="anchor" href="#2-%e5%ae%89%e8%a3%85-nodejs">#</a>
+  
+</h4>
+<p>使用 Homebrew：</p>
+<pre tabindex="0"><code>brew install node
+</code></pre><h4 id="2-安装-claude-code">
+  <strong>2. 安装 Claude Code</strong>
+  
+  <a class="anchor" href="#2-%e5%ae%89%e8%a3%85-claude-code">#</a>
+  
+</h4>
+<pre tabindex="0"><code>npm install -g @anthropic-ai/claude-code
+</code></pre><h4 id="3-配置-api-密钥">
+  <strong>3. 配置 API 密钥</strong>
+  
+  <a class="anchor" href="#3-%e9%85%8d%e7%bd%ae-api-%e5%af%86%e9%92%a5">#</a>
+  
+</h4>
+<h5 id="获取-auth-token-参考添加令牌文档">
+  <strong>获取 Auth Token (参考添加令牌文档</strong>
+  
+  <a class="anchor" href="#%e8%8e%b7%e5%8f%96-auth-token-%e5%8f%82%e8%80%83%e6%b7%bb%e5%8a%a0%e4%bb%a4%e7%89%8c%e6%96%87%e6%a1%a3">#</a>
+  
+</h5>
+<h6 id="方法一使用-bash推荐">
+  <strong>方法一：使用 Bash（推荐）</strong>
+  
+  <a class="anchor" href="#%e6%96%b9%e6%b3%95%e4%b8%80%e4%bd%bf%e7%94%a8-bash%e6%8e%a8%e8%8d%90">#</a>
+  
+</h6>
+<pre tabindex="0"><code>echo &#39;export ANTHROPIC_AUTH_TOKEN=&#34;sk-xxx&#34;&#39; &gt;&gt; ~/.bash_profile echo &#39;export ANTHROPIC_BASE_URL=&#34;https://api.whatai.cc&#34;&#39; &gt;&gt; ~/.bash_profile source ~/.bash_profile
+</code></pre><h6 id="方法二使用-zsh如果使用-oh-my-zsh">
+  <strong>方法二：使用 Zsh（如果使用 Oh My Zsh）</strong>
+  
+  <a class="anchor" href="#%e6%96%b9%e6%b3%95%e4%ba%8c%e4%bd%bf%e7%94%a8-zsh%e5%a6%82%e6%9e%9c%e4%bd%bf%e7%94%a8-oh-my-zsh">#</a>
+  
+</h6>
+<pre tabindex="0"><code>echo &#39;export ANTHROPIC_AUTH_TOKEN=&#34;sk-xxx&#34;&#39; &gt;&gt; ~/.zshrc echo &#39;export ANTHROPIC_BASE_URL=&#34;https://api.whatai.cc&#34;&#39; &gt;&gt; ~/.zshrc source ~/.zshrc
+</code></pre><p><strong>注意：</strong> 永久设置后需要重启终端才能生效。</p>
+<h4 id="4-启动使用-claude-code">
+  <strong>4. 启动使用 Claude Code</strong>
+  
+  <a class="anchor" href="#4-%e5%90%af%e5%8a%a8%e4%bd%bf%e7%94%a8-claude-code">#</a>
+  
+</h4>
+<pre tabindex="0"><code># 进入项目目录
+cd your-project-folder
+
+# 启动 Claude Code
+claude
+</code></pre><p><strong>首次启动后需要先进行主题的选择等操作：</strong></p>
+<ul>
+<li>
+<p>• 选择喜欢的主题（回车）</p>
+</li>
+<li>
+<p>• 确认安全须知（回车）</p>
+</li>
+<li>
+<p>• 使用默认 Terminal 配置（回车）</p>
+</li>
+<li>
+<p>• 信任工作目录（回车）</p>
+</li>
+<li>
+<p>• 开始编程！🚀</p>
+</li>
+</ul>
+<h4 id="windows配置方式">
+  Windows配置方式
+  
+  <a class="anchor" href="#windows%e9%85%8d%e7%bd%ae%e6%96%b9%e5%bc%8f">#</a>
+  
+</h4>
+<p>1、<strong>管理员权限</strong>启动cmd</p>
+<h4 id="1-安装-nodejs-1">
+  <strong>1. 安装 Node.js</strong>
+  
+  <a class="anchor" href="#1-%e5%ae%89%e8%a3%85-nodejs-1">#</a>
+  
+</h4>
+<p>访问  Node.JS 官网，点击最新版本，选择对应的操作系统和版本下载即可</p>
+<p>下载后双击安装，之后一直点击下一步。安装完成后，打开 CMD 窗口，执行命令验证安装：</p>
+<pre tabindex="0"><code>node -v
+</code></pre><p>2、设置 npm 配置,告诉 npm 在安装包时忽略执行包中的脚本（如 preinstall、postinstall 等）,设置完重新启动CMD</p>
+<pre tabindex="0"><code>setx NPM_CONFIG_IGNORE_SCRIPTS true
+</code></pre><p>3、安装 Claude Code</p>
+<pre tabindex="0"><code>npm install -g @anthropic-ai/claude-code
+</code></pre><p>4、配置 SHELL 环境变量</p>
+<h6 id="方法一图形化配置推荐永久生效">
+  <strong>方法一：图形化配置（推荐，永久生效）</strong>
+  
+  <a class="anchor" href="#%e6%96%b9%e6%b3%95%e4%b8%80%e5%9b%be%e5%bd%a2%e5%8c%96%e9%85%8d%e7%bd%ae%e6%8e%a8%e8%8d%90%e6%b0%b8%e4%b9%85%e7%94%9f%e6%95%88">#</a>
+  
+</h6>
+<p>a. 右键点击 &ldquo;此电脑&rdquo; → 选择 &ldquo;属性&rdquo;</p>
+<p>b. 点击 &ldquo;高级系统设置&rdquo;</p>
+<p>c. 在 &ldquo;系统属性&rdquo; 窗口中点击 &ldquo;环境变量&rdquo;</p>
+<p>重要：在 &ldquo;系统变量&rdquo; 部分点击 &ldquo;新建&rdquo;（多人共享电脑可选择 &ldquo;用户变量&rdquo;）</p>
+<p>d. 添加以下两个变量：</p>
+<p>变量名：ANTHROPIC_AUTH_TOKEN，变量值：sk-xxx</p>
+<p>变量名：ANTHROPIC_BASE_URL，变量值：https://api.whatai.cc</p>
+<p>e. 点击 &ldquo;确定&rdquo; 保存</p>
+<h6 id="方法二powershell永久设置">
+  <strong>方法二：PowerShell（永久设置）</strong>
+  
+  <a class="anchor" href="#%e6%96%b9%e6%b3%95%e4%ba%8cpowershell%e6%b0%b8%e4%b9%85%e8%ae%be%e7%bd%ae">#</a>
+  
+</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PowerShell" data-lang="PowerShell"><span style="display:flex;"><span>[<span style="color:#66d9ef">Environment</span>]::SetEnvironmentVariable(<span style="color:#e6db74">&#34;ANTHROPIC_AUTH_TOKEN&#34;</span>, <span style="color:#e6db74">&#34;sk-xxx&#34;</span>, <span style="color:#e6db74">&#34;User&#34;</span>)
+</span></span><span style="display:flex;"><span>[<span style="color:#66d9ef">Environment</span>]::SetEnvironmentVariable(<span style="color:#e6db74">&#34;ANTHROPIC_BASE_URL&#34;</span>, <span style="color:#e6db74">&#34;https://api.whatai.cc&#34;</span>, <span style="color:#e6db74">&#34;User&#34;</span>)
+</span></span></code></pre></div><h6 id="方法三命令提示符永久设置">
+  <strong>方法三：命令提示符（永久设置）</strong>
+  
+  <a class="anchor" href="#%e6%96%b9%e6%b3%95%e4%b8%89%e5%91%bd%e4%bb%a4%e6%8f%90%e7%a4%ba%e7%ac%a6%e6%b0%b8%e4%b9%85%e8%ae%be%e7%bd%ae">#</a>
+  
+</h6>
+<p>CMD</p>
+<pre tabindex="0"><code>setx ANTHROPIC_AUTH_TOKEN &#34;sk-xxx&#34;
+setx ANTHROPIC_BASE_URL &#34;https://api.whatai.cc&#34;
+</code></pre><p><strong>注意：</strong> 永久设置后需要重启终端才能生效。推荐使用永久配置方式。</p>
+<h6 id="方法四通过settingsjson-设置">
+  <strong>方法四：通过</strong>settings.json 设置
+  
+  <a class="anchor" href="#%e6%96%b9%e6%b3%95%e5%9b%9b%e9%80%9a%e8%bf%87settingsjson-%e8%ae%be%e7%bd%ae">#</a>
+  
+</h6>
+<p>找到 settings.json 文件，如果没有请创建</p>
+<pre tabindex="0"><code>C:\Users\{user}\.claude\settings.json
+</code></pre><p>设置 API 信息，保存</p>
+<pre tabindex="0"><code>{
+    &#34;env&#34;: {
+      &#34;ANTHROPIC_MODEL&#34;: &#34;claude-sonnet-4-20250514&#34;,
+      &#34;ANTHROPIC_SMALL_FAST_MODEL&#34;: &#34;claude-sonnet-4-20250514&#34;,
+      &#34;ANTHROPIC_BASE_URL&#34;: &#34;https://api.whatai.cc&#34;,
+      &#34;ANTHROPIC_AUTH_TOKEN&#34;: &#34;sk-AG2&#34;
+    }
+  }
+</code></pre><pre tabindex="0"><code>setx SHELL &#34;C:\Program Files\Git\bin\bash.exe&#34; #这里要换成你的路径， 
+# 如果不知道，可以执行 where git 找一下 
+</code></pre><p>5、添加 npm 环境变量</p>
+<pre tabindex="0"><code>C:\Users\y.xie\.npm-global # 添加Windows环境变量，同样要设置为你的路径，在npm安装包里面
+# 如果不知道，可以执行 npm config get prefix 找一下
+</code></pre><p>将其添加到 Windows 的环境变量（PATH），关闭并重新打开你的终端窗口（CMD / PowerShell / Git Bash），使设置生效。</p>
+<p>6、设置API配置</p>
+<p>7、重启开发环境</p>
+<p>8、enjoy!!</p>
+<pre tabindex="0"><code># 进入项目目录
+cd your-project-folder
+
+# 启动 Claude Code
+claude
+</code></pre><h3 id="-常用命令">
+  <strong>🎯 常用命令</strong>
+  
+  <a class="anchor" href="#-%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4">#</a>
+  
+</h3>
+<ul>
+<li>
+<p><code>claude</code> - 启动交互模式</p>
+</li>
+<li>
+<p><code>claude &quot;task&quot;</code> - 运行一次性任务</p>
+</li>
+<li>
+<p><code>claude commit</code> - 创建 Git 提交</p>
+</li>
+<li>
+<p><code>/help</code> - 显示可用命令</p>
+</li>
+<li>
+<p><code>/clear</code> - 清除对话历史</p>
+</li>
+<li>
+<p><code>/review</code> - 请求代码审查</p>
+</li>
+</ul>
+<h3 id="-使用示例">
+  <strong>💡 使用示例</strong>
+  
+  <a class="anchor" href="#-%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b">#</a>
+  
+</h3>
+<pre tabindex="0"><code># 代码生成
+&gt; 请帮我写一个 Python 函数，用于计算斐波那契数列
+
+# 代码审查
+claude &#34;review this code for potential bugs&#34;
+
+# 自动提交
+claude commit
+</code></pre><h3 id="切换模型">
+  <strong>切换模型</strong>
+  
+  <a class="anchor" href="#%e5%88%87%e6%8d%a2%e6%a8%a1%e5%9e%8b">#</a>
+  
+</h3>
+<p>使用 Claude Code 命令：</p>
+<pre tabindex="0"><code>/model [model id]
+</code></pre><p>默认模型为<code>Sonnet 4</code>，你可以用效果更好的<code>Opus 4</code>：</p>
+<p><strong>opus</strong></p>
+<pre tabindex="0"><code>/model opus
+</code></pre><p>或者，换成其他 claude 模型：</p>
+<p><strong>sonnet 3.7</strong></p>
+<p><strong>sonnet 3.5</strong></p>
+<pre tabindex="0"><code>/model claude-3-7-sonnet-20250219
+</code></pre><p><strong>Kimi K2 支持</strong>启动 Claude Code 之后，只需要运行指令</p>
+<pre tabindex="0"><code>/model moonshotai/kimi-k2-instruct
+</code></pre><p>其他 LLM 模型均支持使用，比如 Openai、Gemini、Qwen、Doubao</p>
+<h3 id="-重要提示">
+  <strong>⚠️ 重要提示</strong>
+  
+  <a class="anchor" href="#-%e9%87%8d%e8%a6%81%e6%8f%90%e7%a4%ba">#</a>
+  
+</h3>
+<ol>
+<li>
+<p><strong>API 密钥配置</strong>：请将 <code>sk-your-api-key</code> 替换为您在 本站 生成的实际 API 密钥</p>
+</li>
+<li>
+<p><strong>令牌分组</strong>：在 本站 创建令牌时，建议选择 &ldquo;企业分组 官转分组&rdquo;</p>
+</li>
+<li>
+<p><strong>网络连接</strong>：确保网络连接稳定，工具需要与 API 服务器通信</p>
+</li>
+<li>
+<p><strong>项目目录</strong>：建议在具体项目目录下使用，以获得更好的上下文理解</p>
+</li>
+</ol>
+<h3 id="-高级功能">
+  <strong>🔧 高级功能</strong>
+  
+  <a class="anchor" href="#-%e9%ab%98%e7%ba%a7%e5%8a%9f%e8%83%bd">#</a>
+  
+</h3>
+<ul>
+<li>
+<p><strong>IDE 集成</strong> - 支持 Cursor 等 IDE 集成</p>
+</li>
+<li>
+<p><strong>MCP 服务器</strong> - 扩展 Agent 能力</p>
+</li>
+<li>
+<p><strong>CI/CD 集成</strong> - 自动化代码审查流程</p>
+</li>
+<li>
+<p><strong>团队规范</strong> - 通过CLAUDE.md文件定义团队规范</p>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/otherai/devtools/claudecode.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/openai/gpttst/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="gpt图生图" />
+        <span>gpt图生图</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/otherai/devtools/pythonopenai/" class="flex align-center book-icon">
+        <span>python openai官方库（使用AutoGPT，langchain等）</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="python openai官方库（使用AutoGPT，langchain等）" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#claude-code-配置方式">Claude code 配置方式</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#-主要功能"><strong>🚀 主要功能</strong></a></li>
+            <li><a href="#本站专属功能">⭐<strong>本站专属功能</strong></a></li>
+            <li><a href="#-安装步骤"><strong>📦 安装步骤</strong></a></li>
+            <li><a href="#-常用命令"><strong>🎯 常用命令</strong></a></li>
+            <li><a href="#-使用示例"><strong>💡 使用示例</strong></a></li>
+            <li><a href="#切换模型"><strong>切换模型</strong></a></li>
+            <li><a href="#-重要提示"><strong>⚠️ 重要提示</strong></a></li>
+            <li><a href="#-高级功能"><strong>🔧 高级功能</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

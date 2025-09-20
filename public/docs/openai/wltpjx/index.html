@@ -1,294 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-  网络图片解析
-  
-  #
-  
-
-
-  接口说明
-  
-  #
-  
-
-通过多模态AI模型分析图片内容，理解图片、提取图片信息，包括OCR功能。
-
-  主流图片分析模型
-  
-  #
-  
-
-
-  
-      
-          模型名称
-          描述
-      
-  
-  
-      
-          gpt-4o
-          目前图片分析调用量最大的模型，稳定、并发高
-      
-      
-          gemini-2.5-flash
-          谷歌旗舰模型，速度快，性价比好
-      
-      
-          claude-sonnet-4-20250514
-          图片分析做的不错，但性价比略差
-      
-      
-          doubao-1.5-vision-pro-250328
-          国内图片分析主流模型，性价比好，稳定、并发高
-      
-  
-
-
-  基础信息
-  
-  #
-  
-
-
-
-Base URL: https://api.whatai.cc
-
-
-请求方式: POST
-
-
-Content-Type: application/json
-
-
-
-  接口地址
-  
-  #
-  
-
-POST /v1/chat/completions
-
-  请求头
-  
-  #
-  
-
-
-  
-      
-          参数
-          类型
-          必填
-          说明
-      
-  
-  
-      
-          Authorization
-          string
-          是
-          Bearer token，格式：Bearer ******
-      
-      
-          Content-Type
-          string
-          是
-          固定值：application/json
-      
-      
-          User-Agent
-          string
-          否
-          客户端标识
-      
-  
-
-
-  请求参数
-  
-  #
-  
-
-{
-  &#34;model&#34;: &#34;gemini-2.0-flash-thinking-exp-1219&#34;,
-  &#34;messages&#34;: [
-    {
-      &#34;role&#34;: &#34;system&#34;,
-      &#34;content&#34;: [
-        {&#34;type&#34;: &#34;text&#34;, &#34;text&#34;: &#34;你是一个图片分析助手。&#34;}
-      ]
-    },
-    {
-      &#34;role&#34;: &#34;user&#34;,
-      &#34;content&#34;: [
-        {
-          &#34;type&#34;: &#34;image_url&#34;,
-          &#34;image_url&#34;: {
-            &#34;url&#34;: &#34;图片URL&#34;
-          }
-        },
-        {
-          &#34;type&#34;: &#34;text&#34;,
-          &#34;text&#34;: &#34;分析提示词&#34;
-        }
-      ]
-    }
-  ],
-  &#34;temperature&#34;: 0.1,
-  &#34;user&#34;: &#34;bltcy&#34;
-}
-
-  参数说明
-  
-  #
-  
-
-
-  
-      
-          参数
-          类型
-          必填
-          说明
-      
-  
-  
-      
-          model
-          string
-          是
-          模型名称，推荐：gemini-2.5-flash 或 gpt-4o
-      
-      
-          messages
-          array
-          是
-          消息内容数组
-      
-      
-          temperature
-          float
-          否
-          生成文本的随机性，0-1之间
-      
-      
-          user
-          string
-          否
-          用户标识
-      
-  
-
-
-  Python 调用示例
-  
-  #
-  
-
-import requests
-
-# API配置
-BASE_URL = &#34;https://api.whatai.cc/&#34;
-API_ENDPOINT = BASE_URL &#43; &#34;v1/chat/completions&#34;
-API_KEY = &#34;sk-******&#34;  # 替换为你的API密钥
-IMAGE_URL = &#34;https://api.whatai.cc/111.jpg&#34;  # 替换为你的图片URL
-
-def analyze_image(image_url, prompt):
-    &#34;&#34;&#34;
-    图片分析函数
-    :param image_url: 图片URL
-    :param prompt: 分析提示词
-    :return: 分析结果文本
-    &#34;&#34;&#34;
-    payload = {
-        &#34;model&#34;: &#34;gemini-2.0-flash-thinking-exp-1219&#34;,
-        &#34;messages&#34;: [
-            {
-                &#34;role&#34;: &#34;system&#34;,
-                &#34;content&#34;: [{&#34;type&#34;: &#34;text&#34;, &#34;text&#34;: &#34;你是一个图片分析助手。&#34;}]
-            },
-            {
-                &#34;role&#34;: &#34;user&#34;,
-                &#34;content&#34;: [
-                    {&#34;type&#34;: &#34;image_url&#34;, &#34;image_url&#34;: {&#34;url&#34;: image_url}},
-                    {&#34;type&#34;: &#34;text&#34;, &#34;text&#34;: prompt}
-                ]
-            }
-        ],
-        &#34;temperature&#34;: 0.1
-    }
-    
-    headers = {
-        &#34;Content-Type&#34;: &#34;application/json&#34;,
-        &#34;Authorization&#34;: f&#34;Bearer {API_KEY}&#34;
-    }
-
-    try:
-        response = requests.post(API_ENDPOINT, headers=headers, json=payload)
-        response.raise_for_status()
-        return response.json()[&#34;choices&#34;][0][&#34;message&#34;][&#34;content&#34;]
-    except Exception as e:
-        print(f&#34;请求失败: {e}&#34;)
-        return None
-
-# 使用示例
-if __name__ == &#34;__main__&#34;:
-    result = analyze_image(IMAGE_URL, &#34;请描述这张图片的内容&#34;)
-    if result:
-        print(&#34;分析结果:&#34;, result)
-
-  常见错误码
-  
-  #
-  
-
-
-  
-      
-          状态码
-          说明
-      
-  
-  
-      
-          400
-          请求参数错误，看看图片是不是太大了
-      
-      
-          500
-          服务器内部错误
-      
-  
-">
+<meta name="description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="/docs/openai/wltpjx/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/openai/wltpjx/">
   <meta property="og:site_name" content="神马中转API">
-  <meta property="og:title" content="神马中转API">
-  <meta property="og:description" content="网络图片解析 # 接口说明 # 通过多模态AI模型分析图片内容，理解图片、提取图片信息，包括OCR功能。
-主流图片分析模型 # 模型名称 描述 gpt-4o 目前图片分析调用量最大的模型，稳定、并发高 gemini-2.5-flash 谷歌旗舰模型，速度快，性价比好 claude-sonnet-4-20250514 图片分析做的不错，但性价比略差 doubao-1.5-vision-pro-250328 国内图片分析主流模型，性价比好，稳定、并发高 基础信息 # Base URL: https://api.whatai.cc
-请求方式: POST
-Content-Type: application/json
-接口地址 # POST /v1/chat/completions
-请求头 # 参数 类型 必填 说明 Authorization string 是 Bearer token，格式：Bearer ****** Content-Type string 是 固定值：application/json User-Agent string 否 客户端标识 请求参数 # { &#34;model&#34;: &#34;gemini-2.0-flash-thinking-exp-1219&#34;, &#34;messages&#34;: [ { &#34;role&#34;: &#34;system&#34;, &#34;content&#34;: [ {&#34;type&#34;: &#34;text&#34;, &#34;text&#34;: &#34;你是一个图片分析助手。&#34;} ] }, { &#34;role&#34;: &#34;user&#34;, &#34;content&#34;: [ { &#34;type&#34;: &#34;image_url&#34;, &#34;image_url&#34;: { &#34;url&#34;: &#34;图片URL&#34; } }, { &#34;type&#34;: &#34;text&#34;, &#34;text&#34;: &#34;分析提示词&#34; } ] } ], &#34;temperature&#34;: 0.1, &#34;user&#34;: &#34;bltcy&#34; } 参数说明 # 参数 类型 必填 说明 model string 是 模型名称，推荐：gemini-2.5-flash 或 gpt-4o messages array 是 消息内容数组 temperature float 否 生成文本的随机性，0-1之间 user string 否 用户标识 Python 调用示例 # import requests # API配置 BASE_URL = &#34;https://api.whatai.cc/&#34; API_ENDPOINT = BASE_URL &#43; &#34;v1/chat/completions&#34; API_KEY = &#34;sk-******&#34; # 替换为你的API密钥 IMAGE_URL = &#34;https://api.whatai.cc/111.jpg&#34; # 替换为你的图片URL def analyze_image(image_url, prompt): &#34;&#34;&#34; 图片分析函数 :param image_url: 图片URL :param prompt: 分析提示词 :return: 分析结果文本 &#34;&#34;&#34; payload = { &#34;model&#34;: &#34;gemini-2.0-flash-thinking-exp-1219&#34;, &#34;messages&#34;: [ { &#34;role&#34;: &#34;system&#34;, &#34;content&#34;: [{&#34;type&#34;: &#34;text&#34;, &#34;text&#34;: &#34;你是一个图片分析助手。&#34;}] }, { &#34;role&#34;: &#34;user&#34;, &#34;content&#34;: [ {&#34;type&#34;: &#34;image_url&#34;, &#34;image_url&#34;: {&#34;url&#34;: image_url}}, {&#34;type&#34;: &#34;text&#34;, &#34;text&#34;: prompt} ] } ], &#34;temperature&#34;: 0.1 } headers = { &#34;Content-Type&#34;: &#34;application/json&#34;, &#34;Authorization&#34;: f&#34;Bearer {API_KEY}&#34; } try: response = requests.post(API_ENDPOINT, headers=headers, json=payload) response.raise_for_status() return response.json()[&#34;choices&#34;][0][&#34;message&#34;][&#34;content&#34;] except Exception as e: print(f&#34;请求失败: {e}&#34;) return None # 使用示例 if __name__ == &#34;__main__&#34;: result = analyze_image(IMAGE_URL, &#34;请描述这张图片的内容&#34;) if result: print(&#34;分析结果:&#34;, result) 常见错误码 # 状态码 说明 400 请求参数错误，看看图片是不是太大了 500 服务器内部错误">
+  <meta property="og:title" content="网络图片解析">
+  <meta property="og:description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
   <meta property="og:locale" content="zh">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
     <meta property="article:modified_time" content="2025-09-19T13:03:01+08:00">
-<title>Wltpjx | 神马中转API</title>
+    <meta property="article:tag" content="API">
+    <meta property="article:tag" content="中转API">
+    <meta property="article:tag" content="服务使用">
+<title>网络图片解析 | 神马中转API</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="/docs/openai/wltpjx/">
-<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" >
+<link rel="canonical" href="//localhost:1313/docs/openai/wltpjx/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.0ddff9479224e55228bc888c1967e918f97380f550b0d3909e3d1c2e2c757210.js" ></script>
+  <script defer src="/zh.search.min.cfa30b6ac98c8f02b9344796716998020496ce0793c20e96f751d11fe1a0a3be.js" integrity="sha256-z6MLasmMjwK5NEeWcWmYAgSWzgeTwg6W91HRH&#43;Ggo74=" crossorigin="anonymous"></script>
 
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" ></script>
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -335,292 +72,14 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="/docs/example/" class="">Example Site</a>
-  
-
-          
-  <ul>
-    
-      
         <li>
           
   
   
 
   
-    <a href="/docs/example/table-of-contents/" class="">Table of Contents</a>
+    <a href="/docs/introduction/" class="">神马中转API 一站式AI大模型API聚合平台 · 行业领先</a>
   
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-f5d9735162e53bec69c2f6248cc6ef7e" class="toggle"  />
-    <label for="section-f5d9735162e53bec69c2f6248cc6ef7e" class="flex">
-      <a role="button" class="flex-auto ">Collapsed</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle" checked />
-    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
-      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
-    </label>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/bdtpjx/" class="">Bdtpjx</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/embedding/" class="">Embedding</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/functioncall/" class="">Functioncall</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/gdgshscjson/" class="">Gdgshscjson</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/gpttst/" class="">Gpttst</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/gpttts/" class="">Gpttts</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/gptwst/" class="">Gptwst</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/ptdhfl/" class="">Ptdhfl</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/ptdhls/" class="">Ptdhls</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/syfw/" class="">Syfw</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/whisper/" class="">Whisper</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/openai/wltpjx/" class="active">Wltpjx</a>
-  
-
-        </li>
-      
-    
-  </ul>
 
         </li>
       
@@ -634,12 +93,38 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle"  />
     <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
-      <a role="button" class="flex-auto ">基本概念</a>
+      <a role="button" class="flex-auto ">基础知识</a>
     </label>
   
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">基本概念-令牌（Token）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">添加令牌：您的AI通行证指南</a>
+  
+
+        </li>
+      
     
       
         <li>
@@ -661,7 +146,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/aidocs/base/" class="">Base</a>
+    <a href="/docs/aidocs/group/" class="">基本概念-令牌渠道分组</a>
   
 
         </li>
@@ -674,7 +159,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/aidocs/group/" class="">Group</a>
+    <a href="/docs/aidocs/pay1/" class="">基本概念-按量付费</a>
   
 
         </li>
@@ -687,33 +172,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/aidocs/key/" class="">Key</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/aidocs/pay1/" class="">Pay1</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/aidocs/pay2/" class="">Pay2</a>
+    <a href="/docs/aidocs/pay2/" class="">基本概念-按次付费</a>
   
 
         </li>
@@ -747,7 +206,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/ailearn/chat/" class="">Chat</a>
+    <a href="/docs/ailearn/wallet/" class="">基础教程-钱包 · 页面</a>
   
 
         </li>
@@ -760,7 +219,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/ailearn/dev/" class="">Dev</a>
+    <a href="/docs/ailearn/model/" class="">基础教程-支持模型 · 页面</a>
   
 
         </li>
@@ -773,7 +232,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/ailearn/errorcode/" class="">Errorcode</a>
+    <a href="/docs/ailearn/chat/" class="">基础教程-聊天 · 页面</a>
   
 
         </li>
@@ -786,22 +245,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/ailearn/keysafety/" class="">Keysafety</a>
-  
-
-        </li>
-      
-    
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/ailearn/notice/" class="">Notice</a>
+    <a href="/docs/ailearn/dev/" class="">基础教程-开发者 · 快速接入</a>
   
 
         </li>
@@ -814,7 +258,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/ailearn/sdk/" class="">Sdk</a>
+    <a href="/docs/ailearn/sdk/" class="">高级功能-官方SDK支持</a>
   
 
         </li>
@@ -827,7 +271,33 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/ailearn/wallet/" class="">Wallet</a>
+    <a href="/docs/ailearn/notice/" class="">高级功能-通知设置 · 额度预警通知</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">高级功能-API KEY 安全配置</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">常见报错码</a>
   
 
         </li>
@@ -839,13 +309,16 @@ https://github.com/alex-shpak/hugo-book
       
     
       
-        <li class="book-section-flat" >
+        <li>
           
   
   
 
   
-    <span>Shortcodes</span>
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle" checked />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
   
 
           
@@ -858,7 +331,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/badges/" class="">Badges</a>
+    <a href="/docs/openai/syfw/" class="">适用范围：♥ 所有模型</a>
   
 
         </li>
@@ -871,7 +344,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+    <a href="/docs/openai/ptdhfl/" class="">普通文本对话（非流）</a>
   
 
         </li>
@@ -884,7 +357,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/cards/" class="">Cards</a>
+    <a href="/docs/openai/ptdhls/" class="">普通文本对话（流式输出）</a>
   
 
         </li>
@@ -897,7 +370,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+    <a href="/docs/openai/gdgshscjson/" class="">固定格式化输出Json</a>
   
 
         </li>
@@ -910,7 +383,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/details/" class="">Details</a>
+    <a href="/docs/openai/embedding/" class="">embedding代码例子</a>
   
 
         </li>
@@ -923,7 +396,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+    <a href="/docs/openai/wltpjx/" class="active">网络图片解析</a>
   
 
         </li>
@@ -936,7 +409,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/images/" class="">Images</a>
+    <a href="/docs/openai/bdtpjx/" class="">本地图片解析</a>
   
 
         </li>
@@ -949,7 +422,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+    <a href="/docs/openai/functioncall/" class="">函数调用FunctionCall</a>
   
 
         </li>
@@ -962,7 +435,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/steps/" class="">Steps</a>
+    <a href="/docs/openai/whisper/" class="">whisper使用示例</a>
   
 
         </li>
@@ -975,7 +448,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+    <a href="/docs/openai/gpttts/" class="">gpt-tts</a>
   
 
         </li>
@@ -988,7 +461,388 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/shortcodes/katex/" class="">KaTeX</a>
+    <a href="/docs/openai/gptwst/" class="">gpt文生图</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">gpt图生图</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0621f15f4cf04829ac2eddaaa730205e" class="toggle"  />
+    <label for="section-0621f15f4cf04829ac2eddaaa730205e" class="flex">
+      <a role="button" class="flex-auto ">模型接入教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-817d6bf53fc67a4117666f8fef044ed1" class="toggle"  />
+    <label for="section-817d6bf53fc67a4117666f8fef044ed1" class="flex">
+      <a role="button" class="flex-auto ">常见AI程序配置教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5e705709838a94aa211a15f9c6e02e24" class="toggle"  />
+    <label for="section-5e705709838a94aa211a15f9c6e02e24" class="flex">
+      <a role="button" class="flex-auto ">编程工具类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/claudecode/" class="">Claude code 配置方式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/pythonopenai/" class="">python openai官方库（使用AutoGPT，langchain等）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/codegpt/" class="">VSCode 插件 Code GPT 使用指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/easycode/" class="">JetBrains插件 Easycode ​</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/langchain/" class="">LangChain​</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1d8817d18f5c961cd85158eff2d9c95e" class="toggle"  />
+    <label for="section-1d8817d18f5c961cd85158eff2d9c95e" class="flex">
+      <a role="button" class="flex-auto ">对话客户端类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatgptwebmidjourneyproxy/" class="">Chatgpt-web-midjourney-proxy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/lobechat/" class="">Lobe-Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/utools-chatgpt/" class="">utools-ChatGPT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/sidebar/" class="">浏览器插件 ChatGPT Sidebar</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatnextweb/" class="">Chat Next Web</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/GoAmz/" class="">GoAmz</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/SparkAI/" class="">SparkAI</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/nineai/" class="">NineAI(99AI) </a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b333ba0fec99449c08fe8af0c1f5a49b" class="toggle"  />
+    <label for="section-b333ba0fec99449c08fe8af0c1f5a49b" class="flex">
+      <a role="button" class="flex-auto ">工具类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/tools/raycast/" class="">Raycast 插件 ChatGPT 使用指南（推荐使用）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/tools/dify/" class="">Dify</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5852b31e2d938d5dbe93ddd86df36c0f" class="toggle"  />
+    <label for="section-5852b31e2d938d5dbe93ddd86df36c0f" class="flex">
+      <a role="button" class="flex-auto ">官方SDK类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/sdk/openaisdk/" class="">OpenAI官方SDK</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/sdk/geminisdk/" class="">Gemini SDK 配置</a>
   
 
         </li>
@@ -1001,26 +855,31 @@ https://github.com/alex-shpak/hugo-book
     
   </ul>
 
-
-
-
-
-
-
-
-
-
-  
-<ul>
-  
-  <li>
+        </li>
+      
     
-    <a href="/posts/"  >
-        Blog
-      </a>
-  </li>
+      
+        <li>
+          
   
-</ul>
+  
+
+  
+    <a href="/docs/errorcode/" class="">常见错误以及解决办法</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
 
 
 
@@ -1048,7 +907,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Wltpjx</h3>
+  <h3>网络图片解析</h3>
 
   <label for="toc-control">
     
@@ -1392,17 +1251,17 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex flex-wrap justify-between">
     <span>
     
-      <a href="/docs/openai/whisper/" class="flex align-center book-icon">
-        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Whisper" />
-        <span>Whisper</span>
+      <a href="/docs/openai/embedding/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="embedding代码例子" />
+        <span>embedding代码例子</span>
       </a>
     
     </span>
     <span>
     
-      <a href="/docs/aidocs/api/" class="flex align-center book-icon">
-        <span>基本概念-API地址（BaseURL）</span>
-        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="基本概念-API地址（BaseURL）" />
+      <a href="/docs/openai/bdtpjx/" class="flex align-center book-icon">
+        <span>本地图片解析</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="本地图片解析" />
       </a>
     
     </span>

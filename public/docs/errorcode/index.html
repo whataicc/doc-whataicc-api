@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/errorcode/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="常见错误以及解决办法">
+  <meta property="og:description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:tag" content="API">
+    <meta property="article:tag" content="中转API">
+    <meta property="article:tag" content="服务使用">
+<title>常见错误以及解决办法 | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/errorcode/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.cfa30b6ac98c8f02b9344796716998020496ce0793c20e96f751d11fe1a0a3be.js" integrity="sha256-z6MLasmMjwK5NEeWcWmYAgSWzgeTwg6W91HRH&#43;Ggo74=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/introduction/" class="">神马中转API 一站式AI大模型API聚合平台 · 行业领先</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle"  />
+    <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
+      <a role="button" class="flex-auto ">基础知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">基本概念-令牌（Token）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">添加令牌：您的AI通行证指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">基本概念-令牌渠道分组</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">基本概念-按量付费</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">基本概念-按次付费</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
+    <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">基础教程-钱包 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/model/" class="">基础教程-支持模型 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">基础教程-聊天 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">基础教程-开发者 · 快速接入</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">高级功能-官方SDK支持</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">高级功能-通知设置 · 额度预警通知</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">高级功能-API KEY 安全配置</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">常见报错码</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle"  />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">适用范围：♥ 所有模型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">普通文本对话（非流）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">普通文本对话（流式输出）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">固定格式化输出Json</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">embedding代码例子</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">网络图片解析</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">本地图片解析</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">函数调用FunctionCall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">whisper使用示例</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">gpt-tts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">gpt文生图</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">gpt图生图</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0621f15f4cf04829ac2eddaaa730205e" class="toggle"  />
+    <label for="section-0621f15f4cf04829ac2eddaaa730205e" class="flex">
+      <a role="button" class="flex-auto ">模型接入教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-817d6bf53fc67a4117666f8fef044ed1" class="toggle"  />
+    <label for="section-817d6bf53fc67a4117666f8fef044ed1" class="flex">
+      <a role="button" class="flex-auto ">常见AI程序配置教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5e705709838a94aa211a15f9c6e02e24" class="toggle"  />
+    <label for="section-5e705709838a94aa211a15f9c6e02e24" class="flex">
+      <a role="button" class="flex-auto ">编程工具类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/claudecode/" class="">Claude code 配置方式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/pythonopenai/" class="">python openai官方库（使用AutoGPT，langchain等）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/codegpt/" class="">VSCode 插件 Code GPT 使用指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/easycode/" class="">JetBrains插件 Easycode ​</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/langchain/" class="">LangChain​</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1d8817d18f5c961cd85158eff2d9c95e" class="toggle"  />
+    <label for="section-1d8817d18f5c961cd85158eff2d9c95e" class="flex">
+      <a role="button" class="flex-auto ">对话客户端类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatgptwebmidjourneyproxy/" class="">Chatgpt-web-midjourney-proxy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/lobechat/" class="">Lobe-Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/utools-chatgpt/" class="">utools-ChatGPT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/sidebar/" class="">浏览器插件 ChatGPT Sidebar</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatnextweb/" class="">Chat Next Web</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/GoAmz/" class="">GoAmz</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/SparkAI/" class="">SparkAI</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/nineai/" class="">NineAI(99AI) </a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b333ba0fec99449c08fe8af0c1f5a49b" class="toggle"  />
+    <label for="section-b333ba0fec99449c08fe8af0c1f5a49b" class="flex">
+      <a role="button" class="flex-auto ">工具类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/tools/raycast/" class="">Raycast 插件 ChatGPT 使用指南（推荐使用）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/tools/dify/" class="">Dify</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5852b31e2d938d5dbe93ddd86df36c0f" class="toggle"  />
+    <label for="section-5852b31e2d938d5dbe93ddd86df36c0f" class="flex">
+      <a role="button" class="flex-auto ">官方SDK类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/sdk/openaisdk/" class="">OpenAI官方SDK</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/sdk/geminisdk/" class="">Gemini SDK 配置</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errorcode/" class="active">常见错误以及解决办法</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>常见错误以及解决办法</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#常见错误以及解决办法-">常见错误以及解决办法 ​</a>
+      <ul>
+        <li><a href="#q切换到了-gpt-4询问它是不是-gpt-4为什么回答不是-">Q：切换到了 GPT-4，询问它是不是 GPT-4，为什么回答不是？ ​</a></li>
+        <li><a href="#q为什么-chatgpt-plus-的-gpt-4-能回答出自己是-gpt-4-">Q：为什么 ChatGPT Plus 的 GPT-4 能回答出自己是 GPT-4？ ​</a></li>
+        <li><a href="#q那我如何去判断他是否是-gpt-4-模型-">Q：那我如何去判断他是否是 GPT-4 模型？ ​</a></li>
+        <li><a href="#q无法登录-">Q：无法登录？ ​</a></li>
+        <li><a href="#q为什么请求后没吐字没补全-token-">Q：为什么请求后没吐字没补全 token？ ​</a></li>
+        <li><a href="#q后台额度充足使用-api-提示额度不足-">Q：后台额度充足，使用 API 提示额度不足？ ​</a></li>
+        <li><a href="#q出现-cdn-回源报错-">Q：出现 CDN 回源报错？ ​</a></li>
+        <li><a href="#q提示当前分组下没有可用渠道-">Q：提示当前分组下没有可用渠道？ ​</a></li>
+        <li><a href="#q额度是什么-怎么计算的-">Q：额度是什么? 怎么计算的？ ​</a></li>
+        <li><a href="#q什么是上下文-">Q：什么是上下文？ ​</a></li>
+        <li><a href="#q账户额度足够为什么提示额度不足-">Q：账户额度足够为什么提示额度不足？ ​</a></li>
+        <li><a href="#qchatgpt-next-web-报错-failed-to-fetch-">Q：ChatGPT Next Web 报错: Failed to fetch？ ​</a></li>
+        <li><a href="#q网站部分页面打开报错-">Q：网站部分页面打开报错？ ​</a></li>
+        <li><a href="#q为什么-gpt-4-额度消耗这么快-">Q：为什么 gpt-4 额度消耗这么快？ ​</a></li>
+        <li><a href="#q令牌无效-">Q：令牌无效？ ​</a></li>
+        <li><a href="#qfailed-to-fetch-">Q：Failed to fetch？ ​</a></li>
+        <li><a href="#q无可用渠道-">Q：无可用渠道？ ​</a></li>
+        <li><a href="#q构图时出现-syntaxerrorunexpected-token--">Q：构图时出现 SyntaxError：Unexpected token“&lt;” …… ​</a></li>
+        <li><a href="#q使用-chatgpt-web-midjourney-proxy-上传失败-">Q：使用 chatgpt-web-midjourney-proxy 上传失败？ ​</a></li>
+        <li><a href="#q该令牌额度已用尽-">Q：该令牌额度已用尽？ ​</a></li>
+        <li><a href="#quser-quota-is-not-enough-">Q：user quota is not enough？ ​</a></li>
+        <li><a href="#qmax_tokens-is-too-large-">Q：max_tokens is too large？ ​</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="常见错误以及解决办法-">
+  常见错误以及解决办法 ​
+  
+  <a class="anchor" href="#%e5%b8%b8%e8%a7%81%e9%94%99%e8%af%af%e4%bb%a5%e5%8f%8a%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95-">#</a>
+  
+</h1>
+<hr>
+<h2 id="q切换到了-gpt-4询问它是不是-gpt-4为什么回答不是-">
+  Q：切换到了 GPT-4，询问它是不是 GPT-4，为什么回答不是？ ​
+  
+  <a class="anchor" href="#q%e5%88%87%e6%8d%a2%e5%88%b0%e4%ba%86-gpt-4%e8%af%a2%e9%97%ae%e5%ae%83%e6%98%af%e4%b8%8d%e6%98%af-gpt-4%e4%b8%ba%e4%bb%80%e4%b9%88%e5%9b%9e%e7%ad%94%e4%b8%8d%e6%98%af-">#</a>
+  
+</h2>
+<p>A： 首先，如果你问 GPT-4：“你是不是 GPT-4？”它大概率会回答：“我是 OpenAI 的 GPT-3 模型，目前还没有 GPT-4。”之所以会这样，是因为 OpenAI 开放给 API 调用的 GPT-4，训练数据都是 2021 年 9 月之前的。模型训练好之后，如果不重新训练，并不会自动更新里面的知识，这就好像我问 2021 年的你 2023 年第一顿饭你吃了什么，答案一定是错的。</p>
+<h2 id="q为什么-chatgpt-plus-的-gpt-4-能回答出自己是-gpt-4-">
+  Q：为什么 ChatGPT Plus 的 GPT-4 能回答出自己是 GPT-4？ ​
+  
+  <a class="anchor" href="#q%e4%b8%ba%e4%bb%80%e4%b9%88-chatgpt-plus-%e7%9a%84-gpt-4-%e8%83%bd%e5%9b%9e%e7%ad%94%e5%87%ba%e8%87%aa%e5%b7%b1%e6%98%af-gpt-4-">#</a>
+  
+</h2>
+<p>A： 简单来说，ChatGPT Plus 使用的模型版本和开放给 API 的并不一样，作为内部版本，很大可能会用更新的数据去训练，甚至是实时数据训练。虽然都叫 GPT-4，但给出的答案不同，因为训练数据不同。</p>
+<h2 id="q那我如何去判断他是否是-gpt-4-模型-">
+  Q：那我如何去判断他是否是 GPT-4 模型？ ​
+  
+  <a class="anchor" href="#q%e9%82%a3%e6%88%91%e5%a6%82%e4%bd%95%e5%8e%bb%e5%88%a4%e6%96%ad%e4%bb%96%e6%98%af%e5%90%a6%e6%98%af-gpt-4-%e6%a8%a1%e5%9e%8b-">#</a>
+  
+</h2>
+<p>A： 可使用以下逻辑性问题进行测试。 问题： 鲁迅和周树人是什么关系？ GPT-3.5： 鲁迅和周树人是两个不同的人 GPT-4： 鲁迅和周树人是同一个人。</p>
+<h2 id="q无法登录-">
+  Q：无法登录？ ​
+  
+  <a class="anchor" href="#q%e6%97%a0%e6%b3%95%e7%99%bb%e5%bd%95-">#</a>
+  
+</h2>
+<p>A： 请确保用户名填写正确，不要填写邮箱地址，填写你注册时的用户名。如遇到登录问题无法自行解决，请联系客服，第一时间为您处理。</p>
+<h2 id="q为什么请求后没吐字没补全-token-">
+  Q：为什么请求后没吐字没补全 token？ ​
+  
+  <a class="anchor" href="#q%e4%b8%ba%e4%bb%80%e4%b9%88%e8%af%b7%e6%b1%82%e5%90%8e%e6%b2%a1%e5%90%90%e5%ad%97%e6%b2%a1%e8%a1%a5%e5%85%a8-token-">#</a>
+  
+</h2>
+<p>A： 有以下可能：</p>
+<ul>
+<li>
+<p>快吐字了，客户端断开连接。</p>
+</li>
+<li>
+<p>tools call 或 function call。</p>
+</li>
+<li>
+<p>OpenAI 直接返回 [Done]，一般是政策安全相关拒绝回答，需要结合返回的 finish_reason 或内容进行判断。</p>
+</li>
+</ul>
+<p>A： 针对不同的数据返回代码，以下是常见的错误代码：</p>
+<table>
+  <thead>
+      <tr>
+          <th>错误代码</th>
+          <th>代码解释</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>400 Bad Request</td>
+          <td>请求格式错误或无效。这通常意味着你的请求参数有误，需要你检查并修正请求参数。</td>
+      </tr>
+      <tr>
+          <td>401 Unauthorized</td>
+          <td>请求令牌无效。这通常意味着你的请求令牌有误，需要你检查并修正请求参数。</td>
+      </tr>
+      <tr>
+          <td>403 Forbidden</td>
+          <td>一般是余额不足。</td>
+      </tr>
+      <tr>
+          <td>404 Not Found</td>
+          <td>请求的资源未找到。你可能正在试图访问一个不存在的端点。</td>
+      </tr>
+      <tr>
+          <td>413 Request Entity Too Large</td>
+          <td>请求体太大。你可能需要减少你的请求数据量。</td>
+      </tr>
+      <tr>
+          <td>429 Too Many Requests</td>
+          <td>由于短时间内发送过多的请求，你已经超过了你的速率限制。</td>
+      </tr>
+      <tr>
+          <td>500 Internal Server Error</td>
+          <td>服务器内部错误。这可能是 OpenAI 服务器的问题，不是你的问题。</td>
+      </tr>
+      <tr>
+          <td>503 Service Unavailable</td>
+          <td>服务暂时不可用。这可能是由于 OpenAI 正在进行维护或者服务器过载。</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="q后台额度充足使用-api-提示额度不足-">
+  Q：后台额度充足，使用 API 提示额度不足？ ​
+  
+  <a class="anchor" href="#q%e5%90%8e%e5%8f%b0%e9%a2%9d%e5%ba%a6%e5%85%85%e8%b6%b3%e4%bd%bf%e7%94%a8-api-%e6%8f%90%e7%a4%ba%e9%a2%9d%e5%ba%a6%e4%b8%8d%e8%b6%b3-">#</a>
+  
+</h2>
+<p>A： 请确认你后台创建的令牌已经分配好额度，过期时间一般可以设置成无限制。另外，额度不是填写金额，500000 额度 = 1 美金，可按需填写。</p>
+<h2 id="q出现-cdn-回源报错-">
+  Q：出现 CDN 回源报错？ ​
+  
+  <a class="anchor" href="#q%e5%87%ba%e7%8e%b0-cdn-%e5%9b%9e%e6%ba%90%e6%8a%a5%e9%94%99-">#</a>
+  
+</h2>
+<p>A： 请联系客服获取企业客户接口地址。</p>
+<h2 id="q提示当前分组下没有可用渠道-">
+  Q：提示当前分组下没有可用渠道？ ​
+  
+  <a class="anchor" href="#q%e6%8f%90%e7%a4%ba%e5%bd%93%e5%89%8d%e5%88%86%e7%bb%84%e4%b8%8b%e6%b2%a1%e6%9c%89%e5%8f%af%e7%94%a8%e6%b8%a0%e9%81%93-">#</a>
+  
+</h2>
+<p>A： 请确保模型名称完全和列表一致，并且区分大小写。</p>
+<h2 id="q额度是什么-怎么计算的-">
+  Q：额度是什么? 怎么计算的？ ​
+  
+  <a class="anchor" href="#q%e9%a2%9d%e5%ba%a6%e6%98%af%e4%bb%80%e4%b9%88-%e6%80%8e%e4%b9%88%e8%ae%a1%e7%ae%97%e7%9a%84-">#</a>
+  
+</h2>
+<p>A： 额度 = 分组倍率 * 模型倍率 * (提示 token + 补全 token * 补全倍率)。 其中补全倍率对于 GPT-3.5 固定为 1.33，GPT-4 为 2，与官方保持一致。如果是非流模式，官方接口会返回消耗的总 token，但是你要注意提示和补全的消耗倍率不一样。</p>
+<h2 id="q什么是上下文-">
+  Q：什么是上下文？ ​
+  
+  <a class="anchor" href="#q%e4%bb%80%e4%b9%88%e6%98%af%e4%b8%8a%e4%b8%8b%e6%96%87-">#</a>
+  
+</h2>
+<p>A： 在 GPT 用于文本生成时，它需要考虑之前输入的所有文本上下文，以生成连贯、有意义的句子。随着输入上下文的增加，GPT 生成的文本变得越来越连贯和精准。例如，如果将一篇完整的文本或段落作为输入，GPT 将能生成符合上下文连贯性的自然语言文本。因此，GPT 上下文累积得越多，生成文本的准确度和连贯性呈逐步提升趋势。</p>
+<h2 id="q账户额度足够为什么提示额度不足-">
+  Q：账户额度足够为什么提示额度不足？ ​
+  
+  <a class="anchor" href="#q%e8%b4%a6%e6%88%b7%e9%a2%9d%e5%ba%a6%e8%b6%b3%e5%a4%9f%e4%b8%ba%e4%bb%80%e4%b9%88%e6%8f%90%e7%a4%ba%e9%a2%9d%e5%ba%a6%e4%b8%8d%e8%b6%b3-">#</a>
+  
+</h2>
+<p>A： 请检查你的令牌额度是否足够，这个和账户额度是分开的。令牌额度仅供用户设置最大使用量，用户可自由设置。</p>
+<h2 id="qchatgpt-next-web-报错-failed-to-fetch-">
+  Q：ChatGPT Next Web 报错: Failed to fetch？ ​
+  
+  <a class="anchor" href="#qchatgpt-next-web-%e6%8a%a5%e9%94%99-failed-to-fetch-">#</a>
+  
+</h2>
+<p>A： 部署的时候不要设置 BASE URL。检查你的接口地址和 API Key 有没有填对。</p>
+<h2 id="q网站部分页面打开报错-">
+  Q：网站部分页面打开报错？ ​
+  
+  <a class="anchor" href="#q%e7%bd%91%e7%ab%99%e9%83%a8%e5%88%86%e9%a1%b5%e9%9d%a2%e6%89%93%e5%bc%80%e6%8a%a5%e9%94%99-">#</a>
+  
+</h2>
+<p>A： 请清理浏览器缓存和 Cookie。</p>
+<h2 id="q为什么-gpt-4-额度消耗这么快-">
+  Q：为什么 gpt-4 额度消耗这么快？ ​
+  
+  <a class="anchor" href="#q%e4%b8%ba%e4%bb%80%e4%b9%88-gpt-4-%e9%a2%9d%e5%ba%a6%e6%b6%88%e8%80%97%e8%bf%99%e4%b9%88%e5%bf%ab-">#</a>
+  
+</h2>
+<p>A： gpt-4 的消耗速度是 gpt-3.5-turbo 的 20 到 40 倍。假设购买了 9w token，我们用 30 倍作为平均倍率，也就是 90000 / 30 = 3000 字左右，加上每次要附带上历史消息，能发的消息数将会进一步减半。在最极限的情况下，一条消息就能把 9w token 消耗完，所以请谨慎使用。</p>
+<h2 id="q令牌无效-">
+  Q：令牌无效？ ​
+  
+  <a class="anchor" href="#q%e4%bb%a4%e7%89%8c%e6%97%a0%e6%95%88-">#</a>
+  
+</h2>
+<p>A： 一般出现这种问题，可能是：</p>
+<ul>
+<li>
+<p>地址写错，不是我们的地址。</p>
+</li>
+<li>
+<p>令牌没有正确的设置到程序中。</p>
+</li>
+<li>
+<p>令牌已失效，请重新生成一个新的令牌。</p>
+</li>
+</ul>
+<h2 id="qfailed-to-fetch-">
+  Q：Failed to fetch？ ​
+  
+  <a class="anchor" href="#qfailed-to-fetch-">#</a>
+  
+</h2>
+<p>A： 一般遇到这种问题，可能是你的网络环境有问题，请尝试更换网络。亦或者是你使用了错误的接口地址，请检查接口地址是否正确。</p>
+<h2 id="q无可用渠道-">
+  Q：无可用渠道？ ​
+  
+  <a class="anchor" href="#q%e6%97%a0%e5%8f%af%e7%94%a8%e6%b8%a0%e9%81%93-">#</a>
+  
+</h2>
+<p>A： 检查错误中得模型名称是否存在。</p>
+<h2 id="q构图时出现-syntaxerrorunexpected-token--">
+  Q：构图时出现 SyntaxError：Unexpected token“&lt;” …… ​
+  
+  <a class="anchor" href="#q%e6%9e%84%e5%9b%be%e6%97%b6%e5%87%ba%e7%8e%b0-syntaxerrorunexpected-token--">#</a>
+  
+</h2>
+<p>A： 出现这个问题仍是使用了不正确的接口，需要参考上面的第三个问题换成正确接口即可解决问题。</p>
+<h2 id="q使用-chatgpt-web-midjourney-proxy-上传失败-">
+  Q：使用 chatgpt-web-midjourney-proxy 上传失败？ ​
+  
+  <a class="anchor" href="#q%e4%bd%bf%e7%94%a8-chatgpt-web-midjourney-proxy-%e4%b8%8a%e4%bc%a0%e5%a4%b1%e8%b4%a5-">#</a>
+  
+</h2>
+<p>A： 对于这个问题，作者已经在项目地址反复说明了很多遍：  。需要使用 docker 部署，并开启 API_UPLOADER，vercel 不支持。而且如果是在前端填写的中转地址，上传文件会跟着中转地址走。</p>
+<h2 id="q该令牌额度已用尽-">
+  Q：该令牌额度已用尽？ ​
+  
+  <a class="anchor" href="#q%e8%af%a5%e4%bb%a4%e7%89%8c%e9%a2%9d%e5%ba%a6%e5%b7%b2%e7%94%a8%e5%b0%bd-">#</a>
+  
+</h2>
+<p>A： 这个问题一般说明你的令牌已经没有额度了，需要给你的令牌加额度，或者你的钱包已经没有额度了，需要给你的钱包充值。</p>
+<h2 id="quser-quota-is-not-enough-">
+  Q：user quota is not enough？ ​
+  
+  <a class="anchor" href="#quser-quota-is-not-enough-">#</a>
+  
+</h2>
+<p>A： 这个问题一般说明你的账户已经没有额度了，需要给你的钱包充值。</p>
+<h2 id="qmax_tokens-is-too-large-">
+  Q：max_tokens is too large？ ​
+  
+  <a class="anchor" href="#qmax_tokens-is-too-large-">#</a>
+  
+</h2>
+<p>A： 请求参数中的 max_tokens 参数设置过大。请求携带的上下文 token 数 + max_tokens 必须小于等于模型的上下文大小。例如，gpt-4 的模型上下文是 128k，max_tokens 最大为 4096。那么必须满足 max_tokens &lt;= 4096 和 请求携带的上下文 token 数 + max_tokens &lt;= 128k 。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/errorcode.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/otherai/sdk/geminisdk/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Gemini SDK 配置" />
+        <span>Gemini SDK 配置</span>
+      </a>
+    
+    </span>
+    <span>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#常见错误以及解决办法-">常见错误以及解决办法 ​</a>
+      <ul>
+        <li><a href="#q切换到了-gpt-4询问它是不是-gpt-4为什么回答不是-">Q：切换到了 GPT-4，询问它是不是 GPT-4，为什么回答不是？ ​</a></li>
+        <li><a href="#q为什么-chatgpt-plus-的-gpt-4-能回答出自己是-gpt-4-">Q：为什么 ChatGPT Plus 的 GPT-4 能回答出自己是 GPT-4？ ​</a></li>
+        <li><a href="#q那我如何去判断他是否是-gpt-4-模型-">Q：那我如何去判断他是否是 GPT-4 模型？ ​</a></li>
+        <li><a href="#q无法登录-">Q：无法登录？ ​</a></li>
+        <li><a href="#q为什么请求后没吐字没补全-token-">Q：为什么请求后没吐字没补全 token？ ​</a></li>
+        <li><a href="#q后台额度充足使用-api-提示额度不足-">Q：后台额度充足，使用 API 提示额度不足？ ​</a></li>
+        <li><a href="#q出现-cdn-回源报错-">Q：出现 CDN 回源报错？ ​</a></li>
+        <li><a href="#q提示当前分组下没有可用渠道-">Q：提示当前分组下没有可用渠道？ ​</a></li>
+        <li><a href="#q额度是什么-怎么计算的-">Q：额度是什么? 怎么计算的？ ​</a></li>
+        <li><a href="#q什么是上下文-">Q：什么是上下文？ ​</a></li>
+        <li><a href="#q账户额度足够为什么提示额度不足-">Q：账户额度足够为什么提示额度不足？ ​</a></li>
+        <li><a href="#qchatgpt-next-web-报错-failed-to-fetch-">Q：ChatGPT Next Web 报错: Failed to fetch？ ​</a></li>
+        <li><a href="#q网站部分页面打开报错-">Q：网站部分页面打开报错？ ​</a></li>
+        <li><a href="#q为什么-gpt-4-额度消耗这么快-">Q：为什么 gpt-4 额度消耗这么快？ ​</a></li>
+        <li><a href="#q令牌无效-">Q：令牌无效？ ​</a></li>
+        <li><a href="#qfailed-to-fetch-">Q：Failed to fetch？ ​</a></li>
+        <li><a href="#q无可用渠道-">Q：无可用渠道？ ​</a></li>
+        <li><a href="#q构图时出现-syntaxerrorunexpected-token--">Q：构图时出现 SyntaxError：Unexpected token“&lt;” …… ​</a></li>
+        <li><a href="#q使用-chatgpt-web-midjourney-proxy-上传失败-">Q：使用 chatgpt-web-midjourney-proxy 上传失败？ ​</a></li>
+        <li><a href="#q该令牌额度已用尽-">Q：该令牌额度已用尽？ ​</a></li>
+        <li><a href="#quser-quota-is-not-enough-">Q：user quota is not enough？ ​</a></li>
+        <li><a href="#qmax_tokens-is-too-large-">Q：max_tokens is too large？ ​</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

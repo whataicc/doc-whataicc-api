@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具类 on 神马中转API</title>
+    <link>//localhost:1313/docs/otherai/tools/</link>
+    <description>Recent content in 工具类 on 神马中转API</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <atom:link href="//localhost:1313/docs/otherai/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raycast 插件 ChatGPT 使用指南（推荐使用）</title>
+      <link>//localhost:1313/docs/otherai/tools/raycast/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/tools/raycast/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+    <item>
+      <title>Dify</title>
+      <link>//localhost:1313/docs/otherai/tools/dify/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/otherai/tools/dify/</guid>
+      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+    </item>
+  </channel>
+</rss>

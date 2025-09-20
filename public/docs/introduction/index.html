@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="//localhost:1313/docs/introduction/">
+  <meta property="og:site_name" content="神马中转API">
+  <meta property="og:title" content="神马中转API 一站式AI大模型API聚合平台 · 行业领先">
+  <meta property="og:description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:tag" content="API">
+    <meta property="article:tag" content="中转API">
+    <meta property="article:tag" content="服务使用">
+<title>神马中转API 一站式AI大模型API聚合平台 · 行业领先 | 神马中转API</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="//localhost:1313/docs/introduction/">
+<link rel="stylesheet" href="/book.min.27cffe658670f57112663ed746a421db277c2dd6549965c27f9ad0103cccd990.css" integrity="sha256-J8/&#43;ZYZw9XESZj7XRqQh2yd8LdZUmWXCf5rQEDzM2ZA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.cfa30b6ac98c8f02b9344796716998020496ce0793c20e96f751d11fe1a0a3be.js" integrity="sha256-z6MLasmMjwK5NEeWcWmYAgSWzgeTwg6W91HRH&#43;Ggo74=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/introduction/" class="active">神马中转API 一站式AI大模型API聚合平台 · 行业领先</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle"  />
+    <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
+      <a role="button" class="flex-auto ">基础知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">基本概念-令牌（Token）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">添加令牌：您的AI通行证指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">基本概念-令牌渠道分组</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">基本概念-按量付费</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">基本概念-按次付费</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
+    <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">基础教程-钱包 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/model/" class="">基础教程-支持模型 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">基础教程-聊天 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">基础教程-开发者 · 快速接入</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">高级功能-官方SDK支持</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">高级功能-通知设置 · 额度预警通知</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">高级功能-API KEY 安全配置</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">常见报错码</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle"  />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">适用范围：♥ 所有模型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">普通文本对话（非流）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">普通文本对话（流式输出）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">固定格式化输出Json</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">embedding代码例子</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">网络图片解析</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">本地图片解析</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">函数调用FunctionCall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">whisper使用示例</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">gpt-tts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">gpt文生图</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">gpt图生图</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0621f15f4cf04829ac2eddaaa730205e" class="toggle"  />
+    <label for="section-0621f15f4cf04829ac2eddaaa730205e" class="flex">
+      <a role="button" class="flex-auto ">模型接入教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-817d6bf53fc67a4117666f8fef044ed1" class="toggle"  />
+    <label for="section-817d6bf53fc67a4117666f8fef044ed1" class="flex">
+      <a role="button" class="flex-auto ">常见AI程序配置教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5e705709838a94aa211a15f9c6e02e24" class="toggle"  />
+    <label for="section-5e705709838a94aa211a15f9c6e02e24" class="flex">
+      <a role="button" class="flex-auto ">编程工具类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/claudecode/" class="">Claude code 配置方式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/pythonopenai/" class="">python openai官方库（使用AutoGPT，langchain等）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/codegpt/" class="">VSCode 插件 Code GPT 使用指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/easycode/" class="">JetBrains插件 Easycode ​</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/langchain/" class="">LangChain​</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1d8817d18f5c961cd85158eff2d9c95e" class="toggle"  />
+    <label for="section-1d8817d18f5c961cd85158eff2d9c95e" class="flex">
+      <a role="button" class="flex-auto ">对话客户端类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatgptwebmidjourneyproxy/" class="">Chatgpt-web-midjourney-proxy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/lobechat/" class="">Lobe-Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/utools-chatgpt/" class="">utools-ChatGPT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/sidebar/" class="">浏览器插件 ChatGPT Sidebar</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatnextweb/" class="">Chat Next Web</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/GoAmz/" class="">GoAmz</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/SparkAI/" class="">SparkAI</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/nineai/" class="">NineAI(99AI) </a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b333ba0fec99449c08fe8af0c1f5a49b" class="toggle"  />
+    <label for="section-b333ba0fec99449c08fe8af0c1f5a49b" class="flex">
+      <a role="button" class="flex-auto ">工具类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/tools/raycast/" class="">Raycast 插件 ChatGPT 使用指南（推荐使用）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/tools/dify/" class="">Dify</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5852b31e2d938d5dbe93ddd86df36c0f" class="toggle"  />
+    <label for="section-5852b31e2d938d5dbe93ddd86df36c0f" class="flex">
+      <a role="button" class="flex-auto ">官方SDK类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/sdk/openaisdk/" class="">OpenAI官方SDK</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/sdk/geminisdk/" class="">Gemini SDK 配置</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errorcode/" class="">常见错误以及解决办法</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>神马中转API 一站式AI大模型API聚合平台 · 行业领先</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#神马中转api-一站式ai大模型api聚合平台--行业领先">神马中转API 一站式AI大模型API聚合平台 · 行业领先</a>
+      <ul>
+        <li><a href="#什么是ai-api中转站">什么是AI API中转站？</a></li>
+        <li><a href="#ai中转站的核心优势">AI中转站的核心优势</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#为什么选择神马聚合中转apiapiwhataicc">为什么选择【神马聚合中转API】（api.whatai.cc）？</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#如何快速接入神马聚合中转api">如何快速接入神马聚合中转API</a>
+          <ul>
+            <li><a href="#-我们的优势">🏁 我们的优势</a></li>
+            <li><a href="#-选择我们就是选择高效与可靠">♥ 选择我们，就是选择高效与可靠</a></li>
+          </ul>
+        </li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="神马中转api-一站式ai大模型api聚合平台--行业领先">
+  神马中转API 一站式AI大模型API聚合平台 · 行业领先
+  
+  <a class="anchor" href="#%e7%a5%9e%e9%a9%ac%e4%b8%ad%e8%bd%acapi-%e4%b8%80%e7%ab%99%e5%bc%8fai%e5%a4%a7%e6%a8%a1%e5%9e%8bapi%e8%81%9a%e5%90%88%e5%b9%b3%e5%8f%b0--%e8%a1%8c%e4%b8%9a%e9%a2%86%e5%85%88">#</a>
+  
+</h1>
+<p>随着大模型与人工智能应用的普及，越来越多的开发者与企业希望快速集成各类AI接口。然而，直接调用不同厂商的API往往面临接口差异大、计费复杂、访问不稳定等问题。这时候，AI API中转站的价值就凸显出来了。  </p>
+<h2 id="什么是ai-api中转站">
+  什么是AI API中转站？
+  
+  <a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%afai-api%e4%b8%ad%e8%bd%ac%e7%ab%99">#</a>
+  
+</h2>
+<p>AI API中转站，顾名思义，就是一个聚合、统一和转发AI接口调用的服务平台。开发者无需分别对接多个厂商的API，只需通过中转站，就能调用不同模型与服务。它相当于“中间层”，帮助开发者屏蔽底层的复杂性，提供更加稳定、高效、灵活的接入方式。</p>
+<p><img src="https://pic2.imgdd.cc/item/68c8cb39fcdff65483fc69e3.jpg" alt="AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转" /></p>
+<h2 id="ai中转站的核心优势">
+  AI中转站的核心优势
+  
+  <a class="anchor" href="#ai%e4%b8%ad%e8%bd%ac%e7%ab%99%e7%9a%84%e6%a0%b8%e5%bf%83%e4%bc%98%e5%8a%bf">#</a>
+  
+</h2>
+<h4 id="1-统一接口标准">
+  1. 统一接口标准
+  
+  <a class="anchor" href="#1-%e7%bb%9f%e4%b8%80%e6%8e%a5%e5%8f%a3%e6%a0%87%e5%87%86">#</a>
+  
+</h4>
+<p>• 各家大模型（如OpenAI、Anthropic、Google、智谱、月之暗面等）的API参数各不相同，直接调用容易增加学习和维护成本。• 中转站将不同接口进行标准化，开发者只需学习一套规范，即可调用多个模型。</p>
+<h4 id="2-提升访问稳定性">
+  2. 提升访问稳定性
+  
+  <a class="anchor" href="#2-%e6%8f%90%e5%8d%87%e8%ae%bf%e9%97%ae%e7%a8%b3%e5%ae%9a%e6%80%a7">#</a>
+  
+</h4>
+<p>• 直连官方API可能会受到网络环境、节点延迟或不可用情况影响。 • 中转站往往部署了全球加速和负载均衡，确保请求更稳定、更顺畅。</p>
+<h4 id="3-聚合计费与灵活套餐">
+  3. 聚合计费与灵活套餐
+  
+  <a class="anchor" href="#3-%e8%81%9a%e5%90%88%e8%ae%a1%e8%b4%b9%e4%b8%8e%e7%81%b5%e6%b4%bb%e5%a5%97%e9%a4%90">#</a>
+  
+</h4>
+<p>• 不同厂商的API价格策略不一，充值也要分别管理。 • 中转站支持统一计费、统一充值，并且可以提供更灵活的套餐选择，降低使用门槛。</p>
+<h4 id="4-支持多模型切换">
+  4. 支持多模型切换
+  
+  <a class="anchor" href="#4-%e6%94%af%e6%8c%81%e5%a4%9a%e6%a8%a1%e5%9e%8b%e5%88%87%e6%8d%a2">#</a>
+  
+</h4>
+<p>• 一个项目可能需要不同模型（例如GPT适合文本生成，Claude适合长文档处理，本土模型更适合中文任务）。 • 中转站可以让你在一条API内快速切换和调用不同模型，极大提升开发效率。</p>
+<h4 id="5-额外功能与增强服务">
+  5. 额外功能与增强服务
+  
+  <a class="anchor" href="#5-%e9%a2%9d%e5%a4%96%e5%8a%9f%e8%83%bd%e4%b8%8e%e5%a2%9e%e5%bc%ba%e6%9c%8d%e5%8a%a1">#</a>
+  
+</h4>
+<p>• 一些中转站提供调用日志、使用统计、速率限制优化、故障自动切换等附加功能。 • 对企业级用户，还可能支持私有化部署与团队协作。  </p>
+<h2 id="为什么选择神马聚合中转apiapiwhataicc">
+  为什么选择【神马聚合中转API】（api.whatai.cc）？
+  
+  <a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%80%89%e6%8b%a9%e7%a5%9e%e9%a9%ac%e8%81%9a%e5%90%88%e4%b8%ad%e8%bd%acapiapiwhataicc">#</a>
+  
+</h2>
+<p>在众多中转服务中，神马聚合中转API（api.whatai.cc）凭借稳定性、易用性与性价比脱颖而出： • 多模型支持：支持国内外主流大模型，满足不同场景的需求。 • 高可用性：全球加速+负载均衡，保证请求稳定性与低延迟。 • 统一调用规范：开发者只需学习一次，即可调用所有支持的AI接口。 • 灵活计费：按量计费、套餐灵活，避免资金分散在多个平台。 • 开发者友好：提供完善的文档、调用示例与调试工具，接入成本低。</p>
+<h4 id="适用场景">
+  适用场景
+  
+  <a class="anchor" href="#%e9%80%82%e7%94%a8%e5%9c%ba%e6%99%af">#</a>
+  
+</h4>
+<p>• 个人开发者：想要快速体验不同模型，无需注册多个平台。 • 企业应用：需要在不同业务中调用多个模型，降低运维与成本压力。 • 创业团队：快速验证产品原型，避免API接入的重复工作。</p>
+<p><img src="https://pic2.imgdd.cc/item/68c78cabfcdff65483faea2a.jpg" alt="Claude API KEY中转/OpenAI API中转_神马API中转" /></p>
+<h2 id="如何快速接入神马聚合中转api">
+  如何快速接入神马聚合中转API
+  
+  <a class="anchor" href="#%e5%a6%82%e4%bd%95%e5%bf%ab%e9%80%9f%e6%8e%a5%e5%85%a5%e7%a5%9e%e9%a9%ac%e8%81%9a%e5%90%88%e4%b8%ad%e8%bd%acapi">#</a>
+  
+</h2>
+<p>⚡3步闪电接入【神马聚合中转API】（api.whatai.cc） · 智启全球260+顶尖AI · 自由选源 精准控成本</p>
+<p>✅极简通用流程：</p>
+<p>开发者｜企业｜创作者 — 仅需3步，零配置调用
+ChatGPT、Claude、Gemini 等 260+ 全球模型！</p>
+<p>支持多源渠道接入 · 价格透明对比 · 按预算自由选择</p>
+<p>✅专属核心价值：</p>
+<p>开发者｜低成本集成 + 灵活选型降本，高效构建AIGC 应用</p>
+<p>企业｜API驱动自动化流程 + 预算可控，智能服务升级</p>
+<p>创作者｜零基础玩转AI 创作全场景 + 丰俭由人选渠道</p>
+<p>让复杂归简 · 让创新加速！</p>
+<p><strong>立即体验：【神马聚合中转API】（api.whatai.cc）</strong> </p>
+<p><img src="https://pic2.imgdd.cc/item/68c7938dfcdff65483faf060.png" alt="AI大模型API中转聚合站推荐_神马中转API_OpenAI&amp;Claude API 中转站" /></p>
+<h3 id="-我们的优势">
+  🏁 我们的优势
+  
+  <a class="anchor" href="#-%e6%88%91%e4%bb%ac%e7%9a%84%e4%bc%98%e5%8a%bf">#</a>
+  
+</h3>
+<p>🌟 我们100%采用企业高速渠道，无套路无广告无保留聊天数据</p>
+<p>🌟 性价比最高的稳定三无纯净 API 源头，旗下已有 230 位中转代理</p>
+<p>🌟 覆盖全球8大地区，包括美国、日本、韩国、英国、新加坡、香港、菲律宾和俄罗斯，共计服务10万+满意客户</p>
+<p>🌟 稳定运行18个月，我们承诺永久优质服务</p>
+<h3 id="-选择我们就是选择高效与可靠">
+  ♥ 选择我们，就是选择高效与可靠
+  
+  <a class="anchor" href="#-%e9%80%89%e6%8b%a9%e6%88%91%e4%bb%ac%e5%b0%b1%e6%98%af%e9%80%89%e6%8b%a9%e9%ab%98%e6%95%88%e4%b8%8e%e5%8f%af%e9%9d%a0">#</a>
+  
+</h3>
+<p>❤ 无需科学上网，全球直连，无封号风险，请求速度是个人账号的1200倍</p>
+<p>❤ 无需模型权限，直接使用最新模型，无需开发基础，一个API key全模型通用</p>
+<p>❤ 完全兼容OpenAI接口协议，支持无缝对接所有模型到各种支持接口的应用</p>
+<p>❤ API key可设定使用时间和余额，便于二次销售 ❤ 100％保障隐私，仅做API中转</p>
+<p>❤ 享受我们的渠道优势，价格远低于官方</p>
+<p>❤ 支持超多模型、各种渠道，价格 &amp; 质量都有保证</p>
+<h2 id="总结">
+  总结
+  
+  <a class="anchor" href="#%e6%80%bb%e7%bb%93">#</a>
+  
+</h2>
+<p>AI API中转站的出现，大大简化了AI接口的接入与管理成本。通过 神马聚合中转API（api.whatai.cc），开发者和企业能够以更低成本、更高效率、更稳定的方式调用全球主流AI模型，为智能应用的落地加速。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+<div>
+  <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/introduction.md" target="_blank" rel="noopener edit">
+    <img src="/svg/edit.svg" class="book-icon" alt="" />
+    <span>编辑本页</span>
+  </a>
+</div>
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/aidocs/base/" class="flex align-center book-icon">
+        <span>基本概念-令牌（Token）</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="基本概念-令牌（Token）" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#神马中转api-一站式ai大模型api聚合平台--行业领先">神马中转API 一站式AI大模型API聚合平台 · 行业领先</a>
+      <ul>
+        <li><a href="#什么是ai-api中转站">什么是AI API中转站？</a></li>
+        <li><a href="#ai中转站的核心优势">AI中转站的核心优势</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#为什么选择神马聚合中转apiapiwhataicc">为什么选择【神马聚合中转API】（api.whatai.cc）？</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#如何快速接入神马聚合中转api">如何快速接入神马聚合中转API</a>
+          <ul>
+            <li><a href="#-我们的优势">🏁 我们的优势</a></li>
+            <li><a href="#-选择我们就是选择高效与可靠">♥ 选择我们，就是选择高效与可靠</a></li>
+          </ul>
+        </li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

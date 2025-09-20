@@ -27,29 +27,16 @@ enableGitInfo = true
   contentDir = 'content'
   weight = 2
 
-# [menu]
-# [[menu.home]]
-#   name = "Documentation"
-#   url = "/docs/example/"
-#   weight = 1
+[menu]
+[[menu.home]]
+  name = "神马中转API教程文档"
+  url = "/docs/introduction/"
+  weight = 1
 
-# [[menu.home]]
-#   name = "Introduction"
-#   url = "/docs/example/"
-#   weight = 10
-#   parent = "Documentation"
-
-# [[menu.home]]
-#   name = "Shortcodes"
-#   url = "/docs/shortcodes/badges/"
-#   weight = 20
-#   parent = "Documentation"
-
-# [[menu.home]]
-#   name = "Showcases"
-#   url = "/showcases/"
-#   weight = 2
-
+[[menu.home]]
+  name = "神马中转API官网"
+  url = "https://api.whatai.cc"
+  weight = 2
 
 # [[menu.home]]
 #   name = "Github"

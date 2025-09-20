@@ -2,24 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 神马中转API</title>
-    <link>/categories/</link>
+    <link>//localhost:1313/categories/</link>
     <description>Recent content in Categories on 神马中转API</description>
     <generator>Hugo</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 19 Sep 2025 13:03:01 +0800</lastBuildDate>
-    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Development</title>
-      <link>/categories/Development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>/categories/Development/</guid>
+      <title>API文档</title>
+      <link>//localhost:1313/categories/API%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/API%E6%96%87%E6%A1%A3/</guid>
       <description></description>
     </item>
     <item>
-      <title>Golang</title>
-      <link>/categories/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>/categories/golang/</guid>
+      <title>技术教程</title>
+      <link>//localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</guid>
       <description></description>
     </item>
   </channel>
