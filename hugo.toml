@@ -1,7 +1,7 @@
 # hugo server --minify --themesDir ../..
 
 baseURL = '/'
-title = '神马中转API'
+title = '神马中转API_低价稳定中转API推荐'
 theme = 'book'
 defaultContentLanguage = 'zh'
 
@@ -57,7 +57,7 @@ enableGitInfo = true
 [params]
   # (Optional, default light) Sets color theme: light, dark or auto.
   # Theme 'auto' switches between dark and light modes based on browser/os preferences
-  BookTheme = 'light'
+  BookTheme = 'auto'
 
   # (Optional, default none) Controls table of contents visibility on right side of pages.
   # Start and end levels can be controlled with markup.tableOfContents setting.
@@ -77,19 +77,6 @@ enableGitInfo = true
   # For backward compatibility you can set '*' to render all sections to menu. Acts same as '/'
   BookSection = 'docs'
 
-  # Here for backwar compatibility, not required.
-  BookRepo = 'https://github.com/alex-shpak/hugo-book/'
-
-  # (Optional, default none) Set template for commit link for the page. Requires enableGitInfo.
-  # When set enabled 'Last Modified' and a link to the commit in the footer of the page.
-  # Param is executed as template using .Site, .Page and .GitInfo as context.
-  BookLastChangeLink = '{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}'
-
-  # (Optional, default none) Set template for edit page link.
-  # When set enabled 'Edit this page' link in the footer of the page.
-  # Param is executed as template using .Site, .Page and .Path as context.
-  BookEditLink = '{{ .Site.Params.BookRepo }}/edit/main/exampleSite/{{ .Path }}'
-
   # (Optional, default 'January 2, 2006') Configure the date format used on the pages
   # - In git information
   # - In blog posts
@@ -101,11 +88,7 @@ enableGitInfo = true
   # Configuration for indexing can be adjusted in i18n folder per language.
   BookSearch = true
 
-  # (Optional, default true) Enables comments template on pages
-  # By default partals/docs/comments.html includes Disqus template
-  # See https://gohugo.io/content-management/comments/#configure-disqus
-  # Can be overwritten by same param in page frontmatter
-  BookComments = true
+
 
   # /!\ This is an experimental feature, might be removed or changed at any time
   # (Optional, experimental, default false) Enables portable links and link checks in markdown pages.
