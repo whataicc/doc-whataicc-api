@@ -259,6 +259,4 @@ curl --location --request POST 'https://api.whatai.cc/v1/chat/completions' \
 }
 ```
 
-[https://doc.dmxapi.cn/base64-image.html](https://doc.dmxapi.cn/base64-image.html)
 
-![Image 8](https://wiki.bltcy.ai/node/01983608-3d61-718c-89db-db78937a9575)

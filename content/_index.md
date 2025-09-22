@@ -33,6 +33,20 @@ keywords: ["神马中转API", "如何使用中转API", "中转API服务","Claude
     nav.scrolled{background:rgba(10,14,39,.95);padding:12px 40px;}
     .nav-container{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;}
     .logo{font-size:24px;font-weight:bold;background:linear-gradient(135deg,#667eea,#764ba2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+   .logo a {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem; /* 你可以根据需要调整文字大小 */
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-img {
+      height: 20px !important;
+      width: auto;     /* 按比例缩放 */
+      margin-right: 0.4em;
+      vertical-align: middle;
+    }
     .nav-links{display:flex;list-style:none;gap:20px;}
     .nav-links a:hover{color:#667eea;}
 
@@ -150,7 +164,12 @@ keywords: ["神马中转API", "如何使用中转API", "中转API服务","Claude
   <!-- nav -->
   <nav id="navbar">
     <div class="nav-container">
-      <div class="logo"><a href="/">🤖 神马中转API</a></div>
+      <div class="logo" style="font-size:40px">
+        <a href="/">
+          <img src="/favicon.png" alt="logo" class="logo-img" style="height:60px;vertical-align:bottom">
+          神马中转API
+        </a>
+      </div>
       <ul class="nav-links">
   		  <li><a href="#achievements">我们的成绩</a></li>    
 		    <li><a href="#models">模型支持</a></li>    

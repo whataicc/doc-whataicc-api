@@ -77,7 +77,7 @@ POST `/v1/chat/completions`
     }
   ],
   "temperature": 0.1,
-  "user": "bltcy"
+  "user": "whatai"
 }
 ```
 
