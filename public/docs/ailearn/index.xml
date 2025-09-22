@@ -2,65 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>站内基础教程 on 神马中转API_低价稳定中转API推荐</title>
-    <link>//localhost:1313/docs/ailearn/</link>
+    <link>http://localhost:1313/docs/ailearn/</link>
     <description>Recent content in 站内基础教程 on 神马中转API_低价稳定中转API推荐</description>
     <generator>Hugo</generator>
     <language>zh</language>
-    <atom:link href="//localhost:1313/docs/ailearn/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/docs/ailearn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>基础教程-钱包 · 页面</title>
-      <link>//localhost:1313/docs/ailearn/wallet/</link>
+      <link>http://localhost:1313/docs/ailearn/wallet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/ailearn/wallet/</guid>
+      <guid>http://localhost:1313/docs/ailearn/wallet/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>基础教程-支持模型 · 页面</title>
-      <link>//localhost:1313/docs/ailearn/model/</link>
+      <link>http://localhost:1313/docs/ailearn/model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/ailearn/model/</guid>
+      <guid>http://localhost:1313/docs/ailearn/model/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>基础教程-聊天 · 页面</title>
-      <link>//localhost:1313/docs/ailearn/chat/</link>
+      <link>http://localhost:1313/docs/ailearn/chat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/ailearn/chat/</guid>
+      <guid>http://localhost:1313/docs/ailearn/chat/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>基础教程-开发者 · 快速接入</title>
-      <link>//localhost:1313/docs/ailearn/dev/</link>
+      <link>http://localhost:1313/docs/ailearn/dev/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/ailearn/dev/</guid>
+      <guid>http://localhost:1313/docs/ailearn/dev/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>高级功能-官方SDK支持</title>
-      <link>//localhost:1313/docs/ailearn/sdk/</link>
+      <link>http://localhost:1313/docs/ailearn/sdk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/ailearn/sdk/</guid>
+      <guid>http://localhost:1313/docs/ailearn/sdk/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>高级功能-通知设置 · 额度预警通知</title>
-      <link>//localhost:1313/docs/ailearn/notice/</link>
+      <link>http://localhost:1313/docs/ailearn/notice/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/ailearn/notice/</guid>
+      <guid>http://localhost:1313/docs/ailearn/notice/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>高级功能-API KEY 安全配置</title>
-      <link>//localhost:1313/docs/ailearn/keysafety/</link>
+      <link>http://localhost:1313/docs/ailearn/keysafety/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/ailearn/keysafety/</guid>
+      <guid>http://localhost:1313/docs/ailearn/keysafety/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>常见报错码</title>
-      <link>//localhost:1313/docs/ailearn/errorcode/</link>
+      <link>http://localhost:1313/docs/ailearn/errorcode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/ailearn/errorcode/</guid>
+      <guid>http://localhost:1313/docs/ailearn/errorcode/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
   </channel>

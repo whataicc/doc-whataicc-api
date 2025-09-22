@@ -150,7 +150,7 @@ keywords: ["神马中转API", "如何使用中转API", "中转API服务","Claude
   <!-- nav -->
   <nav id="navbar">
     <div class="nav-container">
-      <div class="logo">🤖 神马中转API</div>
+      <div class="logo"><a href="/">🤖 神马中转API</a></div>
       <ul class="nav-links">
   		  <li><a href="#achievements">我们的成绩</a></li>    
 		    <li><a href="#models">模型支持</a></li>    

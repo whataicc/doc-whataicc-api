@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程工具类 on 神马中转API_低价稳定中转API推荐</title>
-    <link>//localhost:1313/docs/otherai/devtools/</link>
+    <link>http://localhost:1313/docs/otherai/devtools/</link>
     <description>Recent content in 编程工具类 on 神马中转API_低价稳定中转API推荐</description>
     <generator>Hugo</generator>
     <language>zh</language>
-    <atom:link href="//localhost:1313/docs/otherai/devtools/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/docs/otherai/devtools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Claude code 配置方式</title>
-      <link>//localhost:1313/docs/otherai/devtools/claudecode/</link>
+      <link>http://localhost:1313/docs/otherai/devtools/claudecode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/otherai/devtools/claudecode/</guid>
+      <guid>http://localhost:1313/docs/otherai/devtools/claudecode/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>python openai官方库（使用AutoGPT，langchain等）</title>
-      <link>//localhost:1313/docs/otherai/devtools/pythonopenai/</link>
+      <link>http://localhost:1313/docs/otherai/devtools/pythonopenai/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/otherai/devtools/pythonopenai/</guid>
+      <guid>http://localhost:1313/docs/otherai/devtools/pythonopenai/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>VSCode 插件 Code GPT 使用指南</title>
-      <link>//localhost:1313/docs/otherai/devtools/codegpt/</link>
+      <link>http://localhost:1313/docs/otherai/devtools/codegpt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/otherai/devtools/codegpt/</guid>
+      <guid>http://localhost:1313/docs/otherai/devtools/codegpt/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>JetBrains插件 Easycode ​</title>
-      <link>//localhost:1313/docs/otherai/devtools/easycode/</link>
+      <link>http://localhost:1313/docs/otherai/devtools/easycode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/otherai/devtools/easycode/</guid>
+      <guid>http://localhost:1313/docs/otherai/devtools/easycode/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>LangChain​</title>
-      <link>//localhost:1313/docs/otherai/devtools/langchain/</link>
+      <link>http://localhost:1313/docs/otherai/devtools/langchain/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/otherai/devtools/langchain/</guid>
+      <guid>http://localhost:1313/docs/otherai/devtools/langchain/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
   </channel>

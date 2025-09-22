@@ -1,6 +1,6 @@
 # hugo server --minify --themesDir ../..
 
-baseURL = '/'
+baseURL = 'https://docs.whatai.cc/'
 title = '神马中转API_低价稳定中转API推荐'
 theme = 'book'
 defaultContentLanguage = 'zh'

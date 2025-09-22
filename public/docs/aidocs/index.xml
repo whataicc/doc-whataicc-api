@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>基础知识 on 神马中转API_低价稳定中转API推荐</title>
-    <link>//localhost:1313/docs/aidocs/</link>
+    <link>http://localhost:1313/docs/aidocs/</link>
     <description>Recent content in 基础知识 on 神马中转API_低价稳定中转API推荐</description>
     <generator>Hugo</generator>
     <language>zh</language>
-    <atom:link href="//localhost:1313/docs/aidocs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/docs/aidocs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>基本概念-令牌（Token）</title>
-      <link>//localhost:1313/docs/aidocs/base/</link>
+      <link>http://localhost:1313/docs/aidocs/base/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/aidocs/base/</guid>
+      <guid>http://localhost:1313/docs/aidocs/base/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>添加令牌：您的AI通行证指南</title>
-      <link>//localhost:1313/docs/aidocs/key/</link>
+      <link>http://localhost:1313/docs/aidocs/key/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/aidocs/key/</guid>
+      <guid>http://localhost:1313/docs/aidocs/key/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>基本概念-API地址（BaseURL）</title>
-      <link>//localhost:1313/docs/aidocs/api/</link>
+      <link>http://localhost:1313/docs/aidocs/api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/aidocs/api/</guid>
+      <guid>http://localhost:1313/docs/aidocs/api/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>基本概念-令牌渠道分组</title>
-      <link>//localhost:1313/docs/aidocs/group/</link>
+      <link>http://localhost:1313/docs/aidocs/group/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/aidocs/group/</guid>
+      <guid>http://localhost:1313/docs/aidocs/group/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>基本概念-按量付费</title>
-      <link>//localhost:1313/docs/aidocs/pay1/</link>
+      <link>http://localhost:1313/docs/aidocs/pay1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/aidocs/pay1/</guid>
+      <guid>http://localhost:1313/docs/aidocs/pay1/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>基本概念-按次付费</title>
-      <link>//localhost:1313/docs/aidocs/pay2/</link>
+      <link>http://localhost:1313/docs/aidocs/pay2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/aidocs/pay2/</guid>
+      <guid>http://localhost:1313/docs/aidocs/pay2/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
   </channel>

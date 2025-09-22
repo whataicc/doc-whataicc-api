@@ -2,93 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openai请求格式（通用） on 神马中转API_低价稳定中转API推荐</title>
-    <link>//localhost:1313/docs/openai/</link>
+    <link>http://localhost:1313/docs/openai/</link>
     <description>Recent content in Openai请求格式（通用） on 神马中转API_低价稳定中转API推荐</description>
     <generator>Hugo</generator>
     <language>zh</language>
-    <atom:link href="//localhost:1313/docs/openai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/docs/openai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>适用范围：♥ 所有模型</title>
-      <link>//localhost:1313/docs/openai/syfw/</link>
+      <link>http://localhost:1313/docs/openai/syfw/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/syfw/</guid>
+      <guid>http://localhost:1313/docs/openai/syfw/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>普通文本对话（非流）</title>
-      <link>//localhost:1313/docs/openai/ptdhfl/</link>
+      <link>http://localhost:1313/docs/openai/ptdhfl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/ptdhfl/</guid>
+      <guid>http://localhost:1313/docs/openai/ptdhfl/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>普通文本对话（流式输出）</title>
-      <link>//localhost:1313/docs/openai/ptdhls/</link>
+      <link>http://localhost:1313/docs/openai/ptdhls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/ptdhls/</guid>
+      <guid>http://localhost:1313/docs/openai/ptdhls/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>固定格式化输出Json</title>
-      <link>//localhost:1313/docs/openai/gdgshscjson/</link>
+      <link>http://localhost:1313/docs/openai/gdgshscjson/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/gdgshscjson/</guid>
+      <guid>http://localhost:1313/docs/openai/gdgshscjson/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>embedding代码例子</title>
-      <link>//localhost:1313/docs/openai/embedding/</link>
+      <link>http://localhost:1313/docs/openai/embedding/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/embedding/</guid>
+      <guid>http://localhost:1313/docs/openai/embedding/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>网络图片解析</title>
-      <link>//localhost:1313/docs/openai/wltpjx/</link>
+      <link>http://localhost:1313/docs/openai/wltpjx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/wltpjx/</guid>
+      <guid>http://localhost:1313/docs/openai/wltpjx/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>本地图片解析</title>
-      <link>//localhost:1313/docs/openai/bdtpjx/</link>
+      <link>http://localhost:1313/docs/openai/bdtpjx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/bdtpjx/</guid>
+      <guid>http://localhost:1313/docs/openai/bdtpjx/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>函数调用FunctionCall</title>
-      <link>//localhost:1313/docs/openai/functioncall/</link>
+      <link>http://localhost:1313/docs/openai/functioncall/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/functioncall/</guid>
+      <guid>http://localhost:1313/docs/openai/functioncall/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>whisper使用示例</title>
-      <link>//localhost:1313/docs/openai/whisper/</link>
+      <link>http://localhost:1313/docs/openai/whisper/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/whisper/</guid>
+      <guid>http://localhost:1313/docs/openai/whisper/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>gpt-tts</title>
-      <link>//localhost:1313/docs/openai/gpttts/</link>
+      <link>http://localhost:1313/docs/openai/gpttts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/gpttts/</guid>
+      <guid>http://localhost:1313/docs/openai/gpttts/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>gpt文生图</title>
-      <link>//localhost:1313/docs/openai/gptwst/</link>
+      <link>http://localhost:1313/docs/openai/gptwst/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/gptwst/</guid>
+      <guid>http://localhost:1313/docs/openai/gptwst/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
     <item>
       <title>gpt图生图</title>
-      <link>//localhost:1313/docs/openai/gpttst/</link>
+      <link>http://localhost:1313/docs/openai/gpttst/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/docs/openai/gpttst/</guid>
+      <guid>http://localhost:1313/docs/openai/gpttst/</guid>
       <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
     </item>
   </channel>
