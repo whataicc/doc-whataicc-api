@@ -210,3 +210,25 @@ ChatGPT、Claude、Gemini 等 260+ 全球模型！
 ## 总结
 
 AI API中转站的出现，大大简化了AI接口的接入与管理成本。通过 神马聚合中转API（api.whatai.cc），开发者和企业能够以更低成本、更高效率、更稳定的方式调用全球主流AI模型，为智能应用的落地加速。
+
+## 📖 拓展阅读：常见 AI 程序配置教程
+
+### 🛠️ 开发工具
+- [Claude code AI中转站配置教程](https://docs.whatai.cc/docs/otherai/devtools/claudecode/)
+- [VSCode 插件 Code GPT AI中转站配置教程](https://docs.whatai.cc/docs/otherai/devtools/codegpt/)
+- [Jetbrains 插件 ChatGPT - Easycode AI中转站配置教程](https://docs.whatai.cc/docs/otherai/devtools/easycode/)
+- [LangChain AI中转站配置教程](https://docs.whatai.cc/docs/otherai/devtools/langchain/)
+
+### 💬 聊天应用
+- [Cherry Studio AI中转站配置教程](https://docs.whatai.cc/docs/otherai/chat/cherrystudio/)
+- [ChatGPT-web-midjourney-proxy AI中转站配置教程](https://docs.whatai.cc/docs/otherai/chat/chatgptwebmidjourneyproxy/)
+- [Lobe-Chat AI中转站配置教程](https://docs.whatai.cc/docs/otherai/chat/lobechat/)
+- [浏览器插件 ChatGPT Sidebar AI中转站配置教程](https://docs.whatai.cc/docs/otherai/chat/sidebar/)
+- [ChatBox（推荐使用）AI中转站配置教程](https://docs.whatai.cc/docs/otherai/chat/chatbox/)
+
+### ⚙️ 辅助工具
+- [Raycast 插件 ChatGPT AI中转站配置教程](https://docs.whatai.cc/docs/otherai/tools/raycast/)
+- [Dify AI中转站配置教程](https://docs.whatai.cc/docs/otherai/tools/dify/)
+
+### 📦 SDK
+- [OpenAI / Gemini 等官方 SDK AI中转站配置教程](https://docs.whatai.cc/docs/otherai/sdk/openaisdk/)
