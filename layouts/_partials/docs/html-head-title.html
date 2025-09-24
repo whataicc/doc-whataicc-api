@@ -1,1 +1,6 @@
-{{ partial "docs/title" . }} | {{ .Site.Title -}}
+{{- /* 使用 seo_title 优先，如果没有则使用页面标题 */ -}}
+{{ if .Params.seo_title }}
+  {{ .Params.seo_title }} | {{ .Site.Title }}
+{{ else }}
+  {{ partial "docs/title" . }} | {{ .Site.Title }}
+{{ end }}
