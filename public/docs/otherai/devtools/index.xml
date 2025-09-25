@@ -8,39 +8,39 @@
     <language>zh</language>
     <atom:link href="http://localhost:1313/docs/otherai/devtools/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Claude code 配置方式</title>
+      <title>Claude Code安装与国内使用教程</title>
       <link>http://localhost:1313/docs/otherai/devtools/claudecode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/otherai/devtools/claudecode/</guid>
-      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+      <description>Claude Code国内使用_Claude Code安装使用教程_神马中转API Claude Code代理API</description>
     </item>
     <item>
       <title>python openai官方库（使用AutoGPT，langchain等）</title>
       <link>http://localhost:1313/docs/otherai/devtools/pythonopenai/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/otherai/devtools/pythonopenai/</guid>
-      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+      <description>&lt;h3 id=&#34;python-openai官方库使用autogptlangchain等&#34;&gt;&#xA;  &lt;strong&gt;python openai官方库（使用AutoGPT，langchain等）&lt;/strong&gt;&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#python-openai%e5%ae%98%e6%96%b9%e5%ba%93%e4%bd%bf%e7%94%a8autogptlangchain%e7%ad%89&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;方法一&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; openai&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;openai&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;api_base &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.whatai.cc/v1&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;方法二（方法一不起作用用这个）&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;修改环境变量OPENAI_API_BASE，各个系统怎么改环境变量请自行搜索，修改环境变量后不起作用请重启系统。&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;OPENAI_API_BASE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;https://api.whatai.cc/v1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>VSCode 插件 Code GPT 使用指南</title>
+      <title>VSCode插件Code GPT使用指南</title>
       <link>http://localhost:1313/docs/otherai/devtools/codegpt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/otherai/devtools/codegpt/</guid>
-      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+      <description>&lt;h1 id=&#34;vscode-插件-code-gpt-使用指南&#34;&gt;&#xA;  VSCode 插件 Code GPT 使用指南&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#vscode-%e6%8f%92%e4%bb%b6-code-gpt-%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;这个插件修改 Host 相对麻烦一些，需要修改源码才可以使用。以下是详细的步骤：&lt;/p&gt;&#xA;&lt;h2 id=&#34;步骤&#34;&gt;&#xA;  步骤&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e6%ad%a5%e9%aa%a4&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/66da644cd9c307b7e9b2eea8.png%22&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;这个插件修改Host相对麻烦一些，需要修改源码才可以使用。&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;安装插件。安装好后按Ctrl+Shift+P，弹出框中输入Open Extensions Floder&#xA;&lt;img src=&#34;https://pic.imgdb.cn/item/66da64f9d9c307b7e9b4b8f9.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;&#xA;&lt;li&gt;点击Extensions: Open Extensions Floder，这将打开插件目录，找到Code GPT的文件夹。&#xA;&lt;img src=&#34;https://pic.imgdb.cn/item/66da650ed9c307b7e9b4c988.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;&#xA;&lt;li&gt;打开后进入打开文件./src/clients/openai_client.js，搜索文件中的api.openai.com，并替换为 &lt;code&gt;api.whatai.cc&lt;/code&gt;。保存文件。&#xA;&lt;img src=&#34;https://pic.imgdb.cn/item/66da652fd9c307b7e9b4e10d.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;&#xA;&lt;li&gt;再次回到vscode，按Ctrl+Shift+P，弹出框中输入CodeGPT: Set API KEY，点击CodeGPT: Set API KEY。然后将购买的Key输入进去即可。&#xA;&lt;img src=&#34;https://pic.imgdb.cn/item/66da652fd9c307b7e9b4e10d.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;&#xA;&lt;li&gt;以上步骤完成后，重启VSCode&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;其他VSCode插件类似。&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
-      <title>JetBrains插件 Easycode ​</title>
+      <title>JetBrains插件Easycode​</title>
       <link>http://localhost:1313/docs/otherai/devtools/easycode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/otherai/devtools/easycode/</guid>
-      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+      <description>&lt;h1 id=&#34;jetbrains插件chatgpt---easycode&#34;&gt;&#xA;  &lt;strong&gt;Jetbrains插件ChatGPT - Easycode&lt;/strong&gt;&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#jetbrains%e6%8f%92%e4%bb%b6chatgpt---easycode&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/66da6604d9c307b7e9b582fd.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;安装好插件后在Settings &amp;gt; Tools &amp;gt; OpenAI &amp;gt; GPT 3.5 Turbo中如图所示配置好插件，重点要将Server Settings 修改为 &lt;code&gt;https://api.whatai.cc/v1/chat/completions&lt;/code&gt; 。并勾选Customize Server。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic.imgdb.cn/item/66da642ed9c307b7e9b295cd.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>LangChain​</title>
       <link>http://localhost:1313/docs/otherai/devtools/langchain/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/otherai/devtools/langchain/</guid>
-      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+      <description>&lt;h1 id=&#34;langchain&#34;&gt;&#xA;  LangChain&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#langchain&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;注意事项-&#34;&gt;&#xA;  注意事项 ​&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9-&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;openai_api_base, 的末尾要加上, /v1/chat/completions, ，而且目前只支持 Chat 模型，请确认不要导入错误的包。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;示例代码-&#34;&gt;&#xA;  示例代码 ​&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e7%a4%ba%e4%be%8b%e4%bb%a3%e7%a0%81-&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; langchain.chat_models &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; ChatOpenAI&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;llm &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ChatOpenAI(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    openai_api_base&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.whatai.cc/v1/chat/completions&amp;#34;&lt;/span&gt;, &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    openai_api_key&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sk-xxxxx&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;res &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; llm&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;predict(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(res)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

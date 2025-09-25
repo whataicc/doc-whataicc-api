@@ -13,7 +13,7 @@
   <meta property="og:locale" content="zh">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-09-21T00:12:32+08:00">
+    <meta property="article:modified_time" content="2025-09-24T13:37:34+08:00">
     <meta property="article:tag" content="API">
     <meta property="article:tag" content="中转API">
     <meta property="article:tag" content="服务使用">
@@ -25,7 +25,7 @@
 <link rel="canonical" href="http://localhost:1313/docs/otherai/chat/chatbox/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.57a213a28c6ee3e258fd299dd2924f2806a24711baf4ba78a61b5cfea3e45a19.js" integrity="sha256-V6ITooxu4&#43;JY/Smd0pJPKAaiRxG69Lp4phtc/qPkWhk=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.abe5fb3f205479fdac3a9cbd82f2778a7cab95f3191e43d4ce4b208099c05c6f.js" integrity="sha256-q&#43;X7PyBUef2sOpy9gvJ3inyrlfMZHkPUzksggJnAXG8=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -942,7 +942,48 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#chatbox推荐使用-配置教程">ChatBox(推荐使用) ​配置教程</a></li>
+    <li><a href="#chatbox教程免费快速安装与使用全攻略一键连接所有ai语言模型">Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型</a>
+      <ul>
+        <li><a href="#一chatbox-介绍与功能">一、ChatBox 介绍与功能</a>
+          <ul>
+            <li><a href="#核心功能与特色">核心功能与特色</a></li>
+            <li><a href="#技术优势">技术优势</a></li>
+            <li><a href="#适用场景">适用场景</a></li>
+          </ul>
+        </li>
+        <li><a href="#二chatbox主要功能">二、Chatbox主要功能</a>
+          <ul>
+            <li><a href="#与文档和图片聊天">与文档和图片聊天</a></li>
+            <li><a href="#代码神器生成与预览">代码神器：生成与预览</a></li>
+            <li><a href="#实时联网搜索与查询">实时联网搜索与查询</a></li>
+            <li><a href="#ai-生成的图表可视化见解">AI 生成的图表可视化见解</a></li>
+            <li><a href="#ai-驱动的图像生成">AI 驱动的图像生成</a></li>
+          </ul>
+        </li>
+        <li><a href="#三chatbox安装与配置">三、Chatbox安装与配置</a>
+          <ul>
+            <li><a href="#1-下载-chatbox">1. 下载 ChatBox</a></li>
+            <li><a href="#2-配置-api">2. 配置 API</a></li>
+          </ul>
+        </li>
+        <li><a href="#四chatbox-怎么用">四、ChatBox 怎么用</a></li>
+        <li><a href="#五chatbox-怎么选择模型">五、ChatBox 怎么选择模型</a>
+          <ul>
+            <li><a href="#chatgpt-openai-系列">ChatGPT (OpenAI 系列)</a></li>
+            <li><a href="#claude-anthropic-系列">Claude (Anthropic 系列)</a></li>
+            <li><a href="#deepseek">DeepSeek</a></li>
+            <li><a href="#参数设置">参数设置</a></li>
+          </ul>
+        </li>
+        <li><a href="#六示例教程">六、示例教程</a>
+          <ul>
+            <li><a href="#1-chatgpt-openai">1. ChatGPT (OpenAI)</a></li>
+            <li><a href="#2-claude-anthropic">2. Claude (Anthropic)</a></li>
+          </ul>
+        </li>
+        <li><a href="#七总结">七、总结</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -955,17 +996,276 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="chatbox推荐使用-配置教程">
-  ChatBox(推荐使用) ​配置教程
+  <article class="markdown book-article"><h1 id="chatbox教程免费快速安装与使用全攻略一键连接所有ai语言模型">
+  Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型
   
-  <a class="anchor" href="#chatbox%e6%8e%a8%e8%8d%90%e4%bd%bf%e7%94%a8-%e9%85%8d%e7%bd%ae%e6%95%99%e7%a8%8b">#</a>
+  <a class="anchor" href="#chatbox%e6%95%99%e7%a8%8b%e5%85%8d%e8%b4%b9%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%85%e4%b8%8e%e4%bd%bf%e7%94%a8%e5%85%a8%e6%94%bb%e7%95%a5%e4%b8%80%e9%94%ae%e8%bf%9e%e6%8e%a5%e6%89%80%e6%9c%89ai%e8%af%ad%e8%a8%80%e6%a8%a1%e5%9e%8b">#</a>
   
 </h1>
+<h2 id="一chatbox-介绍与功能">
+  一、ChatBox 介绍与功能
+  
+  <a class="anchor" href="#%e4%b8%80chatbox-%e4%bb%8b%e7%bb%8d%e4%b8%8e%e5%8a%9f%e8%83%bd">#</a>
+  
+</h2>
+<p>Chatbox AI是一款集多模型对话、文件解析、AI绘图、代码生成等功能于一体的全能AI助手，支持Windows、Mac、Linux、iOS、Android 及网页全平台。凭借简洁直观的界面设计、强大的本地化处理能力和开箱即用的云端服务，Chatbox AI 已成为提升工作效率的首选工具。</p>
+<h3 id="核心功能与特色">
+  核心功能与特色
+  
+  <a class="anchor" href="#%e6%a0%b8%e5%bf%83%e5%8a%9f%e8%83%bd%e4%b8%8e%e7%89%b9%e8%89%b2">#</a>
+  
+</h3>
+<p><strong>1. 智能对话系统</strong></p>
+<ul>
+<li><strong>多模型对比</strong>：支持同时连接 ChatGPT 4o/Claude 3.5/DeepSeek 等先进模型，自由切换体验不同 AI 风格</li>
+<li><strong>上下文记忆</strong>：自动保存完整对话历史，支持 Markdown/HTML/TXT 多种格式导出</li>
+<li><strong>个性化设置</strong>：可自定义温度、最大 token 等参数，精准控制 AI 输出</li>
+</ul>
+<p><strong>2. 生产力增强套件</strong></p>
+<ul>
+<li><strong>文件理解</strong>：直接解析PDF/Word/Excel/图片中的内容</li>
+<li><strong>代码专家</strong>：提供类 Claude Artifacts 的实时代码预览能力</li>
+<li><strong>实时联网</strong>：一键获取最新资讯、股票行情等网络数据，回答始终与时俱进</li>
+</ul>
+<p><strong>3. 创意可视化工具</strong></p>
+<ul>
+<li><strong>AI绘图</strong>：通过自然语言描述生成高质量图像（每月免费额度）</li>
+<li><strong>图表生成</strong>：支持将数据转化为可视化图表，支持 LaTeX 公式渲染</li>
+<li><strong>多格式渲染</strong>：完美呈现 Markdown、HTML、数学公式等专业内容</li>
+</ul>
+<p><strong>4. 企业级数据管理</strong></p>
+<ul>
+<li><strong>本地优先</strong>：所有对话记录和文件默认存储在用户设备，保障数据主权</li>
+</ul>
+<h3 id="技术优势">
+  技术优势
+  
+  <a class="anchor" href="#%e6%8a%80%e6%9c%af%e4%bc%98%e5%8a%bf">#</a>
+  
+</h3>
+<ul>
+<li><strong>零门槛体验</strong>：无需技术背景，安装即可享受 AI 生产力</li>
+<li><strong>持续进化</strong>：同步更新模型库和功能模块，保持技术前沿性</li>
+</ul>
+<h3 id="适用场景">
+  适用场景
+  
+  <a class="anchor" href="#%e9%80%82%e7%94%a8%e5%9c%ba%e6%99%af">#</a>
+  
+</h3>
+<ul>
+<li><strong>学术研究</strong>：快速解析论文/教材，生成文献综述</li>
+<li><strong>内容创作</strong>：辅助写作、翻译、社交媒体文案生成</li>
+<li><strong>开发编程</strong>：代码生成/调试/文档编写全流程支持</li>
+<li><strong>商业分析</strong>：自动处理报表数据，生成可视化洞察</li>
+</ul>
+<h2 id="二chatbox主要功能">
+  二、Chatbox主要功能
+  
+  <a class="anchor" href="#%e4%ba%8cchatbox%e4%b8%bb%e8%a6%81%e5%8a%9f%e8%83%bd">#</a>
+  
+</h2>
+<h3 id="与文档和图片聊天">
+  与文档和图片聊天
+  
+  <a class="anchor" href="#%e4%b8%8e%e6%96%87%e6%a1%a3%e5%92%8c%e5%9b%be%e7%89%87%e8%81%8a%e5%a4%a9">#</a>
+  
+</h3>
+<p>无论是文档、图片还是代码，只需将您的文件发送给 Chatbox。它将理解内容并提供智能响应，在每次交互中提高您的生产力和创造力。</p>
+<p><img src="https://pic2.imgdd.cc/item/68d5100d8dc72b176e6eeee7.gif" alt="Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型" /></p>
+<h3 id="代码神器生成与预览">
+  代码神器：生成与预览
+  
+  <a class="anchor" href="#%e4%bb%a3%e7%a0%81%e7%a5%9e%e5%99%a8%e7%94%9f%e6%88%90%e4%b8%8e%e9%a2%84%e8%a7%88">#</a>
+  
+</h3>
+<p>编码更高效，不再费力。AI 助手让创意化为现实 - 更智能，更迅速。</p>
+<p><img src="https://pic2.imgdd.cc/item/68d510e18dc72b176e6ef1d1.gif" alt="Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型" /></p>
+<h3 id="实时联网搜索与查询">
+  实时联网搜索与查询
+  
+  <a class="anchor" href="#%e5%ae%9e%e6%97%b6%e8%81%94%e7%bd%91%e6%90%9c%e7%b4%a2%e4%b8%8e%e6%9f%a5%e8%af%a2">#</a>
+  
+</h3>
+<p>通过 AI 联网搜索获取即时的信息。保持最新事实、新闻和来自互联网的数据。</p>
+<p><img src="https://pic2.imgdd.cc/item/68d5112b8dc72b176e6ef538.gif" alt="Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型" /></p>
+<h3 id="ai-生成的图表可视化见解">
+  AI 生成的图表可视化见解
+  
+  <a class="anchor" href="#ai-%e7%94%9f%e6%88%90%e7%9a%84%e5%9b%be%e8%a1%a8%e5%8f%af%e8%a7%86%e5%8c%96%e8%a7%81%e8%a7%a3">#</a>
+  
+</h3>
+<p>无缝集成到对话中，这些可视化效果清晰地阐明复杂概念、趋势和统计数据。在需要时使用清晰、可定制的视觉辅助工具增强您的理解力和决策力。</p>
+<p><img src="https://pic2.imgdd.cc/item/68d511558dc72b176e6ef751.png" alt="Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型" /></p>
+<h3 id="ai-驱动的图像生成">
+  AI 驱动的图像生成
+  
+  <a class="anchor" href="#ai-%e9%a9%b1%e5%8a%a8%e7%9a%84%e5%9b%be%e5%83%8f%e7%94%9f%e6%88%90">#</a>
+  
+</h3>
+<p>使用 Chatbox 的图像生成功能将您的想法变为现实。只需描述您的愿景，并观看我们的 AI 将您的文字转化为令人惊叹的视觉效果。</p>
+<p><img src="https://pic2.imgdd.cc/item/68d5117f8dc72b176e6ef926.png" alt="Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型" /></p>
 <hr>
-<p>ChatGPT开源桌面应用，支持全部桌面平台。</p>
-<p>下载链接：https://github.com/Bin-Huang/chatbox/releases</p>
-<p>使用方法：如图在设置中填入购买的密钥，并将代理设置为<code>https://api.whatai.cc</code>即可</p>
-<p><img src="https://pic.imgdb.cn/item/66da6b49d9c307b7e9b93284.png" alt="" /></p>
+<h2 id="三chatbox安装与配置">
+  三、Chatbox安装与配置
+  
+  <a class="anchor" href="#%e4%b8%89chatbox%e5%ae%89%e8%a3%85%e4%b8%8e%e9%85%8d%e7%bd%ae">#</a>
+  
+</h2>
+<h3 id="1-下载-chatbox">
+  1. 下载 ChatBox
+  
+  <a class="anchor" href="#1-%e4%b8%8b%e8%bd%bd-chatbox">#</a>
+  
+</h3>
+<ul>
+<li>前往 <strong>ChatBox GitHub</strong> 下载最新版本。</li>
+<li>根据操作系统选择对应安装包：
+<ul>
+<li>Windows → <code>.exe</code></li>
+<li>macOS → <code>.dmg</code></li>
+<li>Linux → <code>.AppImage</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-配置-api">
+  2. 配置 API
+  
+  <a class="anchor" href="#2-%e9%85%8d%e7%bd%ae-api">#</a>
+  
+</h3>
+<p>首次启动时：</p>
+<ol>
+<li>打开 <strong>ChatBox 设置（Settings）</strong>。</li>
+<li>在 <strong>API Key</strong> 栏填写你在 <strong>神马中转API 平台</strong> 获取的 Key，例如：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>sk-xxxxxxx
+</span></span></code></pre></div><ol start="3">
+<li>在 <strong>API Base URL</strong> 填写：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>https://api.whatai.cc
+</span></span></code></pre></div><ol start="4">
+<li>保存即可。</li>
+</ol>
+<p>👉 从此，无论你调用 <strong>OpenAI、Claude 还是 DeepSeek</strong>，都不需要单独配置 Key，全部走 <strong>神马中转API（api.whatai.cc）</strong>。</p>
+<p>使用方法：如图在设置中填入API密钥和API主机，并将API主机设置为<code>https://api.whatai.cc</code>即可</p>
+<p><img src="https://pic2.imgdd.cc/item/68d5125a8dc72b176e6efe58.png" alt="Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型" /></p>
+<hr>
+<h2 id="四chatbox-怎么用">
+  四、ChatBox 怎么用
+  
+  <a class="anchor" href="#%e5%9b%9bchatbox-%e6%80%8e%e4%b9%88%e7%94%a8">#</a>
+  
+</h2>
+<ol>
+<li>打开 ChatBox → 点击 <strong>新建对话</strong>。</li>
+<li>在模型选择栏里，选择你要使用的模型（ChatGPT / Claude / DeepSeek）。</li>
+<li>输入问题，按 <strong>回车</strong> 即可与 AI 交互。</li>
+<li>历史会话会自动保存，可以随时切换和管理。</li>
+</ol>
+<hr>
+<h2 id="五chatbox-怎么选择模型">
+  五、ChatBox 怎么选择模型
+  
+  <a class="anchor" href="#%e4%ba%94chatbox-%e6%80%8e%e4%b9%88%e9%80%89%e6%8b%a9%e6%a8%a1%e5%9e%8b">#</a>
+  
+</h2>
+<p>在新建对话时，选择 <strong>神马中转API</strong> 提供的模型列表：</p>
+<p><img src="https://pic2.imgdd.cc/item/68d514048dc72b176e6efed7.jpg" alt="神马中转API模型，一键连接所有AI语言模型" /></p>
+<h3 id="chatgpt-openai-系列">
+  ChatGPT (OpenAI 系列)
+  
+  <a class="anchor" href="#chatgpt-openai-%e7%b3%bb%e5%88%97">#</a>
+  
+</h3>
+<ul>
+<li>gpt-4o</li>
+<li>gpt-4</li>
+<li>gpt-3.5</li>
+</ul>
+<h3 id="claude-anthropic-系列">
+  Claude (Anthropic 系列)
+  
+  <a class="anchor" href="#claude-anthropic-%e7%b3%bb%e5%88%97">#</a>
+  
+</h3>
+<ul>
+<li>claude-3-opus</li>
+<li>claude-3-sonnet</li>
+<li>claude-3-haiku</li>
+</ul>
+<h3 id="deepseek">
+  DeepSeek
+  
+  <a class="anchor" href="#deepseek">#</a>
+  
+</h3>
+<ul>
+<li>deepseek-chat（通用对话）</li>
+<li>deepseek-coder（编程优化）</li>
+</ul>
+<h3 id="参数设置">
+  参数设置
+  
+  <a class="anchor" href="#%e5%8f%82%e6%95%b0%e8%ae%be%e7%bd%ae">#</a>
+  
+</h3>
+<ul>
+<li><strong>temperature</strong>：控制创意程度（0~1）。</li>
+<li><strong>max_tokens</strong>：最大输出长度。</li>
+</ul>
+<hr>
+<h2 id="六示例教程">
+  六、示例教程
+  
+  <a class="anchor" href="#%e5%85%ad%e7%a4%ba%e4%be%8b%e6%95%99%e7%a8%8b">#</a>
+  
+</h2>
+<p>下面给出二个主流模型的使用示例（全部走 <strong>神马中转API</strong>）。</p>
+<h3 id="1-chatgpt-openai">
+  1. ChatGPT (OpenAI)
+  
+  <a class="anchor" href="#1-chatgpt-openai">#</a>
+  
+</h3>
+<p><strong>配置：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>API Base URL → https://api.whatai.cc
+</span></span><span style="display:flex;"><span>API Key      → 【神马中转API Key】
+</span></span><span style="display:flex;"><span>模型         → gpt-5-mini
+</span></span></code></pre></div><p><strong>示例：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>帮我写一个Python脚本，读取CSV并计算平均值
+</span></span></code></pre></div><p>👉 ChatGPT 会返回完整的 <strong>Python 示例代码</strong>。</p>
+<p><img src="https://pic2.imgdd.cc/item/68d514e58dc72b176e6efef1.png" alt="Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型" /></p>
+<hr>
+<h3 id="2-claude-anthropic">
+  2. Claude (Anthropic)
+  
+  <a class="anchor" href="#2-claude-anthropic">#</a>
+  
+</h3>
+<p><strong>配置：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>API Base URL → https://api.whatai.cc/v1
+</span></span><span style="display:flex;"><span>API Key      → 【神马中转API Key】
+</span></span><span style="display:flex;"><span>模型         → claude-opus-4-1-20250805
+</span></span></code></pre></div><p><strong>示例：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>请写一个JavaScript函数，计算数组的中位数
+</span></span></code></pre></div><p>👉 Claude 会生成带注释的 <strong>完整代码</strong>。</p>
+<p><img src="https://pic2.imgdd.cc/item/68d515a48dc72b176e6f02ba.png" alt="Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型" /></p>
+<hr>
+<h2 id="七总结">
+  七、总结
+  
+  <a class="anchor" href="#%e4%b8%83%e6%80%bb%e7%bb%93">#</a>
+  
+</h2>
+<p>ChatBox 是一款非常实用的桌面 AI 客户端</p>
+<pre><code>•	不需要频繁切换网页
+•	支持多家大模型
+•	界面简洁，功能强大
+•	非常适合开发者、写作者、研究人员使用 
+</code></pre>
+<hr>
+<p>✅ 完成以上配置后，你就能高效使用 ChatBox！</p>
 </article>
  
       
@@ -1035,7 +1335,48 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#chatbox推荐使用-配置教程">ChatBox(推荐使用) ​配置教程</a></li>
+    <li><a href="#chatbox教程免费快速安装与使用全攻略一键连接所有ai语言模型">Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型</a>
+      <ul>
+        <li><a href="#一chatbox-介绍与功能">一、ChatBox 介绍与功能</a>
+          <ul>
+            <li><a href="#核心功能与特色">核心功能与特色</a></li>
+            <li><a href="#技术优势">技术优势</a></li>
+            <li><a href="#适用场景">适用场景</a></li>
+          </ul>
+        </li>
+        <li><a href="#二chatbox主要功能">二、Chatbox主要功能</a>
+          <ul>
+            <li><a href="#与文档和图片聊天">与文档和图片聊天</a></li>
+            <li><a href="#代码神器生成与预览">代码神器：生成与预览</a></li>
+            <li><a href="#实时联网搜索与查询">实时联网搜索与查询</a></li>
+            <li><a href="#ai-生成的图表可视化见解">AI 生成的图表可视化见解</a></li>
+            <li><a href="#ai-驱动的图像生成">AI 驱动的图像生成</a></li>
+          </ul>
+        </li>
+        <li><a href="#三chatbox安装与配置">三、Chatbox安装与配置</a>
+          <ul>
+            <li><a href="#1-下载-chatbox">1. 下载 ChatBox</a></li>
+            <li><a href="#2-配置-api">2. 配置 API</a></li>
+          </ul>
+        </li>
+        <li><a href="#四chatbox-怎么用">四、ChatBox 怎么用</a></li>
+        <li><a href="#五chatbox-怎么选择模型">五、ChatBox 怎么选择模型</a>
+          <ul>
+            <li><a href="#chatgpt-openai-系列">ChatGPT (OpenAI 系列)</a></li>
+            <li><a href="#claude-anthropic-系列">Claude (Anthropic 系列)</a></li>
+            <li><a href="#deepseek">DeepSeek</a></li>
+            <li><a href="#参数设置">参数设置</a></li>
+          </ul>
+        </li>
+        <li><a href="#六示例教程">六、示例教程</a>
+          <ul>
+            <li><a href="#1-chatgpt-openai">1. ChatGPT (OpenAI)</a></li>
+            <li><a href="#2-claude-anthropic">2. Claude (Anthropic)</a></li>
+          </ul>
+        </li>
+        <li><a href="#七总结">七、总结</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

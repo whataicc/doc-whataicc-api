@@ -8,18 +8,18 @@
     <language>zh</language>
     <atom:link href="http://localhost:1313/docs/otherai/tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Raycast 插件 ChatGPT 使用指南（推荐使用）</title>
+      <title>Raycast插件ChatGPT使用指南（推荐使用）</title>
       <link>http://localhost:1313/docs/otherai/tools/raycast/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/otherai/tools/raycast/</guid>
-      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+      <description>&lt;h1 id=&#34;raycast-插件-chatgpt-使用指南推荐使用&#34;&gt;&#xA;  Raycast 插件 ChatGPT 使用指南（推荐使用）&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#raycast-%e6%8f%92%e4%bb%b6-chatgpt-%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97%e6%8e%a8%e8%8d%90%e4%bd%bf%e7%94%a8&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;安装插件, 在 Raycast Store 中找到 ChatGPT 插件，并按照提示安装：&lt;/p&gt;&#xA;&lt;p&gt;配置 API Key, 安装完成后，在该插件配置中的 API Key 中填入我们的 API Key。选中 Change API Endpoint，并在 API Endpoint 中填入 &lt;a href=&#34;https://api.whatai.cc/v1&#34;&gt;https://api.whatai.cc/v1&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;🍺 Enjoy it!&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic2.imgdd.cc/item/68cd0200fcdff6548303060d.gif&#34; alt=&#34;Raycast 插件 ChatGPT 使用指南（推荐使用）&#34; /&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dify</title>
       <link>http://localhost:1313/docs/otherai/tools/dify/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/otherai/tools/dify/</guid>
-      <description>本页详细介绍神马中转API的功能、使用方法以及中转API服务的优势，帮助您快速上手并提升效率。</description>
+      <description>&lt;h1 id=&#34;接入到dify&#34;&gt;&#xA;  接入到Dify&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e6%8e%a5%e5%85%a5%e5%88%b0dify&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1使用openai模型&#34;&gt;&#xA;  1.使用OpenAI模型&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#1%e4%bd%bf%e7%94%a8openai%e6%a8%a1%e5%9e%8b&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;点击右上角自己的头像，点击设置&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic2.imgdd.cc/item/68cd0337fcdff65483031291.png&#34; alt=&#34;Image 12&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;点击模型供应商，选择OpenAI的设置&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic2.imgdd.cc/item/68cd0351fcdff654830312b1.png&#34; alt=&#34;Image 14&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;输入神马中转API 后台-使用API-API Keys 生成的API KEY，输入API Base：&lt;code&gt;https://api.whatai.cc/v1/chat/completions&lt;/code&gt;，点击保存即可&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic2.imgdd.cc/item/68cd0399fcdff65483031318.png&#34; alt=&#34;Image 16&#34; /&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-使用其他模型&#34;&gt;&#xA;  2. 使用其他模型&#xA;  &#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#2-%e4%bd%bf%e7%94%a8%e5%85%b6%e4%bb%96%e6%a8%a1%e5%9e%8b&#34;&gt;#&lt;/a&gt;&#xA;  &#xA;&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;下拉找到OpenAI-API-compatible，选择添加模型&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic2.imgdd.cc/item/68cd03ecfcdff654830313a8.png&#34; alt=&#34;Image 20&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;模型名称填写你想要使用的模型，准确的名称可以通过 模型价格页面 查看&lt;/p&gt;&#xA;&lt;p&gt;输入神马中转AI 后台-使用API-API Keys 生成的API KEY，输入API Base：&lt;code&gt;https://api.whatai.cc/v1/chat/completions&lt;/code&gt;，点击保存即可&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic2.imgdd.cc/item/68cd041afcdff654830313ea.png&#34; alt=&#34;Image 22&#34; /&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
