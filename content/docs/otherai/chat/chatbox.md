@@ -1,10 +1,10 @@
 ---
-weight: 6
+weight: 1
 bookFlatSection: true
 title: "ChatBox(推荐使用)"
 
-seo_title: "ChatBox​配置教程_国内如何使用中转API"
-description: "了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。"
+seo_title: "Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型"
+description: "Chatbox AI是一款集多模型对话、文件解析、AI绘图、代码生成等功能于一体的全能AI助手，支持Windows、Mac、Linux、iOS、Android 及网页全平台。凭借简洁直观的界面设计、强大的本地化处理能力和开箱即用的云端服务，Chatbox AI 已成为提升工作效率的首选工具。"
 keywords: ["神马中转API", "如何使用中转API", "中转API服务"]
 tags: ["API", "中转API", "服务使用"]
 categories: ["技术教程", "API文档"]
@@ -20,13 +20,15 @@ author: "神马中转API（api.whatai.cc）"
 
 Chatbox AI是一款集多模型对话、文件解析、AI绘图、代码生成等功能于一体的全能AI助手，支持Windows、Mac、Linux、iOS、Android 及网页全平台。凭借简洁直观的界面设计、强大的本地化处理能力和开箱即用的云端服务，Chatbox AI 已成为提升工作效率的首选工具。
 
+![Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型](https://pic2.imgdd.cc/item/68d518388dc72b176e6f06bb.png)
+
 ### 核心功能与特色
 
  **1. 智能对话系统**
 
-* **多模型对比**：支持同时连接 ChatGPT 4o/Claude 3.5/DeepSeek 等先进模型，自由切换体验不同 AI 风格
+* **多模型对比**：支持同时连接 ChatGPT 5/Claude 4/DeepSeek 等先进模型，自由切换体验不同AI风格
 * **上下文记忆**：自动保存完整对话历史，支持 Markdown/HTML/TXT 多种格式导出
-* **个性化设置**：可自定义温度、最大 token 等参数，精准控制 AI 输出
+* **个性化设置**：可自定义温度、最大token等参数，精准控制AI输出
 
  **2. 生产力增强套件**
 
@@ -141,11 +143,13 @@ https://api.whatai.cc
 ![神马中转API模型，一键连接所有AI语言模型](https://pic2.imgdd.cc/item/68d514048dc72b176e6efed7.jpg)
 
 ### ChatGPT (OpenAI 系列)
+- gpt-5  
 - gpt-4o  
 - gpt-4  
 - gpt-3.5  
 
 ### Claude (Anthropic 系列)
+- claude-opus-4-1
 - claude-3-opus
 - claude-3-sonnet
 - claude-3-haiku
