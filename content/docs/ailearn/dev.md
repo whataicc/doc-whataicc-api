@@ -21,7 +21,8 @@ author: "神马中转API（api.whatai.cc）"
 
 *   认证方式: Bearer Token (API Key)
 
-**更多baseURL👉： 基础概念-API地址（BaseUrl）**
+**更多baseURL** 👉 [基础概念-API地址](../../docs/aidocs/api/)
+
 
 ### **文本对话接口**
 

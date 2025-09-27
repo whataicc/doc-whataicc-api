@@ -15,12 +15,12 @@ author: "神马中转API（api.whatai.cc）"
 # gpt文生图
 
 ## **概念介绍**
---------
+---
 
 文生图(Text-to-Image)是一种通过自然语言描述生成对应图像的技术。本API基于OpenAI的GPT模型实现，支持多种图像生成模型和尺寸规格。
 
 ## **基础信息**
---------
+---
 
 *   请求方式: POST
 
@@ -31,7 +31,7 @@ author: "神马中转API（api.whatai.cc）"
 *   认证方式: Bearer Token
 
 ## **请求参数**
---------
+---
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
@@ -43,7 +43,7 @@ author: "神马中转API（api.whatai.cc）"
 | seed | int | 否 | 随机种子(-1表示随机) |
 
 ## **支持的模型**
----------
+---
 
 *   `gpt-image-1`: 基础模型(支持1024x1024,1024x1536,1536x1024)
 
@@ -58,7 +58,8 @@ author: "神马中转API（api.whatai.cc）"
 *   `flux-kontext-pro`: 支持文本+图像输入的上下文感知生成/编辑模型，控制更精准。
 
 ## **Python调用示例**
---------------
+---
+
 ```python
 import json
 import requests
@@ -101,7 +102,7 @@ except requests.exceptions.RequestException as e:
 
 
 ## **响应示例**
---------
+---
 
 图片返回`base64`需要转为png图片格式。
 
@@ -113,7 +114,7 @@ except requests.exceptions.RequestException as e:
 
 *   `b64_json`: Base64编码的图像数据
 
-```
+```json
 {
     "created": 1677664795,
     "data": [
@@ -126,7 +127,7 @@ except requests.exceptions.RequestException as e:
 ```
 
 ## **常见错误码：**
-----------
+---
 
 *   401: 认证失败(无效API密钥)
 
@@ -138,8 +139,8 @@ except requests.exceptions.RequestException as e:
 
 建议在代码中添加完善的错误处理逻辑，如示例中所示。
 
-## **详细教程**神马中转
---------
+## **详细教程**神马中转API
+---
 
 ### **🎨 神马中转API 2025超强画图模型天团驾到！**
 

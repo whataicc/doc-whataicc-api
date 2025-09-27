@@ -60,7 +60,7 @@ print(response.text)
 
 
 #### **使用OpenAI官方SDK**
-```
+```python
 from openai import OpenAI
 
 # 初始化客户端

@@ -76,7 +76,7 @@ factory = "openai"
 
 # 初始化 OpenAI 客户端，传入 API key 和 base URL
 client = OpenAI(
-    api_key="sk-***********************************************",  # 替换为你的 API key
+    api_key="sk-*******************************",  # 替换为你的 API key
     base_url="https://api.whatai.cc/v1/"   # 这里是 base url，注意这里需要 /v1/
 )
 

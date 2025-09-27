@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/modellearn/midjourney/">
+  <meta property="og:site_name" content="神马中转API_低价稳定中转API推荐">
+  <meta property="og:title" content="Midjourney使用教程">
+  <meta property="og:description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:tag" content="API">
+    <meta property="article:tag" content="中转API">
+    <meta property="article:tag" content="服务使用">
+<title>
+  Midjourney使用教程_如何使用Midjourney中转API | 神马中转API_低价稳定中转API推荐
+</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/modellearn/midjourney/">
+<link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh.search.min.77231126e83f4a842c51971ebdf3d44ce667b198dde894a9a31e772d5e96ae8e.js" integrity="sha256-dyMRJug/SoQsUZcevfPUTOZnsZjd6JSpox53LV6Wro4=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>神马中转API_低价稳定中转API推荐</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/introduction/" class="">神马中转API简介</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a1a75651f33f50151b1f3e0e2f525ee1" class="toggle"  />
+    <label for="section-a1a75651f33f50151b1f3e0e2f525ee1" class="flex">
+      <a role="button" class="flex-auto ">基础知识</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/base/" class="">基本概念-令牌（Token）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/key/" class="">添加令牌：您的AI通行证指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/api/" class="">基本概念-API地址（BaseURL）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/group/" class="">基本概念-令牌渠道分组</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay1/" class="">基本概念-按量付费</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/aidocs/pay2/" class="">基本概念-按次付费</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
+    <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
+      <a role="button" class="flex-auto ">站内基础教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/wallet/" class="">基础教程-钱包 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/model/" class="">基础教程-支持模型 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/chat/" class="">基础教程-聊天 · 页面</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/dev/" class="">基础教程-开发者快速接入</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/sdk/" class="">高级功能-官方SDK支持</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/notice/" class="">高级功能-通知设置 · 额度预警通知</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/keysafety/" class="">高级功能-API KEY安全配置</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ailearn/errorcode/" class="">常见报错码</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a2f7d319ec4c5bbb43978c97667e6cea" class="toggle"  />
+    <label for="section-a2f7d319ec4c5bbb43978c97667e6cea" class="flex">
+      <a role="button" class="flex-auto ">Openai请求格式（通用）</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/syfw/" class="">适用范围：♥ 所有模型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhfl/" class="">普通文本对话（非流）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/ptdhls/" class="">普通文本对话（流式输出）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gdgshscjson/" class="">固定格式化输出Json</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/embedding/" class="">embedding代码例子</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/wltpjx/" class="">网络图片解析</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/bdtpjx/" class="">本地图片解析</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/functioncall/" class="">函数调用FunctionCall</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/whisper/" class="">whisper使用示例</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttts/" class="">gpt-tts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gptwst/" class="">gpt文生图</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/openai/gpttst/" class="">gpt图生图</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0621f15f4cf04829ac2eddaaa730205e" class="toggle" checked />
+    <label for="section-0621f15f4cf04829ac2eddaaa730205e" class="flex">
+      <a role="button" class="flex-auto ">模型接入教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/modellearn/claudeapi/" class="">Claude API格式兼容</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/modellearn/midjourney/" class="active">Midjourney使用教程</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>常见AI程序配置教程</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5e705709838a94aa211a15f9c6e02e24" class="toggle"  />
+    <label for="section-5e705709838a94aa211a15f9c6e02e24" class="flex">
+      <a role="button" class="flex-auto ">编程工具类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/claudecode/" class="">Claude Code安装与国内使用教程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/pythonopenai/" class="">python openai官方库（使用AutoGPT，langchain等）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/codegpt/" class="">VSCode插件Code GPT使用指南</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/easycode/" class="">JetBrains插件Easycode​</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/devtools/langchain/" class="">LangChain​</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1d8817d18f5c961cd85158eff2d9c95e" class="toggle"  />
+    <label for="section-1d8817d18f5c961cd85158eff2d9c95e" class="flex">
+      <a role="button" class="flex-auto ">对话客户端类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatgptwebmidjourneyproxy/" class="">Chatgpt-web-midjourney-proxy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/lobechat/" class="">Lobe-Chat</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/utools-chatgpt/" class="">utools-ChatGPT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/sidebar/" class="">浏览器插件ChatGPT Sidebar</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/chatnextweb/" class="">Chat Next Web</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/GoAmz/" class="">GoAmz</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/SparkAI/" class="">SparkAI</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/chat/nineai/" class="">NineAI(99AI) </a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b333ba0fec99449c08fe8af0c1f5a49b" class="toggle"  />
+    <label for="section-b333ba0fec99449c08fe8af0c1f5a49b" class="flex">
+      <a role="button" class="flex-auto ">工具类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/tools/raycast/" class="">Raycast插件ChatGPT使用指南（推荐使用）</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/tools/dify/" class="">Dify</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5852b31e2d938d5dbe93ddd86df36c0f" class="toggle"  />
+    <label for="section-5852b31e2d938d5dbe93ddd86df36c0f" class="flex">
+      <a role="button" class="flex-auto ">官方SDK类</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/sdk/openaisdk/" class="">OpenAI官方SDK</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/otherai/sdk/geminisdk/" class="">Gemini SDK配置</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/errorcode/" class="">常见错误以及解决办法</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    
+    <a href="https://whatai.cc"  target="_blank" rel="noopener">
+        AI导航
+      </a>
+  </li>
+  
+  <li>
+    
+    <a href="https://api.whatai.cc"  target="_blank" rel="noopener">
+        中转API官网
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Midjourney使用教程</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#midjourney使用教程-">Midjourney使用教程 ​</a>
+      <ul>
+        <li><a href="#一mj-proxy-plus-快捷接入方式-">一、MJ Proxy Plus 快捷接入方式 ​</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#二切换绘图模式图片代理-">二、切换绘图模式、图片代理 ​</a>
+          <ul>
+            <li></li>
+            <li><a href="#1-通过令牌管理控制推荐-">1️⃣ 通过令牌管理控制（推荐） ​</a></li>
+            <li><a href="#2-通过url路径参数-">2️⃣ 通过URL路径参数 ​</a></li>
+          </ul>
+        </li>
+        <li><a href="#三new-apichat-apishell-api-接入mj-">三、New API/Chat API/Shell API 接入MJ ​</a></li>
+        <li><a href="#四midjourney-价格表-">四、Midjourney 价格表 ​</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="midjourney使用教程-">
+  Midjourney使用教程 ​
+  
+  <a class="anchor" href="#midjourney%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b-">#</a>
+  
+</h1>
+<hr>
+
+<blockquote class='book-hint '>
+  <p>Midjourney（简称mj）和Niji-journey（简称niji）模式相同，都以mj举例</p>
+</blockquote><p>✨ 支持Midjourney官方所有功能</p>
+<ul>
+<li>
+<p>同时支持, Midjourney Proxy Plus, 以及, Midjourney Proxy 接口协议</p>
+</li>
+<li>
+<p>如果你的项目不支持以上方式，请, 查看API接入文档, ，实现调用接口</p>
+</li>
+<li>
+<p>适用性广，支持 Midjourney 所有操作</p>
+</li>
+</ul>
+<h2 id="一mj-proxy-plus-快捷接入方式-">
+  一、MJ Proxy Plus 快捷接入方式 ​
+  
+  <a class="anchor" href="#%e4%b8%80mj-proxy-plus-%e5%bf%ab%e6%8d%b7%e6%8e%a5%e5%85%a5%e6%96%b9%e5%bc%8f-">#</a>
+  
+</h2>
+<hr>
+<p>Midjourney Proxy 主机： <a href="https://api.whatai.cc">https://api.whatai.cc</a></p>
+<p>Midjourney Proxy Secret：在令牌页生成的令牌，格式为 sk-xxxxxx</p>
+<p><img src="https://pic2.imgdd.cc/item/68d618728dc72b176e6fce0f.png" alt="Image 1" /></p>
+<h4 id="不同的客户端需要填写不同的-base_url-请尝试以下地址-">
+  不同的客户端需要填写不同的 BASE_URL ，请尝试以下地址： ​
+  
+  <a class="anchor" href="#%e4%b8%8d%e5%90%8c%e7%9a%84%e5%ae%a2%e6%88%b7%e7%ab%af%e9%9c%80%e8%a6%81%e5%a1%ab%e5%86%99%e4%b8%8d%e5%90%8c%e7%9a%84-base_url-%e8%af%b7%e5%b0%9d%e8%af%95%e4%bb%a5%e4%b8%8b%e5%9c%b0%e5%9d%80-">#</a>
+  
+</h4>
+<ul>
+<li>
+<p><a href="https://api.whatai.cc">https://api.whatai.cc</a></p>
+</li>
+<li>
+<p><a href="https://api.whatai.cc/mj">https://api.whatai.cc/mj</a></p>
+</li>
+<li>
+<p><a href="https://api.whatai.cc/mj/">https://api.whatai.cc/mj/</a></p>
+</li>
+<li>
+<p><a href="https://api.whatai.cc/mj/submit/imagine">https://api.whatai.cc/mj/submit/imagine</a></p>
+</li>
+</ul>
+<h4 id="mode-参数可选-">
+  mode 参数（可选）： ​
+  
+  <a class="anchor" href="#mode-%e5%8f%82%e6%95%b0%e5%8f%af%e9%80%89-">#</a>
+  
+</h4>
+<ul>
+<li>
+<p>relax, ：慢速（1-10分钟出图）</p>
+</li>
+<li>
+<p>fast, ：快速（默认）（1-5分钟出图）</p>
+</li>
+<li>
+<p>turbo, ：极速（1分钟内出图）</p>
+</li>
+</ul>
+<h4 id="proxy-type-参数可选-">
+  proxy-type 参数（可选）： ​
+  
+  <a class="anchor" href="#proxy-type-%e5%8f%82%e6%95%b0%e5%8f%af%e9%80%89-">#</a>
+  
+</h4>
+<ul>
+<li>
+<p>origin, ：图片使用 Discord 原地址，国外访问快，国内可能无法访问</p>
+</li>
+<li>
+<p>relay, ：图片使用服务转发地址，全球访问快（默认）</p>
+</li>
+<li>
+<p>proxy, ：图片使用管理员设置的地址，国内访问快（令牌可设置自己的图片代理地址）</p>
+</li>
+</ul>
+<h2 id="二切换绘图模式图片代理-">
+  二、切换绘图模式、图片代理 ​
+  
+  <a class="anchor" href="#%e4%ba%8c%e5%88%87%e6%8d%a2%e7%bb%98%e5%9b%be%e6%a8%a1%e5%bc%8f%e5%9b%be%e7%89%87%e4%bb%a3%e7%90%86-">#</a>
+  
+</h2>
+<hr>
+<h4 id="设置参数介绍-">
+  设置参数介绍： ​
+  
+  <a class="anchor" href="#%e8%ae%be%e7%bd%ae%e5%8f%82%e6%95%b0%e4%bb%8b%e7%bb%8d-">#</a>
+  
+</h4>
+<ul>
+<li>
+<p>fast, 是 Midjourney 的 fast mode（快速绘图模式），通常 1-5分钟内完成绘图</p>
+</li>
+<li>
+<p>turbo, 是 Midjourney 的 turbo mode（极速绘图模式），通常 1分钟内完成绘图</p>
+</li>
+<li>
+<p>relax, 是 Midjourney 的 relax mode（慢速绘图模式），通常 1-20分钟内完成绘图</p>
+</li>
+<li>
+<p>relay, 是使用中转站地址转发，图片国内访问较快</p>
+</li>
+<li>
+<p>origin, 是使用 Discord 原地址，图片国外访问快，国内不可访问</p>
+</li>
+<li>
+<p>proxy, 是使用图片代理地址，替换, <a href="https://cdn.discordapp.com">https://cdn.discordapp.com</a>, 的地址，图片国内访问较快</p>
+</li>
+</ul>
+<p>设置优先级</p>
+<p>令牌 &gt; 路径参数 &gt; 系统默认</p>
+<h3 id="1-通过令牌管理控制推荐-">
+  1️⃣ 通过令牌管理控制（推荐） ​
+  
+  <a class="anchor" href="#1-%e9%80%9a%e8%bf%87%e4%bb%a4%e7%89%8c%e7%ae%a1%e7%90%86%e6%8e%a7%e5%88%b6%e6%8e%a8%e8%8d%90-">#</a>
+  
+</h3>
+
+<blockquote class='book-hint '>
+  <p>在  ，选择要使用的令牌，点击编辑，设置想要管理的设置。</p>
+</blockquote><ul>
+<li>
+<p>切换绘图模式方式，调整绘图速度
+<img src="https://pic2.imgdd.cc/item/68d618f68dc72b176e6fce35.png" alt="Image 2" /></p>
+</li>
+<li>
+<p>设置返回图片地址，方便国内访问（可使用自己的图片代理）</p>
+</li>
+</ul>
+
+<blockquote class='book-hint '>
+  <ul>
+<li>
+<p>在令牌编辑页设置自己的图片代理地址</p>
+</li>
+<li>
+<p>PS: →, 自建图片代理教程, ，需要自备海外服务器，最好是国内线路优化、带宽大的</p>
+</li>
+</ul>
+</blockquote><h3 id="2-通过url路径参数-">
+  2️⃣ 通过URL路径参数 ​
+  
+  <a class="anchor" href="#2-%e9%80%9a%e8%bf%87url%e8%b7%af%e5%be%84%e5%8f%82%e6%95%b0-">#</a>
+  
+</h3>
+<ul>
+<li>切换绘图模式方式，调整绘图速度,</li>
+<li>/mj 默认是 fast</li>
+<li>mode/mj-fast/mj 是 fast</li>
+<li>mode/mj-turbo/mj 是 turbo</li>
+<li>mode/mj-relax/mj 是 relax</li>
+<li>mode示例：https://api.whatai.cc/mj-turbo/mj/submit/imagine 填写到程序中时，一般为：https://api.whatai.cc/mj-turbo</li>
+<li>切换返回图片地址格式, /mj 是管理员设置的默认方式/mj-relay/mj</li>
+<li>使用服务转发地址，图片国内访问较快/mj-origin/mj 使用 Discord 原地址，图片国外访问快/mj-proxy/mj 使用管理员设置的代理地址，图片国内访问较快示例：https://api.whatai.cc/mj-relay/mj/submit/imagine 填写到程序中时，一般为：https://api.whatai.cc/mj-relay</li>
+</ul>
+<p>同时支持多个参数</p>
+<ul>
+<li>
+<p>格式为：/mj-{mode}-{image_proxy}</p>
+</li>
+<li>
+<p>示例： <a href="https://api.whatai.cc/mj-turbo-origin">https://api.whatai.cc/mj-turbo-origin</a>，采用【极速模式】，返回【Discord 原地址】。https://api.whatai.cc/mj-relax，采用【慢速模式】，返回【服务转发地址（默认）】。https://api.whatai.cc，采用【快速模式（默认）】，返回【服务转发地址（默认）】。</p>
+</li>
+</ul>
+<h2 id="三new-apichat-apishell-api-接入mj-">
+  三、New API/Chat API/Shell API 接入MJ ​
+  
+  <a class="anchor" href="#%e4%b8%89new-apichat-apishell-api-%e6%8e%a5%e5%85%a5mj-">#</a>
+  
+</h2>
+<hr>
+<ul>
+<li>
+<p>渠道类型无所谓，只需渠道模型里有 Midjourney</p>
+</li>
+<li>
+<p>配置代理地址为：https://api.whatai.cc</p>
+</li>
+<li>
+<p>填写密钥为令牌页生成的令牌</p>
+</li>
+</ul>
+<h2 id="四midjourney-价格表-">
+  四、Midjourney 价格表 ​
+  
+  <a class="anchor" href="#%e5%9b%9bmidjourney-%e4%bb%b7%e6%a0%bc%e8%a1%a8-">#</a>
+  
+</h2>
+<hr>
+<ul>
+<li>
+<p>计费价格请参考, 模型价格页面的Midjourney栏 ：https://api.whatai.cc/models?provider=Mid-journey</p>
+</li>
+<li>
+<p>类型 1 端点 ：价格随绘图模式（Fast/Relax/Turbo）变化</p>
+</li>
+<li>
+<p>类型 2 端点 ：价格固定不变</p>
+</li>
+<li>
+<p>类型 3 端点：免费端点，主要用于查询、继续完成任务</p>
+</li>
+</ul>
+<h4 id="类型-1-端点包括-">
+  类型 1 端点包括： ​
+  
+  <a class="anchor" href="#%e7%b1%bb%e5%9e%8b-1-%e7%ab%af%e7%82%b9%e5%8c%85%e6%8b%ac-">#</a>
+  
+</h4>
+<table>
+  <thead>
+      <tr>
+          <th>属性</th>
+          <th>解释</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Outpaint</td>
+          <td>变焦</td>
+      </tr>
+      <tr>
+          <td>Pan</td>
+          <td>焦点移动</td>
+      </tr>
+      <tr>
+          <td>Blend</td>
+          <td>混图</td>
+      </tr>
+      <tr>
+          <td>Inpaint</td>
+          <td>局部重绘</td>
+      </tr>
+      <tr>
+          <td>Upscale 2x</td>
+          <td>放大2倍</td>
+      </tr>
+      <tr>
+          <td>Upscale 4x</td>
+          <td>放大4倍</td>
+      </tr>
+      <tr>
+          <td>PicReader</td>
+          <td>图生文后生成图片</td>
+      </tr>
+      <tr>
+          <td>Reroll</td>
+          <td>重新生成</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="类型-2-端点包括-">
+  类型 2 端点包括： ​
+  
+  <a class="anchor" href="#%e7%b1%bb%e5%9e%8b-2-%e7%ab%af%e7%82%b9%e5%8c%85%e6%8b%ac-">#</a>
+  
+</h4>
+<table>
+  <thead>
+      <tr>
+          <th>属性</th>
+          <th>解释</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Upscale</td>
+          <td>放大</td>
+      </tr>
+      <tr>
+          <td>Describe</td>
+          <td>图生文</td>
+      </tr>
+      <tr>
+          <td>PicReaderRetry</td>
+          <td>图生文重新生成</td>
+      </tr>
+      <tr>
+          <td>FaceSwap</td>
+          <td>换脸</td>
+      </tr>
+      <tr>
+          <td>Shorten</td>
+          <td>Prompt 分析</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="类型-3-端点包括-">
+  类型 3 端点包括： ​
+  
+  <a class="anchor" href="#%e7%b1%bb%e5%9e%8b-3-%e7%ab%af%e7%82%b9%e5%8c%85%e6%8b%ac-">#</a>
+  
+</h4>
+<table>
+  <thead>
+      <tr>
+          <th>属性</th>
+          <th>解释</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Fetch</td>
+          <td>获取单个任务进度</td>
+      </tr>
+      <tr>
+          <td>ListByIDs</td>
+          <td>批量获取任务</td>
+      </tr>
+      <tr>
+          <td>Modal</td>
+          <td>确认提交弹窗任务</td>
+      </tr>
+      <tr>
+          <td>Seed</td>
+          <td>获取 Seed</td>
+      </tr>
+  </tbody>
+</table>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/modellearn/claudeapi/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="Claude API格式兼容" />
+        <span>Claude API格式兼容</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/otherai/devtools/claudecode/" class="flex align-center book-icon">
+        <span>Claude Code安装与国内使用教程</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="Claude Code安装与国内使用教程" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#midjourney使用教程-">Midjourney使用教程 ​</a>
+      <ul>
+        <li><a href="#一mj-proxy-plus-快捷接入方式-">一、MJ Proxy Plus 快捷接入方式 ​</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#二切换绘图模式图片代理-">二、切换绘图模式、图片代理 ​</a>
+          <ul>
+            <li></li>
+            <li><a href="#1-通过令牌管理控制推荐-">1️⃣ 通过令牌管理控制（推荐） ​</a></li>
+            <li><a href="#2-通过url路径参数-">2️⃣ 通过URL路径参数 ​</a></li>
+          </ul>
+        </li>
+        <li><a href="#三new-apichat-apishell-api-接入mj-">三、New API/Chat API/Shell API 接入MJ ​</a></li>
+        <li><a href="#四midjourney-价格表-">四、Midjourney 价格表 ​</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

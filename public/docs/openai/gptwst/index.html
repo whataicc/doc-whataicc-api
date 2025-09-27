@@ -25,7 +25,7 @@
 <link rel="canonical" href="http://localhost:1313/docs/openai/gptwst/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.af1f592a893f1369497fa7e970a6661fd70a756d03abab0110a1e33c0e174cf7.js" integrity="sha256-rx9ZKok/E2lJf6fpcKZmH9cKdW0Dq6sBEKHjPA4XTPc=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.77231126e83f4a842c51971ebdf3d44ce667b198dde894a9a31e772d5e96ae8e.js" integrity="sha256-dyMRJug/SoQsUZcevfPUTOZnsZjd6JSpox53LV6Wro4=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -503,6 +503,32 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/modellearn/claudeapi/" class="">Claude API格式兼容</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/modellearn/midjourney/" class="">Midjourney使用教程</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -630,7 +656,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
+    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
   
 
         </li>
@@ -695,7 +721,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
+    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
   
 
         </li>
@@ -951,7 +977,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#python调用示例"><strong>Python调用示例</strong></a></li>
         <li><a href="#响应示例"><strong>响应示例</strong></a></li>
         <li><a href="#常见错误码"><strong>常见错误码：</strong></a></li>
-        <li><a href="#详细教程神马中转"><strong>详细教程</strong>神马中转</a>
+        <li><a href="#详细教程神马中转api"><strong>详细教程</strong>神马中转API</a>
           <ul>
             <li><a href="#-神马中转api-2025超强画图模型天团驾到"><strong>🎨 神马中转API 2025超强画图模型天团驾到！</strong></a></li>
             <li><a href="#-模型天团简历2025顶配版"><strong>🌟 模型天团简历（2025顶配版）</strong></a></li>
@@ -1157,16 +1183,16 @@ https://github.com/alex-shpak/hugo-book
 <p><code>b64_json</code>: Base64编码的图像数据</p>
 </li>
 </ul>
-<pre tabindex="0"><code>{
-    &#34;created&#34;: 1677664795,
-    &#34;data&#34;: [
-        {
-            &#34;url&#34;: &#34;https://.../generated-image.png&#34;,
-            &#34;b64_json&#34;: &#34;...&#34; 
-        }
-    ]
-}
-</code></pre><h2 id="常见错误码">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#ae81ff">1677664795</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://.../generated-image.png&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;b64_json&#34;</span>: <span style="color:#e6db74">&#34;...&#34;</span> 
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="常见错误码">
   <strong>常见错误码：</strong>
   
   <a class="anchor" href="#%e5%b8%b8%e8%a7%81%e9%94%99%e8%af%af%e7%a0%81">#</a>
@@ -1188,10 +1214,10 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 <p>建议在代码中添加完善的错误处理逻辑，如示例中所示。</p>
-<h2 id="详细教程神马中转">
-  <strong>详细教程</strong>神马中转
+<h2 id="详细教程神马中转api">
+  <strong>详细教程</strong>神马中转API
   
-  <a class="anchor" href="#%e8%af%a6%e7%bb%86%e6%95%99%e7%a8%8b%e7%a5%9e%e9%a9%ac%e4%b8%ad%e8%bd%ac">#</a>
+  <a class="anchor" href="#%e8%af%a6%e7%bb%86%e6%95%99%e7%a8%8b%e7%a5%9e%e9%a9%ac%e4%b8%ad%e8%bd%acapi">#</a>
   
 </h2>
 <hr>
@@ -1515,7 +1541,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#python调用示例"><strong>Python调用示例</strong></a></li>
         <li><a href="#响应示例"><strong>响应示例</strong></a></li>
         <li><a href="#常见错误码"><strong>常见错误码：</strong></a></li>
-        <li><a href="#详细教程神马中转"><strong>详细教程</strong>神马中转</a>
+        <li><a href="#详细教程神马中转api"><strong>详细教程</strong>神马中转API</a>
           <ul>
             <li><a href="#-神马中转api-2025超强画图模型天团驾到"><strong>🎨 神马中转API 2025超强画图模型天团驾到！</strong></a></li>
             <li><a href="#-模型天团简历2025顶配版"><strong>🌟 模型天团简历（2025顶配版）</strong></a></li>

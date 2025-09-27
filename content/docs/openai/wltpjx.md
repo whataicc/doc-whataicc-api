@@ -13,14 +13,15 @@ author: "神马中转API（api.whatai.cc）"
 ---
 
 # 网络图片解析
+---
 
-
-### **接口说明**
+## **接口说明**
+---
 
 通过多模态AI模型分析图片内容，理解图片、提取图片信息，包括OCR功能。
 
-### **主流图片分析模型**
-
+## **主流图片分析模型**
+---
 | **模型名称** | **描述** |
 | --- | --- |
 | gpt-4o | 目前图片分析调用量最大的模型，稳定、并发高 |
@@ -28,7 +29,8 @@ author: "神马中转API（api.whatai.cc）"
 | claude-sonnet-4-20250514 | 图片分析做的不错，但性价比略差 |
 | doubao-1.5-vision-pro-250328 | 国内图片分析主流模型，性价比好，稳定、并发高 |
 
-### **基础信息**
+## **基础信息**
+---
 
 *   **Base URL**: https://api.whatai.cc
 
@@ -36,11 +38,13 @@ author: "神马中转API（api.whatai.cc）"
 
 *   **Content-Type**: `application/json`
 
-### **接口地址**
+## **接口地址**
+---
 
 POST `/v1/chat/completions`
 
-### **请求头**
+## **请求头**
+---
 
 | **参数** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
@@ -48,9 +52,10 @@ POST `/v1/chat/completions`
 | Content-Type | string | 是 | 固定值：`application/json` |
 | User-Agent | string | 否 | 客户端标识 |
 
-### **请求参数**
+## **请求参数**
+---
 
-```
+```json
 {
   "model": "gemini-2.0-flash-thinking-exp-1219",
   "messages": [
@@ -81,7 +86,8 @@ POST `/v1/chat/completions`
 }
 ```
 
-### **参数说明**
+## **参数说明**
+---
 
 | **参数** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
@@ -90,7 +96,7 @@ POST `/v1/chat/completions`
 | temperature | float | 否 | 生成文本的随机性，0-1之间 |
 | user | string | 否 | 用户标识 |
 
-### **Python 调用示例**
+## **Python 调用示例**
 
 ```python
 import requests
@@ -147,7 +153,8 @@ if __name__ == "__main__":
 
 ```
 
-### **常见错误码**
+## **常见错误码**
+---
 
 | **状态码** | **说明** |
 | --- | --- |

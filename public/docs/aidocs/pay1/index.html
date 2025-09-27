@@ -25,7 +25,7 @@
 <link rel="canonical" href="http://localhost:1313/docs/aidocs/pay1/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.af1f592a893f1369497fa7e970a6661fd70a756d03abab0110a1e33c0e174cf7.js" integrity="sha256-rx9ZKok/E2lJf6fpcKZmH9cKdW0Dq6sBEKHjPA4XTPc=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.77231126e83f4a842c51971ebdf3d44ce667b198dde894a9a31e772d5e96ae8e.js" integrity="sha256-dyMRJug/SoQsUZcevfPUTOZnsZjd6JSpox53LV6Wro4=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -503,6 +503,32 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/modellearn/claudeapi/" class="">Claude API格式兼容</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/modellearn/midjourney/" class="">Midjourney使用教程</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -630,7 +656,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
+    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
   
 
         </li>
@@ -695,7 +721,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
+    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
   
 
         </li>
@@ -1020,8 +1046,12 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p><strong>【示例】对于default分组下的gpt-4o-mini模型，假设提问文字数量为6323 tokens，文字输出数量为2481 tokens</strong></p>
 <p><img src="https://pic2.imgdd.cc/item/68cb9552fcdff6548300ba65.png" alt="Image 5" /></p>
-<p>Input（提示token数）：0.15/M tokens （您提问的文字） Output（补全token数）: 0.6/M tokens （AI回答的文字） Cache（模型倍率）：0.075 计算方式为： $0.15 / 1000000 * 6323 + 0.6 / 1000000 * 2481 + 0.075/1000000 * 2048 = 0.002284$</p>
-<h3 id="-模型倍率看不懂可以忽略">
+<pre tabindex="0"><code>Input（提示token数）：0.15/M tokens （您提问的文字）
+Output（补全token数）: 0.6/M tokens （AI回答的文字）
+Cache（模型倍率）：0.075
+计算方式为：
+$0.15 / 1000000 * 6323 + 0.6 / 1000000 * 2481 + 0.075/1000000 * 2048 = 0.002284$ 
+</code></pre><h3 id="-模型倍率看不懂可以忽略">
   <strong>📊 模型倍率（看不懂可以忽略）</strong>
   
   <a class="anchor" href="#-%e6%a8%a1%e5%9e%8b%e5%80%8d%e7%8e%87%e7%9c%8b%e4%b8%8d%e6%87%82%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5">#</a>
@@ -1035,8 +1065,19 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%e5%80%8d%e7%8e%87%e8%bf%90%e4%bd%9c%e5%8e%9f%e7%90%86%e4%b8%89%e6%ad%a5%e9%80%8f%e6%98%8e%e6%9c%ba%e5%88%b6">#</a>
   
 </h4>
-<p>⚠️ 下面只是举例子不是实际定价 # 第一步：设定基础价（全球标准） 例如：GPT-4 基础价 = $0.03/千字（输入） # 第二步：乘以模型倍率（难度系数） 例如：倍率设置 1.5 倍 → $0.03 × 1.5 = $0.045# 第三步：生成最终标价（您看到的数字） 菜单直接显示：GPT-4 输入 → $0.045/千字 消耗时直接按此计算，无隐藏乘除</p>
-<h3 id="-用户高频疑问解密">
+<pre tabindex="0"><code>⚠️ 下面只是举例子不是实际定价
+
+# 第一步：设定基础价（全球标准）
+  例如：GPT-4 基础价 = $0.03/千字（输入）
+
+# 第二步：乘以模型倍率（难度系数）
+  例如：倍率设置 1.5倍 → $0.03 × 1.5 = $0.045
+
+# 第三步：生成最终标价（您看到的数字）
+  菜单直接显示：GPT-4输入 → $0.045/千字  
+
+  消耗时直接按此计算，无隐藏乘除
+</code></pre><h3 id="-用户高频疑问解密">
   <strong>❓ 用户高频疑问解密</strong>
   
   <a class="anchor" href="#-%e7%94%a8%e6%88%b7%e9%ab%98%e9%a2%91%e7%96%91%e9%97%ae%e8%a7%a3%e5%af%86">#</a>

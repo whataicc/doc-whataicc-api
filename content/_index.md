@@ -411,7 +411,11 @@ keywords: ["神马中转API", "如何使用中转API", "中转API服务","Claude
         <h4>教程文章</h4>
         <ul>
         <li><a href="/docs/introduction/" target="_blank">AI中转站使用教程</a></li>
-        <li><a href="/docs/otherai/chat/chatbox/" target="_blank">常见AI程序配置教程</a></li>
+        <li><a href="/docs/otherai/chat/chatbox/" target="_blank">Chatbox教程</a></li>
+         <li><a href="docs/otherai/tools/raycast/" target="_blank">Raycast教程</a></li>
+        <li><a href="/docs/otherai/devtools/codegpt/" target="_blank">Code GPT教程</a></li>
+        <li><a href="/docs/ailearn/wallet/" target="_blank">神马中转API使用教程</a></li>
+        <li><a href="/docs/aidocs/base/" target="_blank">神马中转API基础知识</a></li>             
         </ul>
       </div>
     </div>

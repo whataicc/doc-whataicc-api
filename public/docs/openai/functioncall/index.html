@@ -25,7 +25,7 @@
 <link rel="canonical" href="http://localhost:1313/docs/openai/functioncall/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.af1f592a893f1369497fa7e970a6661fd70a756d03abab0110a1e33c0e174cf7.js" integrity="sha256-rx9ZKok/E2lJf6fpcKZmH9cKdW0Dq6sBEKHjPA4XTPc=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.77231126e83f4a842c51971ebdf3d44ce667b198dde894a9a31e772d5e96ae8e.js" integrity="sha256-dyMRJug/SoQsUZcevfPUTOZnsZjd6JSpox53LV6Wro4=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -503,6 +503,32 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/modellearn/claudeapi/" class="">Claude API格式兼容</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/modellearn/midjourney/" class="">Midjourney使用教程</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -630,7 +656,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
+    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
   
 
         </li>
@@ -695,7 +721,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
+    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
   
 
         </li>
@@ -949,10 +975,13 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#请求示例"><strong>请求示例</strong></a></li>
         <li><a href="#响应处理"><strong>响应处理</strong></a></li>
         <li><a href="#注意事项"><strong>注意事项</strong></a></li>
-        <li><a href="#tools-场景示例">Tools 场景示例</a></li>
-        <li><a href="#-第一步发送用户提问--工具定义">✅ 第一步：发送用户提问 + 工具定义</a></li>
-        <li><a href="#-第二步你执行实际函数例如自己写的天气-api并将结果通过工具响应发回-ai">🔁 第二步：你执行实际函数（例如自己写的天气 API），并将结果通过工具响应发回 AI</a></li>
-        <li><a href="#-第三步返回最终的自然语言回复例如">✅ 第三步：返回最终的自然语言回复（例如）：</a></li>
+        <li><a href="#tools-场景示例">Tools 场景示例</a>
+          <ul>
+            <li><a href="#-第一步发送用户提问--工具定义">✅ 第一步：发送用户提问 + 工具定义</a></li>
+            <li><a href="#-第二步你执行实际函数例如自己写的天气-api并将结果通过工具响应发回-ai">🔁 第二步：你执行实际函数（例如自己写的天气 API），并将结果通过工具响应发回 AI</a></li>
+            <li><a href="#-第三步返回最终的自然语言回复例如">✅ 第三步：返回最终的自然语言回复（例如）：</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1104,54 +1133,54 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#tools-%e5%9c%ba%e6%99%af%e7%a4%ba%e4%be%8b">#</a>
   
 </h2>
-<p>==========</p>
+<hr>
 <p>例如</p>
 <p>用户提问：<strong>“北京天气怎么样？”</strong></p>
 <p>我们定义一个工具 <code>get_weather(city: string)</code></p>
 <p><code>get_weather</code> 函数需要用户开发者自己实现</p>
 <hr>
-<h2 id="-第一步发送用户提问--工具定义">
+<h3 id="-第一步发送用户提问--工具定义">
   ✅ 第一步：发送用户提问 + 工具定义
   
   <a class="anchor" href="#-%e7%ac%ac%e4%b8%80%e6%ad%a5%e5%8f%91%e9%80%81%e7%94%a8%e6%88%b7%e6%8f%90%e9%97%ae--%e5%b7%a5%e5%85%b7%e5%ae%9a%e4%b9%89">#</a>
   
-</h2>
-<pre tabindex="0"><code>
-curl --location --request POST &#39;https://api.whatai.cc/v1/chat/completions&#39; \
---header &#39;Authorization: Bearer $API_KEY&#39; \
---header &#39;Content-Type: application/json&#39; \
---data-raw &#39;{
-    &#34;model&#34;: &#34;gpt-4o&#34;,
-    &#34;messages&#34;: [
-        {
-            &#34;role&#34;: &#34;user&#34;,
-            &#34;content&#34;: &#34;北京天气怎么样？&#34;
-        }
-    ],
-    &#34;tools&#34;: [
-        {
-            &#34;type&#34;: &#34;function&#34;,
-            &#34;function&#34;: {
-                &#34;name&#34;: &#34;get_weather&#34;,
-                &#34;description&#34;: &#34;获取城市天气&#34;,
-                &#34;parameters&#34;: {
-                    &#34;type&#34;: &#34;object&#34;,
-                    &#34;properties&#34;: {
-                        &#34;city&#34;: {
-                            &#34;type&#34;: &#34;string&#34;,
-                            &#34;description&#34;: &#34;城市名称，例如 北京&#34;
-                        }
-                    },
-                    &#34;required&#34;: [
-                        &#34;city&#34;
-                    ]
-                }
-            }
-        }
-    ],
-    &#34;tool_choice&#34;: &#34;auto&#34;
-}&#39;
-</code></pre><p>📥 AI 返回内容（模型决定调用 <code>get_weather</code>）：</p>
+</h3>
+<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">curl</span> <span style="color:#960050;background-color:#1e0010">--location</span> <span style="color:#960050;background-color:#1e0010">--request</span> <span style="color:#960050;background-color:#1e0010">POST</span> <span style="color:#960050;background-color:#1e0010">&#39;https:</span><span style="color:#75715e">//api.whatai.cc/v1/chat/completions&#39; \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">--header</span> <span style="color:#960050;background-color:#1e0010">&#39;Authorization:</span> <span style="color:#960050;background-color:#1e0010">Bearer</span> <span style="color:#960050;background-color:#1e0010">$API_KEY&#39;</span> <span style="color:#960050;background-color:#1e0010">\</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">--header</span> <span style="color:#960050;background-color:#1e0010">&#39;Content-Type:</span> <span style="color:#960050;background-color:#1e0010">application/json&#39;</span> <span style="color:#960050;background-color:#1e0010">\</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">--data-raw</span> <span style="color:#960050;background-color:#1e0010">&#39;</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;gpt-4o&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;messages&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;北京天气怎么样？&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;tools&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;function&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;function&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;get_weather&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;获取城市天气&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;parameters&#34;</span>: {
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;properties&#34;</span>: {
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&#34;city&#34;</span>: {
+</span></span><span style="display:flex;"><span>                            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;string&#34;</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;城市名称，例如 北京&#34;</span>
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    },
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;required&#34;</span>: [
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;city&#34;</span>
+</span></span><span style="display:flex;"><span>                    ]
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;tool_choice&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>
+</span></span><span style="display:flex;"><span>}<span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span></span></code></pre></div><p>📥 AI 返回内容（模型决定调用 <code>get_weather</code>）：</p>
 <pre tabindex="0"><code>{
   &#34;choices&#34;: [
     {
@@ -1171,64 +1200,65 @@ curl --location --request POST &#39;https://api.whatai.cc/v1/chat/completions&#3
     }
   ]
 }
-</code></pre><h2 id="-第二步你执行实际函数例如自己写的天气-api并将结果通过工具响应发回-ai">
+</code></pre><h3 id="-第二步你执行实际函数例如自己写的天气-api并将结果通过工具响应发回-ai">
   🔁 第二步：你执行实际函数（例如自己写的天气 API），并将结果通过工具响应发回 AI
   
   <a class="anchor" href="#-%e7%ac%ac%e4%ba%8c%e6%ad%a5%e4%bd%a0%e6%89%a7%e8%a1%8c%e5%ae%9e%e9%99%85%e5%87%bd%e6%95%b0%e4%be%8b%e5%a6%82%e8%87%aa%e5%b7%b1%e5%86%99%e7%9a%84%e5%a4%a9%e6%b0%94-api%e5%b9%b6%e5%b0%86%e7%bb%93%e6%9e%9c%e9%80%9a%e8%bf%87%e5%b7%a5%e5%85%b7%e5%93%8d%e5%ba%94%e5%8f%91%e5%9b%9e-ai">#</a>
   
-</h2>
+</h3>
+<hr>
 <p>假设你查询天气后得到：</p>
 <p><code>{ &quot;temperature&quot;: &quot;31°C&quot;, &quot;condition&quot;: &quot;晴&quot; }</code></p>
 <p>那么你现在发送的是 <strong>完整上下文 + tool 响应</strong>：</p>
-<pre tabindex="0"><code>
-curl --location --request POST &#39;https://api.whatai.cc/v1/chat/completions&#39; \
---header &#39;Authorization: Bearer $API_KEY&#39; \
---header &#39;Content-Type: application/json&#39; \
---data-raw &#39;{
-    &#34;model&#34;: &#34;gpt-4o&#34;,
-    &#34;messages&#34;: [
-        {
-            &#34;role&#34;: &#34;user&#34;,
-            &#34;content&#34;: &#34;北京天气怎么样？&#34;
-        },
-        {
-            &#34;role&#34;: &#34;assistant&#34;,
-            &#34;tool_calls&#34;: [
-                {
-                    &#34;id&#34;: &#34;toolcall-abc123&#34;,
-                    &#34;type&#34;: &#34;function&#34;,
-                    &#34;function&#34;: {
-                        &#34;name&#34;: &#34;get_weather&#34;,
-                        &#34;arguments&#34;: &#34;{ \&#34;city\&#34;: \&#34;北京\&#34; }&#34;
-                    }
-                }
-            ]
-        },
-        {
-            &#34;role&#34;: &#34;tool&#34;,
-            &#34;tool_call_id&#34;: &#34;toolcall-abc123&#34;,
-            &#34;content&#34;: &#34;{ \&#34;temperature\&#34;: \&#34;31°C\&#34;, \&#34;condition\&#34;: \&#34;晴\&#34; }&#34;
-        }
-    ]
-}&#39;
-</code></pre><hr>
-<h2 id="-第三步返回最终的自然语言回复例如">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">curl</span> <span style="color:#960050;background-color:#1e0010">--location</span> <span style="color:#960050;background-color:#1e0010">--request</span> <span style="color:#960050;background-color:#1e0010">POST</span> <span style="color:#960050;background-color:#1e0010">&#39;https:</span><span style="color:#75715e">//api.whatai.cc/v1/chat/completions&#39; \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">--header</span> <span style="color:#960050;background-color:#1e0010">&#39;Authorization:</span> <span style="color:#960050;background-color:#1e0010">Bearer</span> <span style="color:#960050;background-color:#1e0010">$API_KEY&#39;</span> <span style="color:#960050;background-color:#1e0010">\</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">--header</span> <span style="color:#960050;background-color:#1e0010">&#39;Content-Type:</span> <span style="color:#960050;background-color:#1e0010">application/json&#39;</span> <span style="color:#960050;background-color:#1e0010">\</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">--data-raw</span> <span style="color:#960050;background-color:#1e0010">&#39;</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;gpt-4o&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;messages&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;北京天气怎么样？&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;assistant&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;tool_calls&#34;</span>: [
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;toolcall-abc123&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;function&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;function&#34;</span>: {
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;get_weather&#34;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&#34;arguments&#34;</span>: <span style="color:#e6db74">&#34;{ \&#34;city\&#34;: \&#34;北京\&#34; }&#34;</span>
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;tool&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;tool_call_id&#34;</span>: <span style="color:#e6db74">&#34;toolcall-abc123&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;{ \&#34;temperature\&#34;: \&#34;31°C\&#34;, \&#34;condition\&#34;: \&#34;晴\&#34; }&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}<span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span></span></code></pre></div><hr>
+<h3 id="-第三步返回最终的自然语言回复例如">
   ✅ 第三步：返回最终的自然语言回复（例如）：
   
   <a class="anchor" href="#-%e7%ac%ac%e4%b8%89%e6%ad%a5%e8%bf%94%e5%9b%9e%e6%9c%80%e7%bb%88%e7%9a%84%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%9b%9e%e5%a4%8d%e4%be%8b%e5%a6%82">#</a>
   
-</h2>
-<pre tabindex="0"><code>{
-    &#34;choices&#34;: [
-        {
-            &#34;message&#34;: {
-                &#34;role&#34;: &#34;assistant&#34;,
-                &#34;content&#34;: &#34;北京今天是晴天，气温为 31°C。适合出门哦！&#34;
-            }
-        }
-    ]
-}
-</code></pre></article>
+</h3>
+<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;choices&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;message&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;assistant&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;北京今天是晴天，气温为 31°C。适合出门哦！&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></article>
  
       
 
@@ -1304,10 +1334,13 @@ curl --location --request POST &#39;https://api.whatai.cc/v1/chat/completions&#3
         <li><a href="#请求示例"><strong>请求示例</strong></a></li>
         <li><a href="#响应处理"><strong>响应处理</strong></a></li>
         <li><a href="#注意事项"><strong>注意事项</strong></a></li>
-        <li><a href="#tools-场景示例">Tools 场景示例</a></li>
-        <li><a href="#-第一步发送用户提问--工具定义">✅ 第一步：发送用户提问 + 工具定义</a></li>
-        <li><a href="#-第二步你执行实际函数例如自己写的天气-api并将结果通过工具响应发回-ai">🔁 第二步：你执行实际函数（例如自己写的天气 API），并将结果通过工具响应发回 AI</a></li>
-        <li><a href="#-第三步返回最终的自然语言回复例如">✅ 第三步：返回最终的自然语言回复（例如）：</a></li>
+        <li><a href="#tools-场景示例">Tools 场景示例</a>
+          <ul>
+            <li><a href="#-第一步发送用户提问--工具定义">✅ 第一步：发送用户提问 + 工具定义</a></li>
+            <li><a href="#-第二步你执行实际函数例如自己写的天气-api并将结果通过工具响应发回-ai">🔁 第二步：你执行实际函数（例如自己写的天气 API），并将结果通过工具响应发回 AI</a></li>
+            <li><a href="#-第三步返回最终的自然语言回复例如">✅ 第三步：返回最终的自然语言回复（例如）：</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>

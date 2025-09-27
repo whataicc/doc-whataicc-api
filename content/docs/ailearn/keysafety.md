@@ -45,7 +45,7 @@ author: "神马中转API（api.whatai.cc）"
 ![Image 8](https://pic2.imgdd.cc/item/68cc0a32fcdff6548301c454.png)
 
 
-#### **🔒 3. 模型锁 - 权限级管控 -**启用模型限制
+#### 🔒 3. 模型锁 - 权限级管控 -启用模型限制
 
 **作用**：指定某个 API Key 仅用于特定的模型，防止该 Key 被用于其他模型调用
 
@@ -62,7 +62,7 @@ author: "神马中转API（api.whatai.cc）"
 
 **案例**：为客服系统Key配置安全策略
 ```
-bash复制代码Step 1：进入编辑页
+Step 1：进入编辑页
    Key名称：AI客服生产环境
    
 Step 2：设置IP白名单

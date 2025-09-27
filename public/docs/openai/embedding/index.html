@@ -25,7 +25,7 @@
 <link rel="canonical" href="http://localhost:1313/docs/openai/embedding/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.af1f592a893f1369497fa7e970a6661fd70a756d03abab0110a1e33c0e174cf7.js" integrity="sha256-rx9ZKok/E2lJf6fpcKZmH9cKdW0Dq6sBEKHjPA4XTPc=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.77231126e83f4a842c51971ebdf3d44ce667b198dde894a9a31e772d5e96ae8e.js" integrity="sha256-dyMRJug/SoQsUZcevfPUTOZnsZjd6JSpox53LV6Wro4=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -503,6 +503,32 @@ https://github.com/alex-shpak/hugo-book
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/modellearn/claudeapi/" class="">Claude API格式兼容</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/modellearn/midjourney/" class="">Midjourney使用教程</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -630,7 +656,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
+    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
   
 
         </li>
@@ -695,7 +721,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/otherai/chat/chatbox/" class="">ChatBox(推荐使用)</a>
+    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
   
 
         </li>
@@ -1120,7 +1146,7 @@ https://github.com/alex-shpak/hugo-book
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> openai
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置OpenAI API密钥和基础URL</span>
-</span></span><span style="display:flex;"><span>openai<span style="color:#f92672">.</span>api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sk-***********************************************&#34;</span>  <span style="color:#75715e"># 替换为你的 key</span>
+</span></span><span style="display:flex;"><span>openai<span style="color:#f92672">.</span>api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sk-***************************&#34;</span>  <span style="color:#75715e"># 替换为你的 key</span>
 </span></span><span style="display:flex;"><span>openai<span style="color:#f92672">.</span>base_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://api.whatai.cc/v1/&#34;</span>  <span style="color:#75715e">#  这里是API的 base url，注意这里v1后面需要/，最后的 / 很容易漏掉。</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_embedding</span>(text):
