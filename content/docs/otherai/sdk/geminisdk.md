@@ -12,18 +12,20 @@ categories: ["技术教程", "API文档"]
 author: "神马中转API（api.whatai.cc）"
 ---
 
-#Gemini SDK 配置
-___
 
-## 🌟 Gemini Python SDK 入门文档
+# 🌟 Gemini Python SDK 入门文档
+
+支持 Gemini 官方格式；
+所有模型均支持使用 Gemini 格式
+
 ---
-### 🔧 1. 安装与设置
+## 🔧 1. 安装与设置
 ---
-#### 获取 API 密钥
+### 获取 API 密钥
 
 在网站 https://api.whatai.cc/token 获取令牌
 
-#### 🚀 2. 生成简单文本
+### 🚀 2. 生成简单文本
 ---
 ```
 CUSTOM_BASE_URL // 网站 BaseURL 通常是域名
@@ -32,7 +34,7 @@ API_KEY // 令牌页获取的令牌
 
 非流式
 
-```
+```python
 from google import genai
 from google.genai import types
 

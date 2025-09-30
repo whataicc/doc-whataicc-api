@@ -19,7 +19,9 @@ author: "神马中转API（api.whatai.cc）"
 神马聚合中转API是一个高效的Open AI、Midjourney API代理、Claude代理、Suno代理等供应商
 我们致力于提供优质的 API 接入服务，让您可以轻松集成先进的AI模型至您的产品和服务。通过 API 综合管理平台，无缝整合OpenAl最尖端的人工智能模型。借助我们可靠且易于使用的API解决方案，升级您的产品与服务。
 
-随着大模型与人工智能应用的普及，越来越多的开发者与企业希望快速集成各类AI接口。然而，直接调用不同厂商的API往往面临接口差异大、计费复杂、访问不稳定等问题。这时候，AI API中转站的价值就凸显出来了。  
+神马中转API支持全球主流顶尖AI大模型生态，包括OpenAI的GPT-5/GPT-4o/GPT-4.1系列、谷歌Gemini 2.5 Pro/Flash/nano-banana、Anthropic Claude Sonnet 4.5/4.1，以及 DeepSeek-v3、Midjourney、Luma、Llama3、Mistral等开源模型，覆盖文本、图像、语音、视频等多模态场景，满足从高精度推理到高效生成的多样化需求。
+
+随着大模型与人工智能应用的普及，越来越多的开发者与企业希望快速集成各类AI接口。然而，直接调用不同厂商的API往往面临接口差异大、计费复杂、访问不稳定等问题。这时候，神马中转API中转站的价值就凸显出来了。 
 
 ## 什么是AI API中转站？
 
@@ -107,14 +109,32 @@ GPT-5
 *   Text-to-Image gpt-image-1
 *   Text-to-Speech whisper-1
 *   ...
+  
+### 谷歌 AI大模型
 
-### Anthropic AI大模型
+OpenAI的主要竞争对手，Gemini系列以强大的推理、多模态能力著称
 
-OpenAI的主要竞争对手，模型能力不输GPT
-
-Claude 4.1
+gemini-2.5-pro、nano-banana、gemini-2.5-flash-lite等
 
 *   Model List:
+*   gemini-2.5-pro
+*   gemini-2.5-flash-lite
+*   nano-banana
+*   veo2-pro
+*   gemini-2.5-flash-thinking
+*   gemini-2.0-flash
+*   gemini-1.5-pro-latest
+*   gemini-2.5-flash-image
+*   ...
+  
+### Anthropic AI大模型
+
+专注安全与对齐，Claude 系列对话体验和长文本处理能力极强
+
+Claude Sonnet 4.5
+
+*   Model List:
+*   Claude Sonnet 4.5
 *   claude-4.1 claude-opus-4-1-20250805
 *   claude-4 claude-sonnet-4-20250514
 *   claude-4 claude-opus-4-20250514
@@ -124,10 +144,10 @@ Claude 4.1
 *   claude-3 claude-3-haiku-20240307
 *   claude-3 claude-3-haiku
 *   ...
-
+*   
 ### 开源大模型
 
-主流开源人工智能大模型
+主流开源人工智能大模型，灵活可部署，社区生态活跃
 
 DeepSeek
 
@@ -140,6 +160,10 @@ DeepSeek
 *   code-llama code-llama-13b
 *   mistral mistral-large-latest
 *   mistral mistral-medium-latest
+*   luma
+*   kling-video-v1
+*   jimeng-videos
+*   runwayml-gen4_turbo
 *   ...
 
 ## 如何快速接入神马聚合中转API
