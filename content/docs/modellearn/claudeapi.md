@@ -13,15 +13,15 @@ author: "神马中转API（api.whatai.cc）"
 ---
 
 
-神马中转API实现任意模型Claude Compatible接入！
------------------------------------
+# 神马中转API实现任意模型Claude Compatible接入！
+---
 
 随着 Claude Code 在开发者中的普及，越来越多的用户希望能在只支持 Claude 接口的应用中调用更多模型。神马中转API 率先实现了“任意模型 Claude Compatible”，极大推动了 AI 生态的开放和互联！
 
 * * *
 
 ## 🧠 Claude 格式 vs OpenAI 格式对比
----------------------------
+---
 
 ### 🎯 请求路径区别
 
@@ -34,7 +34,7 @@ author: "神马中转API（api.whatai.cc）"
 
 **OpenAI 格式请求示例**：
 
-```
+```json
 {
     "model": "gpt-4.1",
     "messages": [
@@ -49,7 +49,7 @@ author: "神马中转API（api.whatai.cc）"
 
 **Claude 格式请求示例**：
 
-```
+```json
 {
     "model": "claude-3-5-sonnet-20240620",
     "max_tokens": 1024,
@@ -71,11 +71,11 @@ author: "神马中转API（api.whatai.cc）"
 * * *
 
 ## 📦 响应格式差异对比
------------
+---
 
 ### OpenAI 返回示例
 
-```
+```json
 {
     "choices": [
         {
@@ -100,7 +100,7 @@ author: "神马中转API（api.whatai.cc）"
 
 ### Claude 返回示例
 
-```
+```json
 {
     "id": "msg_01NufbyqybJo5fVtRkH1VPzk",
     "type": "message",
@@ -128,7 +128,7 @@ author: "神马中转API（api.whatai.cc）"
 * * *
 
 ## 🚧 接口不兼容性的挑战
-------------
+---
 
 虽然两者都使用 JSON 结构，但在：
 
@@ -145,7 +145,7 @@ author: "神马中转API（api.whatai.cc）"
 * * *
 
 ## 🚀 神马中转API：让任意模型秒变 Claude Compatible！
-------------------------------------
+---
 
 为解决这一痛点，神马中转API 推出了革命性的 API 中转兼容方案：
 
@@ -165,7 +165,7 @@ author: "神马中转API（api.whatai.cc）"
 
 
 ## 🌈 总结：连接模型生态的桥梁
----------------
+---
 
 神马中转API 打破了模型协议的壁垒，让所有模型都能：
 

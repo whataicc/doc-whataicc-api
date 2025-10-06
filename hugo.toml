@@ -44,10 +44,6 @@ enableGitInfo = true
 #   weight = 3
 
 
-[[menu.after]]
-  name = "AI导航"
-  url = "https://whatai.cc"
-  weight = 19
 
 [[menu.after]]
   name = "中转API官网"

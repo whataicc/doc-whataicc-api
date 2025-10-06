@@ -13,6 +13,7 @@
   <meta property="og:locale" content="zh">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-09-28T00:07:51+08:00">
     <meta property="article:tag" content="API">
     <meta property="article:tag" content="中转API">
     <meta property="article:tag" content="服务使用">
@@ -24,7 +25,7 @@
 <link rel="canonical" href="http://localhost:1313/docs/modellearn/claudeapi/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.77231126e83f4a842c51971ebdf3d44ce667b198dde894a9a31e772d5e96ae8e.js" integrity="sha256-dyMRJug/SoQsUZcevfPUTOZnsZjd6JSpox53LV6Wro4=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.f92686ddf8cc90faeca0636bdae5cff5f5079c6c759abc4b47e04dc3aba221ad.js" integrity="sha256-&#43;SaG3fjMkPrsoGNr2uXP9fUHnGx1mrxLR&#43;BNw6uiIa0=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -911,13 +912,6 @@ https://github.com/alex-shpak/hugo-book
   
   <li>
     
-    <a href="https://whatai.cc"  target="_blank" rel="noopener">
-        AI导航
-      </a>
-  </li>
-  
-  <li>
-    
     <a href="https://api.whatai.cc"  target="_blank" rel="noopener">
         中转API官网
       </a>
@@ -967,9 +961,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#神马中转api实现任意模型claude-compatible接入">神马中转API实现任意模型Claude Compatible接入！</a>
       <ul>
-        <li><a href="#神马中转api实现任意模型claude-compatible接入">神马中转API实现任意模型Claude Compatible接入！</a></li>
         <li><a href="#-claude-格式-vs-openai-格式对比">🧠 Claude 格式 vs OpenAI 格式对比</a>
           <ul>
             <li><a href="#-请求路径区别">🎯 请求路径区别</a></li>
@@ -1003,12 +996,13 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h2 id="神马中转api实现任意模型claude-compatible接入">
+  <article class="markdown book-article"><h1 id="神马中转api实现任意模型claude-compatible接入">
   神马中转API实现任意模型Claude Compatible接入！
   
   <a class="anchor" href="#%e7%a5%9e%e9%a9%ac%e4%b8%ad%e8%bd%acapi%e5%ae%9e%e7%8e%b0%e4%bb%bb%e6%84%8f%e6%a8%a1%e5%9e%8bclaude-compatible%e6%8e%a5%e5%85%a5">#</a>
   
-</h2>
+</h1>
+<hr>
 <p>随着 Claude Code 在开发者中的普及，越来越多的用户希望能在只支持 Claude 接口的应用中调用更多模型。神马中转API 率先实现了“任意模型 Claude Compatible”，极大推动了 AI 生态的开放和互联！</p>
 <hr>
 <h2 id="-claude-格式-vs-openai-格式对比">
@@ -1049,27 +1043,27 @@ https://github.com/alex-shpak/hugo-book
   
 </h3>
 <p><strong>OpenAI 格式请求示例</strong>：</p>
-<pre tabindex="0"><code>{
-    &#34;model&#34;: &#34;gpt-4.1&#34;,
-    &#34;messages&#34;: [
-        {
-            &#34;role&#34;: &#34;user&#34;,
-            &#34;content&#34;: &#34;Hello!&#34;
-        }
-    ]
-}
-</code></pre><p><strong>Claude 格式请求示例</strong>：</p>
-<pre tabindex="0"><code>{
-    &#34;model&#34;: &#34;claude-3-5-sonnet-20240620&#34;,
-    &#34;max_tokens&#34;: 1024,
-    &#34;messages&#34;: [
-        {
-            &#34;role&#34;: &#34;user&#34;,
-            &#34;content&#34;: &#34;Hello, world&#34;
-        }
-    ]
-}
-</code></pre><p><strong>关键差异</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;gpt-4.1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;messages&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;Hello!&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Claude 格式请求示例</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;claude-3-5-sonnet-20240620&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;max_tokens&#34;</span>: <span style="color:#ae81ff">1024</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;messages&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;Hello, world&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>关键差异</strong>：</p>
 <ul>
 <li>
 <p><strong>参数结构</strong>：Claude 请求中必须显式指定 <code>max_tokens</code>；OpenAI 中为可选。</p>
@@ -1092,46 +1086,46 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#openai-%e8%bf%94%e5%9b%9e%e7%a4%ba%e4%be%8b">#</a>
   
 </h3>
-<pre tabindex="0"><code>{
-    &#34;choices&#34;: [
-        {
-            &#34;finish_reason&#34;: &#34;stop&#34;,
-            &#34;index&#34;: 0,
-            &#34;logprobs&#34;: null,
-            &#34;message&#34;: {
-                &#34;annotations&#34;: [],
-                &#34;content&#34;: &#34;Hello! How can I assist you today? 😊&#34;,
-                &#34;refusal&#34;: null,
-                &#34;role&#34;: &#34;assistant&#34;
-            }
-        }
-    ],
-    &#34;created&#34;: 1753384149,
-    &#34;id&#34;: &#34;chatcmpl-BwvbRo5aJ8TXqFwmmOXsE7eicJig3&#34;,
-    &#34;model&#34;: &#34;gpt-4.1&#34;,
-    &#34;object&#34;: &#34;chat.completion&#34;,
-    &#34;system_fingerprint&#34;: &#34;fp_07e970ab25&#34;
-}
-</code></pre><h3 id="claude-返回示例">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;choices&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;finish_reason&#34;</span>: <span style="color:#e6db74">&#34;stop&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;index&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;logprobs&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;message&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;annotations&#34;</span>: [],
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;Hello! How can I assist you today? 😊&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;refusal&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;assistant&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;created&#34;</span>: <span style="color:#ae81ff">1753384149</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;chatcmpl-BwvbRo5aJ8TXqFwmmOXsE7eicJig3&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;gpt-4.1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;object&#34;</span>: <span style="color:#e6db74">&#34;chat.completion&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;system_fingerprint&#34;</span>: <span style="color:#e6db74">&#34;fp_07e970ab25&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="claude-返回示例">
   Claude 返回示例
   
   <a class="anchor" href="#claude-%e8%bf%94%e5%9b%9e%e7%a4%ba%e4%be%8b">#</a>
   
 </h3>
-<pre tabindex="0"><code>{
-    &#34;id&#34;: &#34;msg_01NufbyqybJo5fVtRkH1VPzk&#34;,
-    &#34;type&#34;: &#34;message&#34;,
-    &#34;role&#34;: &#34;assistant&#34;,
-    &#34;model&#34;: &#34;claude-3-5-sonnet-20240620&#34;,
-    &#34;content&#34;: [
-        {
-            &#34;type&#34;: &#34;text&#34;,
-            &#34;text&#34;: &#34;Hello! How can I assist you today? Is there anything specific you&#39;d like to talk about or any questions you have?&#34;
-        }
-    ],
-    &#34;stop_reason&#34;: &#34;end_turn&#34;
-}
-</code></pre><p><strong>主要结构差异</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;msg_01NufbyqybJo5fVtRkH1VPzk&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;message&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;assistant&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;model&#34;</span>: <span style="color:#e6db74">&#34;claude-3-5-sonnet-20240620&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;content&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;text&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;text&#34;</span>: <span style="color:#e6db74">&#34;Hello! How can I assist you today? Is there anything specific you&#39;d like to talk about or any questions you have?&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;stop_reason&#34;</span>: <span style="color:#e6db74">&#34;end_turn&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>主要结构差异</strong>：</p>
 <table>
   <thead>
       <tr>
@@ -1312,9 +1306,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#神马中转api实现任意模型claude-compatible接入">神马中转API实现任意模型Claude Compatible接入！</a>
       <ul>
-        <li><a href="#神马中转api实现任意模型claude-compatible接入">神马中转API实现任意模型Claude Compatible接入！</a></li>
         <li><a href="#-claude-格式-vs-openai-格式对比">🧠 Claude 格式 vs OpenAI 格式对比</a>
           <ul>
             <li><a href="#-请求路径区别">🎯 请求路径区别</a></li>

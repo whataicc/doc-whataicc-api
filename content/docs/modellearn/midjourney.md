@@ -28,13 +28,27 @@ author: "神马中转API（api.whatai.cc）"
 ## 一、MJ Proxy Plus 快捷接入方式 ​
 ------------------------
 
+
 Midjourney Proxy 主机： https://api.whatai.cc
 
 Midjourney Proxy Secret：在令牌页生成的令牌，格式为 sk-xxxxxx 
 
-![Image 1](https://pic2.imgdd.cc/item/68d618728dc72b176e6fce0f.png)
+### ChatGPT & Midjourney配置教程：
 
-#### 不同的客户端需要填写不同的 BASE_URL ，请尝试以下地址： ​
+神马中转API聊天菜单 - ChatGPT & Midjourney - 左下角设置按钮 - 服务端 - 找到Midjourney设置：
+
+![ChatGPT & Midjourney配置教程](https://pic2.imgdd.cc/item/68d618728dc72b176e6fce0f.png)
+
+神马中转API聊天菜单 - ChatGPT & Midjourney - 绘画：
+
+提示词
+```
+On the streets of the city after the rain, the second-dimensional beauty wears a silver-gray hip skirt and gray stockings with patterns. Her high heels are eye-catching, in gray and deep purple tones. She has an urban fashion style. The stockings have exquisite patterns. The street lights and rainwater reflect the elegant legs. 
+```
+
+![ChatGPT & Midjourney配置教程](https://pic2.imgdd.cc/item/68e3cce68dc72b176e79ef2b.png)
+
+### 不同的客户端需要填写不同的 BASE_URL ，请尝试以下地址： ​
 
 *   https://api.whatai.cc
 
@@ -44,7 +58,7 @@ Midjourney Proxy Secret：在令牌页生成的令牌，格式为 sk-xxxxxx
 
 *   https://api.whatai.cc/mj/submit/imagine
 
-#### mode 参数（可选）： ​
+### mode 参数（可选）： ​
 
 *   relax, ：慢速（1-10分钟出图）
 
@@ -52,7 +66,7 @@ Midjourney Proxy Secret：在令牌页生成的令牌，格式为 sk-xxxxxx
 
 *   turbo, ：极速（1分钟内出图）
 
-#### proxy-type 参数（可选）： ​
+### proxy-type 参数（可选）： ​
 
 *   origin, ：图片使用 Discord 原地址，国外访问快，国内可能无法访问
 
@@ -60,10 +74,10 @@ Midjourney Proxy Secret：在令牌页生成的令牌，格式为 sk-xxxxxx
 
 *   proxy, ：图片使用管理员设置的地址，国内访问快（令牌可设置自己的图片代理地址）
 
-## 二、切换绘图模式、图片代理 ​
+## 二、切换绘图模式、图片代理 
 ---------------
 
-#### 设置参数介绍： ​
+#### 设置参数介绍： 
 
 *   fast, 是 Midjourney 的 fast mode（快速绘图模式），通常 1-5分钟内完成绘图
 

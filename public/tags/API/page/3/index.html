@@ -19,7 +19,7 @@
 <link rel="canonical" href="http://localhost:1313/tags/API/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.77231126e83f4a842c51971ebdf3d44ce667b198dde894a9a31e772d5e96ae8e.js" integrity="sha256-dyMRJug/SoQsUZcevfPUTOZnsZjd6JSpox53LV6Wro4=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.f92686ddf8cc90faeca0636bdae5cff5f5079c6c759abc4b47e04dc3aba221ad.js" integrity="sha256-&#43;SaG3fjMkPrsoGNr2uXP9fUHnGx1mrxLR&#43;BNw6uiIa0=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/API/index.xml" title="神马中转API_低价稳定中转API推荐" />
@@ -907,13 +907,6 @@ https://github.com/alex-shpak/hugo-book
   
   <li>
     
-    <a href="https://whatai.cc"  target="_blank" rel="noopener">
-        AI导航
-      </a>
-  </li>
-  
-  <li>
-    
     <a href="https://api.whatai.cc"  target="_blank" rel="noopener">
         中转API官网
       </a>
@@ -1209,7 +1202,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 初始化 OpenAI 客户端，传入 API key 和 base URL</span>
 </span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> OpenAI(
-</span></span><span style="display:flex;"><span>    api_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sk-***********************************************&#34;</span>,  <span style="color:#75715e"># 替换为你的 API key</span>
+</span></span><span style="display:flex;"><span>    api_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sk-*******************************&#34;</span>,  <span style="color:#75715e"># 替换为你的 API key</span>
 </span></span><span style="display:flex;"><span>    base_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://api.whatai.cc/v1/&#34;</span>   <span style="color:#75715e"># 这里是 base url，注意这里需要 /v1/</span>
 </span></span><span style="display:flex;"><span>)
 </span></span><span style="display:flex;"><span>
@@ -1494,7 +1487,7 @@ https://github.com/alex-shpak/hugo-book
 <p>认证方式: Bearer Token (API Key)</p>
 </li>
 </ul>
-<p><strong>更多baseURL👉： 基础概念-API地址（BaseUrl）</strong></p>
+<p><strong>更多baseURL</strong> 👉 <a href="/docs/aidocs/api/">基础概念-API地址</a></p>
 <h3 id="文本对话接口">
   <strong>文本对话接口</strong>
   
@@ -1790,7 +1783,7 @@ https://github.com/alex-shpak/hugo-book
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> openai
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置OpenAI API密钥和基础URL</span>
-</span></span><span style="display:flex;"><span>openai<span style="color:#f92672">.</span>api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sk-***********************************************&#34;</span>  <span style="color:#75715e"># 替换为你的 key</span>
+</span></span><span style="display:flex;"><span>openai<span style="color:#f92672">.</span>api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sk-***************************&#34;</span>  <span style="color:#75715e"># 替换为你的 key</span>
 </span></span><span style="display:flex;"><span>openai<span style="color:#f92672">.</span>base_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://api.whatai.cc/v1/&#34;</span>  <span style="color:#75715e">#  这里是API的 base url，注意这里v1后面需要/，最后的 / 很容易漏掉。</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_embedding</span>(text):

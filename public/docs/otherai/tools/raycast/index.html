@@ -25,7 +25,7 @@
 <link rel="canonical" href="http://localhost:1313/docs/otherai/tools/raycast/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.77231126e83f4a842c51971ebdf3d44ce667b198dde894a9a31e772d5e96ae8e.js" integrity="sha256-dyMRJug/SoQsUZcevfPUTOZnsZjd6JSpox53LV6Wro4=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.f92686ddf8cc90faeca0636bdae5cff5f5079c6c759abc4b47e04dc3aba221ad.js" integrity="sha256-&#43;SaG3fjMkPrsoGNr2uXP9fUHnGx1mrxLR&#43;BNw6uiIa0=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -912,13 +912,6 @@ https://github.com/alex-shpak/hugo-book
   
   <li>
     
-    <a href="https://whatai.cc"  target="_blank" rel="noopener">
-        AI导航
-      </a>
-  </li>
-  
-  <li>
-    
     <a href="https://api.whatai.cc"  target="_blank" rel="noopener">
         中转API官网
       </a>
@@ -968,7 +961,35 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#raycast-插件-chatgpt-使用指南推荐使用">Raycast 插件 ChatGPT 使用指南（推荐使用）</a></li>
+    <li><a href="#raycast-插件-chatgpt-使用指南推荐使用">Raycast 插件 ChatGPT 使用指南（推荐使用）</a>
+      <ul>
+        <li><a href="#一raycast基础功能与特点"><strong>一、Raycast基础功能与特点</strong></a></li>
+        <li><a href="#二安装与配置-raycast"><strong>二、安装与配置 Raycast</strong></a></li>
+        <li><a href="#三插件推荐高频实用"><strong>三、插件推荐（高频实用🔥）</strong></a>
+          <ul>
+            <li><a href="#-通用效率类"><strong>🔧 通用效率类</strong></a></li>
+            <li><a href="#-开发者类"><strong>💻 开发者类</strong></a></li>
+            <li><a href="#-网络与工具类"><strong>🌐 网络与工具类</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#四raycast-插件-chatgpt-使用指南重点-"><strong>四、Raycast 插件 ChatGPT 使用指南（重点 🔥）</strong></a>
+          <ul>
+            <li><a href="#1-安装-chatgpt-插件"><strong>1. 安装 ChatGPT 插件</strong></a></li>
+            <li><a href="#2-api-key-配置"><strong>2. API Key 配置</strong></a></li>
+            <li><a href="#3-快捷键设置"><strong>3. 快捷键设置</strong></a></li>
+            <li><a href="#4-使用场景"><strong>4. 使用场景</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#五chatgpt-插件使用示例"><strong>五、ChatGPT 插件使用示例</strong></a>
+          <ul>
+            <li><a href="#示例-1写代码"><strong>示例 1：写代码</strong></a></li>
+            <li><a href="#示例-2文本润色"><strong>示例 2：文本润色</strong></a></li>
+            <li><a href="#示例-3快速学习"><strong>示例 3：快速学习</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#六总结"><strong>六、总结</strong></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -988,10 +1009,377 @@ https://github.com/alex-shpak/hugo-book
   
 </h1>
 <hr>
-<p>安装插件, 在 Raycast Store 中找到 ChatGPT 插件，并按照提示安装：</p>
-<p>配置 API Key, 安装完成后，在该插件配置中的 API Key 中填入我们的 API Key。选中 Change API Endpoint，并在 API Endpoint 中填入 <a href="https://api.whatai.cc/v1">https://api.whatai.cc/v1</a>。</p>
-<p>🍺 Enjoy it!</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd0200fcdff6548303060d.gif" alt="Raycast 插件 ChatGPT 使用指南（推荐使用）" /></p>
+<p>Raycast 是一款高效的快捷启动与工作流管理工具，可以替代 Spotlight，更快地打开应用、执行脚本、调用 API、管理工作效率插件。它不仅适合开发者，也适合日常办公、学习场景。</p>
+<p><img src="https://pic2.imgdd.cc/item/68d49fe88dc72b176e6e226f.png" alt="Raycast安装教程与国内ChatGPT插件使用指南_MAC最强生产力软件_AI工具推荐" /></p>
+<h2 id="一raycast基础功能与特点">
+  <strong>一、Raycast基础功能与特点</strong>
+  
+  <a class="anchor" href="#%e4%b8%80raycast%e5%9f%ba%e7%a1%80%e5%8a%9f%e8%83%bd%e4%b8%8e%e7%89%b9%e7%82%b9">#</a>
+  
+</h2>
+<p><strong>一、Raycast 基础功能</strong></p>
+<ol>
+<li>
+<p><strong>应用启动</strong></p>
+<ul>
+<li>
+<p>按 ⌘ + 空格 或自定义快捷键呼出 Raycast</p>
+</li>
+<li>
+<p>输入应用名称即可快速打开</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>文件与文件夹搜索</strong></p>
+<ul>
+<li>
+<p>输入文件名、文件夹名即可快速定位</p>
+</li>
+<li>
+<p>支持预览、复制路径</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>系统控制</strong></p>
+<ul>
+<li>
+<p>快速调整音量、亮度</p>
+</li>
+<li>
+<p>切换 Wi-Fi、蓝牙等</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>工作流与插件（Extensions）</strong></p>
+<ul>
+<li>
+<p>Raycast 内置商店（Store）</p>
+</li>
+<li>
+<p>可以安装各类生产力工具（如 GitHub、Jira、Notion、ChatGPT 等插件）</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://pic2.imgdd.cc/item/68d49f948dc72b176e6e21da.png" alt="Raycast安装教程与国内ChatGPT插件使用指南_MAC最强生产力软件_AI工具推荐" /> <strong>二、Raycast 的特点</strong></p>
+<ol>
+<li>
+<p><strong>快速启动</strong>：几乎零延迟的搜索和应用启动体验。</p>
+</li>
+<li>
+<p><strong>可扩展性强</strong>：内置插件市场，开发者可以编写并分享自己的插件。</p>
+</li>
+<li>
+<p><strong>快捷命令</strong>：支持自定义脚本（Shell、Python、JavaScript），快速执行。</p>
+</li>
+<li>
+<p><strong>工作流整合</strong>：支持与 GitHub、Notion、Jira、Linear 等工具无缝结合。</p>
+</li>
+<li>
+<p><strong>美观 &amp; 极简</strong>：界面清爽、交互直观，键盘操作流畅无比。</p>
+</li>
+<li>
+<p><strong>免费为主</strong>：核心功能免费，Pro 版提供团队协作和更强的个性化功能。</p>
+</li>
+</ol>
+<h2 id="二安装与配置-raycast">
+  <strong>二、安装与配置 Raycast</strong>
+  
+  <a class="anchor" href="#%e4%ba%8c%e5%ae%89%e8%a3%85%e4%b8%8e%e9%85%8d%e7%bd%ae-raycast">#</a>
+  
+</h2>
+<ol>
+<li>
+<p><strong>下载安装</strong></p>
+<ul>
+<li>
+<p>官网：https://www.raycast.com</p>
+</li>
+<li>
+<p>支持 macOS</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>初始设置</strong></p>
+<ul>
+<li>
+<p>设置全局快捷键（推荐：⌘ + 空格 替换 Spotlight）</p>
+</li>
+<li>
+<p>登录账号（方便同步插件和配置）</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>安装插件</strong></p>
+<ul>
+<li>打开 Raycast → 输入 Store → 搜索需要的插件 → 一键安装</li>
+</ul>
+</li>
+</ol>
+<p> </p>
+<h2 id="三插件推荐高频实用">
+  <strong>三、插件推荐（高频实用🔥）</strong>
+  
+  <a class="anchor" href="#%e4%b8%89%e6%8f%92%e4%bb%b6%e6%8e%a8%e8%8d%90%e9%ab%98%e9%a2%91%e5%ae%9e%e7%94%a8">#</a>
+  
+</h2>
+<p>以下推荐一些实用的 Raycast 插件，分为通用类和开发类：</p>
+<h3 id="-通用效率类">
+  <strong>🔧 通用效率类</strong>
+  
+  <a class="anchor" href="#-%e9%80%9a%e7%94%a8%e6%95%88%e7%8e%87%e7%b1%bb">#</a>
+  
+</h3>
+<ol>
+<li>
+<p><strong>ChatGPT</strong></p>
+<ul>
+<li>直接在 Raycast 中调用 GPT 模型，快速生成文本、写代码、翻译。</li>
+</ul>
+</li>
+<li>
+<p><strong>Clipboard History</strong></p>
+<ul>
+<li>剪贴板管理神器，快速查找复制过的内容。</li>
+</ul>
+</li>
+<li>
+<p><strong>Emoji Search</strong></p>
+<ul>
+<li>通过关键字快速搜索 Emoji。</li>
+</ul>
+</li>
+<li>
+<p><strong>Google Translate</strong></p>
+<ul>
+<li>内置翻译功能，支持中英文互译。</li>
+</ul>
+</li>
+<li>
+<p><strong>Timer &amp; Stopwatch</strong></p>
+<ul>
+<li>设置倒计时、专注时间。</li>
+</ul>
+</li>
+</ol>
+<h3 id="-开发者类">
+  <strong>💻 开发者类</strong>
+  
+  <a class="anchor" href="#-%e5%bc%80%e5%8f%91%e8%80%85%e7%b1%bb">#</a>
+  
+</h3>
+<ol>
+<li>
+<p><strong>GitHub</strong></p>
+<ul>
+<li>查看 PR、Issue、仓库，快速跳转到网页。</li>
+</ul>
+</li>
+<li>
+<p><strong>Jira</strong></p>
+<ul>
+<li>管理任务、查看工单，适合团队协作。</li>
+</ul>
+</li>
+<li>
+<p><strong>Notion</strong></p>
+<ul>
+<li>快速搜索和打开页面。</li>
+</ul>
+</li>
+<li>
+<p><strong>Linear</strong></p>
+<ul>
+<li>管理任务，和敏捷开发结合良好。</li>
+</ul>
+</li>
+<li>
+<p><strong>Docker</strong></p>
+<ul>
+<li>查看容器状态，直接管理容器。</li>
+</ul>
+</li>
+</ol>
+<h3 id="-网络与工具类">
+  <strong>🌐 网络与工具类</strong>
+  
+  <a class="anchor" href="#-%e7%bd%91%e7%bb%9c%e4%b8%8e%e5%b7%a5%e5%85%b7%e7%b1%bb">#</a>
+  
+</h3>
+<ol>
+<li>
+<p><strong>Google Search</strong></p>
+<ul>
+<li>快速搜索 Google 结果。</li>
+</ul>
+</li>
+<li>
+<p><strong>Currency Converter</strong></p>
+<ul>
+<li>实时汇率转换。</li>
+</ul>
+</li>
+<li>
+<p><strong>Weather</strong></p>
+<ul>
+<li>查看当前天气。</li>
+</ul>
+</li>
+<li>
+<p><strong>Raindrop.io</strong></p>
+<ul>
+<li>管理书签收藏。</li>
+</ul>
+</li>
+</ol>
+<h2 id="四raycast-插件-chatgpt-使用指南重点-">
+  <strong>四、Raycast 插件 ChatGPT 使用指南（重点 🔥）</strong>
+  
+  <a class="anchor" href="#%e5%9b%9braycast-%e6%8f%92%e4%bb%b6-chatgpt-%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97%e9%87%8d%e7%82%b9-">#</a>
+  
+</h2>
+<p>Raycast 的 ChatGPT 插件可以让你在任何场景下快速调用 GPT 能力，不需要额外切换到浏览器。</p>
+<h3 id="1-安装-chatgpt-插件">
+  <strong>1. 安装 ChatGPT 插件</strong>
+  
+  <a class="anchor" href="#1-%e5%ae%89%e8%a3%85-chatgpt-%e6%8f%92%e4%bb%b6">#</a>
+  
+</h3>
+<ul>
+<li>
+<p>打开 Raycast → 输入 Store</p>
+</li>
+<li>
+<p>搜索 <strong>ChatGPT</strong> 插件</p>
+</li>
+<li>
+<p>点击 Install 安装</p>
+</li>
+</ul>
+<p>在 Raycast Store 中找到 ChatGPT 插件，并按照提示安装：</p>
+<p><img src="https://pic2.imgdd.cc/item/68d49ae28dc72b176e6e1fbc.png" alt="Raycast插件ChatGPT使用指南" /></p>
+<h3 id="2-api-key-配置">
+  <strong>2. API Key 配置</strong>
+  
+  <a class="anchor" href="#2-api-key-%e9%85%8d%e7%bd%ae">#</a>
+  
+</h3>
+<p>ChatGPT 插件依赖 OpenAI API或者使用【神马中转API】，你需要：</p>
+<ol>
+<li>
+<p>前往 OpenAI API Keys或者国内直连使用【神马中转API（api.whatai.cc）】</p>
+</li>
+<li>
+<p>复制 API Key</p>
+</li>
+<li>
+<p>打开 Raycast → 输入 ChatGPT → 设置 → 粘贴 API Key</p>
+</li>
+</ol>
+<p>安装完成后在该插件配置中的 <code>API Key</code> 中填入【神马中转API】的API Key，以及选中 <code>Change API Endpoint</code>，并在 <code>API Endpoint</code> 中填入 <code>https://api.whatai.cc/v1</code></p>
+<p><img src="https://pic2.imgdd.cc/item/68d49b628dc72b176e6e1fc2.png" alt="Raycast插件ChatGPT使用指南" /> <img src="https://pic2.imgdd.cc/item/68d49b848dc72b176e6e1fc7.png" alt="Raycast插件ChatGPT使用指南" />  </p>
+<h3 id="3-快捷键设置">
+  <strong>3. 快捷键设置</strong>
+  
+  <a class="anchor" href="#3-%e5%bf%ab%e6%8d%b7%e9%94%ae%e8%ae%be%e7%bd%ae">#</a>
+  
+</h3>
+<ul>
+<li>
+<p>你可以为 <strong>ChatGPT 插件</strong> 设置全局快捷键，比如：⌘ + ⇧ + G</p>
+</li>
+<li>
+<p>随时唤出 ChatGPT，输入问题即可得到回答</p>
+</li>
+</ul>
+<h3 id="4-使用场景">
+  <strong>4. 使用场景</strong>
+  
+  <a class="anchor" href="#4-%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af">#</a>
+  
+</h3>
+<ul>
+<li>
+<p><strong>日常问答</strong>：数学题、语法解释、编程调试</p>
+</li>
+<li>
+<p><strong>文本处理</strong>：中英文翻译、润色、写邮件</p>
+</li>
+<li>
+<p><strong>开发辅助</strong>：代码解释、生成正则、写脚本</p>
+</li>
+</ul>
+<p>🍺 enjoy it~ <img src="https://pic.imgdb.cn/item/66da65dbd9c307b7e9b56670.gif" alt="" />    </p>
+<h2 id="五chatgpt-插件使用示例">
+  <strong>五、ChatGPT 插件使用示例</strong>
+  
+  <a class="anchor" href="#%e4%ba%94chatgpt-%e6%8f%92%e4%bb%b6%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b">#</a>
+  
+</h2>
+<p>以下是一些常见的使用场景示例：</p>
+<h3 id="示例-1写代码">
+  <strong>示例 1：写代码</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-1%e5%86%99%e4%bb%a3%e7%a0%81">#</a>
+  
+</h3>
+<pre tabindex="0"><code>用户输入：
+用 Python 写一个快速排序
+
+ChatGPT 输出：
+def quick_sort(arr):
+if len(arr) &lt;= 1:
+return arr
+pivot = arr[len(arr)//2]
+left = [x for x in arr if x &lt; pivot]
+middle = [x for x in arr if x == pivot]
+right = [x for x in arr if x &gt; pivot]
+return quick_sort(left) + middle + quick_sort(right)
+</code></pre><h3 id="示例-2文本润色">
+  <strong>示例 2：文本润色</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-2%e6%96%87%e6%9c%ac%e6%b6%a6%e8%89%b2">#</a>
+  
+</h3>
+<pre tabindex="0"><code>用户输入：
+请润色这句话 → “我很喜欢用raycast，因为它帮我提高效率”
+
+ChatGPT 输出：
+“我非常喜欢使用 Raycast，它极大地提升了我的工作效率。”
+</code></pre><h3 id="示例-3快速学习">
+  <strong>示例 3：快速学习</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-3%e5%bf%ab%e9%80%9f%e5%ad%a6%e4%b9%a0">#</a>
+  
+</h3>
+<pre tabindex="0"><code>用户输入：
+请用简单的方式解释二叉树
+
+ChatGPT 输出：
+二叉树是一种数据结构，每个节点最多有两个子节点：左子树和右子树。就像一个家谱，每个人最多有两个孩子。
+</code></pre><p> </p>
+<h2 id="六总结">
+  <strong>六、总结</strong>
+  
+  <a class="anchor" href="#%e5%85%ad%e6%80%bb%e7%bb%93">#</a>
+  
+</h2>
+<ul>
+<li>
+<p>Raycast 是一个效率神器，结合插件可以替代大量工具</p>
+</li>
+<li>
+<p>ChatGPT 插件让 AI 随时随地可用，提升学习、写作、编程效率</p>
+</li>
+<li>
+<p>通过配置快捷键，你几乎可以把 ChatGPT 当成 <strong>操作系统级别的助手</strong></p>
+</li>
+</ul>
 </article>
  
       
@@ -1061,7 +1449,35 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#raycast-插件-chatgpt-使用指南推荐使用">Raycast 插件 ChatGPT 使用指南（推荐使用）</a></li>
+    <li><a href="#raycast-插件-chatgpt-使用指南推荐使用">Raycast 插件 ChatGPT 使用指南（推荐使用）</a>
+      <ul>
+        <li><a href="#一raycast基础功能与特点"><strong>一、Raycast基础功能与特点</strong></a></li>
+        <li><a href="#二安装与配置-raycast"><strong>二、安装与配置 Raycast</strong></a></li>
+        <li><a href="#三插件推荐高频实用"><strong>三、插件推荐（高频实用🔥）</strong></a>
+          <ul>
+            <li><a href="#-通用效率类"><strong>🔧 通用效率类</strong></a></li>
+            <li><a href="#-开发者类"><strong>💻 开发者类</strong></a></li>
+            <li><a href="#-网络与工具类"><strong>🌐 网络与工具类</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#四raycast-插件-chatgpt-使用指南重点-"><strong>四、Raycast 插件 ChatGPT 使用指南（重点 🔥）</strong></a>
+          <ul>
+            <li><a href="#1-安装-chatgpt-插件"><strong>1. 安装 ChatGPT 插件</strong></a></li>
+            <li><a href="#2-api-key-配置"><strong>2. API Key 配置</strong></a></li>
+            <li><a href="#3-快捷键设置"><strong>3. 快捷键设置</strong></a></li>
+            <li><a href="#4-使用场景"><strong>4. 使用场景</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#五chatgpt-插件使用示例"><strong>五、ChatGPT 插件使用示例</strong></a>
+          <ul>
+            <li><a href="#示例-1写代码"><strong>示例 1：写代码</strong></a></li>
+            <li><a href="#示例-2文本润色"><strong>示例 2：文本润色</strong></a></li>
+            <li><a href="#示例-3快速学习"><strong>示例 3：快速学习</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#六总结"><strong>六、总结</strong></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

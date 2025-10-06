@@ -15,10 +15,17 @@ author: "神马中转API（api.whatai.cc）"
 # Chatgpt-web-midjourney-proxy配置教程
 ---
 
-进入设置--服务端--
+### ChatGPT & Midjourney配置教程：
 
-填入 API秘钥 和 API地址（https://api.whatai.cc）
+神马中转API聊天菜单 - ChatGPT & Midjourney - 左下角设置按钮 - 服务端 - 找到Midjourney设置：
 
-保存
+![ChatGPT & Midjourney配置教程](https://pic2.imgdd.cc/item/68d618728dc72b176e6fce0f.png)
 
-![Image 8](https://pic2.imgdd.cc/item/68cd194ffcdff65483037942.png)
+神马中转API聊天菜单 - ChatGPT & Midjourney - 绘画：
+
+提示词
+```
+On the streets of the city after the rain, the second-dimensional beauty wears a silver-gray hip skirt and gray stockings with patterns. Her high heels are eye-catching, in gray and deep purple tones. She has an urban fashion style. The stockings have exquisite patterns. The street lights and rainwater reflect the elegant legs. 
+```
+
+![ChatGPT & Midjourney配置教程](https://pic2.imgdd.cc/item/68e3cce68dc72b176e79ef2b.png)

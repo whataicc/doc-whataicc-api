@@ -15,5 +15,6 @@ author: "神马中转API（api.whatai.cc）"
 # Lobe-Chat ​配置教程
 ---
 
-将接口代理地址改成API地址的链接：`https://api.whatai.cc`
+将接口代理地址改成API地址的链接：`https://api.whatai.cc/v1` 或者 `https://api.whatai.cc`
 
+![Lobe-Chat ​配置教程](https://pic2.imgdd.cc/item/68e3d6e18dc72b176e79f2e6.png)
