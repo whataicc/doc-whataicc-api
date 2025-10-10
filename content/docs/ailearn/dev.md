@@ -41,8 +41,6 @@ author: "神马中转API（api.whatai.cc）"
 
     *   `Authorization`: Bearer sk-****** (你的API Key)
 
-    *   `User-Agent`: DMXAPI/1.0.0 (https://api.whatai.cc)
-
     *   `Content-Type`: application/json
 
 ### **请求参数**
@@ -70,7 +68,6 @@ author: "神马中转API（api.whatai.cc）"
 curl -X POST "https://api.whatai.cc/v1/chat/completions" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer sk-******" \  # 替换为你的API Key
-  -H "User-Agent: DMXAPI/1.0.0" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "gpt-4o-mini",
@@ -99,7 +96,6 @@ url = "https://api.whatai.cc/v1/chat/completions"
 headers = {
     'Accept': 'application/json',
     'Authorization': 'Bearer sk-******',  # 替换为你的API Key
-    'User-Agent': 'DMXAPI/1.0.0',
     'Content-Type': 'application/json'
 }
 

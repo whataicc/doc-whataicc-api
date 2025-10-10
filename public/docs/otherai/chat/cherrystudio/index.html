@@ -13,12 +13,12 @@
   <meta property="og:locale" content="zh">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-09-25T18:36:51+08:00">
+    <meta property="article:modified_time" content="2025-10-06T23:00:08+08:00">
     <meta property="article:tag" content="API">
     <meta property="article:tag" content="中转API">
     <meta property="article:tag" content="服务使用">
 <title>
-  Cherry Studio配置教程_国内如何使用中转API | 神马中转API_低价稳定中转API推荐
+  Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐 | 神马中转API_低价稳定中转API推荐
 </title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
@@ -984,6 +984,32 @@ https://github.com/alex-shpak/hugo-book
           </ul>
         </li>
         <li><a href="#cherry-studio界面ui">Cherry Studio界面UI</a></li>
+        <li><a href="#使用-cherry-studio基础操作"><strong>使用 Cherry Studio（基础操作）</strong></a>
+          <ul>
+            <li><a href="#41-对话与多模型切换"><strong>4.1 对话与多模型切换</strong></a></li>
+            <li><a href="#42-智能体--助手管理"><strong>4.2 智能体 / 助手管理</strong></a></li>
+            <li><a href="#43-界面与布局调优"><strong>4.3 界面与布局调优</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#添加智能体--助手"><strong>添加智能体 / 助手</strong></a></li>
+        <li><a href="#知识库教程更进阶"><strong>知识库教程（更进阶）</strong></a>
+          <ul>
+            <li><a href="#添加嵌入模型">添加嵌入模型</a></li>
+            <li><a href="#创建知识库">创建知识库</a></li>
+            <li><a href="#添加文件并向量化">添加文件并向量化</a></li>
+            <li><a href="#添加多种来源的数据">添加多种来源的数据</a></li>
+            <li><a href="#搜索知识库">搜索知识库</a></li>
+            <li><a href="#对话中引用知识库生成回复">对话中引用知识库生成回复</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用示例多个场景演示"><strong>使用示例（多个场景演示）</strong></a>
+          <ul>
+            <li><a href="#示例-1学术问答--引用知识库"><strong>示例 1：学术问答 + 引用知识库</strong></a></li>
+            <li><a href="#示例-2写作助手--多模型对比"><strong>示例 2：写作助手 + 多模型对比</strong></a></li>
+            <li><a href="#示例-3图像生成--文本说明"><strong>示例 3：图像生成 + 文本说明</strong></a></li>
+            <li><a href="#示例-4客服问答--智能体部署"><strong>示例 4：客服问答 / 智能体部署</strong></a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1242,9 +1268,417 @@ https://github.com/alex-shpak/hugo-book
   
 </h2>
 <hr>
-<p><img src="https://pic2.imgdd.cc/item/68cd177ffcdff654830373f0.png" alt="Image 12" /></p>
-<p><img src="https://pic2.imgdd.cc/item/68cd1790fcdff654830374e4.png" alt="Image 13" /></p>
-<p><img src="https://pic2.imgdd.cc/item/68cd17a0fcdff654830375ac.png" alt="Image 14" /></p>
+<p><img src="https://pic2.imgdd.cc/item/68cd177ffcdff654830373f0.png" alt="Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐" /></p>
+<p><img src="https://pic2.imgdd.cc/item/68cd1790fcdff654830374e4.png" alt="Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐" /></p>
+<p><img src="https://pic2.imgdd.cc/item/68cd17a0fcdff654830375ac.png" alt="Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐" /></p>
+<h2 id="使用-cherry-studio基础操作">
+  <strong>使用 Cherry Studio（基础操作）</strong>
+  
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8-cherry-studio%e5%9f%ba%e7%a1%80%e6%93%8d%e4%bd%9c">#</a>
+  
+</h2>
+<p>下面讲一些日常使用和主要操作模块。</p>
+<h3 id="41-对话与多模型切换">
+  <strong>4.1 对话与多模型切换</strong>
+  
+  <a class="anchor" href="#41-%e5%af%b9%e8%af%9d%e4%b8%8e%e5%a4%9a%e6%a8%a1%e5%9e%8b%e5%88%87%e6%8d%a2">#</a>
+  
+</h3>
+<ul>
+<li>
+<p>在主界面进入“对话 / 聊天”模块。</p>
+</li>
+<li>
+<p>在输入框上方通常可以选择当前使用的模型 / 服务商。你可以根据需求切换模型来比较答案。</p>
+</li>
+<li>
+<p>输入问题或提示，按回车发送，模型会生成回答。</p>
+</li>
+<li>
+<p>支持同时“多模型对比”输出（即同一个提示由多个模型同时生成答案）。 </p>
+</li>
+<li>
+<p>对话记录自动归类分组，方便查找历史对话。 </p>
+</li>
+<li>
+<p>可以将对话导出为 Markdown、Word 等格式。 </p>
+</li>
+</ul>
+<h3 id="42-智能体--助手管理">
+  <strong>4.2 智能体 / 助手管理</strong>
+  
+  <a class="anchor" href="#42-%e6%99%ba%e8%83%bd%e4%bd%93--%e5%8a%a9%e6%89%8b%e7%ae%a1%e7%90%86">#</a>
+  
+</h3>
+<p>在 Cherry Studio 中，有“助手市场”或“智能体”机制，你可以直接使用预置助手或自己定义助手。</p>
+<ul>
+<li>
+<p>内置助手：Cherry Studio 自带多个领域（写作、编程、翻译、知识问答等）的助手模块，直接选择即可使用。 </p>
+</li>
+<li>
+<p>自定义助手（智能体）：</p>
+<ol>
+<li>
+<p>新建一个助手，给定名称、角色/指令、默认提示词等。</p>
+</li>
+<li>
+<p>可以设置该助手使用的模型、上下文策略、温度、最大令牌数等参数。</p>
+</li>
+<li>
+<p>通过助手入口或标签快速调起该助手。</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>这样你可以为不同用途（如写作助手、客服助手、侧重代码助手等）分别定制多个助手。</p>
+<p><img src="https://pic2.imgdd.cc/item/68e4a8518dc72b176e7a46d6.png" alt="Cherry Studio教程" />  </p>
+<h3 id="43-界面与布局调优">
+  <strong>4.3 界面与布局调优</strong>
+  
+  <a class="anchor" href="#43-%e7%95%8c%e9%9d%a2%e4%b8%8e%e5%b8%83%e5%b1%80%e8%b0%83%e4%bc%98">#</a>
+  
+</h3>
+<ul>
+<li>
+<p>你可以在设置界面调整消息样式（气泡、列表）、消息字体、主题颜色等。 </p>
+</li>
+<li>
+<p>支持自定义 CSS：如果你懂 CSS，可通过自定义样式让界面更符合你喜好。 </p>
+</li>
+<li>
+<p>侧边栏模块（对话、知识库、绘图、设置等）可以隐藏或重排序，以精简界面。 </p>
+</li>
+<li>
+<p>全局搜索：可快速定位历史记录、知识库条目或对话内容。 </p>
+</li>
+</ul>
+<hr>
+<h2 id="添加智能体--助手">
+  <strong>添加智能体 / 助手</strong>
+  
+  <a class="anchor" href="#%e6%b7%bb%e5%8a%a0%e6%99%ba%e8%83%bd%e4%bd%93--%e5%8a%a9%e6%89%8b">#</a>
+  
+</h2>
+<p>下面是更系统化地管理和使用智能体（助手）的步骤：</p>
+<ol>
+<li>
+<p><strong>创建助手模板</strong></p>
+<p>在“助手 / 智能体”管理界面，点击“新建”或 “+ 助手”</p>
+</li>
+<li>
+<p><strong>设置助手属性</strong></p>
+<ul>
+<li>
+<p><strong>名称 / 标识</strong>：比如 “写作小助”、“代码君”</p>
+</li>
+<li>
+<p><strong>角色指令 / 系统提示</strong>：预设一个角色指令或背景描述，引导模型以特定风格、用途回答</p>
+</li>
+<li>
+<p><strong>默认提示词 / 模板</strong>：用户每次启动助手时带入一些固定提示</p>
+</li>
+<li>
+<p><strong>参数设置</strong>：温度（随机性）、最大令牌、停止词、上下文长度等</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>关联模型 / 服务商</strong></p>
+<p>为该助手指定一个或多个优先使用的模型 / 服务商（若你配置了多个服务）</p>
+</li>
+<li>
+<p><strong>快捷入口 / 标签</strong></p>
+<p>给助手一个入口按钮或快捷调用方式，使你在对话界面能快速选择该助手</p>
+</li>
+<li>
+<p><strong>管理 / 编辑 /复制</strong></p>
+<p>后续可编辑助手配置、复制为新助手、删除不需要的助手</p>
+</li>
+</ol>
+<p>通过这种机制，你能对话体验进行模块化与角色化控制，方便在不同任务场景（写作、客服、知识问答、编程）中切换使用。</p>
+<hr>
+<h2 id="知识库教程更进阶">
+  <strong>知识库教程（更进阶）</strong>
+  
+  <a class="anchor" href="#%e7%9f%a5%e8%af%86%e5%ba%93%e6%95%99%e7%a8%8b%e6%9b%b4%e8%bf%9b%e9%98%b6">#</a>
+  
+</h2>
+<p>知识库（Knowledge Base，简称 KB）是 Cherry Studio 的一个核心功能，用于将结构化 / 非结构化文档导入系统，通过向量检索辅助对话时回答更准确、更具上下文关联性。</p>
+<p>在 0.9.1 版本中，CherryStudio 带来了期待已久的知识库功能。</p>
+<p>下面我们将按步骤呈现 CherryStudio 的详细使用说明。</p>
+<h3 id="添加嵌入模型">
+  添加嵌入模型
+  
+  <a class="anchor" href="#%e6%b7%bb%e5%8a%a0%e5%b5%8c%e5%85%a5%e6%a8%a1%e5%9e%8b">#</a>
+  
+</h3>
+<ol>
+<li>
+<p>在模型管理服务中查找模型，可以点击“嵌入模型”快速筛选；</p>
+</li>
+<li>
+<p>找到需要的模型，添加到我的模型。</p>
+</li>
+</ol>
+<p><img src="https://pic2.imgdd.cc/item/68e4a8c28dc72b176e7a4708.png" alt="Cherry Studio教程" /></p>
+<h3 id="创建知识库">
+  创建知识库
+  
+  <a class="anchor" href="#%e5%88%9b%e5%bb%ba%e7%9f%a5%e8%af%86%e5%ba%93">#</a>
+  
+</h3>
+<ol>
+<li>
+<p>知识库入口：在 CherryStudio 左侧工具栏，点击知识库图标，即可进入管理页面；</p>
+</li>
+<li>
+<p>添加知识库：点击添加，开始创建知识库；</p>
+</li>
+<li>
+<p>命名：输入知识库的名称并添加嵌入模型，以 bge-m3 为例，即可完成创建。</p>
+</li>
+</ol>
+<p><img src="https://pic2.imgdd.cc/item/68e4a8e38dc72b176e7a4713.png" alt="Cherry Studio教程" /></p>
+<p><img src="https://pic2.imgdd.cc/item/68e4a8fb8dc72b176e7a471c.png" alt="Cherry Studio教程" /></p>
+<h3 id="添加文件并向量化">
+  添加文件并向量化
+  
+  <a class="anchor" href="#%e6%b7%bb%e5%8a%a0%e6%96%87%e4%bb%b6%e5%b9%b6%e5%90%91%e9%87%8f%e5%8c%96">#</a>
+  
+</h3>
+<ol>
+<li>
+<p>添加文件：点击添加文件的按钮，打开文件选择；</p>
+</li>
+<li>
+<p>选择文件：选择支持的文件格式，如 pdf，docx，pptx，xlsx，txt，md，mdx 等，并打开；</p>
+</li>
+<li>
+<p>向量化：系统会自动进行向量化处理，当显示完成时（绿色 ✓），代表向量化已完成。</p>
+</li>
+</ol>
+<p><img src="https://pic2.imgdd.cc/item/68e4a9178dc72b176e7a4722.png" alt="Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐" /></p>
+<p><img src="https://pic2.imgdd.cc/item/68e4a9358dc72b176e7a4725.png" alt="Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐" /></p>
+<p><img src="https://pic2.imgdd.cc/item/68e4ab7c8dc72b176e7a479b.png" alt="Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐" /></p>
+<h3 id="添加多种来源的数据">
+  添加多种来源的数据
+  
+  <a class="anchor" href="#%e6%b7%bb%e5%8a%a0%e5%a4%9a%e7%a7%8d%e6%9d%a5%e6%ba%90%e7%9a%84%e6%95%b0%e6%8d%ae">#</a>
+  
+</h3>
+<p>CherryStudio 支持多种添加数据的方式：</p>
+<ol>
+<li>
+<p>文件夹目录：可以添加整个文件夹目录，该目录下支持格式的文件会被自动向量化；</p>
+</li>
+<li>
+<p>网址链接：支持网址 url</p>
+</li>
+<li>
+<p>站点地图：支持 xml 格式的站点地图，如sitemap.xml；</p>
+</li>
+<li>
+<p>纯文本笔记：支持输入纯文本的自定义内容。</p>
+</li>
+</ol>
+<p>提示：</p>
+<ol>
+<li>
+<p>导入知识库的文档中的插图暂不支持转换为向量，需要手动转换为文本；</p>
+</li>
+<li>
+<p>使用网址作为知识库来源时不一定会成功，有些网站有比较严格的反扒机制（或需要登录、授权等），因此该方式不一定能获取到准确内容。创建完成后建议先搜索测试一下。</p>
+</li>
+<li>
+<p>一般网站都会提供sitemap，一般情况下在网站的根地址（即网址）后加/sitemap.xml可以获取到相关信息。如<code>aaa.com/sitemap.xml</code> 。</p>
+</li>
+<li>
+<p>如果网站没提供sitemap或者网址比较杂可自行组合一个sitemap的xml文件使用，文件暂时需要使用公网可直接访问的直链的方式填入，本地文件链接不会被识别。</p>
+</li>
+</ol>
+
+<blockquote class='book-hint '>
+  <ol>
+<li>
+<p>可以让AI生成sitemap文件或让AI写一个sitemap的HTML生成器工具；</p>
+</li>
+<li>
+<p>直链可以使用oss直链或者网盘直链等方式来生成。如果没有现成工具也可到ocoolAI官网，登录后使用网站顶栏的免费文件上传工具来生成直链。</p>
+</li>
+</ol>
+</blockquote><h3 id="搜索知识库">
+  搜索知识库
+  
+  <a class="anchor" href="#%e6%90%9c%e7%b4%a2%e7%9f%a5%e8%af%86%e5%ba%93">#</a>
+  
+</h3>
+<p>当文件等资料向量化完成后，即可进行查询：</p>
+<ol>
+<li>
+<p>点击页面下方的搜索知识库按钮；</p>
+</li>
+<li>
+<p>输入查询的内容；</p>
+</li>
+<li>
+<p>呈现搜索的结果；</p>
+</li>
+<li>
+<p>并显示该条结果的匹配分数。</p>
+</li>
+</ol>
+<p><img src="https://pic2.imgdd.cc/item/68e4abce8dc72b176e7a47ae.png" alt="Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐" /></p>
+<p><img src="https://pic2.imgdd.cc/item/68e4abe28dc72b176e7a47b1.png" alt="Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐" /></p>
+<h3 id="对话中引用知识库生成回复">
+  对话中引用知识库生成回复
+  
+  <a class="anchor" href="#%e5%af%b9%e8%af%9d%e4%b8%ad%e5%bc%95%e7%94%a8%e7%9f%a5%e8%af%86%e5%ba%93%e7%94%9f%e6%88%90%e5%9b%9e%e5%a4%8d">#</a>
+  
+</h3>
+<ol>
+<li>
+<p>创建一个新的话题，在对话工具栏中，点击知识库，会展开已经创建的知识库列表，选择需要引用的知识库；</p>
+</li>
+<li>
+<p>输入并发送问题，模型即返回通过检索结果生成的答案 ；</p>
+</li>
+<li>
+<p>同时，引用的数据来源会附在答案下方，可快捷查看源文件。</p>
+</li>
+</ol>
+<p><img src="https://pic2.imgdd.cc/item/68e4ac1f8dc72b176e7a47c0.png" alt="Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐" /> <img src="https://pic2.imgdd.cc/item/68e4ac3c8dc72b176e7a47c4.png" alt="Cherry Studio配置教程_Cherry Studio安装配置免费教程_cherry studio知识库保姆级新手教程_AI工具推荐" />  </p>
+<hr>
+<h2 id="使用示例多个场景演示">
+  <strong>使用示例（多个场景演示）</strong>
+  
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b%e5%a4%9a%e4%b8%aa%e5%9c%ba%e6%99%af%e6%bc%94%e7%a4%ba">#</a>
+  
+</h2>
+<p>下面给出几个典型的使用示例，以帮助你理解如何在实际场景中应用 Cherry Studio 的功能组合。</p>
+<hr>
+<h3 id="示例-1学术问答--引用知识库">
+  <strong>示例 1：学术问答 + 引用知识库</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-1%e5%ad%a6%e6%9c%af%e9%97%ae%e7%ad%94--%e5%bc%95%e7%94%a8%e7%9f%a5%e8%af%86%e5%ba%93">#</a>
+  
+</h3>
+<p><strong>场景</strong>：你有一篇关于“量子力学基础”的课程讲义（PDF 文件），希望导入后让 AI 在对话中直接引用讲义内容回答问题。</p>
+<p>步骤：</p>
+<ol>
+<li>
+<p>在 “知识库” 模块中新建一个知识库，命名为 “量子力学讲义”，选择 embedding 模型如 bge-m3。</p>
+</li>
+<li>
+<p>上传该讲义的 PDF 文件，Cherry Studio 自动将其拆分并向量化。</p>
+</li>
+<li>
+<p>在知识库界面测试搜索，比如 “什么是叠加态？” 搜索结果应显示对应片段。</p>
+</li>
+<li>
+<p>返回对话界面，开启知识库模式，选择 “量子力学讲义” 作为参考知识库。</p>
+</li>
+<li>
+<p>提问：“解释一下量子叠加态原理”，模型在检索相关知识片段基础上生成回答，并在末尾给出片段来源。</p>
+</li>
+<li>
+<p>若需要继续追问：“那如何理解干涉实验中的叠加？” AI 会基于知识库上下文继续回答。</p>
+</li>
+</ol>
+<p>效果是：AI 的回答更具专业性，也能快速定位源文档中的原段落。</p>
+<hr>
+<h3 id="示例-2写作助手--多模型对比">
+  <strong>示例 2：写作助手 + 多模型对比</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-2%e5%86%99%e4%bd%9c%e5%8a%a9%e6%89%8b--%e5%a4%9a%e6%a8%a1%e5%9e%8b%e5%af%b9%e6%af%94">#</a>
+  
+</h3>
+<p><strong>场景</strong>：你正在写一篇产品文案，希望获得多个版本的草稿，以便进行比较。</p>
+<p>步骤：</p>
+<ol>
+<li>
+<p>在对话界面中选择“多模型对比”模式（若有此功能）。</p>
+</li>
+<li>
+<p>输入提示词，比如 “为某款智能音箱写一段广告文案，突出音质与便携性”。</p>
+</li>
+<li>
+<p>系统同时向多个模型（如 DeepSeek、OpenAI GPT、Gemini）发起请求，返回多个版本文案。</p>
+</li>
+<li>
+<p>你可以对比各版本优缺点（风格、措辞、语气）并选择喜欢的版本进一步润色。</p>
+</li>
+<li>
+<p>若需要，可以启动一个定制的“文案助手”助手，让它专注润色/校正语法风格。</p>
+</li>
+</ol>
+<p>这种方式可以快速跳出思路瓶颈，获得多种创意备选。</p>
+<hr>
+<h3 id="示例-3图像生成--文本说明">
+  <strong>示例 3：图像生成 + 文本说明</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-3%e5%9b%be%e5%83%8f%e7%94%9f%e6%88%90--%e6%96%87%e6%9c%ac%e8%af%b4%e6%98%8e">#</a>
+  
+</h3>
+<p><strong>场景</strong>：你在做一份营销海报，需要 AI 帮你生成一张主题插图，并写一句配文。</p>
+<p>步骤：</p>
+<ol>
+<li>
+<p>切换到“绘图 / 图像”模块，输入提示词：</p>
+
+<blockquote class='book-hint '>
+  <p>“极简风格，现代感科技音箱产品，夜景背景，柔和灯光，3D 效果”</p>
+</blockquote></li>
+<li>
+<p>点击生成，等待模型返回图像。</p>
+</li>
+<li>
+<p>下载或保存图片。</p>
+</li>
+<li>
+<p>切换回对话界面，对 AI（或使用写作助手）输入提示：</p>
+<p>“请为刚才那张插图写一句简洁有力的宣传语，适合海报使用。”</p>
+</li>
+<li>
+<p>AI 给出一句适配图片风格的文案，例如 “音质 · 释放自由” 或 “小体积，大声音”</p>
+</li>
+<li>
+<p>如不满意，可以继续调优提示（图像或文案）进行多轮迭代。</p>
+</li>
+</ol>
+<p>最终你将获得一张贴合主题风格的图像 + 一句配文，方便直接用于设计或海报制作。</p>
+<hr>
+<h3 id="示例-4客服问答--智能体部署">
+  <strong>示例 4：客服问答 / 智能体部署</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-4%e5%ae%a2%e6%9c%8d%e9%97%ae%e7%ad%94--%e6%99%ba%e8%83%bd%e4%bd%93%e9%83%a8%e7%bd%b2">#</a>
+  
+</h3>
+<p><strong>场景</strong>：你有一份产品常见问题文档（FAQ），希望部署一个客服助手，让用户输入问题时自动返回标准答案。</p>
+<p>步骤：</p>
+<ol>
+<li>
+<p>新建一个“FAQ 知识库”，上传 FAQ 文档（Word、PDF 或 TXT 格式）。</p>
+</li>
+<li>
+<p>向量化后测试检索。</p>
+</li>
+<li>
+<p>新建一个“客服助手”智能体，设置其角色提示词为 “你是产品客服助手，请根据知识库提供精准答案，不要无中生有”。</p>
+</li>
+<li>
+<p>将该助手关联到“FAQ 知识库”。</p>
+</li>
+<li>
+<p>用户在对话中输入问题，如 “如何退换货？”</p>
+</li>
+<li>
+<p>系统首先检索知识库，得到对应段落作为上下文，再由助手生成答案并附上引用源。</p>
+</li>
+<li>
+<p>若知识库内无匹配且业务允许，助手可以 fallback 到基础大模型生成回答或提示无人知晓。</p>
+</li>
+</ol>
+<p>这样，你便可以快速搭建一个具有知识库支撑的客服问答系统。</p>
 </article>
  
       
@@ -1337,6 +1771,32 @@ https://github.com/alex-shpak/hugo-book
           </ul>
         </li>
         <li><a href="#cherry-studio界面ui">Cherry Studio界面UI</a></li>
+        <li><a href="#使用-cherry-studio基础操作"><strong>使用 Cherry Studio（基础操作）</strong></a>
+          <ul>
+            <li><a href="#41-对话与多模型切换"><strong>4.1 对话与多模型切换</strong></a></li>
+            <li><a href="#42-智能体--助手管理"><strong>4.2 智能体 / 助手管理</strong></a></li>
+            <li><a href="#43-界面与布局调优"><strong>4.3 界面与布局调优</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#添加智能体--助手"><strong>添加智能体 / 助手</strong></a></li>
+        <li><a href="#知识库教程更进阶"><strong>知识库教程（更进阶）</strong></a>
+          <ul>
+            <li><a href="#添加嵌入模型">添加嵌入模型</a></li>
+            <li><a href="#创建知识库">创建知识库</a></li>
+            <li><a href="#添加文件并向量化">添加文件并向量化</a></li>
+            <li><a href="#添加多种来源的数据">添加多种来源的数据</a></li>
+            <li><a href="#搜索知识库">搜索知识库</a></li>
+            <li><a href="#对话中引用知识库生成回复">对话中引用知识库生成回复</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用示例多个场景演示"><strong>使用示例（多个场景演示）</strong></a>
+          <ul>
+            <li><a href="#示例-1学术问答--引用知识库"><strong>示例 1：学术问答 + 引用知识库</strong></a></li>
+            <li><a href="#示例-2写作助手--多模型对比"><strong>示例 2：写作助手 + 多模型对比</strong></a></li>
+            <li><a href="#示例-3图像生成--文本说明"><strong>示例 3：图像生成 + 文本说明</strong></a></li>
+            <li><a href="#示例-4客服问答--智能体部署"><strong>示例 4：客服问答 / 智能体部署</strong></a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
