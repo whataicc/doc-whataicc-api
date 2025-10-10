@@ -19,7 +19,7 @@
 <link rel="canonical" href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.f92686ddf8cc90faeca0636bdae5cff5f5079c6c759abc4b47e04dc3aba221ad.js" integrity="sha256-&#43;SaG3fjMkPrsoGNr2uXP9fUHnGx1mrxLR&#43;BNw6uiIa0=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.ba7431a8f80102944c8d8f787f01b32a006b31dd6ad26ace64148a6492bd4067.js" integrity="sha256-unQxqPgBApRMjY94fwGzKgBrMd1q0mrOZBSKZJK9QGc=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/index.xml" title="神马中转API_低价稳定中转API推荐" />
@@ -1512,9 +1512,6 @@ https://github.com/alex-shpak/hugo-book
 <p><code>Authorization</code>: Bearer sk-****** (你的API Key)</p>
 </li>
 <li>
-<p><code>User-Agent</code>: DMXAPI/1.0.0 (<a href="https://api.whatai.cc">https://api.whatai.cc</a>)</p>
-</li>
-<li>
 <p><code>Content-Type</code>: application/json</p>
 </li>
 </ul>
@@ -1548,8 +1545,7 @@ https://github.com/alex-shpak/hugo-book
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST <span style="color:#e6db74">&#34;https://api.whatai.cc/v1/chat/completions&#34;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Accept: application/json&#34;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Authorization: Bearer sk-******&#34;</span> <span style="color:#ae81ff">\ </span> <span style="color:#75715e"># 替换为你的API Key</span>
-</span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;User-Agent: DMXAPI/1.0.0&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;model&#34;: &#34;gpt-4o-mini&#34;,
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;messages&#34;: [
@@ -1577,7 +1573,6 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>headers <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Accept&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Authorization&#39;</span>: <span style="color:#e6db74">&#39;Bearer sk-******&#39;</span>,  <span style="color:#75715e"># 替换为你的API Key</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;User-Agent&#39;</span>: <span style="color:#e6db74">&#39;DMXAPI/1.0.0&#39;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Content-Type&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>

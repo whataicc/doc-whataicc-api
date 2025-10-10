@@ -19,7 +19,7 @@
 <link rel="canonical" href="http://localhost:1313/tags/%E4%B8%AD%E8%BD%ACAPI/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.f92686ddf8cc90faeca0636bdae5cff5f5079c6c759abc4b47e04dc3aba221ad.js" integrity="sha256-&#43;SaG3fjMkPrsoGNr2uXP9fUHnGx1mrxLR&#43;BNw6uiIa0=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.ba7431a8f80102944c8d8f787f01b32a006b31dd6ad26ace64148a6492bd4067.js" integrity="sha256-unQxqPgBApRMjY94fwGzKgBrMd1q0mrOZBSKZJK9QGc=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/%E4%B8%AD%E8%BD%ACAPI/index.xml" title="神马中转API_低价稳定中转API推荐" />
@@ -1372,37 +1372,50 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-    <div class="book-post-content"><h1 id="接入到dify">
-  接入到Dify
+    <div class="book-post-content"><p><img src="https://pic2.imgdd.cc/item/68e8c4f08dc72b176e7f5fae.jpg" alt="【2025最新】Dify部署和工作流教程，国内直连OpenAI、Claude等配置Dify使用教程" /></p>
+<p>Dify 是一款开源的大语言模型（LLM）应用开发平台。它融合了后端即服务（Backend as Service）和 LLMOps 的理念，使开发者可以快速搭建生产级的生成式 AI 应用。即使你是非技术人员，也能参与到 AI 应用的定义和数据运营过程中。</p>
+<p>由于 Dify 内置了构建 LLM 应用所需的关键技术栈，包括对数百个模型的支持、直观的 Prompt 编排界面、高质量的 RAG 引擎、稳健的 Agent 框架、灵活的工作流，并同时提供了一套易用的界面和 API。这为开发者节省了许多重复造轮子的时间，使其可以专注在创新和业务需求上。</p>
+<p> </p>
+<h2 id="一为什么使用-dify">
+  一、为什么使用 Dify？
   
-  <a class="anchor" href="#%e6%8e%a5%e5%85%a5%e5%88%b0dify">#</a>
-  
-</h1>
-<hr>
-<h2 id="1使用openai模型">
-  1.使用OpenAI模型
-  
-  <a class="anchor" href="#1%e4%bd%bf%e7%94%a8openai%e6%a8%a1%e5%9e%8b">#</a>
+  <a class="anchor" href="#%e4%b8%80%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bd%bf%e7%94%a8-dify">#</a>
   
 </h2>
-<p>点击右上角自己的头像，点击设置</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd0337fcdff65483031291.png" alt="Image 12" /></p>
-<p>点击模型供应商，选择OpenAI的设置</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd0351fcdff654830312b1.png" alt="Image 14" /></p>
-<p>输入神马中转API 后台-使用API-API Keys 生成的API KEY，输入API Base：<code>https://api.whatai.cc/v1/chat/completions</code>，点击保存即可</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd0399fcdff65483031318.png" alt="Image 16" /></p>
-<h2 id="2-使用其他模型">
-  2. 使用其他模型
+<p>你或许可以把 LangChain 这类的开发库（Library）想象为有着锤子、钉子的工具箱。与之相比，Dify 提供了更接近生产需要的完整方案，Dify 好比是一套脚手架，并且经过了精良的工程设计和软件测试。 重要的是，Dify 是<strong>开源</strong>的，它由一个专业的全职团队和社区共同打造。你可以基于任何模型自部署类似 Assistants API 和 GPTs 的能力，在灵活和安全的基础上，同时保持对数据的完全控制。</p>
+<hr>
+<h2 id="二你能用-dify-做什么">
+  <strong>二、你能用 Dify 做什么</strong>
   
-  <a class="anchor" href="#2-%e4%bd%bf%e7%94%a8%e5%85%b6%e4%bb%96%e6%a8%a1%e5%9e%8b">#</a>
+  <a class="anchor" href="#%e4%ba%8c%e4%bd%a0%e8%83%bd%e7%94%a8-dify-%e5%81%9a%e4%bb%80%e4%b9%88">#</a>
   
 </h2>
+<ul>
+<li>
+<p>快速搭建问答机器人（基于企业文档的 RAG）</p>
+</li>
+<li>
+<p>构建会调用工具（搜索、调用 API、生成图片等）的 Agent（自动化任务）</p>
+</li>
+<li>
+<p>在可视化画布上用“节点 + 触发 + 条件”编排复杂流程（Workflow）</p>
+</li>
+<li>
+<p>通过 REST API 将这些能力嵌入现有业务系统（后端代理调用）</p>
+<p>（上面功能点与细节可在官方产品文档与代码库查看）。</p>
+</li>
+</ul>
+<p><img src="https://pic2.imgdd.cc/item/68e8c54c8dc72b176e7f63d7.png" alt="【2025最新】Dify部署和工作流教程，国内直连OpenAI、Claude等配置Dify使用教程" /></p>
 <hr>
-<p>下拉找到OpenAI-API-compatible，选择添加模型</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd03ecfcdff654830313a8.png" alt="Image 20" /></p>
-<p>模型名称填写你想要使用的模型，准确的名称可以通过 模型价格页面 查看</p>
-<p>输入神马中转AI 后台-使用API-API Keys 生成的API KEY，输入API Base：<code>https://api.whatai.cc/v1/chat/completions</code>，点击保存即可</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd041afcdff654830313ea.png" alt="Image 22" /></p></div>
+<h2 id="三准备工作最小环境--工具">
+  <strong>三、准备工作（最小环境 &amp; 工具）</strong>
+  
+  <a class="anchor" href="#%e4%b8%89%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c%e6%9c%80%e5%b0%8f%e7%8e%af%e5%a2%83--%e5%b7%a5%e5%85%b7">#</a>
+  
+</h2>
+<ul>
+<li>
+<p>最低硬件（参考仓库说明）：<strong>CPU ≥ 2 core，RAM ≥ 4 GiB</strong>（用于快速试验）。生产部署请按负载规划。</p></div>
   </article>
   
   <article class="markdown book-post">

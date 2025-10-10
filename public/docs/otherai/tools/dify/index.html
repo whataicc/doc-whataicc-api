@@ -8,7 +8,7 @@
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/otherai/tools/dify/">
   <meta property="og:site_name" content="神马中转API_低价稳定中转API推荐">
-  <meta property="og:title" content="Dify">
+  <meta property="og:title" content="Dify教程">
   <meta property="og:description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
   <meta property="og:locale" content="zh">
   <meta property="og:type" content="article">
@@ -18,14 +18,14 @@
     <meta property="article:tag" content="中转API">
     <meta property="article:tag" content="服务使用">
 <title>
-  Dify配置使用教程_国内如何使用中转API | 神马中转API_低价稳定中转API推荐
+  【2025最新】Dify部署和工作流教程，国内直连OpenAI、Claude等配置Dify使用教程 | 神马中转API_低价稳定中转API推荐
 </title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="http://localhost:1313/docs/otherai/tools/dify/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.f92686ddf8cc90faeca0636bdae5cff5f5079c6c759abc4b47e04dc3aba221ad.js" integrity="sha256-&#43;SaG3fjMkPrsoGNr2uXP9fUHnGx1mrxLR&#43;BNw6uiIa0=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.ba7431a8f80102944c8d8f787f01b32a006b31dd6ad26ace64148a6492bd4067.js" integrity="sha256-unQxqPgBApRMjY94fwGzKgBrMd1q0mrOZBSKZJK9QGc=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -820,7 +820,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/otherai/tools/dify/" class="active">Dify</a>
+    <a href="/docs/otherai/tools/dify/" class="active">Dify教程</a>
   
 
         </li>
@@ -945,7 +945,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Dify</h3>
+  <h3>Dify教程</h3>
 
   <label for="toc-control">
     
@@ -961,10 +961,29 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#接入到dify">接入到Dify</a>
+    <li>
       <ul>
-        <li><a href="#1使用openai模型">1.使用OpenAI模型</a></li>
-        <li><a href="#2-使用其他模型">2. 使用其他模型</a></li>
+        <li><a href="#一为什么使用-dify">一、为什么使用 Dify？</a></li>
+        <li><a href="#二你能用-dify-做什么"><strong>二、你能用 Dify 做什么</strong></a></li>
+        <li><a href="#三准备工作最小环境--工具"><strong>三、准备工作（最小环境 &amp; 工具）</strong></a></li>
+        <li><a href="#四快速入门--本地docker-compose部署最短命令"><strong>四、快速入门 — 本地（Docker Compose）部署（最短命令）</strong></a></li>
+        <li><a href="#五核心概念与流程快速理解"><strong>五、核心概念与流程（快速理解）</strong></a></li>
+        <li><a href="#六使用神马中转api国内直连">六、使用神马中转API（国内直连）</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#七构建知识库-rag--ui-与-api-示例"><strong>七、构建知识库 (RAG) — UI 与 API 示例</strong></a>
+          <ul>
+            <li><a href="#用-ui-最快"><strong>用 UI （最快）</strong></a></li>
+            <li><a href="#用-api适合自动化--批量"><strong>用 API（适合自动化 / 批量）</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#八在-workflow--agent-里使用知识检索典型流程"><strong>八、在 Workflow / Agent 里使用知识检索（典型流程）</strong></a></li>
+        <li><a href="#九发布应用并通过-api-调用示例"><strong>九、发布应用并通过 API 调用（示例）</strong></a></li>
+        <li><a href="#十进阶自定义插件--新模型--工具"><strong>十、进阶：自定义插件 / 新模型 / 工具</strong></a></li>
+        <li><a href="#十一常见问题与排错技巧实用"><strong>十一、常见问题与排错技巧（实用）</strong></a></li>
+        <li><a href="#十二完整示例从零创建一个-rag-问答机器人快速脚本"><strong>十二、完整示例：从零创建一个 RAG 问答机器人（快速脚本）</strong></a></li>
       </ul>
     </li>
   </ul>
@@ -979,37 +998,266 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="接入到dify">
-  接入到Dify
+  <article class="markdown book-article"><p><img src="https://pic2.imgdd.cc/item/68e8c4f08dc72b176e7f5fae.jpg" alt="【2025最新】Dify部署和工作流教程，国内直连OpenAI、Claude等配置Dify使用教程" /></p>
+<p>Dify 是一款开源的大语言模型（LLM）应用开发平台。它融合了后端即服务（Backend as Service）和 LLMOps 的理念，使开发者可以快速搭建生产级的生成式 AI 应用。即使你是非技术人员，也能参与到 AI 应用的定义和数据运营过程中。</p>
+<p>由于 Dify 内置了构建 LLM 应用所需的关键技术栈，包括对数百个模型的支持、直观的 Prompt 编排界面、高质量的 RAG 引擎、稳健的 Agent 框架、灵活的工作流，并同时提供了一套易用的界面和 API。这为开发者节省了许多重复造轮子的时间，使其可以专注在创新和业务需求上。</p>
+<p> </p>
+<h2 id="一为什么使用-dify">
+  一、为什么使用 Dify？
   
-  <a class="anchor" href="#%e6%8e%a5%e5%85%a5%e5%88%b0dify">#</a>
+  <a class="anchor" href="#%e4%b8%80%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bd%bf%e7%94%a8-dify">#</a>
   
-</h1>
+</h2>
+<p>你或许可以把 LangChain 这类的开发库（Library）想象为有着锤子、钉子的工具箱。与之相比，Dify 提供了更接近生产需要的完整方案，Dify 好比是一套脚手架，并且经过了精良的工程设计和软件测试。 重要的是，Dify 是<strong>开源</strong>的，它由一个专业的全职团队和社区共同打造。你可以基于任何模型自部署类似 Assistants API 和 GPTs 的能力，在灵活和安全的基础上，同时保持对数据的完全控制。</p>
 <hr>
-<h2 id="1使用openai模型">
+<h2 id="二你能用-dify-做什么">
+  <strong>二、你能用 Dify 做什么</strong>
+  
+  <a class="anchor" href="#%e4%ba%8c%e4%bd%a0%e8%83%bd%e7%94%a8-dify-%e5%81%9a%e4%bb%80%e4%b9%88">#</a>
+  
+</h2>
+<ul>
+<li>
+<p>快速搭建问答机器人（基于企业文档的 RAG）</p>
+</li>
+<li>
+<p>构建会调用工具（搜索、调用 API、生成图片等）的 Agent（自动化任务）</p>
+</li>
+<li>
+<p>在可视化画布上用“节点 + 触发 + 条件”编排复杂流程（Workflow）</p>
+</li>
+<li>
+<p>通过 REST API 将这些能力嵌入现有业务系统（后端代理调用）</p>
+<p>（上面功能点与细节可在官方产品文档与代码库查看）。</p>
+</li>
+</ul>
+<p><img src="https://pic2.imgdd.cc/item/68e8c54c8dc72b176e7f63d7.png" alt="【2025最新】Dify部署和工作流教程，国内直连OpenAI、Claude等配置Dify使用教程" /></p>
+<hr>
+<h2 id="三准备工作最小环境--工具">
+  <strong>三、准备工作（最小环境 &amp; 工具）</strong>
+  
+  <a class="anchor" href="#%e4%b8%89%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c%e6%9c%80%e5%b0%8f%e7%8e%af%e5%a2%83--%e5%b7%a5%e5%85%b7">#</a>
+  
+</h2>
+<ul>
+<li>
+<p>最低硬件（参考仓库说明）：<strong>CPU ≥ 2 core，RAM ≥ 4 GiB</strong>（用于快速试验）。生产部署请按负载规划。</p>
+</li>
+<li>
+<p>软件：Docker、Docker Compose（本教程以 Docker Compose 快速启动为例）；如果要生产部署可使用 Helm / Kubernetes。</p>
+</li>
+</ul>
+<hr>
+<h2 id="四快速入门--本地docker-compose部署最短命令">
+  <strong>四、快速入门 — 本地（Docker Compose）部署（最短命令）</strong>
+  
+  <a class="anchor" href="#%e5%9b%9b%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8--%e6%9c%ac%e5%9c%b0docker-compose%e9%83%a8%e7%bd%b2%e6%9c%80%e7%9f%ad%e5%91%bd%e4%bb%a4">#</a>
+  
+</h2>
+<pre tabindex="0"><code># 克隆仓库并启动（在支持 Docker 的机器上）
+git clone https://github.com/langgenius/dify.git
+cd dify/docker
+cp .env.example .env   # 编辑 .env（填写管理员邮箱、数据库/MinIO/模型供应商的凭证等）
+docker compose up -d
+# 启动后到 http://localhost/install 进行初始化
+</code></pre>
+<blockquote class='book-hint '>
+  <p>上述为官方 quick start 的核心命令；具体 .env 字段和更高级部署（K8s/Helm/Terraform/AWS/CDK）见官方文档与仓库说明。</p>
+</blockquote><p><strong>注意</strong></p>
+<ul>
+<li>.env.example 里会列出诸如数据库、存储（MinIO）、SMTP、初始管理员账号等变量，生产环境请使用安全凭证并放到安全 Vault。</li>
+</ul>
+<hr>
+<h2 id="五核心概念与流程快速理解">
+  <strong>五、核心概念与流程（快速理解）</strong>
+  
+  <a class="anchor" href="#%e4%ba%94%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5%e4%b8%8e%e6%b5%81%e7%a8%8b%e5%bf%ab%e9%80%9f%e7%90%86%e8%a7%a3">#</a>
+  
+</h2>
+<ol>
+<li>
+<p><strong>Model Provider（模型供应商）</strong>：Dify 支持大量供应商（OpenAI、Anthropic、Azure OpenAI、Gemini、Hugging Face、Mistral、Replicate、Ollama、LocalAI 等），可以把外部模型或自部署模型接入到平台并供应用调用。</p>
+</li>
+<li>
+<p><strong>Knowledge（知识库 / RAG）</strong>：把文档/PDF/网页/数据库转成可检索的向量/片段，查询时先检索相关片段再交给 LLM 生成，减少“幻觉”。</p>
+</li>
+<li>
+<p><strong>Workflow / Agent</strong>：Workflow 是显式的节点流程（可视化编排），Agent 则是“策略驱动”的智能体（例如 Function Calling / ReAct），可动态选择并调用工具。</p>
+</li>
+<li>
+<p><strong>LLMOps / 监控</strong>：Dify 提供日志、metric 与标注能力，便于持续优化 prompts、模型与数据。</p>
+</li>
+</ol>
+<h2 id="六使用神马中转api国内直连">
+  六、使用神马中转API（国内直连）
+  
+  <a class="anchor" href="#%e5%85%ad%e4%bd%bf%e7%94%a8%e7%a5%9e%e9%a9%ac%e4%b8%ad%e8%bd%acapi%e5%9b%bd%e5%86%85%e7%9b%b4%e8%bf%9e">#</a>
+  
+</h2>
+<h4 id="1使用openai模型">
   1.使用OpenAI模型
   
   <a class="anchor" href="#1%e4%bd%bf%e7%94%a8openai%e6%a8%a1%e5%9e%8b">#</a>
   
-</h2>
-<p>点击右上角自己的头像，点击设置</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd0337fcdff65483031291.png" alt="Image 12" /></p>
+</h4>
+<p>  点击右上角自己的头像，点击设置</p>
+<p>  <img src="https://pic2.imgdd.cc/item/68cd0337fcdff65483031291.png" alt="Image 12" />  </p>
 <p>点击模型供应商，选择OpenAI的设置</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd0351fcdff654830312b1.png" alt="Image 14" /></p>
-<p>输入神马中转API 后台-使用API-API Keys 生成的API KEY，输入API Base：<code>https://api.whatai.cc/v1/chat/completions</code>，点击保存即可</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd0399fcdff65483031318.png" alt="Image 16" /></p>
-<h2 id="2-使用其他模型">
+<p>  <img src="https://pic2.imgdd.cc/item/68cd0351fcdff654830312b1.png" alt="Image 14" /></p>
+<p>  输入神马中转API 后台-使用API-API Keys 生成的API KEY，输入API Base：<code>https://api.whatai.cc/v1/chat/completions</code>，点击保存即可  </p>
+<p>不同的版本尝试填入不同的API地址： <code>https://api.whatai.cc</code> <code>https://api.whatai.cc/v1</code> <code>https://api.whatai.cc/v1/chat/completions</code>  </p>
+<p><img src="https://pic2.imgdd.cc/item/68e8be1e8dc72b176e7f0972.png" alt="" /></p>
+<h4 id="2-使用其他模型">
   2. 使用其他模型
   
   <a class="anchor" href="#2-%e4%bd%bf%e7%94%a8%e5%85%b6%e4%bb%96%e6%a8%a1%e5%9e%8b">#</a>
   
-</h2>
+</h4>
 <hr>
 <p>下拉找到OpenAI-API-compatible，选择添加模型</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd03ecfcdff654830313a8.png" alt="Image 20" /></p>
-<p>模型名称填写你想要使用的模型，准确的名称可以通过 模型价格页面 查看</p>
-<p>输入神马中转AI 后台-使用API-API Keys 生成的API KEY，输入API Base：<code>https://api.whatai.cc/v1/chat/completions</code>，点击保存即可</p>
-<p><img src="https://pic2.imgdd.cc/item/68cd041afcdff654830313ea.png" alt="Image 22" /></p>
+<p>  <img src="https://pic2.imgdd.cc/item/68cd03ecfcdff654830313a8.png" alt="Image 20" /></p>
+<p>  模型名称填写你想要使用的模型，准确的名称可以通过 模型价格页面 查看 输入神马中转AI 后台-使用API-API Keys 生成的API KEY，输入API Base：<code>https://api.whatai.cc/v1/chat/completions</code>，点击保存即可</p>
+<p>不同的版本尝试填入不同的API地址： <code>https://api.whatai.cc</code> <code>https://api.whatai.cc/v1</code> <code>https://api.whatai.cc/v1/chat/completions</code>  </p>
+<p><img src="https://pic2.imgdd.cc/item/68e8c19e8dc72b176e7f2717.png" alt="" />  </p>
+<hr>
+<h2 id="七构建知识库-rag--ui-与-api-示例">
+  <strong>七、构建知识库 (RAG) — UI 与 API 示例</strong>
+  
+  <a class="anchor" href="#%e4%b8%83%e6%9e%84%e5%bb%ba%e7%9f%a5%e8%af%86%e5%ba%93-rag--ui-%e4%b8%8e-api-%e7%a4%ba%e4%be%8b">#</a>
+  
+</h2>
+<h3 id="用-ui-最快">
+  <strong>用 UI （最快）</strong>
+  
+  <a class="anchor" href="#%e7%94%a8-ui-%e6%9c%80%e5%bf%ab">#</a>
+  
+</h3>
+<ul>
+<li>Dashboard -&gt; Knowledge -&gt; 创建知识库 -&gt; 上传文件 / 粘贴文本 -&gt; 选择索引策略（例如 high_quality / economical 等） -&gt; 触发索引。</li>
+</ul>
+<h3 id="用-api适合自动化--批量">
+  <strong>用 API（适合自动化 / 批量）</strong>
+  
+  <a class="anchor" href="#%e7%94%a8-api%e9%80%82%e5%90%88%e8%87%aa%e5%8a%a8%e5%8c%96--%e6%89%b9%e9%87%8f">#</a>
+  
+</h3>
+<p>示例：通过文本创建文档（curl）：</p>
+<pre tabindex="0"><code>curl --location --request POST &#39;https://api.dify.ai/v1/datasets/{dataset_id}/document/create_by_text&#39; \
+  --header &#39;Authorization: Bearer {api_key}&#39; \
+  --header &#39;Content-Type: application/json&#39; \
+  --data-raw &#39;{&#34;name&#34;: &#34;company_faq&#34;,&#34;text&#34;: &#34;这是一个关于产品的常见问题集合...&#34;,&#34;indexing_technique&#34;: &#34;high_quality&#34;,&#34;process_rule&#34;: {&#34;mode&#34;: &#34;automatic&#34;}}&#39;
+</code></pre><p>上传文件示例（curl）：（先上传文件或直接用 create_by_file）</p>
+<pre tabindex="0"><code>curl --location --request POST &#39;https://api.dify.ai/v1/datasets/{dataset_id}/document/create_by_file&#39; \
+  --header &#39;Authorization: Bearer {api_key}&#39; \
+  --form &#39;data=&#34;{\&#34;indexing_technique\&#34;:\&#34;high_quality\&#34;,\&#34;process_rule\&#34;:{\&#34;mode\&#34;:\&#34;custom\&#34;}}&#34;;type=text/plain&#39; \
+  --form &#39;file=@&#34;/path/to/file.pdf&#34;&#39;
+</code></pre><p>（更多 API 列表、分段/元数据管理、查询接口参见知识库 API 文档页面）</p>
+<hr>
+<h2 id="八在-workflow--agent-里使用知识检索典型流程">
+  <strong>八、在 Workflow / Agent 里使用知识检索（典型流程）</strong>
+  
+  <a class="anchor" href="#%e5%85%ab%e5%9c%a8-workflow--agent-%e9%87%8c%e4%bd%bf%e7%94%a8%e7%9f%a5%e8%af%86%e6%a3%80%e7%b4%a2%e5%85%b8%e5%9e%8b%e6%b5%81%e7%a8%8b">#</a>
+  
+</h2>
+<ol>
+<li>
+<p>在 Workflow 画布放置 <strong>知识检索（Knowledge Retrieval）</strong> 节点，配置要检索的知识库与检索参数（top-k、元数据过滤等）。</p>
+</li>
+<li>
+<p>将知识检索节点的输出作为 LLM 节点的上下文输入（LLM 节点接收到用户 query + 检索到的片段）。</p>
+</li>
+<li>
+<p>如果需要自动化任务（如：查询网站、调用计算工具、生成图片等），使用 <strong>Agent 节点</strong> 并为其配置 Agent 策略（Function Calling / ReAct）与所需的 <strong>Tools（工具）</strong>。Dify 提供大量内置工具（搜索、图片生成、计算、外部 API 等），也支持导入 OpenAPI/Plugin 格式的自定义工具。</p>
+</li>
+</ol>
+<hr>
+<h2 id="九发布应用并通过-api-调用示例">
+  <strong>九、发布应用并通过 API 调用（示例）</strong>
+  
+  <a class="anchor" href="#%e4%b9%9d%e5%8f%91%e5%b8%83%e5%ba%94%e7%94%a8%e5%b9%b6%e9%80%9a%e8%bf%87-api-%e8%b0%83%e7%94%a8%e7%a4%ba%e4%be%8b">#</a>
+  
+</h2>
+<p><strong>获取 API Key 与发布</strong>：在应用 -&gt; 访问 API 页面生成访问凭据（注意安全。API Key 请只放后端使用，不要写在前端）。</p>
+<p><strong>示例：调用聊天接口（curl）</strong></p>
+<pre tabindex="0"><code>curl --location --request POST &#39;https://api.dify.ai/v1/chat-messages&#39; \
+  --header &#39;Authorization: Bearer ENTER-YOUR-SECRET-KEY&#39; \
+  --header &#39;Content-Type: application/json&#39; \
+  --data-raw &#39;{
+    &#34;inputs&#34;: {},
+    &#34;query&#34;: &#34;请帮我总结一下我上传的产品文档里关于退款政策的要点。&#34;,
+    &#34;response_mode&#34;: &#34;streaming&#34;,
+    &#34;conversation_id&#34;: &#34;your-conv-id&#34;,
+    &#34;user&#34;: &#34;user-123&#34;
+  }&#39;
+</code></pre><p><strong>Python 示例（requests）</strong></p>
+<pre tabindex="0"><code>import requests
+url = &#34;https://api.dify.ai/v1/chat-messages&#34;
+headers = {&#34;Authorization&#34;: &#34;Bearer YOUR_API_KEY&#34;, &#34;Content-Type&#34;: &#34;application/json&#34;}
+data = {
+  &#34;inputs&#34;: {},
+  &#34;query&#34;: &#34;请列出产品 A 的主要功能&#34;,
+  &#34;response_mode&#34;: &#34;sync&#34;
+}
+r = requests.post(url, headers=headers, json=data)
+print(r.status_code, r.json())
+</code></pre><p>官方 API 文档有更多 endpoint（completion-messages、chat-messages、工作流调用、文件上传等）与示例。</p>
+<hr>
+<h2 id="十进阶自定义插件--新模型--工具">
+  <strong>十、进阶：自定义插件 / 新模型 / 工具</strong>
+  
+  <a class="anchor" href="#%e5%8d%81%e8%bf%9b%e9%98%b6%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8f%92%e4%bb%b6--%e6%96%b0%e6%a8%a1%e5%9e%8b--%e5%b7%a5%e5%85%b7">#</a>
+  
+</h2>
+<ul>
+<li>
+<p><strong>自定义工具</strong>（OpenAPI / OpenAI plugin）：在 Tools -&gt; 自定义，创建可供 Agent 调用的外部服务（例如内部 CRM API）。</p>
+</li>
+<li>
+<p><strong>新增模型供应商 / 插件</strong>：使用 Dify 的插件脚手架可以开发 model/provider 插件（需要 Python 环境，参见插件开发文档）。这允许把厂内自研推理服务接入 Dify。</p>
+</li>
+</ul>
+<hr>
+<h2 id="十一常见问题与排错技巧实用">
+  <strong>十一、常见问题与排错技巧（实用）</strong>
+  
+  <a class="anchor" href="#%e5%8d%81%e4%b8%80%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98%e4%b8%8e%e6%8e%92%e9%94%99%e6%8a%80%e5%b7%a7%e5%ae%9e%e7%94%a8">#</a>
+  
+</h2>
+<ul>
+<li>
+<p><strong>启动后无法访问 /install</strong>：检查 Docker container 是否运行，查看 docker compose ps，并查看容器日志 docker compose logs -f。</p>
+</li>
+<li>
+<p><strong>API 请求示例缺少 base URL 导致 404/错误</strong>：文档中的部分 curl 片段可能只给出相对路径，调用前请加上完整的 Base URL（例如 h ttp://localhost/v1/&hellip; 或 h ttps://api.dify.ai/v1/&hellip;）。有开发者因此报过相关问题。</p>
+</li>
+<li>
+<p><strong>App unavailable / 400</strong>：确保 App 已正确初始化、配置了模型供应商并启用了相应功能；在社区 issue 有类似错误的排查建议。</p>
+</li>
+</ul>
+<hr>
+<h2 id="十二完整示例从零创建一个-rag-问答机器人快速脚本">
+  <strong>十二、完整示例：从零创建一个 RAG 问答机器人（快速脚本）</strong>
+  
+  <a class="anchor" href="#%e5%8d%81%e4%ba%8c%e5%ae%8c%e6%95%b4%e7%a4%ba%e4%be%8b%e4%bb%8e%e9%9b%b6%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa-rag-%e9%97%ae%e7%ad%94%e6%9c%ba%e5%99%a8%e4%ba%ba%e5%bf%ab%e9%80%9f%e8%84%9a%e6%9c%ac">#</a>
+  
+</h2>
+<ol>
+<li>
+<p>部署 Dify（参考第 4 节）。</p>
+</li>
+<li>
+<p>在 Dashboard -&gt; Knowledge -&gt; 新建知识库（或用 API 创建 POST /v1/datasets）。</p>
+</li>
+<li>
+<p>用 API 上传文档（示例见第 7 节的 create_by_file）。</p>
+</li>
+<li>
+<p>在 Workflow 画布：加入 <strong>知识检索节点</strong>（指向上面的知识库）→ <strong>LLM 节点</strong>（选择已配置的模型）→ 将检索结果拼接进 prompt。</p>
+</li>
+<li>
+<p>本地测试并调整 prompt 与检索 top-k，确认正确后发布应用并生成 API key。</p>
+</li>
+</ol>
 </article>
  
       
@@ -1079,10 +1327,29 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#接入到dify">接入到Dify</a>
+    <li>
       <ul>
-        <li><a href="#1使用openai模型">1.使用OpenAI模型</a></li>
-        <li><a href="#2-使用其他模型">2. 使用其他模型</a></li>
+        <li><a href="#一为什么使用-dify">一、为什么使用 Dify？</a></li>
+        <li><a href="#二你能用-dify-做什么"><strong>二、你能用 Dify 做什么</strong></a></li>
+        <li><a href="#三准备工作最小环境--工具"><strong>三、准备工作（最小环境 &amp; 工具）</strong></a></li>
+        <li><a href="#四快速入门--本地docker-compose部署最短命令"><strong>四、快速入门 — 本地（Docker Compose）部署（最短命令）</strong></a></li>
+        <li><a href="#五核心概念与流程快速理解"><strong>五、核心概念与流程（快速理解）</strong></a></li>
+        <li><a href="#六使用神马中转api国内直连">六、使用神马中转API（国内直连）</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#七构建知识库-rag--ui-与-api-示例"><strong>七、构建知识库 (RAG) — UI 与 API 示例</strong></a>
+          <ul>
+            <li><a href="#用-ui-最快"><strong>用 UI （最快）</strong></a></li>
+            <li><a href="#用-api适合自动化--批量"><strong>用 API（适合自动化 / 批量）</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#八在-workflow--agent-里使用知识检索典型流程"><strong>八、在 Workflow / Agent 里使用知识检索（典型流程）</strong></a></li>
+        <li><a href="#九发布应用并通过-api-调用示例"><strong>九、发布应用并通过 API 调用（示例）</strong></a></li>
+        <li><a href="#十进阶自定义插件--新模型--工具"><strong>十、进阶：自定义插件 / 新模型 / 工具</strong></a></li>
+        <li><a href="#十一常见问题与排错技巧实用"><strong>十一、常见问题与排错技巧（实用）</strong></a></li>
+        <li><a href="#十二完整示例从零创建一个-rag-问答机器人快速脚本"><strong>十二、完整示例：从零创建一个 RAG 问答机器人（快速脚本）</strong></a></li>
       </ul>
     </li>
   </ul>
