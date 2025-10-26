@@ -125,6 +125,15 @@ https://api.whatai.cc
 
 ![Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型](https://pic2.imgdd.cc/item/68d5125a8dc72b176e6efe58.png)
 
+
+不同的客户端需要填写不同的BASE_URL, 请尝试如下地址
+`https://api.whatai.cc`
+`https://api.whatai.cc/v1`
+`https://api.whatai.cc/v1/chat/completions`
+
+Claude配置：
+
+![Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型](https://pic.imgdd.cc/item/68fd767445440b5a919cc8ac.png)
 ---
 
 ## 四、ChatBox 怎么用
