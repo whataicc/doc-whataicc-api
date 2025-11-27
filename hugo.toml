@@ -49,6 +49,10 @@ enableGitInfo = true
   name = "中转API官网"
   url = "https://api.whatai.cc"
   weight = 20
+  [[menu.after]]
+  name = "神马中转API开发文档"
+  url = "https://gpt-best.apifox.cn/doc-6113929"
+  weight = 19
 
 [params]
   # (Optional, default light) Sets color theme: light, dark or auto.

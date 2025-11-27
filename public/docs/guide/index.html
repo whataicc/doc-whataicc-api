@@ -3,33 +3,36 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
+<meta name="description" content="三步快速接入神马中转API，完全兼容OpenAI接口">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/otherai/tools/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/guide/">
   <meta property="og:site_name" content="神马中转API_低价稳定中转API推荐">
-  <meta property="og:title" content="工具类">
+  <meta property="og:title" content="快速使用指南">
+  <meta property="og:description" content="三步快速接入神马中转API，完全兼容OpenAI接口">
   <meta property="og:locale" content="zh">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2023-11-26T17:30:00+08:00">
+    <meta property="article:modified_time" content="2023-11-26T17:30:00+08:00">
 <title>
-  工具类 | 神马中转API_低价稳定中转API推荐
+  快速使用指南 | 神马中转API_低价稳定中转API推荐
 </title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/otherai/tools/">
+<link rel="canonical" href="http://localhost:1313/docs/guide/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/zh.search.min.20bedc3b1863a0a7df7094a718b404d33f6dedd939b36a5f06c1a435bd8e83ee.js" integrity="sha256-IL7cOxhjoKffcJSnGLQE0z9t7dk5s2pfBsGkNb2Og&#43;4=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/docs/otherai/tools/index.xml" title="神马中转API_低价稳定中转API推荐" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
   
 </head>
-<body dir="ltr" class="book-kind-section book-type-docs book-layout-">
+<body dir="ltr" class="book-kind-page book-type-docs book-layout-">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
@@ -88,7 +91,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/guide/" class="">快速使用指南</a>
+    <a href="/docs/guide/" class="active">快速使用指南</a>
   
 
         </li>
@@ -799,9 +802,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b333ba0fec99449c08fe8af0c1f5a49b" class="toggle" checked />
+    <input type="checkbox" id="section-b333ba0fec99449c08fe8af0c1f5a49b" class="toggle"  />
     <label for="section-b333ba0fec99449c08fe8af0c1f5a49b" class="flex">
-      <a role="button" class="flex-auto active">工具类</a>
+      <a role="button" class="flex-auto ">工具类</a>
     </label>
   
 
@@ -960,9 +963,11 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>工具类</h3>
+  <h3>快速使用指南</h3>
 
   <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
@@ -972,7 +977,30 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-1注册神马中转api账号">🖥️ 1、注册「神马中转API」账号</a></li>
+        <li><a href="#-2获得-api-key">🔑 2、获得 API Key</a></li>
+        <li><a href="#-3修改代码的请求地址">🔄 3、修改代码的请求地址</a>
+          <ul>
+            <li><a href="#调用方式">调用方式</a></li>
+            <li><a href="#模型方面">模型方面</a></li>
+            <li><a href="#注意事项">注意事项</a></li>
+          </ul>
+        </li>
+        <li><a href="#神马中转api可视化操作演示">神马中转API可视化操作演示</a>
+          <ul>
+            <li><a href="#nano-banner画图">Nano Banner画图</a></li>
+            <li><a href="#聊天画图视频音乐">聊天&amp;画图&amp;视频&amp;音乐</a></li>
+            <li><a href="#操练场-终极测试所有模型">操练场-终极测试所有模型</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -983,7 +1011,95 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"></article>
+  <article class="markdown book-article"><h2 id="-1注册神马中转api账号">
+  🖥️ 1、注册「神马中转API」账号
+  
+  <a class="anchor" href="#-1%e6%b3%a8%e5%86%8c%e7%a5%9e%e9%a9%ac%e4%b8%ad%e8%bd%acapi%e8%b4%a6%e5%8f%b7">#</a>
+  
+</h2>
+<p><strong>免费注册</strong>：注册将自动赠送 <strong>0.2 美金余额</strong>，测试阶段跑通绝对没问题~</p>
+<p><a href="https://api.whatai.cc/login">立即注册</a></p>
+<hr>
+<h2 id="-2获得-api-key">
+  🔑 2、获得 API Key
+  
+  <a class="anchor" href="#-2%e8%8e%b7%e5%be%97-api-key">#</a>
+  
+</h2>
+<p>进入后台的 <strong><a href="https://api.whatai.cc/token">令牌</a></strong> 页面，选择右上角【添加令牌】，填写名称其他默认，即可获取生成的key</p>
+<p>Key 的格式通常是：<code>sk-xxxx......</code></p>
+<hr>
+<h2 id="-3修改代码的请求地址">
+  🔄 3、修改代码的请求地址
+  
+  <a class="anchor" href="#-3%e4%bf%ae%e6%94%b9%e4%bb%a3%e7%a0%81%e7%9a%84%e8%af%b7%e6%b1%82%e5%9c%b0%e5%9d%80">#</a>
+  
+</h2>
+<h3 id="调用方式">
+  调用方式
+  
+  <a class="anchor" href="#%e8%b0%83%e7%94%a8%e6%96%b9%e5%bc%8f">#</a>
+  
+</h3>
+<p>只需要将请求地址和 Key 修改为与 OpenAI 官方完全一致。</p>
+<p>简单来说：将 <code>https://api.openai.com</code> 全局替换改成：
+<code>https://api.whatai.cc</code></p>
+<p>并使用在『神马中转API』网站后台的 <strong>令牌</strong>，其他代码层面无需做任何改动。</p>
+<h3 id="模型方面">
+  模型方面
+  
+  <a class="anchor" href="#%e6%a8%a1%e5%9e%8b%e6%96%b9%e9%9d%a2">#</a>
+  
+</h3>
+<p>本站支持大部分OpenAI、Claude、Gemini、Nano Banana等可用模型，注册即可试用。</p>
+<p><a href="https://api.whatai.cc/models">账户菜单 &gt; 模型价格 &gt; 一键复制模型名称</a></p>
+<h3 id="注意事项">
+  注意事项
+  
+  <a class="anchor" href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">#</a>
+  
+</h3>
+<p>不同的客户端需要填写不同的BASE_URL，某些程序需要添加 <code>v1</code> 后缀，具体有3种情况，请测试：</p>
+<ul>
+<li><code>https://api.whatai.cc</code></li>
+<li><code>https://api.whatai.cc/v1</code></li>
+<li><code>https://api.whatai.cc/v1/chat/completions</code></li>
+</ul>
+<h2 id="神马中转api可视化操作演示">
+  神马中转API可视化操作演示
+  
+  <a class="anchor" href="#%e7%a5%9e%e9%a9%ac%e4%b8%ad%e8%bd%acapi%e5%8f%af%e8%a7%86%e5%8c%96%e6%93%8d%e4%bd%9c%e6%bc%94%e7%a4%ba">#</a>
+  
+</h2>
+<p>顶部菜单选择聊天，里面有可视化操作【聊天&amp;画图&amp;视频&amp;音乐】【Nano Banner画图】【GPT画图】</p>
+<h3 id="nano-banner画图">
+  Nano Banner画图
+  
+  <a class="anchor" href="#nano-banner%e7%94%bb%e5%9b%be">#</a>
+  
+</h3>
+<p>默认配置，选择文生图或者图生图，输入提示词、选择数量/质量/比例，点击【生成】，等待生成完成第一时间下载图片不要刷新页面</p>
+<p><strong>页面上的余额张数都不用管，是错误的，可以正常使用</strong></p>
+<p><img src="https://pic.imgdd.cc/item/6927b5d7c828c4c6deffdc00.png" alt="AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转" /></p>
+<h3 id="聊天画图视频音乐">
+  聊天&amp;画图&amp;视频&amp;音乐
+  
+  <a class="anchor" href="#%e8%81%8a%e5%a4%a9%e7%94%bb%e5%9b%be%e8%a7%86%e9%a2%91%e9%9f%b3%e4%b9%90">#</a>
+  
+</h3>
+<p>默认配置，选择模型，是输入问题，发送等待回复</p>
+<p><img src="https://pic.imgdd.cc/item/6927b7adc828c4c6deffdca9.png" alt="AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转" /></p>
+<h3 id="操练场-终极测试所有模型">
+  操练场-终极测试所有模型
+  
+  <a class="anchor" href="#%e6%93%8d%e7%bb%83%e5%9c%ba-%e7%bb%88%e6%9e%81%e6%b5%8b%e8%af%95%e6%89%80%e6%9c%89%e6%a8%a1%e5%9e%8b">#</a>
+  
+</h3>
+<p>操练场，正常默认配置，选择模型，输入问题，发送</p>
+<p><img src="https://pic.imgdd.cc/item/691fdb85c828c4c6defabc03.png" alt="AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转" /></p>
+<p>如果需要传图片可以随便找个免费图床即可，推荐<a href="https://www.superbed.cc/signup?link=1827pfhr">聚合图床</a>
+<img src="https://pic.imgdd.cc/item/6927bbb8c828c4c6deffe173.png" alt="AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转" /></p>
+</article>
  
       
 
@@ -1004,6 +1120,25 @@ https://github.com/alex-shpak/hugo-book
   
   
   
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/introduction/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="神马中转API简介" />
+        <span>神马中转API简介</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/aidocs/base/" class="flex align-center book-icon">
+        <span>基本概念-令牌（Token）</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="基本概念-令牌（Token）" />
+      </a>
+    
+    </span>
+  </div>
+  
 
 
 
@@ -1017,11 +1152,49 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+
+</div>
+  
  
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-1注册神马中转api账号">🖥️ 1、注册「神马中转API」账号</a></li>
+        <li><a href="#-2获得-api-key">🔑 2、获得 API Key</a></li>
+        <li><a href="#-3修改代码的请求地址">🔄 3、修改代码的请求地址</a>
+          <ul>
+            <li><a href="#调用方式">调用方式</a></li>
+            <li><a href="#模型方面">模型方面</a></li>
+            <li><a href="#注意事项">注意事项</a></li>
+          </ul>
+        </li>
+        <li><a href="#神马中转api可视化操作演示">神马中转API可视化操作演示</a>
+          <ul>
+            <li><a href="#nano-banner画图">Nano Banner画图</a></li>
+            <li><a href="#聊天画图视频音乐">聊天&amp;画图&amp;视频&amp;音乐</a></li>
+            <li><a href="#操练场-终极测试所有模型">操练场-终极测试所有模型</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
 
  
   </main>
