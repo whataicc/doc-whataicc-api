@@ -68,7 +68,7 @@ Key 的格式通常是：`sk-xxxx......`
 
 操练场，正常默认配置，选择模型，输入问题，发送
 
-
+每次请求前点击输入框旁边的垃圾桶，清除内容之后在使用
 ![AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转](https://pic.imgdd.cc/item/691fdb85c828c4c6defabc03.png)
 
 如果需要传图片可以随便找个免费图床即可，推荐[聚合图床](https://www.superbed.cc/signup?link=1827pfhr)
