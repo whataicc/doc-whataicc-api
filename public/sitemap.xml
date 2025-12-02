@@ -41,6 +41,9 @@
     <loc>http://localhost:1313/docs/otherai/devtools/pythonopenai/</loc>
     <lastmod>2025-09-24T13:37:34+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/docs/otherai/devtools/cline/</loc>
+    <lastmod>2025-12-02T13:49:27+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/docs/ailearn/model/</loc>
     <lastmod>2025-09-28T00:07:51+08:00</lastmod>
   </url><url>
@@ -64,8 +67,6 @@
   </url><url>
     <loc>http://localhost:1313/docs/openai/</loc>
     <lastmod>2025-09-21T00:12:32+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/otherai/devtools/cline/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/otherai/devtools/codegpt/</loc>
     <lastmod>2025-09-24T13:37:34+08:00</lastmod>
@@ -185,27 +186,27 @@
     <lastmod>2025-09-21T00:12:32+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/API/</loc>
-    <lastmod>2025-11-04T11:53:00+08:00</lastmod>
+    <lastmod>2025-12-02T13:49:27+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/API%E6%96%87%E6%A1%A3/</loc>
-    <lastmod>2025-11-04T11:53:00+08:00</lastmod>
+    <lastmod>2025-12-02T13:49:27+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-04T11:53:00+08:00</lastmod>
+    <lastmod>2025-12-02T13:49:27+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-04T11:53:00+08:00</lastmod>
+    <lastmod>2025-12-02T13:49:27+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2025-11-04T11:53:00+08:00</lastmod>
+    <lastmod>2025-12-02T13:49:27+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-11-04T11:53:00+08:00</lastmod>
+    <lastmod>2025-12-02T13:49:27+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-09-28T00:07:51+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/%E4%B8%AD%E8%BD%ACAPI/</loc>
-    <lastmod>2025-11-04T11:53:00+08:00</lastmod>
+    <lastmod>2025-12-02T13:49:27+08:00</lastmod>
   </url>
 </urlset>

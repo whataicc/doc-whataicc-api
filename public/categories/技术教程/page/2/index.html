@@ -19,7 +19,7 @@
 <link rel="canonical" href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.f200ac3684744cd649d0500a8782f9f191916af0edadc23a0687fe1496bd8078.js" integrity="sha256-8gCsNoR0TNZJ0FAKh4L58ZGRavDtrcI6Bof&#43;FJa9gHg=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.7e372d942353ebca5e72fde0107b71f65d7782c0a193b3960cc9d1ece0d366eb.js" integrity="sha256-fjctlCNT68pecv3gEHtx9l13gsChk7OWDMnR7ODTZus=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/index.xml" title="神马中转API_低价稳定中转API推荐" />
@@ -1084,6 +1084,88 @@ https://github.com/alex-shpak/hugo-book
   
   <article class="markdown book-post">
     <h2>
+      <a href="/docs/otherai/devtools/cline/">VSCode插件Cline使用指南</a>
+    </h2>
+    
+
+
+  
+  <div class="text-small">
+    
+      <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a>, 
+      <a href="/categories/API%E6%96%87%E6%A1%A3/">API文档</a>
+  </div>
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/API/">API</a>, 
+      <a href="/tags/%E4%B8%AD%E8%BD%ACAPI/">中转API</a>, 
+      <a href="/tags/%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8/">服务使用</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h1 id="vscode插件cline使用配置">
+  VSCode插件Cline使用+配置
+  
+  <a class="anchor" href="#vscode%e6%8f%92%e4%bb%b6cline%e4%bd%bf%e7%94%a8%e9%85%8d%e7%bd%ae">#</a>
+  
+</h1>
+<hr>
+<p>Cline 是一款新型的 VSCode AI 助手插件，主打 <strong>正确性 + 可控性 + 文件级操作能力</strong>。它让 AI 可以在你的本地项目中 <strong>读写文件、执行命令、运行代码、生成多步计划</strong>，更像一个可以合作的软件工程师。</p>
+<p>本文将带你从零开始学习 Cline，包括：</p>
+<ul>
+<li>
+<p>Cline 的核心功能和使用方式</p>
+</li>
+<li>
+<p>基础工作流程</p>
+</li>
+<li>
+<p>常见的几个使用示例</p>
+</li>
+<li>
+<p>如何通过<strong>神马中转API</strong>配置Cline使用GPT-5.1与Claude</p>
+</li>
+</ul>
+<p><img src="https://pic.imgdd.cc/item/692e72dc1db7fae26608af63.jpg" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" /></p>
+<hr>
+<h2 id="什么是cline它能做什么">
+  <strong>什么是Cline？它能做什么？</strong>
+  
+  <a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%afcline%e5%ae%83%e8%83%bd%e5%81%9a%e4%bb%80%e4%b9%88">#</a>
+  
+</h2>
+<p>Cline 是一个 VSCode 插件，让你可以在编辑器中与强大的 LLM（如 GPT-5.1、Claude 4.5 等）协作。它不仅仅是聊天，而是真正可以在项目中执行操作的助手。</p>
+<p><strong>核心能力：</strong></p>
+<p><strong>✅文件操作（读/写/修改）</strong></p>
+<p>Cline 能浏览项目中的文件，并以高可控性方式修改。</p>
+<p><strong>✅多步骤推理与执行计划</strong></p>
+<p>Cline 会先生成一份清晰的「操作计划」，你同意后才执行，每一步你都能检查。</p>
+<p><strong>✅命令执行（终端）</strong></p>
+<p>Cline 能运行命令，比如 npm、git、python、docker 等。</p>
+<p><strong>✅环境访问</strong></p>
+<p>可读的代码文件、终端输出、目录结构。</p>
+<p><strong>✅可使用多种模型</strong></p>
+<p>如 GPT-5.1、Claude 3.5 Sonnet 等。</p>
+<p><img src="https://pic.imgdd.cc/item/692e74f41db7fae26608af7d.png" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" /></p>
+<hr>
+<h2 id="如何安装配置cline">
+  <strong>如何安装配置Cline</strong>
+  
+  <a class="anchor" href="#%e5%a6%82%e4%bd%95%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aecline">#</a>
+  
+</h2>
+<p>在 VSCode 扩展市场搜索：</p>
+<pre tabindex="0"><code>Cline
+</code></pre><p>发布者一般是：Roo Code / Cline.bot</p>
+<p>点击 <strong>Install</strong> 安装即可。</p></div>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
       <a href="/docs/ailearn/model/">基础教程-支持模型 · 页面</a>
     </h2>
     
@@ -1485,87 +1567,6 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <p>将接口代理地址改成API地址的链接：<code>https://api.whatai.cc/v1</code> 或者 <code>https://api.whatai.cc</code></p>
 <p><img src="https://pic2.imgdd.cc/item/68e3d6e18dc72b176e79f2e6.png" alt="Lobe-Chat ​配置教程" /></p></div>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/docs/otherai/devtools/cline/">VSCode插件Cline使用指南</a>
-    </h2>
-    
-
-
-  
-  <div class="text-small">
-    
-      <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a>, 
-      <a href="/categories/API%E6%96%87%E6%A1%A3/">API文档</a>
-  </div>
-  
-
-  
-  <div class="text-small">
-    
-      <a href="/tags/API/">API</a>, 
-      <a href="/tags/%E4%B8%AD%E8%BD%ACAPI/">中转API</a>, 
-      <a href="/tags/%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8/">服务使用</a>
-  </div>
-  
-
-
-    <div class="book-post-content"><h1 id="vscode插件cline使用配置">
-  VSCode插件Cline使用+配置
-  
-  <a class="anchor" href="#vscode%e6%8f%92%e4%bb%b6cline%e4%bd%bf%e7%94%a8%e9%85%8d%e7%bd%ae">#</a>
-  
-</h1>
-<hr>
-<p>Cline 是一款新型的 VSCode AI 助手插件，主打 <strong>正确性 + 可控性 + 文件级操作能力</strong>。它让 AI 可以在你的本地项目中 <strong>读写文件、执行命令、运行代码、生成多步计划</strong>，更像一个可以合作的软件工程师。</p>
-<p>本文将带你从零开始学习 Cline，包括：</p>
-<ul>
-<li>
-<p>Cline 的核心功能和使用方式</p>
-</li>
-<li>
-<p>基础工作流程</p>
-</li>
-<li>
-<p>常见的几个使用示例</p>
-</li>
-<li>
-<p>如何通过<strong>神马中转API</strong>配置Cline使用GPT-5.1与Claude</p>
-</li>
-</ul>
-<p><img src="https://pic.imgdd.cc/item/692e72dc1db7fae26608af63.jpg" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" /></p>
-<hr>
-<h2 id="什么是cline它能做什么">
-  <strong>什么是Cline？它能做什么？</strong>
-  
-  <a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%afcline%e5%ae%83%e8%83%bd%e5%81%9a%e4%bb%80%e4%b9%88">#</a>
-  
-</h2>
-<p>Cline 是一个 VSCode 插件，让你可以在编辑器中与强大的 LLM（如 GPT-5.1、Claude 4.5 等）协作。它不仅仅是聊天，而是真正可以在项目中执行操作的助手。</p>
-<p><strong>核心能力：</strong>****</p>
-<p>**✅ **<strong>文件操作（读/写/修改）</strong></p>
-<p>Cline 能浏览项目中的文件，并以高可控性方式修改。</p>
-<p>**✅ **<strong>多步骤推理与执行计划</strong></p>
-<p>Cline 会先生成一份清晰的「操作计划」，你同意后才执行，每一步你都能检查。</p>
-<p>**✅ **<strong>命令执行（终端）</strong></p>
-<p>Cline 能运行命令，比如 npm、git、python、docker 等。</p>
-<p>**✅ **<strong>环境访问</strong></p>
-<p>可读的代码文件、终端输出、目录结构。</p>
-<p>**✅ **<strong>可使用多种模型</strong></p>
-<p>如 GPT-5.1、Claude 3.5 Sonnet 等。</p>
-<p><img src="https://pic.imgdd.cc/item/692e74f41db7fae26608af7d.png" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" /></p>
-<hr>
-<h2 id="如何安装配置cline">
-  <strong>如何安装配置Cline</strong>
-  
-  <a class="anchor" href="#%e5%a6%82%e4%bd%95%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aecline">#</a>
-  
-</h2>
-<p>在 VSCode 扩展市场搜索：</p>
-<pre tabindex="0"><code>Cline
-</code></pre><p>发布者一般是：<strong>Roo Code / Cline.bot</strong>****</p></div>
   </article>
   
   <article class="markdown book-post">
