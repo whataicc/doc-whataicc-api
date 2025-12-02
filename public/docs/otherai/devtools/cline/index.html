@@ -6,23 +6,22 @@
 <meta name="description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/ailearn/chat/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/otherai/devtools/cline/">
   <meta property="og:site_name" content="神马中转API_低价稳定中转API推荐">
-  <meta property="og:title" content="基础教程-聊天 · 页面">
+  <meta property="og:title" content="VSCode插件Cline使用指南">
   <meta property="og:description" content="了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。">
   <meta property="og:locale" content="zh">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-09-28T00:07:51+08:00">
     <meta property="article:tag" content="API">
     <meta property="article:tag" content="中转API">
     <meta property="article:tag" content="服务使用">
 <title>
-  基础教程-聊天 · 页面_如何使用中转API | 神马中转API_低价稳定中转API推荐
+  VSCode插件Cline配置使用指南_国内如何使用中转API | 神马中转API_低价稳定中转API推荐
 </title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/ailearn/chat/">
+<link rel="canonical" href="http://localhost:1313/docs/otherai/devtools/cline/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/zh.search.min.f200ac3684744cd649d0500a8782f9f191916af0edadc23a0687fe1496bd8078.js" integrity="sha256-8gCsNoR0TNZJ0FAKh4L58ZGRavDtrcI6Bof&#43;FJa9gHg=" crossorigin="anonymous"></script>
@@ -205,7 +204,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle" checked />
+    <input type="checkbox" id="section-cd3c7c429af15477d4ff05ea111934a3" class="toggle"  />
     <label for="section-cd3c7c429af15477d4ff05ea111934a3" class="flex">
       <a role="button" class="flex-auto ">站内基础教程</a>
     </label>
@@ -247,7 +246,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/ailearn/chat/" class="active">基础教程-聊天 · 页面</a>
+    <a href="/docs/ailearn/chat/" class="">基础教程-聊天 · 页面</a>
   
 
         </li>
@@ -567,7 +566,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-5e705709838a94aa211a15f9c6e02e24" class="toggle"  />
+    <input type="checkbox" id="section-5e705709838a94aa211a15f9c6e02e24" class="toggle" checked />
     <label for="section-5e705709838a94aa211a15f9c6e02e24" class="flex">
       <a role="button" class="flex-auto ">编程工具类</a>
     </label>
@@ -609,7 +608,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/otherai/devtools/cline/" class="">VSCode插件Cline使用指南</a>
+    <a href="/docs/otherai/devtools/cline/" class="active">VSCode插件Cline使用指南</a>
   
 
         </li>
@@ -978,7 +977,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>基础教程-聊天 · 页面</h3>
+  <h3>VSCode插件Cline使用指南</h3>
 
   <label for="toc-control">
     
@@ -994,15 +993,26 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#基础教程-聊天--页面">基础教程-聊天 · 页面</a>
+    <li><a href="#vscode插件cline使用配置">VSCode插件Cline使用+配置</a>
       <ul>
-        <li><a href="#-双通道配置聊天-"><strong>⚡ 双通道配置聊天</strong> ​</a>
+        <li><a href="#什么是cline它能做什么"><strong>什么是Cline？它能做什么？</strong></a></li>
+        <li><a href="#如何安装配置cline"><strong>如何安装配置Cline</strong></a>
           <ul>
-            <li></li>
+            <li><a href="#cline配置模型使用神马中转-api接入gpt-51claude"><strong>Cline配置模型：使用「神马中转 API」接入GPT-5.1/Claude</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#cline的基础使用流程"><strong>Cline的基础使用流程</strong></a></li>
+        <li><a href="#cline的常见使用场景示例"><strong>Cline的常见使用场景示例</strong></a>
+          <ul>
+            <li><a href="#示例-1重构一个文件"><strong>示例 1：重构一个文件</strong></a></li>
+            <li><a href="#示例-2生成一个新的react组件"><strong>示例 2：生成一个新的React组件</strong></a></li>
+            <li><a href="#示例-3执行终端命令--生成文件"><strong>示例 3：执行终端命令 + 生成文件</strong></a></li>
+            <li><a href="#示例-4自动修复一个报错"><strong>示例 4：自动修复一个报错</strong></a></li>
           </ul>
         </li>
       </ul>
     </li>
+    <li></li>
   </ul>
 </nav>
 
@@ -1015,90 +1025,302 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="基础教程-聊天--页面">
-  基础教程-聊天 · 页面
+  <article class="markdown book-article"><h1 id="vscode插件cline使用配置">
+  VSCode插件Cline使用+配置
   
-  <a class="anchor" href="#%e5%9f%ba%e7%a1%80%e6%95%99%e7%a8%8b-%e8%81%8a%e5%a4%a9--%e9%a1%b5%e9%9d%a2">#</a>
+  <a class="anchor" href="#vscode%e6%8f%92%e4%bb%b6cline%e4%bd%bf%e7%94%a8%e9%85%8d%e7%bd%ae">#</a>
   
 </h1>
-<h2 id="-双通道配置聊天-">
-  <strong>⚡ 双通道配置聊天</strong> ​
-  
-  <a class="anchor" href="#-%e5%8f%8c%e9%80%9a%e9%81%93%e9%85%8d%e7%bd%ae%e8%81%8a%e5%a4%a9-">#</a>
-  
-</h2>
-<p>⚠️ 请先创建令牌，才可使用站内聊天</p>
-<p>💻<strong>管理入口</strong>👉 <a href="https://api.whatai.cc/token">令牌控制台</a></p>
-<p>📖<strong>令牌配置指南</strong>👉 <a href="../../aidocs/base/">基础知识-基本概念-添加令牌</a></p>
-<h4 id="-方式一闪电直连推荐">
-  <strong>🚀 方式一：闪电直连（推荐）</strong>
-  
-  <a class="anchor" href="#-%e6%96%b9%e5%bc%8f%e4%b8%80%e9%97%aa%e7%94%b5%e7%9b%b4%e8%bf%9e%e6%8e%a8%e8%8d%90">#</a>
-  
-</h4>
-
-<blockquote class='book-hint '>
-  <ul>
-<li>
-<p>在令牌列表找到目标Key</p>
-</li>
-<li>
-<p>点击「聊天」按钮</p>
-</li>
-<li>
-<p>系统自动完成：</p>
-</li>
-</ul>
+<hr>
+<p>Cline 是一款新型的 VSCode AI 助手插件，主打 <strong>正确性 + 可控性 + 文件级操作能力</strong>。它让 AI 可以在你的本地项目中 <strong>读写文件、执行命令、运行代码、生成多步计划</strong>，更像一个可以合作的软件工程师。</p>
+<p>本文将带你从零开始学习 Cline，包括：</p>
 <ul>
 <li>
-<p>注入Key到聊天窗</p>
+<p>Cline 的核心功能和使用方式</p>
 </li>
 <li>
-<p>配置BASE_URL</p>
+<p>基础工作流程</p>
 </li>
 <li>
-<p>选择默认模型</p>
+<p>常见的几个使用示例</p>
+</li>
+<li>
+<p>如何通过<strong>神马中转API</strong>配置Cline使用GPT-5.1与Claude</p>
 </li>
 </ul>
-</blockquote><p><img src="https://pic2.imgdd.cc/item/68cc0247fcdff6548301c089.png" alt="Image 12" /></p>
-<p>💡 适合场景：快速体验、临时调试</p>
-<h4 id="-方式二手动配置高级">
-  <strong>🛠️ 方式二：手动配置（高级）</strong>
+<p><img src="https://pic.imgdd.cc/item/692e72dc1db7fae26608af63.jpg" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" /></p>
+<hr>
+<h2 id="什么是cline它能做什么">
+  <strong>什么是Cline？它能做什么？</strong>
   
-  <a class="anchor" href="#-%e6%96%b9%e5%bc%8f%e4%ba%8c%e6%89%8b%e5%8a%a8%e9%85%8d%e7%bd%ae%e9%ab%98%e7%ba%a7">#</a>
+  <a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%afcline%e5%ae%83%e8%83%bd%e5%81%9a%e4%bb%80%e4%b9%88">#</a>
   
-</h4>
-<p><strong>Step 1</strong> 进入聊天页面 → 设置 ⚙️ → 服务端</p>
-<p><strong>Step 2</strong> 填写关键参数：</p>
-<pre tabindex="0"><code>必备参数： 
-API Key(令牌)  ███ sk-xxxxxxxxxxxx （粘贴复制的Key） 
-BaseURL  ███ 选填以下任一：    
-https://api.whatai.cc 
-https://api.whatai.cc/v1    
-https://api.whatai.cc/v1/chat/completions  
-
-Midjourney专用地址：    
-https://api.whatai.cc   
-https://api.whatai.cc/mj
-
-BaseURL指南：基础知识-基础概念-API地址（BaseURL）
-</code></pre><p><strong>Step 3</strong> 填写模型：</p>
-
-<blockquote class='book-hint '>
-  <ol>
+</h2>
+<p>Cline 是一个 VSCode 插件，让你可以在编辑器中与强大的 LLM（如 GPT-5.1、Claude 4.5 等）协作。它不仅仅是聊天，而是真正可以在项目中执行操作的助手。</p>
+<p><strong>核心能力：</strong></p>
+<p><strong>✅文件操作（读/写/修改）</strong></p>
+<p>Cline 能浏览项目中的文件，并以高可控性方式修改。</p>
+<p><strong>✅多步骤推理与执行计划</strong></p>
+<p>Cline 会先生成一份清晰的「操作计划」，你同意后才执行，每一步你都能检查。</p>
+<p><strong>✅命令执行（终端）</strong></p>
+<p>Cline 能运行命令，比如 npm、git、python、docker 等。</p>
+<p><strong>✅环境访问</strong></p>
+<p>可读的代码文件、终端输出、目录结构。</p>
+<p><strong>✅可使用多种模型</strong></p>
+<p>如 GPT-5.1、Claude 3.5 Sonnet 等。</p>
+<p><img src="https://pic.imgdd.cc/item/692e74f41db7fae26608af7d.png" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" /></p>
+<hr>
+<h2 id="如何安装配置cline">
+  <strong>如何安装配置Cline</strong>
+  
+  <a class="anchor" href="#%e5%a6%82%e4%bd%95%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aecline">#</a>
+  
+</h2>
+<p>在 VSCode 扩展市场搜索：</p>
+<pre tabindex="0"><code>Cline
+</code></pre><p>发布者一般是：Roo Code / Cline.bot</p>
+<p>点击 <strong>Install</strong> 安装即可。</p>
+<p>打开后，你会在 VSCode 左下角看到一个 Cline 入口图标。</p>
+<p><img src="https://pic.imgdd.cc/item/692e6c5f1db7fae26608aea4.png" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" />  </p>
+<h3 id="cline配置模型使用神马中转-api接入gpt-51claude">
+  <strong>Cline配置模型：使用「神马中转 API」接入GPT-5.1/Claude</strong>
+  
+  <a class="anchor" href="#cline%e9%85%8d%e7%bd%ae%e6%a8%a1%e5%9e%8b%e4%bd%bf%e7%94%a8%e7%a5%9e%e9%a9%ac%e4%b8%ad%e8%bd%ac-api%e6%8e%a5%e5%85%a5gpt-51claude">#</a>
+  
+</h3>
+<p>这是很多人最关心的部分。下面教你完整配置方法。</p>
+<hr>
+<p><strong>进入 Cline 设置</strong></p>
+<p>VSCode → 右下角 Cline 图标 → 点击 <strong>Settings（设置）</strong>****</p>
+<p>主要关注三项：</p>
+<ul>
 <li>
-<p>访问「支持模型」页面</p>
+<p><strong>API Provider</strong></p>
 </li>
 <li>
-<p>复制目标模型名称（如 gpt-4-turbo）</p>
+<p><strong>Base URL</strong></p>
 </li>
 <li>
-<p>在聊天窗口粘贴到模型选择框</p>
+<p><strong>API Key</strong></p>
+</li>
+</ul>
+<hr>
+<p><strong>选择 API Provider 为 “OpenAI Compatible”</strong> <strong>设置 API Base URL（神马中转API地址）</strong></p>
+<p>你的 Base URL 一般类似：</p>
+<pre tabindex="0"><code>https://api.whatai.cc/v1
+</code></pre><hr>
+<p><strong>填写 API Key</strong></p>
+<pre tabindex="0"><code>API Key: sk-xxxxxxxxxxxxx
+</code></pre><hr>
+<p><strong>设置模型</strong> 在 Cline 的模型选择中填入你想用的模型名称，例如：</p>
+<pre tabindex="0"><code>gpt-5-2025-08-07
+</code></pre><hr>
+<p><img src="https://pic.imgdd.cc/item/692e6fba1db7fae26608af0a.png" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" />   <strong>验证是否连接成功</strong></p>
+<p>在 Cline 输入：</p>
+<pre tabindex="0"><code>你好，测试一下连接是否成功。
+</code></pre><p>如果模型能正常响应，说明：</p>
+<p>✔️ API Key 正常</p>
+<p>✔️ Base URL 正常</p>
+<p>✔️ 模型名称有效</p>
+<p>  <strong>配置Claude步骤类似，注意一下Base URL</strong>   不同的客户端需要填写不同的BASE_URL, 请尝试如下地址： <code>https://api.whatai.cc</code> <code>https://api.whatai.cc/v1</code> <code>https://api.whatai.cc/v1/chat/completions</code> <img src="https://pic.imgdd.cc/item/692e70711db7fae26608af18.png" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" />  </p>
+<p>你现在即可使用 GPT-5.1 / Claude 驱动 Cline 在 VSCode 中全自动工作。</p>
+<p><img src="https://pic.imgdd.cc/item/692e75a01db7fae26608af97.png" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" />  </p>
+<hr>
+<h2 id="cline的基础使用流程">
+  <strong>Cline的基础使用流程</strong>
+  
+  <a class="anchor" href="#cline%e7%9a%84%e5%9f%ba%e7%a1%80%e4%bd%bf%e7%94%a8%e6%b5%81%e7%a8%8b">#</a>
+  
+</h2>
+<p>Cline 的交互主要通过 <strong>右下角的任务面板</strong> 进行。</p>
+<p>典型流程：</p>
+<hr>
+<p><strong>① 提出你的任务</strong></p>
+<p>你可以告诉 Cline：</p>
+<ul>
+<li>
+<p>“帮我重写这个函数的结构”</p>
+</li>
+<li>
+<p>“给我生成一个 Python 可视化示例”</p>
+</li>
+<li>
+<p>“把这个项目转成 TypeScript”</p>
+</li>
+<li>
+<p>“生成一个基于 Next.js 的登录界面”</p>
+</li>
+</ul>
+<hr>
+<p><strong>② Cline 会生成「行动计划」</strong></p>
+<p>Cline 会解析你的请求，并提出一份计划：</p>
+<pre tabindex="0"><code>Plan:
+1. 读取 src/pages/index.js
+2. 修改其中的内容
+3. 新建 components/LoginForm.tsx
+4. 运行 `npm install bcryptjs`
+</code></pre><hr>
+<p><strong>③ 你逐步确认</strong></p>
+<p>你可以：</p>
+<ul>
+<li>
+<p>✔️ 同意执行</p>
+</li>
+<li>
+<p>❌ 拒绝某一步</p>
+</li>
+<li>
+<p>✏️ 修改计划</p>
+</li>
+</ul>
+<hr>
+<p><strong>④ Cline 逐步执行操作</strong></p>
+<p>包括：</p>
+<ul>
+<li>
+<p>修改文件内容</p>
+</li>
+<li>
+<p>打开/创建文件</p>
+</li>
+<li>
+<p>执行终端命令</p>
+</li>
+<li>
+<p>返回结果并进入下一步</p>
+</li>
+</ul>
+<p><img src="https://pic.imgdd.cc/item/692e71a01db7fae26608af4e.gif" alt="VSCode插件Cline使用&#43;配置：从入门到进阶的完整教程（含国内直连GPT-5.1/Claude配置）" />  </p>
+<hr>
+<h2 id="cline的常见使用场景示例">
+  <strong>Cline的常见使用场景示例</strong>
+  
+  <a class="anchor" href="#cline%e7%9a%84%e5%b8%b8%e8%a7%81%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af%e7%a4%ba%e4%be%8b">#</a>
+  
+</h2>
+<p>下面给你几个非常实用的示例案例。</p>
+<hr>
+<h3 id="示例-1重构一个文件">
+  <strong>示例 1：重构一个文件</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-1%e9%87%8d%e6%9e%84%e4%b8%80%e4%b8%aa%e6%96%87%e4%bb%b6">#</a>
+  
+</h3>
+<p>你告诉 Cline：</p>
+<pre tabindex="0"><code>请重构当前文件，让代码更简洁清晰，同时保持功能不变。
+</code></pre><p>Cline 的典型计划：</p>
+<ul>
+<li>
+<p>查看文件内容</p>
+</li>
+<li>
+<p>输出重构后的代码</p>
+</li>
+<li>
+<p>替换文件</p>
+</li>
+</ul>
+<p>你确认后它会自动完成重构。</p>
+<hr>
+<h3 id="示例-2生成一个新的react组件">
+  <strong>示例 2：生成一个新的React组件</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-2%e7%94%9f%e6%88%90%e4%b8%80%e4%b8%aa%e6%96%b0%e7%9a%84react%e7%bb%84%e4%bb%b6">#</a>
+  
+</h3>
+<p>你输入：</p>
+<pre tabindex="0"><code>帮我创建一个响应式的登录界面组件，使用 Tailwind，带 email + password 输入框。
+</code></pre><p>Cline 会自动：</p>
+<ul>
+<li>
+<p>创建 Login.tsx</p>
+</li>
+<li>
+<p>加入 Tailwind 类</p>
+</li>
+<li>
+<p>若缺依赖会提醒安装</p>
+</li>
+<li>
+<p>询问是否写测试</p>
+</li>
+</ul>
+<p>你逐步确认，它即可生成完整文件结构。</p>
+<hr>
+<h3 id="示例-3执行终端命令--生成文件">
+  <strong>示例 3：执行终端命令 + 生成文件</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-3%e6%89%a7%e8%a1%8c%e7%bb%88%e7%ab%af%e5%91%bd%e4%bb%a4--%e7%94%9f%e6%88%90%e6%96%87%e4%bb%b6">#</a>
+  
+</h3>
+<p>你输入：</p>
+<pre tabindex="0"><code>创建一个 Python 项目，并生成一个 CSV 转 JSON 的脚本。
+</code></pre><p>Cline 计划：</p>
+<ol>
+<li>
+<p>新建目录 python-tools</p>
+</li>
+<li>
+<p>创建 convert.py</p>
+</li>
+<li>
+<p>添加 CSV → JSON 转换代码</p>
+</li>
+<li>
+<p>运行 python convert.py sample.csv</p>
 </li>
 </ol>
-<p>4.点击保存</p>
-</blockquote><p><img src="https://pic2.imgdd.cc/item/68cc02d2fcdff6548301c0c5.png" alt="Image 16" /></p>
-<p><strong>Step 4</strong> 回到聊天页面，可以开始聊天啦！！！！！！！</p>
+<p>Cline 执行时，你每步都能看到终端输出。</p>
+<hr>
+<h3 id="示例-4自动修复一个报错">
+  <strong>示例 4：自动修复一个报错</strong>
+  
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b-4%e8%87%aa%e5%8a%a8%e4%bf%ae%e5%a4%8d%e4%b8%80%e4%b8%aa%e6%8a%a5%e9%94%99">#</a>
+  
+</h3>
+<p>你输入：</p>
+<pre tabindex="0"><code>帮我修复这个 TypeScript 报错。
+</code></pre><p>Cline 会：</p>
+<ul>
+<li>
+<p>读取报错</p>
+</li>
+<li>
+<p>打开相应源文件</p>
+</li>
+<li>
+<p>分析类型问题</p>
+</li>
+<li>
+<p>提供修复方案</p>
+</li>
+<li>
+<p>推荐你确认后自动修改</p>
+</li>
+</ul>
+<hr>
+<h1 id="">
+  
+  
+  <a class="anchor" href="#">#</a>
+  
+</h1>
+<p> </p>
+<p>现在你已经掌握：</p>
+<ul>
+<li>
+<p>Cline 的核心使用方式</p>
+</li>
+<li>
+<p>多步骤计划与文件/命令操作</p>
+</li>
+<li>
+<p>如何使用 Cline 完成多种实际开发任务</p>
+</li>
+<li>
+<p>如何通过「神马中转 API」连接 GPT-5.1 与 Claude</p>
+</li>
+</ul>
 </article>
  
       
@@ -1123,17 +1345,17 @@ BaseURL指南：基础知识-基础概念-API地址（BaseURL）
   <div class="flex flex-wrap justify-between">
     <span>
     
-      <a href="/docs/ailearn/model/" class="flex align-center book-icon">
-        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="基础教程-支持模型 · 页面" />
-        <span>基础教程-支持模型 · 页面</span>
+      <a href="/docs/otherai/devtools/pythonopenai/" class="flex align-center book-icon">
+        <img src="/svg/backward.svg" class="book-icon" alt="Previous" title="python openai官方库（使用AutoGPT，langchain等）" />
+        <span>python openai官方库（使用AutoGPT，langchain等）</span>
       </a>
     
     </span>
     <span>
     
-      <a href="/docs/ailearn/dev/" class="flex align-center book-icon">
-        <span>基础教程-开发者快速接入</span>
-        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="基础教程-开发者快速接入" />
+      <a href="/docs/otherai/devtools/codegpt/" class="flex align-center book-icon">
+        <span>VSCode插件Code GPT使用指南</span>
+        <img src="/svg/forward.svg" class="book-icon" alt="Next" title="VSCode插件Code GPT使用指南" />
       </a>
     
     </span>
@@ -1168,15 +1390,26 @@ BaseURL指南：基础知识-基础概念-API地址（BaseURL）
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#基础教程-聊天--页面">基础教程-聊天 · 页面</a>
+    <li><a href="#vscode插件cline使用配置">VSCode插件Cline使用+配置</a>
       <ul>
-        <li><a href="#-双通道配置聊天-"><strong>⚡ 双通道配置聊天</strong> ​</a>
+        <li><a href="#什么是cline它能做什么"><strong>什么是Cline？它能做什么？</strong></a></li>
+        <li><a href="#如何安装配置cline"><strong>如何安装配置Cline</strong></a>
           <ul>
-            <li></li>
+            <li><a href="#cline配置模型使用神马中转-api接入gpt-51claude"><strong>Cline配置模型：使用「神马中转 API」接入GPT-5.1/Claude</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#cline的基础使用流程"><strong>Cline的基础使用流程</strong></a></li>
+        <li><a href="#cline的常见使用场景示例"><strong>Cline的常见使用场景示例</strong></a>
+          <ul>
+            <li><a href="#示例-1重构一个文件"><strong>示例 1：重构一个文件</strong></a></li>
+            <li><a href="#示例-2生成一个新的react组件"><strong>示例 2：生成一个新的React组件</strong></a></li>
+            <li><a href="#示例-3执行终端命令--生成文件"><strong>示例 3：执行终端命令 + 生成文件</strong></a></li>
+            <li><a href="#示例-4自动修复一个报错"><strong>示例 4：自动修复一个报错</strong></a></li>
           </ul>
         </li>
       </ul>
     </li>
+    <li></li>
   </ul>
 </nav>
 

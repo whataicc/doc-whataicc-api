@@ -30,7 +30,7 @@
     <lastmod>2025-09-24T13:37:34+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/guide/</loc>
-    <lastmod>2023-11-26T17:30:00+08:00</lastmod>
+    <lastmod>2025-11-27T13:20:38+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/otherai/chat/chatgptwebmidjourneyproxy/</loc>
     <lastmod>2025-10-06T23:00:08+08:00</lastmod>
@@ -64,6 +64,8 @@
   </url><url>
     <loc>http://localhost:1313/docs/openai/</loc>
     <lastmod>2025-09-21T00:12:32+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/otherai/devtools/cline/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/otherai/devtools/codegpt/</loc>
     <lastmod>2025-09-24T13:37:34+08:00</lastmod>
