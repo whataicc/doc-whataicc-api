@@ -19,7 +19,7 @@
 <link rel="canonical" href="http://localhost:1313/tags/API/">
 <link rel="stylesheet" href="/book.min.ce1689397c669bcad456856a83f58cfccb0f8b23e5dd2bbff3755c795c7c8e70.css" integrity="sha256-zhaJOXxmm8rUVoVqg/WM/MsPiyPl3Su/83VceVx8jnA=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh.search.min.7e372d942353ebca5e72fde0107b71f65d7782c0a193b3960cc9d1ece0d366eb.js" integrity="sha256-fjctlCNT68pecv3gEHtx9l13gsChk7OWDMnR7ODTZus=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.8f6859918d59956af5888a2405d9164cb2b356662ba92bd28e41386ea3b88e53.js" integrity="sha256-j2hZkY1ZlWr1iIokBdkWTLKzVmYrqSvSjkE4bqO4jlM=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/API/index.xml" title="神马中转API_低价稳定中转API推荐" />
@@ -703,6 +703,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/otherai/chat/lobechat/" class="">Lobe-Chat</a>
   
 
@@ -730,19 +743,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/otherai/chat/sidebar/" class="">浏览器插件ChatGPT Sidebar</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/otherai/chat/cherrystudio/" class="">Cherry Studio</a>
   
 
         </li>
@@ -1041,6 +1041,116 @@ https://github.com/alex-shpak/hugo-book
 
       
       
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/docs/ailearn/chat/">基础教程-聊天 · 页面</a>
+    </h2>
+    
+
+
+  
+  <div class="text-small">
+    
+      <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a>, 
+      <a href="/categories/API%E6%96%87%E6%A1%A3/">API文档</a>
+  </div>
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/tags/API/">API</a>, 
+      <a href="/tags/%E4%B8%AD%E8%BD%ACAPI/">中转API</a>, 
+      <a href="/tags/%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8/">服务使用</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><h1 id="基础教程-聊天--页面">
+  基础教程-聊天 · 页面
+  
+  <a class="anchor" href="#%e5%9f%ba%e7%a1%80%e6%95%99%e7%a8%8b-%e8%81%8a%e5%a4%a9--%e9%a1%b5%e9%9d%a2">#</a>
+  
+</h1>
+<h2 id="-双通道配置聊天-">
+  <strong>⚡ 双通道配置聊天</strong> ​
+  
+  <a class="anchor" href="#-%e5%8f%8c%e9%80%9a%e9%81%93%e9%85%8d%e7%bd%ae%e8%81%8a%e5%a4%a9-">#</a>
+  
+</h2>
+<p>⚠️ 请先创建令牌，才可使用站内聊天</p>
+<p>💻<strong>管理入口</strong>👉 <a href="https://api.whatai.cc/token">令牌控制台</a></p>
+<p>📖<strong>令牌配置指南</strong>👉 <a href="../../aidocs/base/">基础知识-基本概念-添加令牌</a></p>
+<h4 id="-方式一闪电直连推荐">
+  <strong>🚀 方式一：闪电直连（推荐）</strong>
+  
+  <a class="anchor" href="#-%e6%96%b9%e5%bc%8f%e4%b8%80%e9%97%aa%e7%94%b5%e7%9b%b4%e8%bf%9e%e6%8e%a8%e8%8d%90">#</a>
+  
+</h4>
+
+<blockquote class='book-hint '>
+  <ul>
+<li>
+<p>在令牌列表找到目标Key</p>
+</li>
+<li>
+<p>点击「聊天」按钮</p>
+</li>
+<li>
+<p>系统自动完成：</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>注入Key到聊天窗</p>
+</li>
+<li>
+<p>配置BASE_URL</p>
+</li>
+<li>
+<p>选择默认模型</p>
+</li>
+</ul>
+</blockquote><p><img src="https://pic2.imgdd.cc/item/68cc0247fcdff6548301c089.png" alt="Image 12" /></p>
+<p>💡 适合场景：快速体验、临时调试</p>
+<h4 id="-方式二手动配置高级">
+  <strong>🛠️ 方式二：手动配置（高级）</strong>
+  
+  <a class="anchor" href="#-%e6%96%b9%e5%bc%8f%e4%ba%8c%e6%89%8b%e5%8a%a8%e9%85%8d%e7%bd%ae%e9%ab%98%e7%ba%a7">#</a>
+  
+</h4>
+<p><strong>Step 1</strong> 进入聊天页面 → 设置 ⚙️ → 服务端</p>
+<p><strong>Step 2</strong> 填写关键参数：</p>
+<pre tabindex="0"><code>必备参数： 
+API Key(令牌)  ███ sk-xxxxxxxxxxxx （粘贴复制的Key） 
+BaseURL  ███ 选填以下任一：    
+https://api.whatai.cc 
+https://api.whatai.cc/v1    
+https://api.whatai.cc/v1/chat/completions  
+
+Midjourney专用地址：    
+https://api.whatai.cc   
+https://api.whatai.cc/mj
+
+BaseURL指南：基础知识-基础概念-API地址（BaseURL）
+</code></pre><p><strong>Step 3</strong> 填写模型：</p>
+
+<blockquote class='book-hint '>
+  <ol>
+<li>
+<p>访问「支持模型」页面</p>
+</li>
+<li>
+<p>复制目标模型名称（如 gpt-4-turbo）</p>
+</li>
+<li>
+<p>在聊天窗口粘贴到模型选择框</p>
+</li>
+</ol>
+<p>4.点击保存</p>
+</blockquote><p><img src="https://pic2.imgdd.cc/item/68cc02d2fcdff6548301c0c5.png" alt="Image 16" /></p></div>
+  </article>
   
   <article class="markdown book-post">
     <h2>
@@ -2112,97 +2222,6 @@ https://github.com/alex-shpak/hugo-book
 <blockquote class='book-hint '>
   <p>提示：将 <code>******</code> 替换为你实际的 API Key，其他厂商 SDK 配置方式类似</p>
 </blockquote></div>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/docs/aidocs/pay1/">基本概念-按量付费</a>
-    </h2>
-    
-
-
-  
-  <div class="text-small">
-    
-      <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a>, 
-      <a href="/categories/API%E6%96%87%E6%A1%A3/">API文档</a>
-  </div>
-  
-
-  
-  <div class="text-small">
-    
-      <a href="/tags/API/">API</a>, 
-      <a href="/tags/%E4%B8%AD%E8%BD%ACAPI/">中转API</a>, 
-      <a href="/tags/%E6%9C%8D%E5%8A%A1%E4%BD%BF%E7%94%A8/">服务使用</a>
-  </div>
-  
-
-
-    <div class="book-post-content"><h1 id="-基本概念-按量付费">
-  📖 基本概念-按量付费
-  
-  <a class="anchor" href="#-%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5-%e6%8c%89%e9%87%8f%e4%bb%98%e8%b4%b9">#</a>
-  
-</h1>
-<h3 id="-按量计费像交水电费一样简单">
-  <strong>💸 按量计费：像交水电费一样简单！</strong>
-  
-  <a class="anchor" href="#-%e6%8c%89%e9%87%8f%e8%ae%a1%e8%b4%b9%e5%83%8f%e4%ba%a4%e6%b0%b4%e7%94%b5%e8%b4%b9%e4%b8%80%e6%a0%b7%e7%ae%80%e5%8d%95">#</a>
-  
-</h3>
-<p><strong>用多少字，付多少钱！</strong> 就像家里用电——开灯时间越长，电费越多～</p>
-<h3 id="计费示例-">
-  计费示例 ​
-  
-  <a class="anchor" href="#%e8%ae%a1%e8%b4%b9%e7%a4%ba%e4%be%8b-">#</a>
-  
-</h3>
-<ul>
-<li>
-<p>文字类模型的计费通常是按照 tokens 计算。</p>
-</li>
-<li>
-<p>例如，1K tokens 消耗 xx 美金，这种计费方式与官方渠道相同。</p>
-</li>
-</ul>
-<h3 id="优惠政策-">
-  优惠政策 ​
-  
-  <a class="anchor" href="#%e4%bc%98%e6%83%a0%e6%94%bf%e7%ad%96-">#</a>
-  
-</h3>
-<ul>
-<li>
-<p>官方渠道的美金购买需要实时汇率（大约 1:7）。</p>
-</li>
-<li>
-<p>在我们平台，您可以直接以折扣价格购买美金。</p>
-</li>
-<li>
-<p>具体汇率请查询充值页。</p>
-</li>
-</ul>
-<h3 id="-实景案例">
-  <strong>🌰 实景案例</strong>
-  
-  <a class="anchor" href="#-%e5%ae%9e%e6%99%af%e6%a1%88%e4%be%8b">#</a>
-  
-</h3>
-<p><strong>【示例】对于default分组下的gpt-4o-mini模型，假设提问文字数量为6323 tokens，文字输出数量为2481 tokens</strong></p>
-<p><img src="https://pic2.imgdd.cc/item/68cb9552fcdff6548300ba65.png" alt="Image 5" /></p>
-<pre tabindex="0"><code>Input（提示token数）：0.15/M tokens （您提问的文字）
-Output（补全token数）: 0.6/M tokens （AI回答的文字）
-Cache（模型倍率）：0.075
-计算方式为：
-$0.15 / 1000000 * 6323 + 0.6 / 1000000 * 2481 + 0.075/1000000 * 2048 = 0.002284$ 
-</code></pre><h3 id="-模型倍率看不懂可以忽略">
-  <strong>📊 模型倍率（看不懂可以忽略）</strong>
-  
-  <a class="anchor" href="#-%e6%a8%a1%e5%9e%8b%e5%80%8d%e7%8e%87%e7%9c%8b%e4%b8%8d%e6%87%82%e5%8f%af%e4%bb%a5%e5%bf%bd%e7%95%a5">#</a>
-  
-</h3>
-<p><strong>支持价格页面的模型价格即实价！</strong></p></div>
   </article>
   
 

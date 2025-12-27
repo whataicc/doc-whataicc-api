@@ -8,7 +8,7 @@ weight: 2
 
 ## 🖥️ 1、注册「神马中转API」账号
 
-**免费注册**：注册将自动赠送 **0.2 美金余额**，测试阶段跑通绝对没问题~
+**免费注册**：注册将自动赠送 **0.2 美金余额**，测试阶段跑通绝对没问题，首页工作台也有签赠送额度~
 
 [立即注册](https://api.whatai.cc/login)
 
@@ -19,6 +19,8 @@ weight: 2
 进入后台的 **[令牌](https://api.whatai.cc/token)** 页面，选择右上角【添加令牌】，填写名称其他默认，即可获取生成的key
 
 Key 的格式通常是：`sk-xxxx......`
+
+[添加令牌详细教程](https://docs.whatai.cc/docs/aidocs/key/)
 
 ---
 
@@ -47,7 +49,7 @@ Key 的格式通常是：`sk-xxxx......`
 
 ## 神马中转API可视化操作演示
 
-顶部菜单选择聊天，里面有可视化操作【聊天&画图&视频&音乐】【Nano Banner画图】【GPT画图】
+顶部菜单选择聊天，里面有可视化操作【聊天&画图&视频&音乐】【Nano Banner画图】【GPT画图】【操练场】
 
 ### Nano Banner画图
 
@@ -73,3 +75,23 @@ Key 的格式通常是：`sk-xxxx......`
 
 如果需要传图片可以随便找个免费图床即可，推荐[聚合图床](https://www.superbed.cc/signup?link=1827pfhr)
 ![AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转](https://pic.imgdd.cc/item/6927bbb8c828c4c6deffe173.png)
+
+
+## 快速教程
+
+### API文档常用接口
+[聊天兼容OPENAI格式接口（gpt、Gemini、Claude等）](hhttps://gpt-best.apifox.cn/doc-6113929)
+
+[通用绘图异步API接口（Nano-banana、gpt-image等）](https://gpt-best.apifox.cn/api-356258955)
+
+[通用视频开发API接口（Sora、veo等）](https://gpt-best.apifox.cn/doc-7324259)
+
+[神马中转API开发文档](https://gpt-best.apifox.cn/)
+
+
+### 常用软件教程
+[Claude Code保姆级新手安装使用教程](https://docs.whatai.cc/docs/otherai/devtools/claudecode/)
+
+[Chatbox教程快速安装与使用](https://docs.whatai.cc/docs/otherai/chat/chatbox/)
+
+[Cherry Studio安装配置使用教程](https://docs.whatai.cc/docs/otherai/chat/cherrystudio/)
