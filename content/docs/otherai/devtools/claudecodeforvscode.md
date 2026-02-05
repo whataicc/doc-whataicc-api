@@ -1,7 +1,7 @@
 ---
-weight: 6
+weight: 4
 bookFlatSection: true
-title: "VSCode插件Claude Code for VSCode配置神马中转APIAI详细设置与使用教程"
+title: "VSCode插件ClaudeCode for VSCode配置教程"
 
 seo_title: "VSCode插件Claude Code for VSCode配置神马中转APIAI详细设置与使用教程"
 summary: "Claude Code国内使用_Claude Code安装使用教程_神马中转API Claude Code代理API"
