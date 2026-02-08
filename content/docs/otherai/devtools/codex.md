@@ -203,7 +203,7 @@ OpenAI 官方 quickstart 也提到：安装后 Codex 面板会出现在侧边栏
 
 ## **常见问题（FAQ）与排查清单**
 
-### **Q1：****codex: command not found ****/ 找不到命令**
+### **Q1：codex: command not found/ 找不到命令**
 
 **原因常见是 npm 全局安装路径没加入 PATH**，或安装没成功。
 

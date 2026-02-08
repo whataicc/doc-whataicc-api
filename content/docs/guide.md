@@ -92,6 +92,10 @@ Key 的格式通常是：`sk-xxxx......`
 ### 常用软件教程
 [Claude Code保姆级新手安装使用教程](https://docs.whatai.cc/docs/otherai/devtools/claudecode/)
 
+[CodeX配置使用教程](https://docs.whatai.cc/docs/otherai/devtools/codex/)
+
 [Chatbox教程快速安装与使用](https://docs.whatai.cc/docs/otherai/chat/chatbox/)
 
 [Cherry Studio安装配置使用教程](https://docs.whatai.cc/docs/otherai/chat/cherrystudio/)
+
+[VSCode插件Cline配置使用教程](https://docs.whatai.cc/docs/otherai/devtools/cline/)
