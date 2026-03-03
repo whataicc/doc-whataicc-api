@@ -15,11 +15,26 @@ author: "神马中转API（api.whatai.cc）"
 # Chatgpt-web-midjourney-proxy配置教程
 ---
 
-### ChatGPT & Midjourney配置教程：
+## ChatGPT & Midjourney配置教程：
 
 神马中转API聊天菜单 - ChatGPT & Midjourney - 左下角设置按钮 - 服务端 - 找到Midjourney设置：
 
 ![ChatGPT & Midjourney配置教程](https://pic2.imgdd.cc/item/68d618728dc72b176e6fce0f.png)
+
+## 对话
+
+1.选择模型，添加神马中转API模型价格页面支持的模型值，比如添加：gpt-5.2
+![ChatGPT & Midjourney配置教程](https://pic.imgdd.cc/item/69a652f5a2f7ff87620f76f9.png)
+
+2.输入神马中转API支持的模型值，具体参考模型价格页面：[神马中转模型价格](https://api.whatai.cc/models)
+![ChatGPT & Midjourney配置教程](https://pic.imgdd.cc/item/69a65411a2f7ff87620f7793.png)
+![ChatGPT & Midjourney配置教程](https://pic.imgdd.cc/item/69a654eda2f7ff87620f7802.png)
+![ChatGPT & Midjourney配置教程](https://pic.imgdd.cc/item/69a65534a2f7ff87620f780e.png)
+
+3.新建聊天，输入问题使用新设置的模型
+![ChatGPT & Midjourney配置教程](https://pic.imgdd.cc/item/69a655fea2f7ff87620f782e.png)
+
+## 绘画
 
 神马中转API聊天菜单 - ChatGPT & Midjourney - 绘画：
 

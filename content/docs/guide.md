@@ -63,6 +63,7 @@ Key 的格式通常是：`sk-xxxx......`
 
 默认配置，选择模型，是输入问题，发送等待回复
 
+更多详细教程：[聊天详细教程](https://docs.whatai.cc/docs/otherai/chat/chatgptwebmidjourneyproxy/)
 ![AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转](https://pic.imgdd.cc/item/6927b7adc828c4c6deffdca9.png)
 
 
