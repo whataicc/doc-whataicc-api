@@ -1,7 +1,7 @@
 ---
 weight: 1
 bookFlatSection: true
-title: "Raycast插件ChatGPT使用指南（推荐使用）"
+title: "Raycast插件教程"
 
 seo_title: "Raycast插件ChatGPT使用指南（推荐使用）_国内如何使用中转API"
 description: "了解神马中转API的使用方法，掌握如何配置和调用中转API服务，轻松解决接口调用难题。"
