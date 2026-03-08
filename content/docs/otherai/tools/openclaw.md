@@ -254,6 +254,111 @@ openclaw channels status
 **前置软件**：
 
 * Node.js 22.0.0+
+  
+#### 部署方式选择
+
+Windows有两种部署方式：
+
+1. **WSL2 + Ubuntu（强烈推荐）**：官方推荐方式，提供完整Linux环境支持
+2. **PowerShell原生部署**：纯Windows环境，适合不想使用WSL2的用户
+
+#### 方式一：WSL2 + Ubuntu部署（强烈推荐）
+
+这是官方推荐的Windows部署方式，提供最完整的Linux环境支持。
+
+##### 第一步：启用WSL2
+
+**以管理员身份打开PowerShell**，执行：
+
+```powershell
+# 启用WSL功能
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+# 设置WSL 2为默认版本
+wsl --set-default-version 2
+```
+**重启计算机**。
+
+##### 第二步：安装Ubuntu
+
+**方法一：Microsoft Store安装（推荐）**
+
+1. 打开Microsoft Store
+2. 搜索「Ubuntu 22.04 LTS」或「Ubuntu 24.04 LTS」
+3. 点击「获取」并安装
+4. 首次启动设置用户名和密码
+
+安装完成后会自动打开Ubuntu终端，按提示设置用户名和密码。
+
+##### 第三步：更新Ubuntu系统
+
+在Ubuntu终端中执行：
+
+```bash
+# 更新软件包列表
+sudo apt update && sudo apt upgrade -y
+
+# 安装基础工具
+sudo apt install -y curl git wget build-essential
+```
+##### 第四步：安装Node.js 22+
+
+```bash
+# 添加NodeSource仓库
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+
+# 安装Node.js
+sudo apt install -y nodejs
+
+# 验证版本（必须≥22.x）
+node -v
+npm -v
+```
+##### 第五步：安装 OpenClaw
+
+**方法A：一键脚本安装**
+
+```bash
+curl -fsSL https://openclaw.ai/install.sh | bash
+```
+##### 第六步：验证安装
+
+```bash
+# 查看版本
+openclaw --version
+
+# 查看帮助
+openclaw --help
+
+# 查看系统状态
+openclaw status
+```
+##### 第七步：配置Windows访问WSL2服务
+
+由于OpenClaw运行在WSL2中，需要配置端口转发以便Windows访问。
+
+**创建启动脚本** `start-openclaw.bat`：
+
+```batch
+@echo off
+echo Starting OpenClaw Gateway in WSL2...
+wsl -d Ubuntu-22.04 -u root service openclaw start
+timeout /t 3
+start http://localhost:18789
+```
+或直接在WSL2中启动：
+
+```bash
+# 在WSL2 Ubuntu终端中
+openclaw gateway run --port 18789
+```
+然后在Windows浏览器访问 `http://localhost:18789`
+
+---
+
+
+
 
 #### PowerShell原生部署
 
@@ -394,7 +499,7 @@ OpenClaw 的配置文件位置通常如下： **系统文件路径示例** Windo
 
 * `baseUrl`：API服务地址
 * `apiKey`：认证密钥
-* `api`：API协议类型（如 `openai-chat`、`anthropic-messages`）
+* `api`：API协议类型（如 `openai-completions`、`anthropic-messages`）
 * `models`：模型列表和参数
 
 #### 配置神马中转API代理
@@ -408,18 +513,18 @@ OpenClaw 的配置文件位置通常如下： **系统文件路径示例** Windo
     "providers": {
       "whataicc": {
         "baseUrl": "https://api.whatai.cc/v1",
-        "apiKey": "sk-or-v1-你的密钥",
+        "apiKey": "sk-xxxxx-你的神马中转API密钥",
         "auth": "api-key",
-        "api": "openai-chat",
+        "api": "openai-completions",
         "models": [
           {
-            "id": "anthropic/claude-sonnet-4-6",
+            "id": "claude-sonnet-4-6",
             "name": "claude-sonnet-4-6",
             "contextWindow": 200000,
             "maxTokens": 8192
           },
           {
-            "id": "openai/gpt-4",
+            "id": "gpt-4",
             "name": "GPT-4",
             "contextWindow": 128000,
             "maxTokens": 4096
@@ -431,7 +536,7 @@ OpenClaw 的配置文件位置通常如下： **系统文件路径示例** Windo
   "agents": {
     "defaults": {
       "model": {
-        "primary": "whataicc/anthropic/claude-sonnet-4-6"
+        "primary": "whataicc/claude-sonnet-4-6"
       }
     }
   }
@@ -447,7 +552,7 @@ OpenClaw 的配置文件位置通常如下： **系统文件路径示例** Windo
 | `baseUrl`       | API服务地址 | `https://api.whatai.cc`            |
 | `apiKey`        | API 密钥  | `sk-xxx`                           |
 | `auth`          | 认证方式    | `api-key` 或 `bearer`               |
-| `api`           | API协议   | `openai-chat`、`anthropic-messages` |
+| `api`           | API协议   | `openai-completions`、`anthropic-messages` |
 | `id`            | 模型ID    | `deepseek-chat`                    |
 | `name`          | 显示名称    | `DeepSeek Chat`                    |
 | `contextWindow` | 上下文窗口   | `64000`                            |
@@ -457,7 +562,7 @@ OpenClaw 的配置文件位置通常如下： **系统文件路径示例** Windo
 
  
 
-* `openai-chat`：OpenAI兼容接口（最常用）
+* `openai-completions`：OpenAI兼容接口（最常用）
 * `anthropic-messages`：Anthropic Claude接口
 * `google-generative-ai`：Google Gemini接口
 
