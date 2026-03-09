@@ -137,7 +137,7 @@ OpenClaw 的设计强调实用性和扩展性，它包含一些核心能力：
 
 在终端中执行以下命令：
 
-```
+```bash
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
@@ -154,7 +154,7 @@ curl -fsSL https://openclaw.ai/install.sh | bash
 
 安装完成后，执行以下命令验证：
 
-```
+```bash
 openclaw --version
 ```
 
@@ -164,7 +164,7 @@ openclaw --version
 
 运行配置向导：
 
-```
+```bash
 openclaw onboard
 ```
 
@@ -231,7 +231,7 @@ openclaw onboard
 
 ##### 第五步：验证安装
 
-```
+```bash
 # 检查Gateway状态
 openclaw channels status
 
@@ -539,14 +539,14 @@ openclaw onboard
 ![](https://pic.imgdd.cc/item/69ae5878b4a2eb58b526fd76.png)  
 ![](https://pic.imgdd.cc/item/69ae58e8b4a2eb58b52700e7.png)  
 
-### 安装完毕可视化修改
+### 2.安装完毕可视化修改
 
 启动openclaw之后左侧菜单【设置-配置】- Models - 输入模型BaseURL：`https://api.whatai.cc/v1`，输入对应的API Key，选择`OpenAI-compatible`，输入模型ID如：`claude-sonnet-4-6`
 
 ![](https://pic.imgdd.cc/item/69ae59beb4a2eb58b5270796.png)  
 
 
-### 其他版本可修改配置文件
+### 3.其他版本可修改配置文件
 
 OpenClaw 的配置文件位置通常如下： **系统文件路径示例** 
 
@@ -657,26 +657,28 @@ openclaw models test whataicc/claude-sonnet-4-6
 
 ## 常见问题及解决方案
 
+使用问题或配置问题查看，OpenClaw中文帮助文档：https://docs.openclaw.ai/zh-CN
+
 ### 问题1：找不到配置文件
 
 **排查步骤**:
 
 1. **检查配置文件是否存在**
 
-   ```
+   ```bash
    ls -la ~/.openclaw/openclaw.json
    ls -la ~/.openclaw/agents/*/openclaw.json
    ```
 
 2. **运行 doctor 命令**
 
-   ```
+   ```bash
    openclaw doctor
    ```
 
 3. **手动创建配置文件**
 
-   ```
+   ```bash
    mkdir -p ~/.openclaw
    echo '{}' > ~/.openclaw/openclaw.json
    ```
@@ -689,13 +691,13 @@ openclaw models test whataicc/claude-sonnet-4-6
 
 1. **查看所有 Agent**
 
-   ```
+   ```bash
    openclaw agents list
    ```
 
 2. **查看每个 Agent 的配置**
 
-   ```
+   ```bash
    openclaw config get --agent main-assistant
    openclaw config get --agent tech-dev
    ```
@@ -707,7 +709,7 @@ openclaw models test whataicc/claude-sonnet-4-6
 
 ### **问题3：Node.js版本不对**
 
-```
+```bash
 # 检查版本
 node --version
 
@@ -718,7 +720,7 @@ nvm use 22
 
 ### **问题4：**** 权限错误**
 
-```
+```bash
 # macOS/Linux
 sudo chown -R $USER ~/.openclaw
 
@@ -754,7 +756,7 @@ sudo chown -R $USER ~/.openclaw
 
 **Q1: Gateway无法启动**
 
-```
+```bash
 # 查看日志
 tail -f ~/.openclaw/logs/gateway.log
 
@@ -764,7 +766,7 @@ openclaw gateway restart
 
 **Q2: 端口被占用**
 
-```
+```bash
 # 查看端口占用
 lsof -i :18789
 
