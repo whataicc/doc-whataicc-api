@@ -182,13 +182,17 @@ openclaw onboard
 
 **3. 选择AI模型**：
 
-选择你的AI供应商（支持国内外主流模型）：
+选择你的AI供应商选择Custom Provider：
 
-![](https://pic.imgdd.cc/item/69a7c594a9cdb1e92dcd14fb.png)  
+![](https://pic.imgdd.cc/item/69ae57ebb4a2eb58b526f991.png)  
 
-**4. 输入API Key**：
+**4. 输入BaseURL和API Key**：
 
-根据选择的模型，输入对应的API Key
+输入模型BaseURL：`https://api.whatai.cc/v1`，输入对应的API Key，选择`OpenAI-compatible`，输入模型ID如：`claude-sonnet-4-6`
+
+![](https://pic.imgdd.cc/item/69ae582bb4a2eb58b526fb6c.png)  
+![](https://pic.imgdd.cc/item/69ae5878b4a2eb58b526fd76.png)  
+![](https://pic.imgdd.cc/item/69ae58e8b4a2eb58b52700e7.png)  
 
 **5. 选择聊天工具**：
 
@@ -239,8 +243,6 @@ openclaw channels status
 
 > 🪟 **Windows用户**：完全可用，但部分系统集成功能受限。
 
-#### 系统要求
-
 **硬件要求**：
 
 * CPU：2核以上
@@ -284,12 +286,15 @@ wsl --set-default-version 2
 
 **方法一：Microsoft Store安装（推荐）**
 
-1. 打开Microsoft Store
+1. 打开Microsoft Store，本地商店或者网页：https://apps.microsoft.com/search?query=Ubuntu+22.04+LTS&hl=zh-CN&gl=CN
 2. 搜索「Ubuntu 22.04 LTS」或「Ubuntu 24.04 LTS」
 3. 点击「获取」并安装
 4. 首次启动设置用户名和密码
 
 安装完成后会自动打开Ubuntu终端，按提示设置用户名和密码。
+
+![](https://pic.imgdd.cc/item/69ae24c8fe73d60a1df4c3b2.png)
+
 
 ##### 第三步：更新Ubuntu系统
 
@@ -302,26 +307,49 @@ sudo apt update && sudo apt upgrade -y
 # 安装基础工具
 sudo apt install -y curl git wget build-essential
 ```
+
+![](https://pic.imgdd.cc/item/69ae2551fe73d60a1df4c632.png)
+
 ##### 第四步：安装Node.js 22+
 
 ```bash
-# 添加NodeSource仓库
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+#运行 NVM 安装脚本
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
-# 安装Node.js
-sudo apt install -y nodejs
+#使 NVM 生效
+source ~/.bashrc
 
-# 验证版本（必须≥22.x）
-node -v
-npm -v
+#安装 Node.js：
+nvm install 22
+
+#验证 Node.js 版本（必须≥22.x）
+node --version
+npm --version
 ```
 ##### 第五步：安装 OpenClaw
 
-**方法A：一键脚本安装**
+**一键脚本安装**
 
 ```bash
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
+
+![](https://pic.imgdd.cc/item/69ae2756fe73d60a1df4d941.png)
+
+**选择AI模型**：
+
+选择你的AI供应商选择Custom Provider：
+
+![](https://pic.imgdd.cc/item/69ae57ebb4a2eb58b526f991.png)  
+
+**输入BaseURL和API Key**：
+
+输入模型BaseURL：`https://api.whatai.cc/v1`，输入对应的API Key，选择`OpenAI-compatible`，输入模型ID如：`claude-sonnet-4-6`
+
+![](https://pic.imgdd.cc/item/69ae582bb4a2eb58b526fb6c.png)  
+![](https://pic.imgdd.cc/item/69ae5878b4a2eb58b526fd76.png)  
+![](https://pic.imgdd.cc/item/69ae58e8b4a2eb58b52700e7.png)  
+
 ##### 第六步：验证安装
 
 ```bash
@@ -360,7 +388,7 @@ openclaw gateway run --port 18789
 
 
 
-#### PowerShell原生部署
+#### PowerShell原生部署(不推荐)
 
 ##### 第一步：安装Node.js 22+
 
@@ -372,7 +400,7 @@ openclaw gateway run --port 18789
 
 ##### 第二步：验证Node.js安装
 
-```
+```bash
 # 打开PowerShell
 node -v
 npm -v
@@ -382,7 +410,7 @@ npm -v
 
 **重要**：必须以**管理员身份**运行PowerShell。
 
-```
+```bash
 # 安装最新稳定版
 npm install -g openclaw@latest
 
@@ -394,7 +422,7 @@ npm install -g @qingchencloud/openclaw-zh@latest
 
 如果遇到权限错误：
 
-```
+```bash
 # 方法A：启用PowerShell脚本执行
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
@@ -408,7 +436,7 @@ npm config set cache "C:\npm-cache"
 
 ##### 第五步：验证安装
 
-```
+```bash
 openclaw --version
 openclaw --help
 ```
@@ -417,7 +445,7 @@ openclaw --help
 
 **问题：sharp模块加载失败**
 
-```
+```bash
 # 清理npm缓存
 npm cache clean --force
 
@@ -442,7 +470,7 @@ C:\Users\你的用户名\.openclaw
 
 启动初始化向导
 
-```
+```bash
 openclaw onboard --install-daemon
 ```
 
@@ -464,7 +492,7 @@ openclaw onboard --install-daemon
 
 ##### 第一步：安装Node.js
 
-```
+```bash
 # Ubuntu/Debian
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -475,25 +503,58 @@ node --version
 
 ##### 第二步：安装 OpenClaw
 
-```
+```bash
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
 ##### 第三步：验证安装
 
-```
+```bash
 openclaw --version
 ```
 
 ##### 第四步：初始化配置
 
-```
+```bash
 openclaw onboard
 ```
 
 ## OpenClaw配置神马中转API
 
-OpenClaw 的配置文件位置通常如下： **系统文件路径示例** Windows:`C:Users用户名.openclawopenclaw.json` macOS:`~/.openclaw/openclaw.json` Linux:`~/.openclaw/openclaw.json`  
+下面介绍三种方法设置OpenClaw配置神马中转API
+
+### 1.安装时直接设置
+
+**选择AI模型**：
+
+选择你的AI供应商选择Custom Provider：
+
+![](https://pic.imgdd.cc/item/69ae57ebb4a2eb58b526f991.png)  
+
+**4. 输入BaseURL和API Key**：
+
+输入模型BaseURL：`https://api.whatai.cc/v1`，输入对应的API Key，选择`OpenAI-compatible`，输入模型ID如：`claude-sonnet-4-6`
+
+![](https://pic.imgdd.cc/item/69ae582bb4a2eb58b526fb6c.png)  
+![](https://pic.imgdd.cc/item/69ae5878b4a2eb58b526fd76.png)  
+![](https://pic.imgdd.cc/item/69ae58e8b4a2eb58b52700e7.png)  
+
+### 安装完毕可视化修改
+
+启动openclaw之后左侧菜单【设置-配置】- Models - 输入模型BaseURL：`https://api.whatai.cc/v1`，输入对应的API Key，选择`OpenAI-compatible`，输入模型ID如：`claude-sonnet-4-6`
+
+![](https://pic.imgdd.cc/item/69ae59beb4a2eb58b5270796.png)  
+
+
+### 其他版本可修改配置文件
+
+OpenClaw 的配置文件位置通常如下： **系统文件路径示例** 
+
+Windows:`C:Users用户名.openclawopenclaw.json` 
+
+macOS:`~/.openclaw/openclaw.json` 
+
+Linux:`~/.openclaw/openclaw.json`  
 
 需要手动编辑配置文件 `~/.openclaw/openclaw.json`，指定：
 
@@ -506,7 +567,7 @@ OpenClaw 的配置文件位置通常如下： **系统文件路径示例** Windo
 
 如果你使用API代理服务，配置如下：
 
-```
+```json
 {
   "models": {
     "mode": "merge",
@@ -570,7 +631,7 @@ OpenClaw 的配置文件位置通常如下： **系统文件路径示例** Windo
 
  
 
-```
+```bash
 # 方式1：重启Gateway
 openclaw gateway restart
 
@@ -586,12 +647,12 @@ systemctl --user restart openclaw-gateway.service
 
  
 
-```
+```bash
 # 查看当前配置的模型
 openclaw models list
 
 # 测试模型连接
-openclaw models test whataicc/anthropic/claude-sonnet-4-6
+openclaw models test whataicc/claude-sonnet-4-6
 ```
 
 ## 常见问题及解决方案
