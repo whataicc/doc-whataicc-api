@@ -91,6 +91,8 @@ Key 的格式通常是：`sk-xxxx......`
 
 
 ### 常用软件教程
+[OpenClaw安装配置教程](https://docs.whatai.cc/docs/otherai/tools/openclaw)
+
 [Claude Code保姆级新手安装使用教程](https://docs.whatai.cc/docs/otherai/devtools/claudecode/)
 
 [CodeX配置使用教程](https://docs.whatai.cc/docs/otherai/devtools/codex/)
@@ -100,3 +102,7 @@ Key 的格式通常是：`sk-xxxx......`
 [Cherry Studio安装配置使用教程](https://docs.whatai.cc/docs/otherai/chat/cherrystudio/)
 
 [VSCode插件Cline配置使用教程](https://docs.whatai.cc/docs/otherai/devtools/cline/)
+
+[N8N教程](https://docs.whatai.cc/docs/otherai/tools/n8n/)
+
+[Dify教程](https://docs.whatai.cc/docs/otherai/tools/dify/)
