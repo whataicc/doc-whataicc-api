@@ -102,7 +102,7 @@ Coze 官方把工作流定义为：
 
  
 
-## **Coze配置****神马中转API教程**
+## **Coze配置神马中转API教程**
 
 ***
 
@@ -152,7 +152,7 @@ Coze 官方把工作流定义为：
 
 * **模型名称（Model Name）**
 
-```
+```json
 API Key: sk-xxxxxx
 Base URL: https://api.whatai.cc/v1/chat/completions
 Model: gpt-5.4
@@ -192,7 +192,7 @@ Model: gpt-5.4
 
 **基础配置示例**
 
-```
+```json
 curl --location --request POST 'https://api.whatai.cc/v1/chat/completions' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer {{YOUR_API_KEY}}' \

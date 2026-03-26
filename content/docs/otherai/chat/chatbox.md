@@ -132,9 +132,15 @@ https://api.whatai.cc
 `https://api.whatai.cc/v1/chat/completions`
 
 Claude配置：
-
+API主机填写：`https://api.whatai.cc/v1`，不用点检查，添加完模型直接聊天使用
 ![Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型](https://pic.imgdd.cc/item/68fd767445440b5a919cc8ac.png)
 
+去模型价格页面复制模型值如`claude-sonnet-4-6`，点击设置中的新建，模型ID填入刚刚复制的模型值，显示名称填一样的，模型类型选择聊天，其他的按需设置
+![Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型](https://pic.imgdd.cc/item/69c4f3cef945d4b3152d1144.png)
+
+返回主页面新建聊天使用新增加的模型
+
+![Chatbox教程(免费)快速安装与使用全攻略，一键连接所有AI语言模型](https://pic.imgdd.cc/item/69c4f4daf945d4b3152d183b.png)
 
 ---
 
@@ -154,20 +160,20 @@ Claude配置：
 ![神马中转API模型，一键连接所有AI语言模型](https://pic2.imgdd.cc/item/68d514048dc72b176e6efed7.jpg)
 
 ### ChatGPT (OpenAI 系列)
-- gpt-5  
-- gpt-4o  
-- gpt-4  
-- gpt-3.5  
+- gpt-5.4-nano
+- gpt-5.4-mini-2026-03-17
+- gpt-5.4-pro-2026-03-05
+- gpt-5.2-chat-latest
 
 ### Claude (Anthropic 系列)
-- claude-opus-4-1
-- claude-3-opus
-- claude-3-sonnet
-- claude-3-haiku
+- claude-opus-4-6
+- claude-sonnet-4-6
+- claude-haiku-4-5-20251001
+- claude-3-5-sonnet-latest
 
-### DeepSeek
-- deepseek-chat（通用对话）  
-- deepseek-coder（编程优化）  
+### Google
+- gemini-3.1-pro-preview
+- gemini-3-flash-preview-nothinking
 
 ### 参数设置
 - **temperature**：控制创意程度（0~1）。  
@@ -205,7 +211,7 @@ API Key      → 【神马中转API Key】
 ```plaintext
 API Base URL → https://api.whatai.cc/v1
 API Key      → 【神马中转API Key】
-模型         → claude-opus-4-1-20250805
+模型         → claude-sonnet-4-6
 ```
 
 **示例：**

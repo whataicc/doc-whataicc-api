@@ -53,7 +53,14 @@ Key 的格式通常是：`sk-xxxx......`
 
 ### Nano Banner画图
 
-默认配置，选择文生图或者图生图，输入提示词、选择数量/质量/比例，点击【生成】，等待生成完成第一时间下载图片不要刷新页面
+默认配置，选择文生图或者图生图，输入提示词、选择数量/质量/比例，点击【生成】，等待生成完成第一时间下载图片不要刷新页面。
+
+选择模型可以点击右上方齿轮，里面选择模型：
+
+* Nano Banana 2：Gemini 3.1 Flash Image（预览版）模型 (gemini-3.1-flash-image-preview)。此模型是 Gemini 3 Pro Image 的高效版本，针对速度和高用量开发者使用情形进行了优化。
+* Nano Banana Pro：Gemini 3 Pro Image 预览版模型 (gemini-3-pro-image-preview)。此模型专为专业资产制作而设计，利用高级推理（“思考”）功能来遵循复杂的指令并呈现高保真文本。
+* Nano Banana：Gemini 2.5 Flash Image 模型 (gemini-2.5-flash-image)。此模型专为速度和效率而设计，经过优化，可处理海量低延迟任务。
+
 
 **页面上的余额张数都不用管，是错误的，可以正常使用**
 

@@ -40,7 +40,7 @@ author: "神马中转API（api.whatai.cc）"
 
 ## **配置“神马中转API”**
 
-实际有三种登录方式，本质就是要通过认证你才能使用，点击选项卡会提示你跳转到对应的说明文档，如下图所示： ![VSCode插件Claude Code for VSCode配置AI中转与详细使用教程](https://pic.imgdd.cc/item/6982de37d9c88c98816cb1fa.png)   我们其实可以直接配置API KEY、BASE URL，比如接入神马中转API模型，点这个插件的设置（齿轮）进去，然后找到 在 settings.json 中编辑 点进去，如下图所示： BASE URL神马中转API官网：`https://api.whatai.cc` ![VSCode插件Claude Code for VSCode配置AI中转与详细使用教程](https://pic.imgdd.cc/item/6982de19d9c88c98816cb1f1.png) 添加如下内容，**保存 settings.json 后**，先退出 VSCode，再重新进入。
+实际有三种登录方式，本质就是要通过认证你才能使用，点击选项卡会提示你跳转到对应的说明文档，如下图所示： ![VSCode插件Claude Code for VSCode配置AI中转与详细使用教程](https://pic.imgdd.cc/item/6982de37d9c88c98816cb1fa.png)   我们其实可以直接配置API KEY、BASE URL，比如接入神马中转API模型，先关闭自动更新，点这个插件的设置（齿轮）进去，然后找到 在 settings.json 中编辑 点进去，如下图所示： BASE URL神马中转API官网：`https://api.whatai.cc` ![VSCode插件Claude Code for VSCode配置AI中转与详细使用教程](https://pic.imgdd.cc/item/6982de19d9c88c98816cb1f1.png) 添加如下内容，**保存 settings.json 后**，先退出 VSCode，再重新进入。
 
 ```
 {
@@ -61,6 +61,8 @@ author: "神马中转API（api.whatai.cc）"
 ```
 
 ![VSCode插件Claude Code for VSCode配置AI中转与详细使用教程](https://pic.imgdd.cc/item/6982de85d9c88c98816cb220.png)   最后，**测试在 VSCode 中成功使用 Claude Code 插件**  
+
+*   不要经常第一时间升级，可能会出现未知的BUG，稳定一段时间再决定是否升级
 
 ## 开始使用
 
