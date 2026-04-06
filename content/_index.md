@@ -405,6 +405,7 @@ keywords: ["神马中转API", "如何使用中转API", "中转API服务","Claude
         <h4>友情链接</h4>
         <ul><li><a href="https://whatai.cc" target="_blank">AI导航</a></li>
         <li><a href="https://api.whatai.cc" target="_blank">神马中转API官网</a></li>
+        <li><a href="https://www.aihubproxy.com" target="_blank">AIHub智慧代理API</a></li>
         </ul>
       </div>
       <div class="footer-column">

@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: true
 title: "Claude Code安装与国内使用教程"
 
-seo_title: "「2025最新推荐」Claude Code国内使用_保姆级新手安装使用教程_神马中转API Claude Code代理API_最强AI编程工具"
+seo_title: "「2026最新推荐」Claude Code国内使用_保姆级新手安装使用教程_神马中转API Claude Code代理API_最强AI编程工具"
 summary: "Claude Code国内使用_Claude Code安装使用教程_神马中转API Claude Code代理API"
 description: "Claude Code国内使用_Claude Code安装使用教程_神马中转API Claude Code代理API"
 keywords: ["Claude Code国内使用","神马中转API", "如何使用中转API", "中转API服务"]
@@ -12,7 +12,7 @@ categories: ["技术教程", "API文档"]
 
 author: "神马中转API（api.whatai.cc）"
 ---
-# 「2025最新推荐」Claude Code国内使用_保姆级新手安装使用教程_神马中转API Claude Code代理API_最强AI编程工具
+# 「2026最新推荐」Claude Code国内使用_保姆级新手安装使用教程_神马中转API Claude Code代理API_最强AI编程工具
 
 ## 什么是 Claude Code
 
@@ -78,7 +78,9 @@ npm install -g @anthropic-ai/claude-code
 ```
 #### **3. 配置 API 密钥**
 
-##### **获取 Auth Token (参考添加令牌文档**
+**获取 Auth Token 参考添加令牌文档** : https://docs.whatai.cc/docs/aidocs/key/
+
+使用自己的key替换下方`sk-xxx`
 
 ###### **方法一：使用 Bash（推荐）**
 ```

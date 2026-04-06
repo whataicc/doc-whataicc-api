@@ -12,7 +12,7 @@ categories: ["技术教程", "API文档"]
 author: "神马中转API（api.whatai.cc）"
 ---
 
-![【2025最新】Dify部署和工作流教程，国内直连OpenAI、Claude等配置Dify使用教程](https://pic2.imgdd.cc/item/68e8c4f08dc72b176e7f5fae.jpg)
+![【2026最新】Dify部署和工作流教程，国内直连OpenAI、Claude等配置Dify使用教程](https://pic2.imgdd.cc/item/68e8c4f08dc72b176e7f5fae.jpg)
 
 Dify 是一款开源的大语言模型（LLM）应用开发平台。它融合了后端即服务（Backend as Service）和 LLMOps 的理念，使开发者可以快速搭建生产级的生成式 AI 应用。即使你是非技术人员，也能参与到 AI 应用的定义和数据运营过程中。
 
@@ -39,7 +39,7 @@ Dify 是一款开源的大语言模型（LLM）应用开发平台。它融合了
     （上面功能点与细节可在官方产品文档与代码库查看）。
     
 
-![【2025最新】Dify部署和工作流教程，国内直连OpenAI、Claude等配置Dify使用教程](https://pic2.imgdd.cc/item/68e8c54c8dc72b176e7f63d7.png)
+![【2026最新】Dify部署和工作流教程，国内直连OpenAI、Claude等配置Dify使用教程](https://pic2.imgdd.cc/item/68e8c54c8dc72b176e7f63d7.png)
 
 * * *
 
