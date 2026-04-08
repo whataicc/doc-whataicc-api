@@ -291,6 +291,36 @@ claude commit
 *   **CI/CD 集成** - 自动化代码审查流程
 
 *   **团队规范** - 通过CLAUDE.md文件定义团队规范
+*   
+
+
+## Claude Code如何降低使用成本
+Claude Code 每次交互都会消耗令牌。平均成本为每位开发者每天 69012 Token以下。
+你可以通过使用 `/cost` 命令查看当前会话使用量。
+1. 压缩对话：
+  - Claude 默认在上下文超过 95% 容量时使用自动压缩
+  - 切换自动压缩：运行 `/config` 命令，并导航到”Auto-compact”，设置为 true。按回车键来切换配置值。
+  - 当上下文变大时手动使用 `/compact` 来手动压缩对话，节省 Token
+  - 添加自定义指令：`/compact Focus on code samples and API usage`
+  - 或者通过添加到 CLAUDE.md 来自定义紧凑：
+```
+# Summary instructions
+When you are using compact, please focus on test output and code changes
+```
+2. 编写清晰具体的指令： 避免触发不必要扫描的模糊请求
+3. 分解复杂任务： 将大型任务拆分为聚焦任务，这样每次带回的上下文长度会小很多。
+4. 在任务之间清除历史： 使用 `/clear` 重置上下文
+成本可能因以下因素而显著变化：
+- 被分析代码库的大小
+- 查询的复杂性
+- 被搜索或修改的文件数量
+- 对话历史的长度
+- 压缩对话的频率
+- 后台进程（俳句生成、对话摘要）
+
+选择正确的模型
+
+Sonnet 处理大多数编码任务效果很好，成本低于 Opus。为复杂的架构决策或多步推理保留 Opus。使用 `/model` 在会话中途切换模型，或在 `/config` 中设置默认值。对于简单的 subagent 任务，在您的subagent 配置中指定 `model: haiku`
 
 ## Claude Code 能做什么：功能列表
 
