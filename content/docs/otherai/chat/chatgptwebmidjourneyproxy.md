@@ -34,6 +34,11 @@ author: "神马中转API（api.whatai.cc）"
 3.新建聊天，输入问题使用新设置的模型
 ![ChatGPT & Midjourney配置教程](https://pic.imgdd.cc/item/69a655fea2f7ff87620f782e.png)
 
+## 快捷使用
+可以在顶部菜单-模型价格-选中想使用的模型-点击【在线体验】
+![AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转](https://pic.imgdd.cc/item/69f82e461b404a7cc7742475.png)
+
+
 ## 绘画
 
 神马中转API聊天菜单 - ChatGPT & Midjourney - 绘画：

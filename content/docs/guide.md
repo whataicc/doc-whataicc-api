@@ -74,6 +74,17 @@ Key 的格式通常是：`sk-xxxx......`
 ![AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转](https://pic.imgdd.cc/item/6927b7adc828c4c6deffdca9.png)
 
 
+
+### GPT Image 2绘图
+
+路径：顶部菜单-聊天-【GPT-Image-2绘图】
+
+进入之后右上角设置超时时间：1200秒
+
+![AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转](https://pic.imgdd.cc/item/69f82c111b404a7cc77423f6.webp)
+
+
+
 ### 操练场-终极测试所有模型
 
 操练场，正常默认配置，选择模型，输入问题，发送
@@ -84,11 +95,17 @@ Key 的格式通常是：`sk-xxxx......`
 如果需要传图片可以随便找个免费图床即可，推荐[聚合图床](https://www.superbed.cc/signup?link=1827pfhr)
 ![AI中转站教程原理_AI大模型API中转聚合站推荐_神马API中转](https://pic.imgdd.cc/item/6927bbb8c828c4c6deffe173.png)
 
+### 机灵助手
+也可以去基于神马中转API开发的微信小程序使用gpt-image-2、NanoBanana生图，新用户赠送1000
+
+![AI生图微信小程序推荐机灵助手_AI大模型API中转聚合站推荐_神马API中转](https://pic.imgdd.cc/item/69f82d211b404a7cc7742457.png)
 
 ## 快速教程
 
 ### API文档常用接口
 [聊天兼容OPENAI格式接口（gpt、Gemini、Claude等）](hhttps://gpt-best.apifox.cn/doc-6113929)
+
+[通用gpt-image-2绘图开发API接口（gpt-image-2等绘图）](https://gpt-best.apifox.cn/api-447261009)
 
 [通用绘图异步API接口（Nano-banana、gpt-image等）](https://gpt-best.apifox.cn/api-356258955)
 
